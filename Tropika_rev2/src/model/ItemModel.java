@@ -30,8 +30,6 @@ public class ItemModel extends Model {
     byte[] gambar;
     String keterangan;
 
-    
-
     public ItemModel() {
     }
 
@@ -155,8 +153,6 @@ public class ItemModel extends Model {
         this.keterangan = keterangan;
     }
 
-    
-
     public void insert() {
         try {
 //            conn = SqliteConnect.ConnectDb();
@@ -199,8 +195,16 @@ public class ItemModel extends Model {
             JOptionPane.showMessageDialog(null, e);
         }
     }
-    
-    public ArrayList<ItemModel> selectItem(){
+
+    public ArrayList<ItemModel> selectItem() {
+        try {
+            pst = conn.prepareStatement("SELCT * FROM barang");
+            rs = pst.executeQuery();
+            while (rs.next()) {                
+            }
+        } catch (Exception e) {
+            System.out.println("e : " + e);
+        }
         return null;
     }
 }
