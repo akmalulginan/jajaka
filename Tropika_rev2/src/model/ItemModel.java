@@ -7,6 +7,7 @@ package model;
 
 import java.awt.HeadlessException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -197,5 +198,9 @@ public class ItemModel extends Model {
         } catch (SQLException | HeadlessException e) {
             JOptionPane.showMessageDialog(null, e);
         }
-    }   
+    }
+    
+    public ArrayList<ItemModel> selectItem(){
+        return null;
+    }
 }
