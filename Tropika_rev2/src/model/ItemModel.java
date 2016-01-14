@@ -157,7 +157,7 @@ public class ItemModel extends Model {
         try {
 //            conn = SqliteConnect.ConnectDb();
 //            conn = DbConnect.ConnectDb();
-            String sql = "INSERT INTO barang "
+            String sql = "INSERT INTO item "
                     + "("
                     + "kodeItem, "
                     + "barcode, "
@@ -200,7 +200,8 @@ public class ItemModel extends Model {
         try {
             pst = conn.prepareStatement("SELCT * FROM barang");
             rs = pst.executeQuery();
-            while (rs.next()) {                
+            while (rs.next()) {   
+                this.setKodeItem(rs.getString("kodeBarang"));
             }
         } catch (Exception e) {
             System.out.println("e : " + e);
