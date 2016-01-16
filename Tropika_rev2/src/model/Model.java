@@ -16,7 +16,7 @@ import java.sql.Statement;
  */
 public class Model {
 
-    public Connection conn = DbConnect.ConnectDb();
+    public Connection conn = SqliteConnect.ConnectDb();
     public Statement st;
     public PreparedStatement pst;
     public ResultSet rs;
