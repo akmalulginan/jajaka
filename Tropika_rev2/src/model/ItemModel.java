@@ -201,7 +201,7 @@ public class ItemModel extends Model {
     public ArrayList<ItemModel> selectItem() {
         ArrayList<ItemModel> itemList = new ArrayList<>();
         try {
-            pst = conn.prepareStatement("SELCT * FROM item");
+            pst = conn.prepareStatement("SELECT * FROM item");
             rs = pst.executeQuery();
             while (rs.next()) {   
                 this.setKodeItem(rs.getString("kodeItem"));
@@ -223,6 +223,15 @@ public class ItemModel extends Model {
         } catch (Exception e) {
             System.out.println("e : " + e);
             return null;
+        }
+    }
+    
+    public static void main(String[] args) {
+        
+        ArrayList<ItemModel> itemList = new ItemModel().selectItem();
+        
+        for (ItemModel item : itemList) {
+            System.out.println(item.barcode);
         }
     }
 }
