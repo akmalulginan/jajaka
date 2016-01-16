@@ -153,7 +153,7 @@ public class ItemModel extends Model {
         this.keterangan = keterangan;
     }
 
-    public boolean insert() {
+    public boolean insertItem() {
         try {
 //            conn = SqliteConnect.ConnectDb();
 //            conn = DbConnect.ConnectDb();
@@ -201,7 +201,7 @@ public class ItemModel extends Model {
     public boolean updateAnggota() {
         boolean toReturn = false;
         try {
-            // the mysql insert statement
+           
             String query = "UPDATE anggota "
                     + "SET "
                     + "kodeItem = ? "
@@ -220,7 +220,6 @@ public class ItemModel extends Model {
 
             if (conn != null) {
 
-               
                 pst = conn.prepareStatement(query);
                 pst.setString(1, kodeItem);
                 pst.setString(2, barcode);
@@ -235,7 +234,7 @@ public class ItemModel extends Model {
                 pst.setBoolean(11, statusItem);
                 pst.setBytes(12, gambar);
                 pst.setString(13, keterangan);
-                
+
                 pst.execute();
                 conn.close();
                 toReturn = true;
@@ -307,9 +306,6 @@ public class ItemModel extends Model {
 
     public static void main(String[] args) {
 
-       
         new ItemModel().updateItem();
-        
-        
     }
 }
