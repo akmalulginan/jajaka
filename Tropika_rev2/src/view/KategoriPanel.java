@@ -14,12 +14,14 @@ import control.KategoriControl;
  */
 public class KategoriPanel extends javax.swing.JPanel {
 
+    private KategoriControl kategoriControl = new KategoriControl();
     /**
      * Creates new form FormKategori
      */
     public KategoriPanel() {
         initComponents();
-        new KategoriControl().Update_Table(dataTable);
+        kategoriControl.populateTable(dataTable, "");
+        
     }
 
     /**
@@ -52,13 +54,13 @@ public class KategoriPanel extends javax.swing.JPanel {
 
         dataTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {},
-                {},
-                {},
-                {}
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-
+                "Kode", "Barcode", "Nama", "Satuan", "Dapat Dibeli", "Dapat Dijual", "Dapat Diproduksi", "Untuk Produksi", "Dapat Dibongkar", "Status", "Keterangan"
             }
         ));
         jScrollPane1.setViewportView(dataTable);
