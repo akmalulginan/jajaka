@@ -5,12 +5,15 @@
  */
 package control;
 
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import model.ItemModel;
 import view.ItemPanel;
+import view.KategoriPanel;
 
 /**
  *
@@ -46,5 +49,17 @@ public class KategoriControl {
 
         table.setModel(defaultTableModel);
         return defaultTableModel.getRowCount() != 0;
+    }
+
+    public void refresh(KategoriPanel kategoriPanel) {
+        kategoriPanel.addComponentListener(new ComponentAdapter() {
+            public void componentShown(ComponentEvent e) {
+                populateTable(kategoriPanel.getDataTable(), "");
+            }
+
+            public void componentHidden(ComponentEvent e) {
+                System.out.println("Component hidden");
+            }
+        });
     }
 }

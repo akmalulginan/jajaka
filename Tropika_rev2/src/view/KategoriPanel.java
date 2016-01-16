@@ -1,14 +1,15 @@
 package view;
 
-import control.ItemControl;
 import control.KategoriControl;
+import javax.swing.JComboBox;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author sipit
@@ -16,13 +17,25 @@ import control.KategoriControl;
 public class KategoriPanel extends javax.swing.JPanel {
 
     private KategoriControl kategoriControl = new KategoriControl();
+
     /**
      * Creates new form FormKategori
      */
     public KategoriPanel() {
         initComponents();
-        kategoriControl.populateTable(dataTable, "");
-        
+        kategoriControl.refresh(this);
+    }
+
+    public JTextField getCariText() {
+        return cariText;
+    }
+
+    public JTable getDataTable() {
+        return dataTable;
+    }
+
+    public JComboBox getKategoriComboBox() {
+        return kategoriComboBox;
     }
 
     /**
