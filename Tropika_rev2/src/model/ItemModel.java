@@ -199,6 +199,7 @@ public class ItemModel extends Model {
     }
 
     public ArrayList<ItemModel> selectItem() {
+        ArrayList<ItemModel> itemList = new ArrayList<>();
         try {
             pst = conn.prepareStatement("SELCT * FROM item");
             rs = pst.executeQuery();
@@ -216,10 +217,12 @@ public class ItemModel extends Model {
                 this.setStatusItem(rs.getBoolean("statusItem"));
                 this.setGambar(rs.getBytes("gambar"));
                 this.setKeterangan(rs.getString("keterangan"));
+                itemList.add(this);
             }
+            return itemList;
         } catch (Exception e) {
             System.out.println("e : " + e);
+            return null;
         }
-        return null;
     }
 }
