@@ -239,11 +239,9 @@ public class ItemModel extends Model {
                 conn.close();
                 toReturn = true;
             }
-
         } catch (Exception e) {
             System.out.println("error : " + e.getMessage());
         }
-
         return toReturn;
     }
 
@@ -296,7 +294,7 @@ public class ItemModel extends Model {
 
     public static void main(String[] args) {
 
-        new ItemModel().updateItem();
+        new ItemModel().selectItem();
     }
     
     
