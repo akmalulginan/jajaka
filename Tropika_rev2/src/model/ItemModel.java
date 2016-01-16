@@ -202,6 +202,18 @@ public class ItemModel extends Model {
             rs = pst.executeQuery();
             while (rs.next()) {   
                 this.setKodeItem(rs.getString("kodeItem"));
+                this.setBarcode(rs.getString("barcode"));
+                this.setNamaItem(rs.getString("namaItem"));
+                this.setKategori(rs.getString("kategori"));
+                this.setSatuan(rs.getString("satuan"));
+                this.setDapatDibeli(rs.getBoolean("dapatDibeli"));
+                this.setDapatDijual(rs.getBoolean("dapatDibeli"));
+                this.setDapatDiproduksi(rs.getBoolean("dapatDiproduksi"));
+                this.setDipakaiUntukProduksi(rs.getBoolean("dapaatUntukProduksi"));
+                this.setDapatDibongkar(rs.getBoolean("dapatDibongkar"));
+                this.setStatusItem(rs.getBoolean("statusItem"));
+                this.setGambar(rs.getBytes("gambar"));
+                this.setKeterangan(rs.getString("keterangan"));
             }
         } catch (Exception e) {
             System.out.println("e : " + e);
