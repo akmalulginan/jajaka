@@ -22,7 +22,7 @@ public class SqliteConnect {
     public static Connection ConnectDb() {
         try {
             Class.forName("org.sqlite.JDBC");
-            Connection conn = DriverManager.getConnection("jdbc:sqlite:lib/db.sqlite");
+            Connection conn = DriverManager.getConnection("jdbc:sqlite:lib/database.db");
             return conn;
         } catch (ClassNotFoundException | SQLException e) {
             JOptionPane.showMessageDialog(null, e);
