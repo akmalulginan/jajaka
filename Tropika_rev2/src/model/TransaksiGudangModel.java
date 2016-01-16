@@ -6,7 +6,6 @@
 package model;
 
 import java.awt.Image;
-import java.io.ByteArrayOutputStream;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
