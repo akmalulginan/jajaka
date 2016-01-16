@@ -249,20 +249,21 @@ public class ItemModel extends Model {
             pst = conn.prepareStatement("SELECT * FROM item");
             rs = pst.executeQuery();
             while (rs.next()) {
-                this.setKodeItem(rs.getString("kodeItem"));
-                this.setBarcode(rs.getString("barcode"));
-                this.setNamaItem(rs.getString("namaItem"));
-                this.setKategori(rs.getString("kategori"));
-                this.setSatuan(rs.getString("satuan"));
-                this.setDapatDibeli(rs.getBoolean("dapatDibeli"));
-                this.setDapatDijual(rs.getBoolean("dapatDibeli"));
-                this.setDapatDiproduksi(rs.getBoolean("dapatDiproduksi"));
-                this.setDipakaiUntukProduksi(rs.getBoolean("dipakaiUntukProduksi"));
-                this.setDapatDibongkar(rs.getBoolean("dapatDibongkar"));
-                this.setStatusItem(rs.getBoolean("statusItem"));
-                this.setGambar(rs.getBytes("gambar"));
-                this.setKeterangan(rs.getString("keterangan"));
-                itemList.add(this);
+                ItemModel itemModel = new ItemModel();
+                itemModel.setKodeItem(rs.getString("kodeItem"));
+                itemModel.setBarcode(rs.getString("barcode"));
+                itemModel.setNamaItem(rs.getString("namaItem"));
+                itemModel.setKategori(rs.getString("kategori"));
+                itemModel.setSatuan(rs.getString("satuan"));
+                itemModel.setDapatDibeli(rs.getBoolean("dapatDibeli"));
+                itemModel.setDapatDijual(rs.getBoolean("dapatDibeli"));
+                itemModel.setDapatDiproduksi(rs.getBoolean("dapatDiproduksi"));
+                itemModel.setDipakaiUntukProduksi(rs.getBoolean("dipakaiUntukProduksi"));
+                itemModel.setDapatDibongkar(rs.getBoolean("dapatDibongkar"));
+                itemModel.setStatusItem(rs.getBoolean("statusItem"));
+                itemModel.setGambar(rs.getBytes("gambar"));
+                itemModel.setKeterangan(rs.getString("keterangan"));
+                itemList.add(itemModel);
             }
             return itemList;
         } catch (Exception e) {
