@@ -198,10 +198,10 @@ public class ItemModel extends Model {
 
     public ArrayList<ItemModel> selectItem() {
         try {
-            pst = conn.prepareStatement("SELCT * FROM barang");
+            pst = conn.prepareStatement("SELCT * FROM item");
             rs = pst.executeQuery();
             while (rs.next()) {   
-                this.setKodeItem(rs.getString("kodeBarang"));
+                this.setKodeItem(rs.getString("kodeItem"));
             }
         } catch (Exception e) {
             System.out.println("e : " + e);
