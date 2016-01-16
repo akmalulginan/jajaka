@@ -448,15 +448,20 @@ public class SupplierPanel extends javax.swing.JPanel {
         inputCepatKey2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         inputCepatKey2.setIconTextGap(10);
         inputCepatKey2.setMargin(new java.awt.Insets(2, 2, 2, 2));
+        inputCepatKey2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputCepatKey2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1014, Short.MAX_VALUE)
+            .addGap(0, 1028, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 17, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(25, 25, 25)
@@ -476,14 +481,14 @@ public class SupplierPanel extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(864, 864, 864)
                             .addComponent(inputCepatKey2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 17, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 389, Short.MAX_VALUE)
+            .addGap(0, 397, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 13, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel1)
                         .addComponent(jLabel6)
@@ -497,7 +502,7 @@ public class SupplierPanel extends javax.swing.JPanel {
                     .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(6, 6, 6)
                     .addComponent(inputCepatKey2)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 14, Short.MAX_VALUE)))
         );
 
         add(jPanel1);
@@ -506,6 +511,10 @@ public class SupplierPanel extends javax.swing.JPanel {
     private void blacklistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blacklistActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_blacklistActionPerformed
+
+    private void inputCepatKey2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCepatKey2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputCepatKey2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

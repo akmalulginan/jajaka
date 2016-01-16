@@ -1,8 +1,6 @@
 package view;
 
 import control.ItemControl;
-import java.awt.event.ItemEvent;
-import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -22,21 +20,21 @@ public class ItemPanel extends javax.swing.JPanel {
     /**
      * Creates new form FormBarang
      */
-    private ItemControl itemControl = new ItemControl();
+    private final ItemControl itemControl = new ItemControl();
 
     Boolean dapatDibeli = false;
     Boolean dapatDijual = false;
     Boolean dapatDiproduksi = false;
     Boolean dipakaiUntukProduksi = false;
     Boolean dapatDibongkar = false;
-    Boolean statusBarang = false;
+    Boolean statusItem = false;
     byte[] gambar = null;
 
     public ItemPanel() {
         initComponents();
         kategoriCombo.addItem("Stok");
         kategoriCombo.addItem("Non Stok");
-//        loadCombo();
+        itemControl.loadSatuanCombo(satuanCombo);
     }
 
     public JComboBox getKategoriCombo() {
@@ -47,12 +45,12 @@ public class ItemPanel extends javax.swing.JPanel {
         return keteranganText;
     }
 
-    public JTextField getKodeBarangText() {
-        return kodeBarangText;
+    public JTextField getKodeItemText() {
+        return kodeItemText;
     }
 
-    public JTextField getNamaBarangText() {
-        return namaBarangText;
+    public JTextField getNamaItemText() {
+        return namaItemText;
     }
 
     public JTextField getPathText() {
@@ -79,8 +77,8 @@ public class ItemPanel extends javax.swing.JPanel {
         return dapatDibongkar;
     }
 
-    public Boolean getStatusBarang() {
-        return statusBarang;
+    public Boolean getStatusItem() {
+        return statusItem;
     }
 
     public byte[] getGambar() {
@@ -119,15 +117,15 @@ public class ItemPanel extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        kodeBarangText = new javax.swing.JTextField();
+        kodeItemText = new javax.swing.JTextField();
         barcodeText = new javax.swing.JTextField();
-        namaBarangText = new javax.swing.JTextField();
+        namaItemText = new javax.swing.JTextField();
         satuanCombo = new javax.swing.JComboBox();
         kategoriCombo = new javax.swing.JComboBox();
         tambahSatuanButton = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
-        statusBarangCheck = new javax.swing.JCheckBox();
+        statusItemCheck = new javax.swing.JCheckBox();
         jLabel12 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         keteranganText = new javax.swing.JTextPane();
@@ -189,14 +187,14 @@ public class ItemPanel extends javax.swing.JPanel {
         jLabel10.setForeground(new java.awt.Color(40, 40, 40));
         jLabel10.setText(":");
 
-        kodeBarangText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        kodeBarangText.setForeground(new java.awt.Color(40, 40, 40));
+        kodeItemText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        kodeItemText.setForeground(new java.awt.Color(40, 40, 40));
 
         barcodeText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         barcodeText.setForeground(new java.awt.Color(40, 40, 40));
 
-        namaBarangText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        namaBarangText.setForeground(new java.awt.Color(40, 40, 40));
+        namaItemText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        namaItemText.setForeground(new java.awt.Color(40, 40, 40));
 
         satuanCombo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         satuanCombo.setForeground(new java.awt.Color(40, 40, 40));
@@ -226,15 +224,15 @@ public class ItemPanel extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
-        statusBarangCheck.setBackground(new java.awt.Color(230, 199, 159));
-        statusBarangCheck.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        statusBarangCheck.setForeground(new java.awt.Color(40, 40, 40));
-        statusBarangCheck.setText("Aktif");
-        statusBarangCheck.setBorderPaintedFlat(true);
-        statusBarangCheck.setOpaque(false);
-        statusBarangCheck.addActionListener(new java.awt.event.ActionListener() {
+        statusItemCheck.setBackground(new java.awt.Color(230, 199, 159));
+        statusItemCheck.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        statusItemCheck.setForeground(new java.awt.Color(40, 40, 40));
+        statusItemCheck.setText("Aktif");
+        statusItemCheck.setBorderPaintedFlat(true);
+        statusItemCheck.setOpaque(false);
+        statusItemCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                statusBarangCheckActionPerformed(evt);
+                statusItemCheckActionPerformed(evt);
             }
         });
 
@@ -281,7 +279,7 @@ public class ItemPanel extends javax.swing.JPanel {
                     .addComponent(jScrollPane2)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(statusBarangCheck)
+                            .addComponent(statusItemCheck)
                             .addComponent(jLabel12))
                         .addGap(0, 121, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -298,7 +296,7 @@ public class ItemPanel extends javax.swing.JPanel {
                     .addComponent(gambarLabel))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(statusBarangCheck)
+                    .addComponent(statusItemCheck)
                     .addComponent(openButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pathText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -435,9 +433,9 @@ public class ItemPanel extends javax.swing.JPanel {
                             .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(4, 4, 4)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(kodeBarangText, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(kodeItemText, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(barcodeText, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(namaBarangText, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(namaItemText, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(satuanCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(6, 6, 6)
@@ -477,11 +475,11 @@ public class ItemPanel extends javax.swing.JPanel {
                         .addGap(11, 11, 11)
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(kodeBarangText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(kodeItemText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
                         .addComponent(barcodeText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(7, 7, 7)
-                        .addComponent(namaBarangText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(namaItemText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(11, 11, 11)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(satuanCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -499,10 +497,10 @@ public class ItemPanel extends javax.swing.JPanel {
         add(jPanel4, new java.awt.GridBagConstraints());
     }// </editor-fold>//GEN-END:initComponents
 
-    private void statusBarangCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusBarangCheckActionPerformed
+    private void statusItemCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusItemCheckActionPerformed
         // TODO add your handling code here:
-        statusBarang = statusBarangCheck.isSelected();
-    }//GEN-LAST:event_statusBarangCheckActionPerformed
+        statusItem = statusItemCheck.isSelected();
+    }//GEN-LAST:event_statusItemCheckActionPerformed
 
     private void dapatDibeliCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dapatDibeliCheckActionPerformed
         // TODO add your handling code here:
@@ -526,23 +524,7 @@ public class ItemPanel extends javax.swing.JPanel {
 
     private void simpanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanButtonActionPerformed
         // TODO add your handling code here:
-        if (!kodeBarangText.getText().isEmpty()) {
-            itemControl.set(
-                    kodeBarangText.getText(),
-                    barcodeText.getText(),
-                    namaBarangText.getText(),
-                    kategoriCombo.getSelectedItem().toString(),
-                    dapatDibeli,
-                    dapatDijual,
-                    dapatDiproduksi,
-                    dipakaiUntukProduksi,
-                    dapatDibongkar,
-                    statusBarang,
-                    gambar,
-                    keteranganText.getText(),
-                    satuanCombo.getSelectedItem().toString()
-            );
-        }
+        itemControl.simpanItem(this);
     }//GEN-LAST:event_simpanButtonActionPerformed
 
     private void dapatDibongkarCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dapatDibongkarCheckActionPerformed
@@ -572,7 +554,7 @@ public class ItemPanel extends javax.swing.JPanel {
         SatuanDialog n = new SatuanDialog(null, true);
         n.show();
         if (n.getReturnStatus() == 1) {
-//            loadCombo();
+            itemControl.loadSatuanCombo(satuanCombo);
         }
         System.out.println(n.getReturnStatus());
 
@@ -612,13 +594,13 @@ public class ItemPanel extends javax.swing.JPanel {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JComboBox kategoriCombo;
     private javax.swing.JTextPane keteranganText;
-    private javax.swing.JTextField kodeBarangText;
-    private javax.swing.JTextField namaBarangText;
+    private javax.swing.JTextField kodeItemText;
+    private javax.swing.JTextField namaItemText;
     private javax.swing.JButton openButton;
     private javax.swing.JTextField pathText;
     private javax.swing.JComboBox satuanCombo;
     private javax.swing.JButton simpanButton;
-    private javax.swing.JCheckBox statusBarangCheck;
+    private javax.swing.JCheckBox statusItemCheck;
     private javax.swing.JButton tambahSatuanButton;
     // End of variables declaration//GEN-END:variables
 }
