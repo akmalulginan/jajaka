@@ -119,9 +119,9 @@ public class ItemControl {
         }
     }
 
-    public void loadCombo() {
-        this.satuanCombo.removeAllItems();
-        ItemControl bC = new ItemControl();
-        bC.loadSatuan(this.satuanCombo);
-    }
+//    public void loadCombo() {
+//        this.satuanCombo.removeAllItems();
+//        ItemControl bC = new ItemControl();
+//        bC.loadSatuan(this.satuanCombo);
+//    }
 }
