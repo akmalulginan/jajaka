@@ -212,7 +212,7 @@ public class ItemModel extends Model {
                 this.setDapatDibeli(rs.getBoolean("dapatDibeli"));
                 this.setDapatDijual(rs.getBoolean("dapatDibeli"));
                 this.setDapatDiproduksi(rs.getBoolean("dapatDiproduksi"));
-                this.setDipakaiUntukProduksi(rs.getBoolean("dapaatUntukProduksi"));
+                this.setDipakaiUntukProduksi(rs.getBoolean("dipakaiUntukProduksi"));
                 this.setDapatDibongkar(rs.getBoolean("dapatDibongkar"));
                 this.setStatusItem(rs.getBoolean("statusItem"));
                 this.setGambar(rs.getBytes("gambar"));
@@ -223,15 +223,6 @@ public class ItemModel extends Model {
         } catch (Exception e) {
             System.out.println("e : " + e);
             return null;
-        }
-    }
-    
-    public static void main(String[] args) {
-        
-        ArrayList<ItemModel> itemList = new ItemModel().selectItem();
-        
-        for (ItemModel item : itemList) {
-            System.out.println(item.barcode);
         }
     }
 }
