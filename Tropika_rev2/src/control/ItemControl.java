@@ -23,6 +23,8 @@ import model.SatuanModel;
  */
 public class ItemControl {
 
+    ItemModel itemModel = new ItemModel();
+
     public void set(
             String kodeItem,
             String barcode,
@@ -38,28 +40,27 @@ public class ItemControl {
             String keterangan,
             String kodeSatuan
     ) {
-        ItemModel bM = new ItemModel();
-        bM.setKodeItem(kodeItem);
-        bM.setBarcode(barcode);
-        bM.setNamaItem(namaItem);
-        bM.setKategori(kategori);
-        bM.setDapatDibeli(dapatDibeli);
-        bM.setDapatDijual(dapatDijual);
-        bM.setDapatDiproduksi(dapatDiproduksi);
-        bM.setDipakaiUntukProduksi(dipakaiUntukProduksi);
-        bM.setDapatDibongkar(dapatDibongkar);
-        bM.setStatusItem(statusItem);
+        itemModel.setKodeItem(kodeItem);
+        itemModel.setBarcode(barcode);
+        itemModel.setNamaItem(namaItem);
+        itemModel.setKategori(kategori);
+        itemModel.setDapatDibeli(dapatDibeli);
+        itemModel.setDapatDijual(dapatDijual);
+        itemModel.setDapatDiproduksi(dapatDiproduksi);
+        itemModel.setDipakaiUntukProduksi(dipakaiUntukProduksi);
+        itemModel.setDapatDibongkar(dapatDibongkar);
+        itemModel.setStatusItem(statusItem);
         if (gambar != null) {
-            bM.setGambar(gambar);
+            itemModel.setGambar(gambar);
         } else {
-            String filename = System.getProperty("user.dir")+"\\lib\\item.bak";
-            bM.setGambar(setImage(filename));
+            String filename = System.getProperty("user.dir") + "\\lib\\item.bak";
+            itemModel.setGambar(setImage(filename));
         }
-        bM.setKeterangan(keterangan);
-        bM.setSatuan(kodeSatuan);
+        itemModel.setKeterangan(keterangan);
+        itemModel.setSatuan(kodeSatuan);
 
-        bM.insert();
-//        System.out.println(bM.toString());
+        itemModel.insert();
+//        System.out.println(itemModel.toString());
     }
 
     public void loadSatuan(JComboBox combo) {
@@ -97,7 +98,7 @@ public class ItemControl {
             return null;
         }
     }
-    
+
     public byte[] setImage(String filename) {
 
         try {

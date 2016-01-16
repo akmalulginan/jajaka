@@ -15,19 +15,19 @@ import model.KategoriModel;
 public class KategoriControl {
     public void Update_Table(JTable table) {
         String sql = "SELECT "
-                + "kodeBarang AS 'Kode Barang', "
+                + "kodeItem AS 'Kode Item', "
                 + "barcode AS Barcode, "
-                + "namaBarang AS Nama, "
+                + "namaItem AS Nama, "
                 + "satuan AS Satuan, "
                 + "dapatDibeli AS 'Dapat Dibeli', "
                 + "dapatDijual AS 'Dapat Dijual', "
                 + "dapatDiproduksi AS 'Dapat Diproduksi', "
                 + "dipakaiUntukProduksi AS 'Dipakai Untuk Produksi', "
                 + "dapatDibongkar AS 'Dapat Dibongkar', "
-                + "statusBarang AS Status, "
+                + "statusItem AS Status, "
 //                + "gambar AS Gambar, "
                 + "keterangan AS Keterangan "
-                + "FROM barang";
+                + "FROM item";
         new KategoriModel().Update_Table(sql, table);
     }
 }
