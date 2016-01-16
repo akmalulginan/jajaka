@@ -56,9 +56,9 @@
                           </Group>
                           <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="kodeBarangText" min="-2" pref="236" max="-2" attributes="0"/>
+                              <Component id="kodeItemText" min="-2" pref="236" max="-2" attributes="0"/>
                               <Component id="barcodeText" min="-2" pref="236" max="-2" attributes="0"/>
-                              <Component id="namaBarangText" min="-2" pref="236" max="-2" attributes="0"/>
+                              <Component id="namaItemText" min="-2" pref="236" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="satuanCombo" min="-2" pref="124" max="-2" attributes="0"/>
                                   <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
@@ -107,11 +107,11 @@
                           <Component id="jLabel10" min="-2" pref="29" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="kodeBarangText" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="kodeItemText" min="-2" pref="29" max="-2" attributes="0"/>
                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                           <Component id="barcodeText" min="-2" pref="29" max="-2" attributes="0"/>
                           <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
-                          <Component id="namaBarangText" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="namaItemText" min="-2" pref="29" max="-2" attributes="0"/>
                           <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="satuanCombo" min="-2" pref="29" max="-2" attributes="0"/>
@@ -243,7 +243,7 @@
             <Property name="text" type="java.lang.String" value=":"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="kodeBarangText">
+        <Component class="javax.swing.JTextField" name="kodeItemText">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="14" style="0"/>
@@ -263,7 +263,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="namaBarangText">
+        <Component class="javax.swing.JTextField" name="namaItemText">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="14" style="0"/>
@@ -361,7 +361,7 @@
                               <Component id="jScrollPane2" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="statusBarangCheck" min="-2" max="-2" attributes="0"/>
+                                      <Component id="statusItemCheck" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="0" pref="121" max="32767" attributes="0"/>
@@ -385,7 +385,7 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="statusBarangCheck" min="-2" max="-2" attributes="0"/>
+                              <Component id="statusItemCheck" min="-2" max="-2" attributes="0"/>
                               <Component id="openButton" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -396,7 +396,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JCheckBox" name="statusBarangCheck">
+                <Component class="javax.swing.JCheckBox" name="statusItemCheck">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="9f" green="c7" red="e6" type="rgb"/>
@@ -412,7 +412,7 @@
                     <Property name="opaque" type="boolean" value="false"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="statusBarangCheckActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="statusItemCheckActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel12">

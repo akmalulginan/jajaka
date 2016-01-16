@@ -6,18 +6,18 @@
 package control;
 
 import java.awt.Image;
-import java.awt.event.ItemEvent;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import javax.swing.ImageIcon;
-import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import model.ItemModel;
 import model.SatuanModel;
+import view.ItemPanel;
 
 /**
  *
@@ -27,42 +27,45 @@ public class ItemControl {
 
     ItemModel itemModel = new ItemModel();
 
-    public void set(
-            String kodeItem,
-            String barcode,
-            String namaItem,
-            String kategori,
-            boolean dapatDibeli,
-            boolean dapatDijual,
-            boolean dapatDiproduksi,
-            boolean dipakaiUntukProduksi,
-            boolean dapatDibongkar,
-            boolean statusItem,
-            byte[] gambar,
-            String keterangan,
-            String kodeSatuan
-    ) {
-        itemModel.setKodeItem(kodeItem);
-        itemModel.setBarcode(barcode);
-        itemModel.setNamaItem(namaItem);
-        itemModel.setKategori(kategori);
-        itemModel.setDapatDibeli(dapatDibeli);
-        itemModel.setDapatDijual(dapatDijual);
-        itemModel.setDapatDiproduksi(dapatDiproduksi);
-        itemModel.setDipakaiUntukProduksi(dipakaiUntukProduksi);
-        itemModel.setDapatDibongkar(dapatDibongkar);
-        itemModel.setStatusItem(statusItem);
-        if (gambar != null) {
-            itemModel.setGambar(gambar);
+    public void simpanItem(ItemPanel itemPanel) {
+        if (itemPanel.getKodeItemText().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(itemPanel, "Kode Item tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else if (itemPanel.getBarcodeText().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(itemPanel, "Barcode Item tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else if (itemPanel.getNamaItemText().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(itemPanel, "Nama Item tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else if (itemPanel.getKategoriCombo().getSelectedItem().toString().isEmpty()) {
+            JOptionPane.showMessageDialog(itemPanel, "Kategori Item tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else if (itemPanel.getKategoriCombo().getSelectedItem().toString().isEmpty()) {
+            JOptionPane.showMessageDialog(itemPanel, "Kategori Item tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
-            String filename = System.getProperty("user.dir") + "\\lib\\item.bak";
-            itemModel.setGambar(setImage(filename));
-        }
-        itemModel.setKeterangan(keterangan);
-        itemModel.setSatuan(kodeSatuan);
+            itemModel.setKodeItem(itemPanel.getKodeItemText().getText());
+            itemModel.setBarcode(itemPanel.getBarcodeText().getText());
+            itemModel.setNamaItem(itemPanel.getNamaItemText().getText());
+            itemModel.setKategori(itemPanel.getKategoriCombo().getSelectedItem().toString());
+            itemModel.setDapatDibeli(itemPanel.getDapatDibeli());
+            itemModel.setDapatDijual(itemPanel.getDapatDijual());
+            itemModel.setDapatDiproduksi(itemPanel.getDapatDiproduksi());
+            itemModel.setDipakaiUntukProduksi(itemPanel.getDipakaiUntukProduksi());
+            itemModel.setDapatDibongkar(itemPanel.getDapatDibongkar());
+            itemModel.setStatusItem(itemPanel.getStatusItem());
+            if (itemPanel.getGambar() != null) {
+                itemModel.setGambar(itemPanel.getGambar());
+            } else {
+                String filename = System.getProperty("user.dir") + "\\lib\\item.bak";
+                itemModel.setGambar(setImage(filename));
+            }
+            itemModel.setKeterangan(itemPanel.getKeteranganText().getText());
+            itemModel.setSatuan(itemPanel.getSatuanCombo().getSelectedItem().toString());
 
-        itemModel.insert();
-//        System.out.println(itemModel.toString());
+            if (itemModel.insert()) {
+                JOptionPane.showMessageDialog(itemPanel, "Item berhasil Disimopan!");
+            } else {
+                JOptionPane.showMessageDialog(itemPanel, "Item berhasil Disimopan!");
+            }
+
+        }
+
     }
 
     public void loadSatuan(JComboBox combo) {
@@ -119,9 +122,9 @@ public class ItemControl {
         }
     }
 
-//    public void loadCombo() {
-//        this.satuanCombo.removeAllItems();
-//        ItemControl bC = new ItemControl();
-//        bC.loadSatuan(this.satuanCombo);
-//    }
+    public void loadSatuanCombo(JComboBox comboBox) {
+        comboBox.removeAllItems();
+        ItemControl bC = new ItemControl();
+        loadSatuan(comboBox);
+    }
 }
