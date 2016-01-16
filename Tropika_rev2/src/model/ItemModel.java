@@ -198,7 +198,7 @@ public class ItemModel extends Model {
         }
     }
 
-    public boolean updateAnggota() {
+    public boolean updateItem() {
         boolean toReturn = false;
         try {
            
@@ -289,16 +289,6 @@ public class ItemModel extends Model {
 
         } catch (Exception e) {
             System.out.println("error : " + e.getMessage());
-
-        }
-        return toReturn;
-    }
-
-    public boolean updateItem() {
-        boolean toReturn = false;
-        try {
-
-        } catch (Exception e) {
 
         }
         return toReturn;
