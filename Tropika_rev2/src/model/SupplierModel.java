@@ -7,6 +7,7 @@ package model;
 
 import java.awt.HeadlessException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -135,6 +136,7 @@ public class SupplierModel extends Model {
 
     public boolean insert() {
         try {
+
             String sql = "INSERT INTO "
                     + "supplier "
                     + "("
@@ -171,7 +173,6 @@ public class SupplierModel extends Model {
             pst.setString(13, emailCs);
 
             pst.execute();
-            JOptionPane.showMessageDialog(null, "SUKSES");
 
             return true;
 
@@ -179,6 +180,106 @@ public class SupplierModel extends Model {
             JOptionPane.showMessageDialog(null, e);
             return false;
         }
+    }
+
+    public boolean update() {
+        boolean toReturn = false;
+        try {
+
+            String query = "UPDATE supplier "
+                    + "SET "
+                    + "kodeSupplier = ? "
+                    + "namaSupplier = ? "
+                    + "kategoriSupplier = ? "
+                    + "alamat = ? "
+                    + "kota = ? "
+                    + "kodePos = ? "
+                    + "noTelp = ? "
+                    + "noFax = ? "
+                    + "email = ? "
+                    + "catatan = ? "
+                    + "contactPerson = ? "
+                    + "noTelpCs = ? "
+                    + "emailCs = ? ";
+
+            if (conn != null) {
+                pst = conn.prepareStatement(query);
+                pst.setString(1, kodeSupplier);
+                pst.setString(2, namaSupplier);
+                pst.setString(3, kategoriSupplier);
+                pst.setString(4, kota);
+                pst.setString(5, kodePos);
+                pst.setString(6, noTelp);
+                pst.setString(7, noFax);
+                pst.setString(8, email);
+                pst.setString(9, catatan);
+                pst.setString(10, catatan);
+                pst.setString(11, contactPerson);
+                pst.setString(12, noTelpCs);
+                pst.setString(13, emailCs);
+
+                pst.execute();
+                conn.close();
+                toReturn = true;
+            }
+        } catch (Exception e) {
+            System.out.println("error : " + e.getMessage());
+        }
+        return toReturn;
+    }
+    
+    public ArrayList<SupplierModel> select() {
+        ArrayList<SupplierModel> list = new ArrayList<>();
+        try {
+            pst = conn.prepareStatement("SELECT * FROM supplier");
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                 
+                this.setKodeSupplier(rs.getString("kodeSupplier"));
+                this.setNamaSupplier(rs.getString("namaSupplier"));
+                this.setKategoriSupplier(rs.getString("kategoriSupplier"));
+                this.setAlamat(rs.getString("alamat"));
+                this.setKota(rs.getString("kota"));
+                this.setKodePos(rs.getString("kodePos"));
+                this.setNoTelp(rs.getString("noTelp"));
+                this.setNoFax(rs.getString("noFax"));
+                this.setEmail(rs.getString("email"));
+                this.setCatatan(rs.getString("catatan"));
+                this.setContactPerson(rs.getString("contactPerson"));
+                this.setNoTelpCs(rs.getString("noTelpCs"));
+                this.setEmailCs(rs.getString("emailCs"));
+                list.add(this);
+            }
+            return list;
+        } catch (Exception e) {
+            System.out.println("e : " + e);
+            return null;
+        }
+    }
+    
+    public Boolean delete() {
+        Boolean toReturn = false;
+
+        try {
+            String query = "DELETE FROM supplier WHERE kodeSupplier = ?";
+            if (conn != null) {
+                pst = conn.prepareStatement(query);
+                pst.setString(1, kodeSupplier);
+                pst.execute();
+                conn.close();
+                toReturn = true;
+            }
+        } catch (Exception e) {
+
+        }
+
+        return toReturn;
+    }
+    
+    
+
+    public static void main(String[] args) {
+        new SupplierModel().select();
     }
 
 }

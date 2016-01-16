@@ -153,10 +153,8 @@ public class ItemModel extends Model {
         this.keterangan = keterangan;
     }
 
-    public boolean insertItem() {
+    public boolean insert() {
         try {
-//            conn = SqliteConnect.ConnectDb();
-//            conn = DbConnect.ConnectDb();
             String sql = "INSERT INTO item "
                     + "("
                     + "kodeItem, "
@@ -190,7 +188,7 @@ public class ItemModel extends Model {
             pst.setBytes(12, gambar);
             pst.setString(13, keterangan);
             pst.execute();
-            JOptionPane.showMessageDialog(null, "SUKSES");
+            
             return true;
         } catch (SQLException | HeadlessException e) {
             JOptionPane.showMessageDialog(null, e);
@@ -198,7 +196,7 @@ public class ItemModel extends Model {
         }
     }
 
-    public boolean updateItem() {
+    public boolean update() {
         boolean toReturn = false;
         try {
            
@@ -245,7 +243,7 @@ public class ItemModel extends Model {
         return toReturn;
     }
 
-    public ArrayList<ItemModel> selectItem() {
+    public ArrayList<ItemModel> select() {
         ArrayList<ItemModel> itemList = new ArrayList<>();
         try {
             pst = conn.prepareStatement("SELECT * FROM item");
@@ -273,7 +271,7 @@ public class ItemModel extends Model {
         }
     }
 
-    public boolean deleteAnggota() {
+    public boolean delete() {
         boolean toReturn = false;
         try {
             String query = "DELETE FROM item WHERE kodeItem = ?";
@@ -291,11 +289,5 @@ public class ItemModel extends Model {
         }
         return toReturn;
     }
-
-    public static void main(String[] args) {
-
-        new ItemModel().selectItem();
-    }
-    
     
 }

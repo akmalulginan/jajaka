@@ -59,7 +59,7 @@ public class ItemControl {
         itemModel.setKeterangan(keterangan);
         itemModel.setSatuan(kodeSatuan);
 
-        itemModel.insertItem();
+        itemModel.insert();
 //        System.out.println(itemModel.toString());
     }
 

@@ -115,7 +115,7 @@ public class GudangModel extends Model {
         this.produksi = produksi;
     }
 
-    public void insert() {
+    public boolean insert() {
         try {
             String sql = "INSERT INTO gudang "
                     + "("
@@ -131,8 +131,7 @@ public class GudangModel extends Model {
                     + "penyimpanan, "
                     + "produksi"
                     + ") VALUES (?,?,?,?,?,?,?,?,?,?,?)";
-//            conn = SqliteConnect.ConnectDb();
-//            conn = DbConnect.ConnectDb();
+
             pst = conn.prepareStatement(sql);
             pst.setString(1, kodeGudang);
             pst.setString(2, alamat);
@@ -145,12 +144,18 @@ public class GudangModel extends Model {
             pst.setString(9, contactPerson);
             pst.setBoolean(10, penyimpanan);
             pst.setBoolean(11, produksi);
-            
+
             pst.execute();
             
-            JOptionPane.showMessageDialog(null, "SUKSES");
+            return true;
+
         } catch (SQLException | HeadlessException e) {
             JOptionPane.showMessageDialog(null, e);
+            return false;
         }
+    }
+    
+    public static void main(String[] args) {
+        new GudangModel().insert();
     }
 }

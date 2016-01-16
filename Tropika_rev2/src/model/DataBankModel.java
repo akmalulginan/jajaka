@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -41,11 +42,10 @@ public class DataBankModel extends Model {
         this.namaBank = namaBank;
     }
 
-    public void insertDataBank() {
+    public boolean insert() {
         try {
             String sql = "INSERT INTO dataBank (noRekening, atasNama, namaBank) VALUES (?,?,?)";
-//            conn = SqliteConnect.ConnectDb();
-//            conn = DbConnect.ConnectDb();
+
             pst = conn.prepareStatement(sql);
             pst.setString(1, noRekening);
             pst.setString(2, atasNama);
@@ -53,13 +53,15 @@ public class DataBankModel extends Model {
 
             pst.execute();
 
-            JOptionPane.showMessageDialog(null, "SUKSES");
+            return true;
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
+            return false;
         }
     }
 
-    public boolean updateDataBank() {
+    public boolean update() {
         Boolean toReturn = false;
 
         try {
@@ -85,15 +87,44 @@ public class DataBankModel extends Model {
         return toReturn;
     }
 
-    public boolean deleteDataBank() {
+    public boolean delete() {
         Boolean toReturn = false;
-        
-        try{
-            String query = "DELETE";
-        }catch(Exception e){
-            
+
+        try {
+            String query = "DELETE FROM databank WHERE noRekening = ?";
+            if (conn != null) {
+                pst = conn.prepareStatement(query);
+                pst.setString(1, noRekening);
+                pst.execute();
+                conn.close();
+                toReturn = true;
+            }
+        } catch (Exception e) {
+
         }
-        
+
         return toReturn;
+    }
+
+    public ArrayList<DataBankModel> select() {
+        ArrayList<DataBankModel> List = new ArrayList<>();
+        try {
+            pst = conn.prepareStatement("SELECT * FROM databank");
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                this.setNoRekening(rs.getString("noRekening"));
+                this.setAtasNama(rs.getString("atasNama"));
+                this.setNamaBank(rs.getString("namaBank"));
+                List.add(this);
+            }
+            return List;
+        } catch (Exception e) {
+            System.out.println("e : " + e);
+            return null;
+        }
+    }
+
+    public static void main(String[] args) {
+        new DataBankModel().select();
     }
 }

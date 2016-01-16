@@ -20,7 +20,7 @@ public class KategoriControl {
     private ItemModel itemModel = new ItemModel();
 
     public boolean populateTable(JTable table, String cari) {
-        ArrayList<ItemModel> itemList = itemModel.selectItem();
+        ArrayList<ItemModel> itemList = itemModel.select();
         DefaultTableModel defaultTableModel = (DefaultTableModel) table.getModel();
         defaultTableModel.setRowCount(0);
 
