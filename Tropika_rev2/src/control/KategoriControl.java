@@ -5,29 +5,45 @@
  */
 package control;
 
+import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.JTable;
-import model.KategoriModel;
+import javax.swing.table.DefaultTableModel;
+import model.ItemModel;
 
 /**
  *
  * @author akmal
  */
 public class KategoriControl {
-    public void Update_Table(JTable table) {
-        String sql = "SELECT "
-                + "kodeItem AS 'Kode Item', "
-                + "barcode AS Barcode, "
-                + "namaItem AS Nama, "
-                + "satuan AS Satuan, "
-                + "dapatDibeli AS 'Dapat Dibeli', "
-                + "dapatDijual AS 'Dapat Dijual', "
-                + "dapatDiproduksi AS 'Dapat Diproduksi', "
-                + "dipakaiUntukProduksi AS 'Dipakai Untuk Produksi', "
-                + "dapatDibongkar AS 'Dapat Dibongkar', "
-                + "statusItem AS Status, "
-//                + "gambar AS Gambar, "
-                + "keterangan AS Keterangan "
-                + "FROM item";
-        new KategoriModel().Update_Table(sql, table);
+
+    private ItemModel itemModel = new ItemModel();
+
+    public boolean populateTable(JTable table, String cari) {
+        ArrayList<ItemModel> itemList = itemModel.selectItem();
+        DefaultTableModel defaultTableModel = (DefaultTableModel) table.getModel();
+        defaultTableModel.setRowCount(0);
+
+        for (ItemModel item : itemList) {
+
+            defaultTableModel.addRow(
+                    new Object[]{
+                        item.getKodeItem(),
+                        item.getBarcode(),
+                        item.getNamaItem(),
+                        item.getSatuan(),
+                        item.isDapatDibeli(),
+                        item.isDapatDijual(),
+                        item.isDapatDiproduksi(),
+                        item.isDipakaiUntukProduksi(),
+                        item.isDapatDibongkar(),
+                        item.isStatusItem(),
+                        item.getKeterangan()
+                    }
+            );
+        }
+
+        table.setModel(defaultTableModel);
+        return defaultTableModel.getRowCount() != 0;
     }
 }
