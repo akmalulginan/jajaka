@@ -225,4 +225,8 @@ public class ItemModel extends Model {
             return null;
         }
     }
+    
+    public static void main(String[] args) {
+        new ItemModel().selectItem();
+    }
 }
