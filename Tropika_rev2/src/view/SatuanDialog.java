@@ -173,7 +173,7 @@ public class SatuanDialog extends javax.swing.JDialog {
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
         new SatuanControl().set(kodeSatuanText.getText(), namaSatuanText.getText());
         ItemPanel barang = new ItemPanel();
-        barang.loadCombo();
+//        barang.loadCombo();
         barang.revalidate();
         doClose(RET_OK);
     }//GEN-LAST:event_okButtonActionPerformed

@@ -3,6 +3,10 @@ package view;
 import control.ItemControl;
 import java.awt.event.ItemEvent;
 import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -18,6 +22,8 @@ public class ItemPanel extends javax.swing.JPanel {
     /**
      * Creates new form FormBarang
      */
+    private ItemControl itemControl = new ItemControl();
+
     Boolean dapatDibeli = false;
     Boolean dapatDijual = false;
     Boolean dapatDiproduksi = false;
@@ -30,24 +36,67 @@ public class ItemPanel extends javax.swing.JPanel {
         initComponents();
         kategoriCombo.addItem("Stok");
         kategoriCombo.addItem("Non Stok");
-        loadCombo();
+//        loadCombo();
     }
 
-    public void itemStateChanged(ItemEvent e, JCheckBox check, Boolean status) {
-        Object source = e.getItemSelectable();
-        if (source == dapatDibeliCheck) {
-            status = true;
-        }
-        if (e.getStateChange() == ItemEvent.DESELECTED) {
-            status = false;
-        }
-
+    public JComboBox getKategoriCombo() {
+        return kategoriCombo;
     }
 
-    public void loadCombo() {
-        this.satuanCombo.removeAllItems();
-        ItemControl bC = new ItemControl();
-        bC.loadSatuan(this.satuanCombo);
+    public JTextPane getKeteranganText() {
+        return keteranganText;
+    }
+
+    public JTextField getKodeBarangText() {
+        return kodeBarangText;
+    }
+
+    public JTextField getNamaBarangText() {
+        return namaBarangText;
+    }
+
+    public JTextField getPathText() {
+        return pathText;
+    }
+
+    public Boolean getDapatDibeli() {
+        return dapatDibeli;
+    }
+
+    public Boolean getDapatDijual() {
+        return dapatDijual;
+    }
+
+    public Boolean getDapatDiproduksi() {
+        return dapatDiproduksi;
+    }
+
+    public Boolean getDipakaiUntukProduksi() {
+        return dipakaiUntukProduksi;
+    }
+
+    public Boolean getDapatDibongkar() {
+        return dapatDibongkar;
+    }
+
+    public Boolean getStatusBarang() {
+        return statusBarang;
+    }
+
+    public byte[] getGambar() {
+        return gambar;
+    }
+
+    public JTextField getBarcodeText() {
+        return barcodeText;
+    }
+
+    public JLabel getGambarLabel() {
+        return gambarLabel;
+    }
+
+    public JComboBox getSatuanCombo() {
+        return satuanCombo;
     }
 
     /**
@@ -90,12 +139,6 @@ public class ItemPanel extends javax.swing.JPanel {
         dapatDijualCheck = new javax.swing.JCheckBox();
         dipakaiUntukProduksiCheck = new javax.swing.JCheckBox();
         dapatDiproduksiCheck = new javax.swing.JCheckBox();
-        jLabel13 = new javax.swing.JLabel();
-        stokMinText = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        stokMaxText = new javax.swing.JTextField();
         dapatDibongkarCheck = new javax.swing.JCheckBox();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 32767));
         simpanButton = new javax.swing.JButton();
@@ -310,36 +353,6 @@ public class ItemPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel13.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(40, 40, 40));
-        jLabel13.setText("Stok Minimum");
-        jLabel13.setEnabled(false);
-
-        stokMinText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        stokMinText.setForeground(new java.awt.Color(40, 40, 40));
-        stokMinText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
-        stokMinText.setEnabled(false);
-
-        jLabel14.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(40, 40, 40));
-        jLabel14.setText(":");
-        jLabel14.setEnabled(false);
-
-        jLabel15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(40, 40, 40));
-        jLabel15.setText("Stok Maximum");
-        jLabel15.setEnabled(false);
-
-        jLabel16.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(40, 40, 40));
-        jLabel16.setText(":");
-        jLabel16.setEnabled(false);
-
-        stokMaxText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        stokMaxText.setForeground(new java.awt.Color(40, 40, 40));
-        stokMaxText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
-        stokMaxText.setEnabled(false);
-
         dapatDibongkarCheck.setBackground(new java.awt.Color(230, 199, 159));
         dapatDibongkarCheck.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         dapatDibongkarCheck.setForeground(new java.awt.Color(40, 40, 40));
@@ -356,31 +369,14 @@ public class ItemPanel extends javax.swing.JPanel {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel15)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(stokMaxText, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel13)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(stokMinText, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dapatDiproduksiCheck)
-                            .addComponent(dipakaiUntukProduksiCheck)
-                            .addComponent(dapatDijualCheck)
-                            .addComponent(dapatDibeliCheck)
-                            .addComponent(dapatDibongkarCheck))))
-                .addContainerGap(33, Short.MAX_VALUE))
+                    .addComponent(dapatDiproduksiCheck)
+                    .addComponent(dipakaiUntukProduksiCheck)
+                    .addComponent(dapatDijualCheck)
+                    .addComponent(dapatDibeliCheck)
+                    .addComponent(dapatDibongkarCheck))
+                .addContainerGap(296, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -395,17 +391,7 @@ public class ItemPanel extends javax.swing.JPanel {
                 .addComponent(dapatDibongkarCheck)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dapatDiproduksiCheck)
-                .addGap(8, 8, 8)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(stokMinText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(jLabel16)
-                    .addComponent(stokMaxText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(179, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Sifat Item", jPanel2);
@@ -541,8 +527,7 @@ public class ItemPanel extends javax.swing.JPanel {
     private void simpanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanButtonActionPerformed
         // TODO add your handling code here:
         if (!kodeBarangText.getText().isEmpty()) {
-            ItemControl bC = new ItemControl();
-            bC.set(
+            itemControl.set(
                     kodeBarangText.getText(),
                     barcodeText.getText(),
                     namaBarangText.getText(),
@@ -587,7 +572,7 @@ public class ItemPanel extends javax.swing.JPanel {
         SatuanDialog n = new SatuanDialog(null, true);
         n.show();
         if (n.getReturnStatus() == 1) {
-            loadCombo();
+//            loadCombo();
         }
         System.out.println(n.getReturnStatus());
 
@@ -612,10 +597,6 @@ public class ItemPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -638,8 +619,6 @@ public class ItemPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox satuanCombo;
     private javax.swing.JButton simpanButton;
     private javax.swing.JCheckBox statusBarangCheck;
-    private javax.swing.JTextField stokMaxText;
-    private javax.swing.JTextField stokMinText;
     private javax.swing.JButton tambahSatuanButton;
     // End of variables declaration//GEN-END:variables
 }
