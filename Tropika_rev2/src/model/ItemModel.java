@@ -202,7 +202,7 @@ public class ItemModel extends Model {
         boolean toReturn = false;
         try {
            
-            String query = "UPDATE anggota "
+            String query = "UPDATE item "
                     + "SET "
                     + "kodeItem = ? "
                     + "barcode = ? "
@@ -298,4 +298,6 @@ public class ItemModel extends Model {
 
         new ItemModel().updateItem();
     }
+    
+    
 }
