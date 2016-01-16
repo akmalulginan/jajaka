@@ -198,11 +198,11 @@ public class ItemModel extends Model {
         }
     }
 
-    public boolean updateAnggota() {
+    public boolean updateItem() {
         boolean toReturn = false;
         try {
            
-            String query = "UPDATE anggota "
+            String query = "UPDATE item "
                     + "SET "
                     + "kodeItem = ? "
                     + "barcode = ? "
@@ -239,11 +239,9 @@ public class ItemModel extends Model {
                 conn.close();
                 toReturn = true;
             }
-
         } catch (Exception e) {
             System.out.println("error : " + e.getMessage());
         }
-
         return toReturn;
     }
 
@@ -294,18 +292,10 @@ public class ItemModel extends Model {
         return toReturn;
     }
 
-    public boolean updateItem() {
-        boolean toReturn = false;
-        try {
-
-        } catch (Exception e) {
-
-        }
-        return toReturn;
-    }
-
     public static void main(String[] args) {
 
-        new ItemModel().updateItem();
+        new ItemModel().selectItem();
     }
+    
+    
 }

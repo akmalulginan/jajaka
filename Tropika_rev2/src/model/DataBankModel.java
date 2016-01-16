@@ -41,7 +41,7 @@ public class DataBankModel extends Model {
         this.namaBank = namaBank;
     }
 
-    public void insert() {
+    public void insertDataBank() {
         try {
             String sql = "INSERT INTO dataBank (noRekening, atasNama, namaBank) VALUES (?,?,?)";
 //            conn = SqliteConnect.ConnectDb();
@@ -57,5 +57,43 @@ public class DataBankModel extends Model {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
+    }
+
+    public boolean updateDataBank() {
+        Boolean toReturn = false;
+
+        try {
+            String query = "UPDATE databank "
+                    + "SET "
+                    + "noRekening = ? "
+                    + "atasNama = ? "
+                    + "namaBank = ? ";
+
+            if (conn != null) {
+                pst = conn.prepareStatement(query);
+                pst.setString(1, noRekening);
+                pst.setString(2, atasNama);
+                pst.setString(3, namaBank);
+
+                pst.execute();
+                conn.close();
+                toReturn = true;
+            }
+        } catch (Exception e) {
+            System.out.println("error : " + e.getMessage());
+        }
+        return toReturn;
+    }
+
+    public boolean deleteDataBank() {
+        Boolean toReturn = false;
+        
+        try{
+            String query = "DELETE";
+        }catch(Exception e){
+            
+        }
+        
+        return toReturn;
     }
 }
