@@ -133,7 +133,7 @@ public class SupplierModel extends Model {
         this.emailCs = emailCs;
     }
 
-    public void insert() {
+    public boolean insert() {
         try {
             String sql = "INSERT INTO "
                     + "supplier "
@@ -169,12 +169,15 @@ public class SupplierModel extends Model {
             pst.setString(11, contactPerson);
             pst.setString(12, noTelpCs);
             pst.setString(13, emailCs);
-            
+
             pst.execute();
-            
             JOptionPane.showMessageDialog(null, "SUKSES");
+
+            return true;
+
         } catch (SQLException | HeadlessException e) {
             JOptionPane.showMessageDialog(null, e);
+            return false;
         }
     }
 
