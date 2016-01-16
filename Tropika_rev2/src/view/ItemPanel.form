@@ -64,7 +64,7 @@
                                   <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                                   <Component id="tambahSatuanButton" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="kategoriCombo" min="-2" pref="125" max="-2" attributes="0"/>
+                              <Component id="kategoriCombo" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                           <Component id="jTabbedPane1" min="-2" max="-2" attributes="0"/>
