@@ -1,5 +1,6 @@
 package view;
 
+import control.ItemControl;
 import control.KategoriControl;
 
 /*
@@ -33,20 +34,23 @@ public class KategoriPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        cariText = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         table = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         dataTable = new javax.swing.JTable();
-        inputCepatKey4 = new javax.swing.JButton();
-        tglUsulan2 = new javax.swing.JTextField();
         inputCepatKey5 = new javax.swing.JButton();
+        kategoriComboBox = new javax.swing.JComboBox();
+
+        cariText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        cariText.setForeground(new java.awt.Color(40, 40, 40));
 
         setBackground(new java.awt.Color(231, 231, 231));
         setName("Kategori"); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(40, 40, 40));
-        jLabel2.setText("Nama Kelompok");
+        jLabel2.setText("Kategori");
 
         table.setBackground(new java.awt.Color(204, 204, 204));
         table.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
@@ -69,36 +73,18 @@ public class KategoriPanel extends javax.swing.JPanel {
         table.setLayout(tableLayout);
         tableLayout.setHorizontalGroup(
             tableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE)
         );
         tableLayout.setVerticalGroup(
             tableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 357, Short.MAX_VALUE)
         );
 
-        inputCepatKey4.setBackground(new java.awt.Color(36, 198, 237));
-        inputCepatKey4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        inputCepatKey4.setForeground(new java.awt.Color(40, 40, 40));
-        inputCepatKey4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close.png"))); // NOI18N
-        inputCepatKey4.setText("Tutup");
-        inputCepatKey4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        inputCepatKey4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        inputCepatKey4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        inputCepatKey4.setIconTextGap(23);
-        inputCepatKey4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputCepatKey4ActionPerformed(evt);
-            }
-        });
-
-        tglUsulan2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        tglUsulan2.setForeground(new java.awt.Color(40, 40, 40));
-
         inputCepatKey5.setBackground(new java.awt.Color(36, 198, 237));
         inputCepatKey5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         inputCepatKey5.setForeground(new java.awt.Color(40, 40, 40));
         inputCepatKey5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/find.png"))); // NOI18N
-        inputCepatKey5.setText("Find");
+        inputCepatKey5.setText("Cari");
         inputCepatKey5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         inputCepatKey5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         inputCepatKey5.setIconTextGap(10);
@@ -108,6 +94,8 @@ public class KategoriPanel extends javax.swing.JPanel {
             }
         });
 
+        kategoriComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Stok", "Non Stok" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -116,15 +104,12 @@ public class KategoriPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(table, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 540, Short.MAX_VALUE)
-                        .addComponent(inputCepatKey4, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
+                        .addGap(39, 39, 39)
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addComponent(tglUsulan2, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(kategoriComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(inputCepatKey5, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -135,32 +120,27 @@ public class KategoriPanel extends javax.swing.JPanel {
                 .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(tglUsulan2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputCepatKey5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputCepatKey5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(kategoriComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24)
                 .addComponent(table, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(7, 7, 7)
-                .addComponent(inputCepatKey4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(47, 47, 47))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inputCepatKey4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCepatKey4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputCepatKey4ActionPerformed
-
     private void inputCepatKey5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCepatKey5ActionPerformed
         // TODO add your handling code here:
+        kategoriControl.populateTable(dataTable, kategoriComboBox.getSelectedItem().toString());
     }//GEN-LAST:event_inputCepatKey5ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField cariText;
     private javax.swing.JTable dataTable;
-    private javax.swing.JButton inputCepatKey4;
     private javax.swing.JButton inputCepatKey5;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JComboBox kategoriComboBox;
     private javax.swing.JPanel table;
-    private javax.swing.JTextField tglUsulan2;
     // End of variables declaration//GEN-END:variables
 }

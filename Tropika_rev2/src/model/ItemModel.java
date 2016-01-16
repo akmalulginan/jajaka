@@ -243,10 +243,16 @@ public class ItemModel extends Model {
         return toReturn;
     }
 
-    public ArrayList<ItemModel> select() {
+    public ArrayList<ItemModel> select(String cari) {
+        String query = "SELECT * FROM item";
+
+        if (!cari.isEmpty()) {
+            query = query + " WHERE kategori LIKE '%" + cari + "%'";
+        }
+        
         ArrayList<ItemModel> itemList = new ArrayList<>();
         try {
-            pst = conn.prepareStatement("SELECT * FROM item");
+            pst = conn.prepareStatement(query);
             rs = pst.executeQuery();
             while (rs.next()) {
                 ItemModel itemModel = new ItemModel();

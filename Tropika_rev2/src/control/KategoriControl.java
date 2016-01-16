@@ -10,6 +10,7 @@ import java.util.Date;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import model.ItemModel;
+import view.ItemPanel;
 
 /**
  *
@@ -20,7 +21,7 @@ public class KategoriControl {
     private ItemModel itemModel = new ItemModel();
 
     public boolean populateTable(JTable table, String cari) {
-        ArrayList<ItemModel> itemList = itemModel.select();
+        ArrayList<ItemModel> itemList = itemModel.select(cari);
         DefaultTableModel defaultTableModel = (DefaultTableModel) table.getModel();
         defaultTableModel.setRowCount(0);
 

@@ -121,7 +121,7 @@ public class MainMenu extends javax.swing.JFrame {
         kelompokButton.setBackground(new java.awt.Color(204, 215, 222));
         kelompokButton.setForeground(new java.awt.Color(40, 40, 40));
         kelompokButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Kelompok.png"))); // NOI18N
-        kelompokButton.setText("<html><hr>Kelompok");
+        kelompokButton.setText("<html><hr>Kategori");
         kelompokButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         kelompokButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         kelompokButton.setVerticalAlignment(javax.swing.SwingConstants.TOP);
