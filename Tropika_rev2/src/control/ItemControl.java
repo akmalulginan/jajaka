@@ -6,10 +6,12 @@
 package control;
 
 import java.awt.Image;
+import java.awt.event.ItemEvent;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import javax.swing.ImageIcon;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
@@ -115,5 +117,11 @@ public class ItemControl {
         } catch (Exception e) {
             return null;
         }
+    }
+
+    public void loadCombo() {
+        this.satuanCombo.removeAllItems();
+        ItemControl bC = new ItemControl();
+        bC.loadSatuan(this.satuanCombo);
     }
 }

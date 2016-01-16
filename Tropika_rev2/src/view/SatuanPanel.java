@@ -127,7 +127,7 @@ public class SatuanPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         new SatuanControl().set(kodeSatuanText.getText(), namaSatuanText.getText());
         ItemPanel barang = new ItemPanel();
-        barang.loadCombo();
+//        barang.loadCombo();
         barang.revalidate();
     }//GEN-LAST:event_inputCepatKey2ActionPerformed
 
