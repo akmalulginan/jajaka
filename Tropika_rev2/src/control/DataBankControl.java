@@ -18,6 +18,6 @@ public class DataBankControl {
         dB.setAtasNama(atasNama);
         dB.setNamaBank(namaBank);
         
-        dB.insert();
+        dB.insertDataBank();
     }
 }
