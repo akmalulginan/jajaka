@@ -153,7 +153,7 @@ public class ItemModel extends Model {
         this.keterangan = keterangan;
     }
 
-    public void insert() {
+    public boolean insert() {
         try {
 //            conn = SqliteConnect.ConnectDb();
 //            conn = DbConnect.ConnectDb();
@@ -191,8 +191,10 @@ public class ItemModel extends Model {
             pst.setString(13, keterangan);
             pst.execute();
             JOptionPane.showMessageDialog(null, "SUKSES");
+            return true;
         } catch (SQLException | HeadlessException e) {
             JOptionPane.showMessageDialog(null, e);
+            return false;
         }
     }
 
