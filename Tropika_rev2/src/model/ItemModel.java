@@ -225,8 +225,30 @@ public class ItemModel extends Model {
             return null;
         }
     }
+    public boolean deleteAnggota() {
+        boolean toReturn = false;
+        try {
+            String query = "DELETE FROM item WHERE kodeItem = ?";
+            if (conn != null) {
+                pst = conn.prepareStatement(query);
+                pst.setString(1, kodeItem);
+                pst.execute();
+                conn.close();
+                toReturn = true;
+            }
+
+        } catch (Exception e) {
+            System.out.println("error : " + e.getMessage());
+
+        }
+        return toReturn;
+    }
     
     public static void main(String[] args) {
+        
         new ItemModel().selectItem();
+       
+            
+        
     }
 }
