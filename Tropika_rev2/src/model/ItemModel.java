@@ -198,12 +198,62 @@ public class ItemModel extends Model {
         }
     }
 
+    public boolean updateAnggota() {
+        boolean toReturn = false;
+        try {
+            // the mysql insert statement
+            String query = "UPDATE anggota "
+                    + "SET "
+                    + "kodeItem = ? "
+                    + "barcode = ? "
+                    + "namaItem = ? "
+                    + "kategori = ? "
+                    + "satuan = ? "
+                    + "dapatDibeli = ? "
+                    + "dapatDijual = ? "
+                    + "dapatDiproduksi = ? "
+                    + "dipakaiUntukProduksi = ? "
+                    + "dapatDibongkar = ? "
+                    + "statusItem = ? "
+                    + "gambar = ? "
+                    + "keterangan = ? ";
+
+            if (conn != null) {
+
+               
+                pst = conn.prepareStatement(query);
+                pst.setString(1, kodeItem);
+                pst.setString(2, barcode);
+                pst.setString(3, namaItem);
+                pst.setString(4, kategori);
+                pst.setString(5, satuan);
+                pst.setBoolean(6, dapatDibeli);
+                pst.setBoolean(7, dapatDijual);
+                pst.setBoolean(8, dapatDiproduksi);
+                pst.setBoolean(9, dipakaiUntukProduksi);
+                pst.setBoolean(10, dapatDibongkar);
+                pst.setBoolean(11, statusItem);
+                pst.setBytes(12, gambar);
+                pst.setString(13, keterangan);
+                
+                pst.execute();
+                conn.close();
+                toReturn = true;
+            }
+
+        } catch (Exception e) {
+            System.out.println("error : " + e.getMessage());
+        }
+
+        return toReturn;
+    }
+
     public ArrayList<ItemModel> selectItem() {
         ArrayList<ItemModel> itemList = new ArrayList<>();
         try {
             pst = conn.prepareStatement("SELECT * FROM item");
             rs = pst.executeQuery();
-            while (rs.next()) {   
+            while (rs.next()) {
                 this.setKodeItem(rs.getString("kodeItem"));
                 this.setBarcode(rs.getString("barcode"));
                 this.setNamaItem(rs.getString("namaItem"));
@@ -225,6 +275,7 @@ public class ItemModel extends Model {
             return null;
         }
     }
+
     public boolean deleteAnggota() {
         boolean toReturn = false;
         try {
@@ -243,12 +294,22 @@ public class ItemModel extends Model {
         }
         return toReturn;
     }
-    
+
+    public boolean updateItem() {
+        boolean toReturn = false;
+        try {
+
+        } catch (Exception e) {
+
+        }
+        return toReturn;
+    }
+
     public static void main(String[] args) {
-        
-        new ItemModel().selectItem();
+
        
-            
+        new ItemModel().updateItem();
+        
         
     }
 }
