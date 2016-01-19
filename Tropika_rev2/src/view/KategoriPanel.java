@@ -71,15 +71,20 @@ public class KategoriPanel extends javax.swing.JPanel {
 
         dataTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Kode", "Barcode", "Nama", "Satuan", "Dapat Dibeli", "Dapat Dijual", "Dapat Diproduksi", "Untuk Produksi", "Dapat Dibongkar", "Status", "Keterangan"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, true, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(dataTable);
 
         javax.swing.GroupLayout tableLayout = new javax.swing.GroupLayout(table);

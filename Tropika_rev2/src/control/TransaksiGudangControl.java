@@ -26,10 +26,10 @@ public class TransaksiGudangControl {
                 + "FROM gudang";
         if (jenis.equals("barang")) {
             sql = "SELECT "
-                    + "kodeBarang AS 'Kode Item', "
-                    + "namaBarang AS Nama, "
+                    + "kodeItem AS 'Kode Item', "
+                    + "namaItem AS Nama, "
                     + "gambar AS Gambar "
-                    + "FROM barang";
+                    + "FROM item";
         }
 
         new TransaksiGudangModel().select(sql, table);

@@ -6,11 +6,14 @@
 package view;
 
 //import com.util.FormUtil;
+import control.LoginControl;
 import java.awt.event.KeyEvent;
 import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 import javax.swing.UIManager;
 
 /**
@@ -22,6 +25,8 @@ public class Login extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
+    private LoginControl loginControl = new LoginControl();
+    
     public Login() {
 //        initComponents();
         setUndecorated(true);
@@ -32,6 +37,16 @@ public class Login extends javax.swing.JFrame {
         dateLabel.setText(dateFormat.format(date));
 
     }
+
+    public JPasswordField getPasswordText() {
+        return passwordText;
+    }
+
+    public JTextField getUsernameText() {
+        return usernameText;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -216,12 +231,7 @@ public class Login extends javax.swing.JFrame {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         // TODO add your handling code here:
-        if (usernameText.getText().equals("admin") && passwordText.getText().equals("admin")) {
-            this.dispose();
-            new MainMenu().show();
-        } else {
-            keteranganLabel.setText("Username atau Password Salah");
-        }
+        loginControl.login(this);
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

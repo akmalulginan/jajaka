@@ -11,9 +11,9 @@ package model;
  */
 public class UserModel extends Model {
 
-    private String username;
-    private String password;
-    private LevelModel level;
+    protected String username;
+    protected String password;
+    protected LevelModel level;
 
     public UserModel() {
     }
@@ -45,27 +45,29 @@ public class UserModel extends Model {
     
 
     public UserModel select() {
-        String query = "SELECT "
-                + "user.username, "
-                + "user.password, "
-                + "user.level, "
-                + "FROM "
-                + "user "
-                + "WHERE user.username = ? AND user.password = ?";
-
+        UserModel userModel = new UserModel();
+        
+        String query = "SELECT * FROM user WHERE user.username = ? AND user.password = ?";
+        System.out.println(query);
         try {
+            conn = SqliteConnect.ConnectDb();
             pst = conn.prepareStatement(query);
             pst.setString(1, username);
             pst.setString(2, password);
             rs = pst.executeQuery();
 
             if (rs.next()) {
-                
+                userModel.setUsername(rs.getString("username"));
+                userModel.setPassword(rs.getString("password"));
+//                userModel.setLevel(new LevelModel().select(rs.getInt("level")));
+                System.out.println(rs.getInt("level"));
             }
+            conn.close();
         } catch (Exception e) {
+            System.out.println("esss : " + e);
         }
 
-        return this;
+        return userModel;
     }
 
 }

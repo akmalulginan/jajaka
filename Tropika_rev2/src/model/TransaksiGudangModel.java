@@ -31,7 +31,7 @@ public class TransaksiGudangModel extends Model {
     }
 
     public void getImage(String kode, JLabel gambarLabel) {
-        String sql = "SELECT gambar FROM barang WHERE kodeBarang=?";
+        String sql = "SELECT gambar FROM item WHERE kodeItem=?";
 
         try {
 //            conn = DbConnect.ConnectDb();
