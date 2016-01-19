@@ -17,7 +17,7 @@ public class MainMenu extends javax.swing.JFrame {
     /**
      * Creates new form Menu
      */
-    MenuControl mC = new MenuControl();
+    private MenuControl menuControl = new MenuControl();
 
     public MainMenu() {
         this.setExtendedState(this.getExtendedState() | MainMenu.MAXIMIZED_BOTH);
@@ -562,57 +562,57 @@ public class MainMenu extends javax.swing.JFrame {
     private void itemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemButtonActionPerformed
         // TODO add your handling code here:
         ItemPanel barang = new ItemPanel();
-        mC.newTab(barang, pane);
+        menuControl.newTab(barang, pane);
         barang.repaint();
     }//GEN-LAST:event_itemButtonActionPerformed
 
     private void gudangButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gudangButtonActionPerformed
         // TODO add your handling code here:
-        mC.newTab(new GudangPanel(), pane);
+        menuControl.newTab(new GudangPanel(), pane);
     }//GEN-LAST:event_gudangButtonActionPerformed
 
     private void hargaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hargaButtonActionPerformed
         // TODO add your handling code here:
-        mC.newTab(new DataHargaPanel(), pane);
+        menuControl.newTab(new DataHargaPanel(), pane);
     }//GEN-LAST:event_hargaButtonActionPerformed
 
     private void kelompokButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kelompokButtonActionPerformed
         // TODO add your handling code here:
-        mC.newTab(new KategoriPanel(), pane);
+        menuControl.newTab(new KategoriPanel(), pane);
     }//GEN-LAST:event_kelompokButtonActionPerformed
 
     private void supplierButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supplierButtonActionPerformed
         // TODO add your handling code here:
-        mC.newTab(new SupplierPanel(), pane);
+        menuControl.newTab(new SupplierPanel(), pane);
     }//GEN-LAST:event_supplierButtonActionPerformed
 
     private void karyawanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_karyawanButtonActionPerformed
         // TODO add your handling code here:
-        mC.newTab(new KaryawanPanel(), pane);
+        menuControl.newTab(new KaryawanPanel(), pane);
     }//GEN-LAST:event_karyawanButtonActionPerformed
 
     private void cariButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cariButtonActionPerformed
         // TODO add your handling code here:
-        mC.newTab(new DataKaryawanSearchPanel(), pane);
+        menuControl.newTab(new DataKaryawanSearchPanel(), pane);
     }//GEN-LAST:event_cariButtonActionPerformed
 
     private void userButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userButtonActionPerformed
         // TODO add your handling code here:
-        mC.newTab(new Pengguna1Panel(), pane);
+        menuControl.newTab(new Pengguna1Panel(), pane);
     }//GEN-LAST:event_userButtonActionPerformed
 
     private void passwordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordButtonActionPerformed
-        mC.newTab(new PasswordPanel(), pane);
+        menuControl.newTab(new PasswordPanel(), pane);
     }//GEN-LAST:event_passwordButtonActionPerformed
 
     private void hakAksesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hakAksesButtonActionPerformed
         // TODO add your handling code here:
-        mC.newTab(new HakAksesPanel(), pane);
+        menuControl.newTab(new HakAksesPanel(), pane);
     }//GEN-LAST:event_hakAksesButtonActionPerformed
 
     private void pembelianButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pembelianButtonActionPerformed
         // TODO add your handling code here:
-        mC.newTab(new PembelianBarangPanel(), pane);
+        menuControl.newTab(new PembelianBarangPanel(), pane);
     }//GEN-LAST:event_pembelianButtonActionPerformed
 
     private void paneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_paneMouseClicked
@@ -620,23 +620,23 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_paneMouseClicked
 
     private void penjualanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penjualanButtonActionPerformed
-        mC.newTab(new PenjualanBarangPanel(), pane);
+        menuControl.newTab(new PenjualanBarangPanel(), pane);
     }//GEN-LAST:event_penjualanButtonActionPerformed
 
     private void laporanGudangButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_laporanGudangButtonActionPerformed
-        mC.newTab(new LaporanGudangPanel(), pane);
+        menuControl.newTab(new LaporanGudangPanel(), pane);
     }//GEN-LAST:event_laporanGudangButtonActionPerformed
 
     private void laporanPembelianButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_laporanPembelianButtonActionPerformed
-        mC.newTab(new LaporanPembelianPanel(), pane);
+        menuControl.newTab(new LaporanPembelianPanel(), pane);
     }//GEN-LAST:event_laporanPembelianButtonActionPerformed
 
     private void laporanPenjualanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_laporanPenjualanButtonActionPerformed
-        mC.newTab(new LaporanPenjualanPanel(), pane);
+        menuControl.newTab(new LaporanPenjualanPanel(), pane);
     }//GEN-LAST:event_laporanPenjualanButtonActionPerformed
 
     private void transaksiGudangButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transaksiGudangButtonActionPerformed
-        mC.newTab(new TransaksiGudangPanel(), pane);
+        menuControl.newTab(new TransaksiGudangPanel(), pane);
     }//GEN-LAST:event_transaksiGudangButtonActionPerformed
 
     /**
@@ -664,13 +664,13 @@ public class MainMenu extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold> 
         //</editor-fold>
-        //</editor-fold>
-        try {
-            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-        } catch (Exception e) {
-            System.out.println("UIManager Exception : " + e);
-        }
+//        try {
+//            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+//        } catch (Exception e) {
+//            System.out.println("UIManager Exception : " + e);
+//        }
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
