@@ -5,7 +5,9 @@
  */
 package control;
 
+import javax.swing.JOptionPane;
 import model.SupplierModel;
+import view.SupplierPanel;
 
 /**
  *
@@ -13,36 +15,47 @@ import model.SupplierModel;
  */
 public class SupplierControl {
 
-    public void setSupplier(
-            String kodeSupplier,
-            String namaSupplier,
-            String kategoriSupplier,
-            String alamat,
-            String kota,
-            String kodePos,
-            String noTelp,
-            String noFax,
-            String email,
-            String catatan,
-            String contactPerson,
-            String noTelpCs,
-            String emailCs
-    ) {
-        SupplierModel sM = new SupplierModel();
-        sM.setKodeSupplier(kodeSupplier);
-        sM.setNamaSupplier(namaSupplier);
-        sM.setKategoriSupplier(kategoriSupplier);
-        sM.setAlamat(alamat);
-        sM.setKota(kota);
-        sM.setKodePos(kodePos);
-        sM.setNoTelp(noTelp);
-        sM.setNoFax(noFax);
-        sM.setEmail(email);
-        sM.setCatatan(catatan);
-        sM.setContactPerson(contactPerson);
-        sM.setNoTelpCs(noTelpCs);
-        sM.setEmailCs(emailCs);
+    SupplierModel supplierModel = new SupplierModel();
+ 
+    public void setSupplier(SupplierPanel supplierPanel){
         
-        sM.insert();
+        supplierModel.setKodeSupplier(supplierPanel.getKodeSupplier().getText());
+        supplierModel.setNamaSupplier(supplierPanel.getNamaSupplier().getText());
+        supplierModel.setKategoriSupplier(supplierPanel.getKategori().getText());
+        supplierModel.setAlamat(supplierPanel.getAlamat().getText());
+        supplierModel.setKota(supplierPanel.getKota().getText());
+        supplierModel.setKodePos(supplierPanel.getKodePos().getText());
+        supplierModel.setNoTelp(supplierPanel.getNoTelp().getText());
+        supplierModel.setNoFax(supplierPanel.getNoFax().getText());
+        supplierModel.setEmail(supplierPanel.getEmail().getText());
+        supplierModel.setCatatan(supplierPanel.getCatatan().getText());
+        supplierModel.setContactPerson(supplierPanel.getContactPerson().getText());
+        supplierModel.setNoTelpCs(supplierPanel.getNoTelpCs().getText());
+        supplierModel.setEmailCs(supplierPanel.getEmailCs().getText());
+        
+        if (supplierModel.insert()) {
+            JOptionPane.showMessageDialog(null, "Anggota berhasil ditambahkan !");
+            
+        } else {
+            JOptionPane.showMessageDialog(null, "Gagal menyimpan anggota !");
+        }
+    }
+    public void clear(SupplierPanel supplierPanel){
+        supplierPanel.getKodeSupplier().setText("");
+        supplierPanel.getNamaSupplier().setText("");
+        supplierPanel.getKategori().setText("");
+        supplierPanel.getAlamat().setText("");
+        supplierPanel.getKota().setText("");
+        supplierPanel.getKodePos().setText("");
+        supplierPanel.getNoTelp().setText("");
+        supplierPanel.getNoFax().setText("");
+        supplierPanel.getEmail().setText("");
+        supplierPanel.getCatatan().setText("");
+        supplierPanel.getContactPerson().setText("");
+        supplierPanel.getNoTelpCs().setText("");
+        supplierPanel.getEmailCs().setText("");
+        supplierPanel.getNoRek().setText("");
+        supplierPanel.getAtasNama().setText("");
+        supplierPanel.getNamaBank().setText("");
     }
 }

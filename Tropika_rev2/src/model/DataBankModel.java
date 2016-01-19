@@ -17,6 +17,15 @@ public class DataBankModel extends Model {
     String noRekening;
     String atasNama;
     String namaBank;
+    String idPemilik;
+
+    public String getIdPemilik() {
+        return idPemilik;
+    }
+
+    public void setIdPemilik(String idPemilik) {
+        this.idPemilik = idPemilik;
+    }
 
     public String getNoRekening() {
         return noRekening;
@@ -44,12 +53,13 @@ public class DataBankModel extends Model {
 
     public boolean insert() {
         try {
-            String sql = "INSERT INTO dataBank (noRekening, atasNama, namaBank) VALUES (?,?,?)";
+            String sql = "INSERT INTO dataBank (noRekening, atasNama, namaBank, idPemilik) VALUES (?,?,?,?)";
 
             pst = conn.prepareStatement(sql);
             pst.setString(1, noRekening);
             pst.setString(2, atasNama);
             pst.setString(3, namaBank);
+            pst.setString(4, idPemilik);
 
             pst.execute();
 
@@ -69,13 +79,15 @@ public class DataBankModel extends Model {
                     + "SET "
                     + "noRekening = ? "
                     + "atasNama = ? "
-                    + "namaBank = ? ";
+                    + "namaBank = ? "
+                    + "idPemilik = ?";
 
             if (conn != null) {
                 pst = conn.prepareStatement(query);
                 pst.setString(1, noRekening);
                 pst.setString(2, atasNama);
                 pst.setString(3, namaBank);
+                pst.setString(4, idPemilik);
 
                 pst.execute();
                 conn.close();
@@ -115,6 +127,7 @@ public class DataBankModel extends Model {
                 this.setNoRekening(rs.getString("noRekening"));
                 this.setAtasNama(rs.getString("atasNama"));
                 this.setNamaBank(rs.getString("namaBank"));
+                this.setIdPemilik(rs.getString("idPemilik"));
                 List.add(this);
             }
             return List;

@@ -1,5 +1,11 @@
 package view;
 
+import control.SupplierControl;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,10 +21,88 @@ public class SupplierPanel extends javax.swing.JPanel {
     /**
      * Creates new form FormSuplayer
      */
+    
+    SupplierControl sc = new SupplierControl(); 
+    
     public SupplierPanel() {
         initComponents();
     }
 
+    public JTextPane getAlamat() {
+        return alamat;
+    }
+
+    public JTextField getAtasNama() {
+        return atasNama;
+    }
+
+    public JCheckBox getBlacklist() {
+        return blacklist;
+    }
+
+    public JTextPane getCatatan() {
+        return catatan;
+    }
+
+    public JTextField getEmail() {
+        return email;
+    }
+
+    public JButton getInputCepatKey2() {
+        return inputCepatKey2;
+    }
+
+    public JTextField getKategori() {
+        return kategori;
+    }
+
+    public JTextField getKodeSupplier() {
+        return kodeSupplier;
+    }
+
+    public JTextField getKota() {
+        return kota;
+    }
+
+    public JTextField getNamaBank() {
+        return namaBank;
+    }
+
+    public JTextField getNamaSupplier() {
+        return namaSupplier;
+    }
+
+    public JTextField getNoFax() {
+        return noFax;
+    }
+
+    public JTextField getNoRek() {
+        return noRek;
+    }
+
+    public JTextField getNoTelp() {
+        return noTelp;
+    }
+
+    public JTextField getKodePos() {
+        return kodePos;
+    }
+
+    public JTextField getContactPerson() {
+        return contactPerson;
+    }
+
+    public JTextField getEmailCs() {
+        return emailCs;
+    }
+
+    public JTextField getNoTelpCs() {
+        return noTelpCs;
+    }
+    
+
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,12 +112,14 @@ public class SupplierPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        aktif = new javax.swing.JCheckBox();
+        blacklist = new javax.swing.JCheckBox();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        panelInfoSupplier = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         kategori = new javax.swing.JTextField();
@@ -71,11 +157,38 @@ public class SupplierPanel extends javax.swing.JPanel {
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
-        aktif = new javax.swing.JCheckBox();
-        blacklist = new javax.swing.JCheckBox();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        contactPerson = new javax.swing.JTextField();
+        noTelpCs = new javax.swing.JTextField();
+        emailCs = new javax.swing.JTextField();
         namaSupplier = new javax.swing.JTextField();
         kodeSupplier = new javax.swing.JTextField();
         inputCepatKey2 = new javax.swing.JButton();
+
+        aktif.setBackground(new java.awt.Color(230, 199, 159));
+        aktif.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        aktif.setForeground(new java.awt.Color(40, 40, 40));
+        aktif.setText("Aktif");
+        aktif.setBorderPaintedFlat(true);
+        aktif.setOpaque(false);
+
+        blacklist.setBackground(new java.awt.Color(230, 199, 159));
+        blacklist.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        blacklist.setForeground(new java.awt.Color(40, 40, 40));
+        blacklist.setText("Blacklist");
+        blacklist.setBorderPaintedFlat(true);
+        blacklist.setOpaque(false);
+        blacklist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                blacklistActionPerformed(evt);
+            }
+        });
 
         setBackground(new java.awt.Color(231, 231, 231));
         setName("Supplier"); // NOI18N
@@ -99,9 +212,9 @@ public class SupplierPanel extends javax.swing.JPanel {
         jLabel7.setForeground(new java.awt.Color(40, 40, 40));
         jLabel7.setText(":");
 
-        jTabbedPane1.setBackground(new java.awt.Color(204, 204, 204));
-        jTabbedPane1.setForeground(new java.awt.Color(40, 40, 40));
-        jTabbedPane1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        panelInfoSupplier.setBackground(new java.awt.Color(204, 204, 204));
+        panelInfoSupplier.setForeground(new java.awt.Color(40, 40, 40));
+        panelInfoSupplier.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
         jPanel2.setBackground(new java.awt.Color(230, 199, 159));
         jPanel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -281,25 +394,6 @@ public class SupplierPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        aktif.setBackground(new java.awt.Color(230, 199, 159));
-        aktif.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        aktif.setForeground(new java.awt.Color(40, 40, 40));
-        aktif.setText("Aktif");
-        aktif.setBorderPaintedFlat(true);
-        aktif.setOpaque(false);
-
-        blacklist.setBackground(new java.awt.Color(230, 199, 159));
-        blacklist.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        blacklist.setForeground(new java.awt.Color(40, 40, 40));
-        blacklist.setText("Blacklist");
-        blacklist.setBorderPaintedFlat(true);
-        blacklist.setOpaque(false);
-        blacklist.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                blacklistActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -365,10 +459,7 @@ public class SupplierPanel extends javax.swing.JPanel {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(aktif)
-                    .addComponent(blacklist))
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -421,16 +512,88 @@ public class SupplierPanel extends javax.swing.JPanel {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel28)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(aktif)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(blacklist)))
-                .addContainerGap(8, Short.MAX_VALUE))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Info Supplier", jPanel2);
+        panelInfoSupplier.addTab("Info Supplier", jPanel2);
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel3.setText("Nama ");
+
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel4.setText("No.Telp Customer Service");
+
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel5.setText("Email Customer Service");
+
+        jLabel12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel12.setText(":");
+
+        jLabel13.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel13.setText(":");
+
+        jLabel14.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel14.setText(":");
+
+        contactPerson.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+
+        noTelpCs.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+
+        emailCs.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(33, 33, 33)
+                        .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(contactPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(noTelpCs, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(emailCs, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(578, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(contactPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(noTelpCs, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel14)
+                    .addComponent(emailCs, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(92, Short.MAX_VALUE))
+        );
+
+        panelInfoSupplier.addTab("Contact Person", jPanel3);
 
         namaSupplier.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         namaSupplier.setForeground(new java.awt.Color(40, 40, 40));
@@ -477,7 +640,7 @@ public class SupplierPanel extends javax.swing.JPanel {
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(4, 4, 4)
                             .addComponent(namaSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 994, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(panelInfoSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 994, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(864, 864, 864)
                             .addComponent(inputCepatKey2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -499,7 +662,7 @@ public class SupplierPanel extends javax.swing.JPanel {
                         .addComponent(jLabel7)
                         .addComponent(namaSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(6, 6, 6)
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelInfoSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(6, 6, 6)
                     .addComponent(inputCepatKey2)
                     .addGap(0, 14, Short.MAX_VALUE)))
@@ -514,8 +677,12 @@ public class SupplierPanel extends javax.swing.JPanel {
 
     private void inputCepatKey2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCepatKey2ActionPerformed
         // TODO add your handling code here:
+        sc.setSupplier(this);
+        sc.clear(this);
+        panelInfoSupplier.setSelectedIndex(0);
     }//GEN-LAST:event_inputCepatKey2ActionPerformed
 
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox aktif;
@@ -523,11 +690,16 @@ public class SupplierPanel extends javax.swing.JPanel {
     private javax.swing.JTextField atasNama;
     private javax.swing.JCheckBox blacklist;
     private javax.swing.JTextPane catatan;
+    private javax.swing.JTextField contactPerson;
     private javax.swing.JTextField email;
+    private javax.swing.JTextField emailCs;
     private javax.swing.JButton inputCepatKey2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -542,21 +714,24 @@ public class SupplierPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField kategori;
     private javax.swing.JTextField kodePos;
     private javax.swing.JTextField kodeSupplier;
@@ -566,5 +741,7 @@ public class SupplierPanel extends javax.swing.JPanel {
     private javax.swing.JTextField noFax;
     private javax.swing.JTextField noRek;
     private javax.swing.JTextField noTelp;
+    private javax.swing.JTextField noTelpCs;
+    private javax.swing.JTabbedPane panelInfoSupplier;
     // End of variables declaration//GEN-END:variables
 }
