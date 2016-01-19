@@ -22,7 +22,7 @@ public class SupplierPanel extends javax.swing.JPanel {
      * Creates new form FormSuplayer
      */
     
-    SupplierControl sc = new SupplierControl(); 
+    private SupplierControl supplierControl = new SupplierControl(); 
     
     public SupplierPanel() {
         initComponents();
@@ -677,9 +677,7 @@ public class SupplierPanel extends javax.swing.JPanel {
 
     private void inputCepatKey2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCepatKey2ActionPerformed
         // TODO add your handling code here:
-        sc.setSupplier(this);
-        sc.clear(this);
-        panelInfoSupplier.setSelectedIndex(0);
+        supplierControl.simpanSupplier(this);
     }//GEN-LAST:event_inputCepatKey2ActionPerformed
 
     

@@ -49,12 +49,12 @@ public class SupplierControl {
 
         setSupplier(supplierPanel);
         setDataBank(supplierPanel);
-        validasi(supplierPanel);
 
         if (validasi(supplierPanel)) {
             if (supplierModel.insert()) {
                 if (dataBankModel.insert()) {
                     JOptionPane.showMessageDialog(supplierPanel, "Supplier berhasil ditambahkan !");
+                    clear(supplierPanel);
                 } else {
                     JOptionPane.showMessageDialog(supplierPanel, "Data Bank gagal disimpan !");
                 }
