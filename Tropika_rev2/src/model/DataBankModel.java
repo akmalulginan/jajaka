@@ -14,10 +14,10 @@ import javax.swing.JOptionPane;
  */
 public class DataBankModel extends Model {
 
-    String noRekening;
-    String atasNama;
-    String namaBank;
-    String idPemilik;
+    private String noRekening;
+    private String atasNama;
+    private String namaBank;
+    private String idPemilik;
 
     public String getIdPemilik() {
         return idPemilik;
@@ -112,7 +112,7 @@ public class DataBankModel extends Model {
                 toReturn = true;
             }
         } catch (Exception e) {
-
+            System.out.println("error : " + e.getMessage());
         }
 
         return toReturn;
