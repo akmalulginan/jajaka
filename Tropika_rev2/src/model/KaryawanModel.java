@@ -190,7 +190,7 @@ public class KaryawanModel extends Model {
         boolean toReturn = false;
 
         try {
-            String query = "UPDATE pembelian "
+            String query = "UPDATE karyawan "
                     + "SET "
                     + "kodeKaryawan = ?"
                     + "namaLengkap = ?"
