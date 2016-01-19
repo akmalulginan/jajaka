@@ -59,7 +59,7 @@ public class ItemControl {
                 JOptionPane.showMessageDialog(itemPanel, "Item berhasil Disimpan!");
                 clear(itemPanel);
             } else {
-                JOptionPane.showMessageDialog(itemPanel, "Item gagal Disimpan!");
+                JOptionPane.showMessageDialog(itemPanel, "Item gagal Disimpan!\nKode Item sudah terdaftar");
             }
         }
 
