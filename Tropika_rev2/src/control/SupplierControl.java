@@ -6,6 +6,7 @@
 package control;
 
 import javax.swing.JOptionPane;
+import model.DataBankModel;
 import model.SupplierModel;
 import view.SupplierPanel;
 
@@ -15,10 +16,11 @@ import view.SupplierPanel;
  */
 public class SupplierControl {
 
-    SupplierModel supplierModel = new SupplierModel();
- 
-    public void setSupplier(SupplierPanel supplierPanel){
-        
+    private SupplierModel supplierModel = new SupplierModel();
+    private DataBankModel dataBankModel = new DataBankModel();
+
+    public void setSupplier(SupplierPanel supplierPanel) {
+
         supplierModel.setKodeSupplier(supplierPanel.getKodeSupplier().getText());
         supplierModel.setNamaSupplier(supplierPanel.getNamaSupplier().getText());
         supplierModel.setKategoriSupplier(supplierPanel.getKategori().getText());
@@ -32,15 +34,53 @@ public class SupplierControl {
         supplierModel.setContactPerson(supplierPanel.getContactPerson().getText());
         supplierModel.setNoTelpCs(supplierPanel.getNoTelpCs().getText());
         supplierModel.setEmailCs(supplierPanel.getEmailCs().getText());
-        
+    }
+
+    public void setDataBank(SupplierPanel supplierPanel) {
+
+        dataBankModel.setNoRekening(supplierPanel.getNoRek().getText());
+        dataBankModel.setAtasNama(supplierPanel.getAtasNama().getText());
+        dataBankModel.setNamaBank(supplierPanel.getNamaBank().getText());
+        dataBankModel.setIdPemilik(supplierPanel.getKodeSupplier().getText());
+
+    }
+
+    public void simpanSupplier(SupplierPanel supplierPanel) {
+
+        setSupplier(supplierPanel);
+        setDataBank(supplierPanel);
+
         if (supplierModel.insert()) {
-            JOptionPane.showMessageDialog(null, "Anggota berhasil ditambahkan !");
-            
+            if (dataBankModel.insert()) {
+                JOptionPane.showMessageDialog(supplierPanel, "Supplier berhasil ditambahkan !");
+            } else {
+                JOptionPane.showMessageDialog(supplierPanel, "Data Bank gagal disimpan !");
+            }
         } else {
-            JOptionPane.showMessageDialog(null, "Gagal menyimpan anggota !");
+            JOptionPane.showMessageDialog(supplierPanel, "Gagal menyimpan Supplier !");
         }
     }
-    public void clear(SupplierPanel supplierPanel){
+
+    public boolean validasi(SupplierPanel supplierPanel) {
+        boolean toReturn = false;
+        if (supplierPanel.getKodeSupplier().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(supplierPanel, "Kode supplier harus diisi");
+        } else if (supplierPanel.getNamaSupplier().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(supplierPanel, "Kode supplier harus diisi");
+        } else if (supplierPanel.getKategori().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(supplierPanel, "Kode supplier harus diisi");
+        } else if (supplierPanel.getAlamat().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(supplierPanel, "Kode supplier harus diisi");
+        } else if (supplierPanel.getKota().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(supplierPanel, "Kode supplier harus diisi");
+        } else if (supplierPanel.getKodePos().getText().isEmpty()) {//
+            JOptionPane.showMessageDialog(supplierPanel, "Kode supplier harus diisi");
+        } else if (supplierPanel.getNamaSupplier().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(supplierPanel, "Kode supplier harus diisi");
+        }
+    }
+
+    public void clear(SupplierPanel supplierPanel) {
         supplierPanel.getKodeSupplier().setText("");
         supplierPanel.getNamaSupplier().setText("");
         supplierPanel.getKategori().setText("");
@@ -58,4 +98,5 @@ public class SupplierControl {
         supplierPanel.getAtasNama().setText("");
         supplierPanel.getNamaBank().setText("");
     }
+
 }
