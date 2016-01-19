@@ -202,7 +202,6 @@ public class ItemModel extends Model {
 
             String query = "UPDATE item "
                     + "SET "
-                    + "kodeItem = ? "
                     + "barcode = ? "
                     + "namaItem = ? "
                     + "kategori = ? "
@@ -214,24 +213,25 @@ public class ItemModel extends Model {
                     + "dapatDibongkar = ? "
                     + "statusItem = ? "
                     + "gambar = ? "
-                    + "keterangan = ? ";
+                    + "keterangan = ? "
+                    + "WHERE kodeItem = ?";
 
             if (conn != null) {
 
                 pst = conn.prepareStatement(query);
-                pst.setString(1, kodeItem);
-                pst.setString(2, barcode);
-                pst.setString(3, namaItem);
-                pst.setString(4, kategori);
-                pst.setString(5, satuan);
-                pst.setBoolean(6, dapatDibeli);
-                pst.setBoolean(7, dapatDijual);
-                pst.setBoolean(8, dapatDiproduksi);
-                pst.setBoolean(9, dipakaiUntukProduksi);
-                pst.setBoolean(10, dapatDibongkar);
-                pst.setBoolean(11, statusItem);
-                pst.setBytes(12, gambar);
-                pst.setString(13, keterangan);
+                pst.setString(13, kodeItem);
+                pst.setString(1, barcode);
+                pst.setString(2, namaItem);
+                pst.setString(3, kategori);
+                pst.setString(4, satuan);
+                pst.setBoolean(5, dapatDibeli);
+                pst.setBoolean(6, dapatDijual);
+                pst.setBoolean(7, dapatDiproduksi);
+                pst.setBoolean(8, dipakaiUntukProduksi);
+                pst.setBoolean(9, dapatDibongkar);
+                pst.setBoolean(10, statusItem);
+                pst.setBytes(11, gambar);
+                pst.setString(12, keterangan);
 
                 pst.execute();
                 conn.close();

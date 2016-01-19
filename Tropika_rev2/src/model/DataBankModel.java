@@ -77,17 +77,17 @@ public class DataBankModel extends Model {
         try {
             String query = "UPDATE databank "
                     + "SET "
-                    + "noRekening = ? "
                     + "atasNama = ? "
                     + "namaBank = ? "
-                    + "idPemilik = ?";
+                    + "idPemilik = ?"
+                    + "WHERE noRekening = ?";
 
             if (conn != null) {
                 pst = conn.prepareStatement(query);
-                pst.setString(1, noRekening);
-                pst.setString(2, atasNama);
-                pst.setString(3, namaBank);
-                pst.setString(4, idPemilik);
+                pst.setString(4, noRekening);
+                pst.setString(1, atasNama);
+                pst.setString(2, namaBank);
+                pst.setString(3, idPemilik);
 
                 pst.execute();
                 conn.close();

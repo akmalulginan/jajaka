@@ -109,23 +109,23 @@ public class PembelianModel extends Model {
         try {
             String query = "UPDATE pembelian "
                     + "SET "
-                    + "kodeUsulan = ? "
                     + "namaUsulan = ? "
                     + "tanggal = ? "
                     + "kodeItem = ? "
                     + "jumlahPembelian = ? "
                     + "harga = ? "
-                    + "keterangan = ?";
+                    + "keterangan = ?"
+                    + "WHERE kodeUsulan = ?";
 
             if (conn != null) {
                 pst = conn.prepareStatement(query);
-                pst.setString(1, kodeUsulan);
-                pst.setString(2, namaUsulan);
-                pst.setDate(3, tanggal);
-                pst.setString(4, kodeItem);
-                pst.setInt(5, jumlahPembelian);
-                pst.setDouble(6, harga);
-                pst.setString(7, keterangan);
+                pst.setString(7, kodeUsulan);
+                pst.setString(1, namaUsulan);
+                pst.setDate(2, tanggal);
+                pst.setString(3, kodeItem);
+                pst.setInt(4, jumlahPembelian);
+                pst.setDouble(5, harga);
+                pst.setString(6, keterangan);
 
                 pst.execute();
                 conn.close();

@@ -192,7 +192,6 @@ public class KaryawanModel extends Model {
         try {
             String query = "UPDATE karyawan "
                     + "SET "
-                    + "kodeKaryawan = ?"
                     + "namaLengkap = ?"
                     + "namaPanggilan = ?"
                     + "jenisKelamin = ?"
@@ -206,26 +205,27 @@ public class KaryawanModel extends Model {
                     + "email = ?"
                     + "catatan = ?"
                     + "status = ?"
-                    + "gambar = ?";
+                    + "gambar = ?"
+                    + "WHERE kodeKaryawan = ?";
 
             if (conn != null) {
                 pst = conn.prepareStatement(query);
 
-                pst.setString(1, kodeKaryawan);
-                pst.setString(2, namaLengkap);
-                pst.setString(3, namaPanggilan);
-                pst.setString(4, jenisKelamin);
-                pst.setDate(5, tanggalMasuk);
-                pst.setString(6, tempatLahir);
-                pst.setDate(7, tanggalLahir);
-                pst.setString(8, alamat);
-                pst.setString(9, kota);
-                pst.setString(10, kodePos);
-                pst.setString(11, noHp);
-                pst.setString(12, email);
-                pst.setString(13, catatan);
-                pst.setString(14, status);
-                pst.setBytes(15, gambar);
+                pst.setString(15, kodeKaryawan);
+                pst.setString(1, namaLengkap);
+                pst.setString(2, namaPanggilan);
+                pst.setString(3, jenisKelamin);
+                pst.setDate(4, tanggalMasuk);
+                pst.setString(5, tempatLahir);
+                pst.setDate(6, tanggalLahir);
+                pst.setString(7, alamat);
+                pst.setString(8, kota);
+                pst.setString(9, kodePos);
+                pst.setString(10, noHp);
+                pst.setString(11, email);
+                pst.setString(12, catatan);
+                pst.setString(13, status);
+                pst.setBytes(14, gambar);
 
                 pst.execute();
                 conn.close();
