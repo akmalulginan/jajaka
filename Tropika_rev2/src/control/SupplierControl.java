@@ -81,7 +81,6 @@ public class SupplierControl {
         } else if (supplierPanel.getAlamat().getText().isEmpty()) {
             JOptionPane.showMessageDialog(supplierPanel, "Alamat supplier harus diisi");
             supplierPanel.getAlamat().requestFocus();
-            
         } else if (supplierPanel.getKota().getText().isEmpty()) {
             JOptionPane.showMessageDialog(supplierPanel, "Kota supplier harus diisi");
             supplierPanel.getKota().requestFocus();

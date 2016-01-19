@@ -143,18 +143,6 @@ public class ItemControl {
             JOptionPane.showMessageDialog(itemPanel, "satuan item belum dipilih!", "Error", JOptionPane.ERROR_MESSAGE);
         } else if (itemPanel.getKategoriCombo().getSelectedItem().toString().isEmpty()) {
             JOptionPane.showMessageDialog(itemPanel, "Kategori Item tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
-//        } else if (itemPanel.getDapatDibeli().toString().isEmpty()) {
-//            JOptionPane.showMessageDialog(itemPanel, "Dapat dibeli tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
-//        }else if (itemPanel.getDapatDijual().toString().isEmpty()) {
-//            JOptionPane.showMessageDialog(itemPanel, "Dapat dijual tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
-//        }else if (itemPanel.getDapatDiproduksi().toString().isEmpty()) {
-//            JOptionPane.showMessageDialog(itemPanel, "Dapat Diproduksi tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
-//        }else if (itemPanel.getDipakaiUntukProduksi().toString().isEmpty()) {
-//            JOptionPane.showMessageDialog(itemPanel, "Dipakai Untuk Produksi tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
-//        }else if (itemPanel.getDapatDibongkar().toString().isEmpty()) {
-//            JOptionPane.showMessageDialog(itemPanel, "Dapat Dibongkar tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
-//        }else if (itemPanel.getStatusItem().toString().isEmpty()) {
-//            JOptionPane.showMessageDialog(itemPanel, "Status Item tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
             toReturn = true;
         }
