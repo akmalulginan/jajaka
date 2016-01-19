@@ -524,7 +524,9 @@ public class ItemPanel extends javax.swing.JPanel {
 
     private void simpanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanButtonActionPerformed
         // TODO add your handling code here:
+        itemControl.validasi(this);
         itemControl.simpanItem(this);
+        itemControl.clear(this);
     }//GEN-LAST:event_simpanButtonActionPerformed
 
     private void dapatDibongkarCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dapatDibongkarCheckActionPerformed
