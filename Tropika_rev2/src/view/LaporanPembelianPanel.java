@@ -35,6 +35,7 @@ public class LaporanPembelianPanel extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(231, 231, 231));
+        setName("Laporan Pembelian"); // NOI18N
         setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel2.setOpaque(false);

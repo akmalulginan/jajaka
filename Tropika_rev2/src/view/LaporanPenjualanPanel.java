@@ -34,6 +34,7 @@ public class LaporanPenjualanPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
+        setName("Laporan Penjualan"); // NOI18N
         setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel2.setOpaque(false);

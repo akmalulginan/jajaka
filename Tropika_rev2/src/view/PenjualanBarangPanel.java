@@ -44,6 +44,7 @@ public class PenjualanBarangPanel extends javax.swing.JPanel {
         simpanButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(231, 231, 231));
+        setName("Penjualan"); // NOI18N
         setLayout(new java.awt.GridBagLayout());
 
         jPanel1.setOpaque(false);

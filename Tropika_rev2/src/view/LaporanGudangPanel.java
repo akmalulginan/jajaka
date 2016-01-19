@@ -35,6 +35,7 @@ public class LaporanGudangPanel extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(231, 231, 231));
+        setName("Laporan Gudang"); // NOI18N
         setLayout(new java.awt.GridBagLayout());
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
