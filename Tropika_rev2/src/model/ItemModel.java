@@ -188,7 +188,7 @@ public class ItemModel extends Model {
             pst.setBytes(12, gambar);
             pst.setString(13, keterangan);
             pst.execute();
-            
+
             return true;
         } catch (SQLException | HeadlessException e) {
             JOptionPane.showMessageDialog(null, e);
@@ -199,7 +199,7 @@ public class ItemModel extends Model {
     public boolean update() {
         boolean toReturn = false;
         try {
-           
+
             String query = "UPDATE item "
                     + "SET "
                     + "kodeItem = ? "
@@ -285,9 +285,10 @@ public class ItemModel extends Model {
 
         } catch (Exception e) {
             System.out.println("error : " + e.getMessage());
-
         }
         return toReturn;
     }
     
+    
+
 }
