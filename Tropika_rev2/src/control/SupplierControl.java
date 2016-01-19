@@ -49,15 +49,18 @@ public class SupplierControl {
 
         setSupplier(supplierPanel);
         setDataBank(supplierPanel);
+        validasi(supplierPanel);
 
-        if (supplierModel.insert()) {
-            if (dataBankModel.insert()) {
-                JOptionPane.showMessageDialog(supplierPanel, "Supplier berhasil ditambahkan !");
+        if (validasi(supplierPanel)) {
+            if (supplierModel.insert()) {
+                if (dataBankModel.insert()) {
+                    JOptionPane.showMessageDialog(supplierPanel, "Supplier berhasil ditambahkan !");
+                } else {
+                    JOptionPane.showMessageDialog(supplierPanel, "Data Bank gagal disimpan !");
+                }
             } else {
-                JOptionPane.showMessageDialog(supplierPanel, "Data Bank gagal disimpan !");
+                JOptionPane.showMessageDialog(supplierPanel, "Gagal menyimpan Supplier !");
             }
-        } else {
-            JOptionPane.showMessageDialog(supplierPanel, "Gagal menyimpan Supplier !");
         }
     }
 
@@ -65,19 +68,45 @@ public class SupplierControl {
         boolean toReturn = false;
         if (supplierPanel.getKodeSupplier().getText().isEmpty()) {
             JOptionPane.showMessageDialog(supplierPanel, "Kode supplier harus diisi");
+            supplierPanel.getKodeSupplier().requestFocus();
         } else if (supplierPanel.getNamaSupplier().getText().isEmpty()) {
-            JOptionPane.showMessageDialog(supplierPanel, "Kode supplier harus diisi");
+            JOptionPane.showMessageDialog(supplierPanel, "Nama supplier harus diisi");
+            supplierPanel.getNamaSupplier().requestFocus();
         } else if (supplierPanel.getKategori().getText().isEmpty()) {
-            JOptionPane.showMessageDialog(supplierPanel, "Kode supplier harus diisi");
+            JOptionPane.showMessageDialog(supplierPanel, "Kategori supplier harus diisi");
+            supplierPanel.getKategori().requestFocus();
         } else if (supplierPanel.getAlamat().getText().isEmpty()) {
-            JOptionPane.showMessageDialog(supplierPanel, "Kode supplier harus diisi");
+            JOptionPane.showMessageDialog(supplierPanel, "Alamat supplier harus diisi");
+            supplierPanel.getAlamat().requestFocus();
         } else if (supplierPanel.getKota().getText().isEmpty()) {
-            JOptionPane.showMessageDialog(supplierPanel, "Kode supplier harus diisi");
-        } else if (supplierPanel.getKodePos().getText().isEmpty()) {//
-            JOptionPane.showMessageDialog(supplierPanel, "Kode supplier harus diisi");
-        } else if (supplierPanel.getNamaSupplier().getText().isEmpty()) {
-            JOptionPane.showMessageDialog(supplierPanel, "Kode supplier harus diisi");
+            JOptionPane.showMessageDialog(supplierPanel, "Kota supplier harus diisi");
+        } else if (supplierPanel.getKodePos().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(supplierPanel, "Kode pos supplier harus diisi");
+        } else if (supplierPanel.getNoTelp().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(supplierPanel, "No Telp supplier harus diisi");
+        } else if (supplierPanel.getNoFax().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(supplierPanel, "No Fax supplier harus diisi");
+        } else if (supplierPanel.getEmail().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(supplierPanel, "Email supplier harus diisi");
+        } else if (supplierPanel.getCatatan().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(supplierPanel, "Catatan supplier harus diisi");
+        } else if (supplierPanel.getNoRek().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(supplierPanel, "No rekening supplier harus diisi");
+        } else if (supplierPanel.getAtasNama().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(supplierPanel, "Atas nama rekening supplier harus diisi");
+        } else if (supplierPanel.getNamaBank().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(supplierPanel, "Nama bank supplier harus diisi");
+        } else if (supplierPanel.getContactPerson().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(supplierPanel, "Contact Person supplier harus diisi");
+        } else if (supplierPanel.getNoTelpCs().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(supplierPanel, "No Telp Contact Person supplier harus diisi");
+        } else if (supplierPanel.getEmailCs().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(supplierPanel, "Email Contact Person supplier harus diisi");
+        } else {
+            toReturn = true;
         }
+
+        return toReturn;
     }
 
     public void clear(SupplierPanel supplierPanel) {
