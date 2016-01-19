@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
@@ -58,7 +59,8 @@ public class SatuanModel extends Model {
         }
     }
     
-    public void select(JComboBox combo){
+    public ArrayList<SatuanModel> select(){
+        ArrayList<SatuanModel> satuanList = new ArrayList<>();
         try {
 //            conn = SqliteConnect.ConnectDb();
 //            conn = DbConnect.ConnectDb();
@@ -66,12 +68,17 @@ public class SatuanModel extends Model {
             pst = conn.prepareStatement(sql);
             rs = pst.executeQuery();
 
+            SatuanModel satuanModel;
             while (rs.next()) {
-                String satuan = rs.getString("kodeSatuan");
-                combo.addItem(satuan);
+                satuanModel = new SatuanModel();
+                satuanModel.kodeSatuan = rs.getString("kodeSatuan");
+                satuanModel.namaSatuan = rs.getString("namaSatuan");
+                satuanList.add(satuanModel);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
+        
+        return satuanList;
     }
 }

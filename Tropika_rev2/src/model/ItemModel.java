@@ -154,6 +154,7 @@ public class ItemModel extends Model {
     }
 
     public boolean insert() {
+        boolean toReturn = false;
         try {
             String sql = "INSERT INTO item "
                     + "("
@@ -187,13 +188,14 @@ public class ItemModel extends Model {
             pst.setBoolean(11, statusItem);
             pst.setBytes(12, gambar);
             pst.setString(13, keterangan);
-            pst.execute();
+            if (pst.execute()) {
+                toReturn = true;
+            }
 
-            return true;
         } catch (SQLException | HeadlessException e) {
             JOptionPane.showMessageDialog(null, e);
-            return false;
         }
+        return toReturn;
     }
 
     public boolean update() {
@@ -249,7 +251,7 @@ public class ItemModel extends Model {
         if (!cari.isEmpty()) {
             query = query + " WHERE kategori LIKE '%" + cari + "%'";
         }
-        
+
         ArrayList<ItemModel> itemList = new ArrayList<>();
         try {
             pst = conn.prepareStatement(query);
@@ -295,7 +297,5 @@ public class ItemModel extends Model {
         }
         return toReturn;
     }
-    
-    
 
 }

@@ -1,6 +1,7 @@
 package view;
 
 import control.ItemControl;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -96,6 +97,32 @@ public class ItemPanel extends javax.swing.JPanel {
     public JComboBox getSatuanCombo() {
         return satuanCombo;
     }
+
+    public JCheckBox getDapatDibeliCheck() {
+        return dapatDibeliCheck;
+    }
+
+    public JCheckBox getDapatDibongkarCheck() {
+        return dapatDibongkarCheck;
+    }
+
+    public JCheckBox getDapatDijualCheck() {
+        return dapatDijualCheck;
+    }
+
+    public JCheckBox getDapatDiproduksiCheck() {
+        return dapatDiproduksiCheck;
+    }
+
+    public JCheckBox getDipakaiUntukProduksiCheck() {
+        return dipakaiUntukProduksiCheck;
+    }
+
+    public JCheckBox getStatusItemCheck() {
+        return statusItemCheck;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -497,42 +524,10 @@ public class ItemPanel extends javax.swing.JPanel {
         add(jPanel4, new java.awt.GridBagConstraints());
     }// </editor-fold>//GEN-END:initComponents
 
-    private void statusItemCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusItemCheckActionPerformed
-        // TODO add your handling code here:
-        statusItem = statusItemCheck.isSelected();
-    }//GEN-LAST:event_statusItemCheckActionPerformed
-
-    private void dapatDibeliCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dapatDibeliCheckActionPerformed
-        // TODO add your handling code here:
-        dapatDibeli = dapatDibeliCheck.isSelected();
-    }//GEN-LAST:event_dapatDibeliCheckActionPerformed
-
-    private void dapatDijualCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dapatDijualCheckActionPerformed
-        // TODO add your handling code here:
-        dapatDijual = dapatDijualCheck.isSelected();
-    }//GEN-LAST:event_dapatDijualCheckActionPerformed
-
-    private void dipakaiUntukProduksiCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dipakaiUntukProduksiCheckActionPerformed
-        // TODO add your handling code here:
-        dipakaiUntukProduksi = dipakaiUntukProduksiCheck.isSelected();
-    }//GEN-LAST:event_dipakaiUntukProduksiCheckActionPerformed
-
-    private void dapatDiproduksiCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dapatDiproduksiCheckActionPerformed
-        // TODO add your handling code here:
-        dapatDiproduksi = dapatDiproduksiCheck.isSelected();
-    }//GEN-LAST:event_dapatDiproduksiCheckActionPerformed
-
     private void simpanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanButtonActionPerformed
         // TODO add your handling code here:
-        itemControl.validasi(this);
         itemControl.simpanItem(this);
-        itemControl.clear(this);
     }//GEN-LAST:event_simpanButtonActionPerformed
-
-    private void dapatDibongkarCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dapatDibongkarCheckActionPerformed
-        // TODO add your handling code here:
-        dapatDibongkar = dapatDibongkarCheck.isSelected();
-    }//GEN-LAST:event_dapatDibongkarCheckActionPerformed
 
     private void satuanComboMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_satuanComboMouseEntered
         // TODO add your handling code here:
@@ -553,12 +548,12 @@ public class ItemPanel extends javax.swing.JPanel {
     private void tambahSatuanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahSatuanButtonActionPerformed
         // TODO add your handling code here:
 //        new TambahSatuanDialog(new MainMenu(), true).show();
-        SatuanDialog n = new SatuanDialog(null, true);
-        n.show();
-        if (n.getReturnStatus() == 1) {
+        SatuanDialog satuanDialog = new SatuanDialog(null, true);
+        satuanDialog.setVisible(true);
+        if (satuanDialog.getReturnStatus() == 1) {
             itemControl.loadSatuanCombo(satuanCombo);
         }
-        System.out.println(n.getReturnStatus());
+        System.out.println(satuanDialog.getReturnStatus());
 
 //        System.out.println(result);
     }//GEN-LAST:event_tambahSatuanButtonActionPerformed
@@ -567,6 +562,36 @@ public class ItemPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         gambar = new ItemControl().setImage(new ItemControl().openImage(pathText), gambarLabel);
     }//GEN-LAST:event_openButtonActionPerformed
+
+    private void dapatDiproduksiCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dapatDiproduksiCheckActionPerformed
+        // TODO add your handling code here:
+        dapatDiproduksi = dapatDiproduksiCheck.isSelected();
+    }//GEN-LAST:event_dapatDiproduksiCheckActionPerformed
+
+    private void dapatDibongkarCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dapatDibongkarCheckActionPerformed
+        // TODO add your handling code here:
+        dapatDibongkar = dapatDibongkarCheck.isSelected();
+    }//GEN-LAST:event_dapatDibongkarCheckActionPerformed
+
+    private void dipakaiUntukProduksiCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dipakaiUntukProduksiCheckActionPerformed
+        // TODO add your handling code here:
+        dipakaiUntukProduksi = dipakaiUntukProduksiCheck.isSelected();
+    }//GEN-LAST:event_dipakaiUntukProduksiCheckActionPerformed
+
+    private void dapatDijualCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dapatDijualCheckActionPerformed
+        // TODO add your handling code here:
+        dapatDijual = dapatDijualCheck.isSelected();
+    }//GEN-LAST:event_dapatDijualCheckActionPerformed
+
+    private void dapatDibeliCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dapatDibeliCheckActionPerformed
+        // TODO add your handling code here:
+        dapatDibeli = dapatDibeliCheck.isSelected();
+    }//GEN-LAST:event_dapatDibeliCheckActionPerformed
+
+    private void statusItemCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusItemCheckActionPerformed
+        // TODO add your handling code here:
+        statusItem = statusItemCheck.isSelected();
+    }//GEN-LAST:event_statusItemCheckActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
