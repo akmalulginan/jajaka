@@ -188,7 +188,6 @@ public class SupplierModel extends Model {
 
             String query = "UPDATE supplier "
                     + "SET "
-                    + "kodeSupplier = ? "
                     + "namaSupplier = ? "
                     + "kategoriSupplier = ? "
                     + "alamat = ? "
@@ -200,23 +199,24 @@ public class SupplierModel extends Model {
                     + "catatan = ? "
                     + "contactPerson = ? "
                     + "noTelpCs = ? "
-                    + "emailCs = ? ";
+                    + "emailCs = ? "
+                    + "WHERE kodeSupplier = ?";
 
             if (conn != null) {
                 pst = conn.prepareStatement(query);
-                pst.setString(1, kodeSupplier);
-                pst.setString(2, namaSupplier);
-                pst.setString(3, kategoriSupplier);
-                pst.setString(4, kota);
-                pst.setString(5, kodePos);
-                pst.setString(6, noTelp);
-                pst.setString(7, noFax);
-                pst.setString(8, email);
+                pst.setString(13, kodeSupplier);
+                pst.setString(1, namaSupplier);
+                pst.setString(2, kategoriSupplier);
+                pst.setString(3, kota);
+                pst.setString(4, kodePos);
+                pst.setString(5, noTelp);
+                pst.setString(6, noFax);
+                pst.setString(7, email);
+                pst.setString(8, catatan);
                 pst.setString(9, catatan);
-                pst.setString(10, catatan);
-                pst.setString(11, contactPerson);
-                pst.setString(12, noTelpCs);
-                pst.setString(13, emailCs);
+                pst.setString(10, contactPerson);
+                pst.setString(11, noTelpCs);
+                pst.setString(12, emailCs);
 
                 pst.execute();
                 conn.close();

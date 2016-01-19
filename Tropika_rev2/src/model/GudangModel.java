@@ -7,6 +7,7 @@ package model;
 
 import java.awt.HeadlessException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -24,8 +25,8 @@ public class GudangModel extends Model {
     String email;
     String catatan;
     String contactPerson;
-    Boolean penyimpanan;
-    Boolean produksi;
+    boolean penyimpanan;
+    boolean produksi;
 
     public String getKodeGudang() {
         return kodeGudang;
@@ -99,7 +100,7 @@ public class GudangModel extends Model {
         this.contactPerson = contactPerson;
     }
 
-    public Boolean getPenyimpanan() {
+    public boolean getPenyimpanan() {
         return penyimpanan;
     }
 
@@ -107,7 +108,7 @@ public class GudangModel extends Model {
         this.penyimpanan = penyimpanan;
     }
 
-    public Boolean getProduksi() {
+    public boolean getProduksi() {
         return produksi;
     }
 
@@ -146,7 +147,7 @@ public class GudangModel extends Model {
             pst.setBoolean(11, produksi);
 
             pst.execute();
-            
+
             return true;
 
         } catch (SQLException | HeadlessException e) {
@@ -154,8 +155,96 @@ public class GudangModel extends Model {
             return false;
         }
     }
-    
-    public static void main(String[] args) {
-        new GudangModel().insert();
+
+    public boolean update() {
+        boolean toReturn = false;
+
+        try {
+            String query = "UPDATE  "
+                    + "SET "
+                    + "alamat = ?"
+                    + "kota = ?"
+                    + "kodePos = ?"
+                    + "noTelp = ?"
+                    + "noFax = ?"
+                    + "email = ?"
+                    + "catatan = ?"
+                    + "contactPerson = ?"
+                    + "penyimpanan = ?"
+                    + "produksi = ?"
+                    + "WHERE kodeGudang = ?";
+
+            if (conn != null) {
+                pst = conn.prepareStatement(query);
+
+                pst.setString(11, kodeGudang);
+                pst.setString(1, alamat);
+                pst.setString(2, kota);
+                pst.setString(3, kodePos);
+                pst.setString(4, noTelp);
+                pst.setString(5, noFax);
+                pst.setString(6, email);
+                pst.setString(7, catatan);
+                pst.setString(8, contactPerson);
+                pst.setBoolean(9, penyimpanan);
+                pst.setBoolean(10, produksi);
+
+                pst.execute();
+                conn.close();
+                toReturn = true;
+            }
+        } catch (Exception e) {
+            System.out.println("error : " + e.getMessage());
+        }
+        return toReturn;
     }
+
+    public ArrayList<GudangModel> select() {
+        ArrayList<GudangModel> list = new ArrayList<>();
+        try {
+            pst = conn.prepareStatement("SELECT * FROM gudang");
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                
+                this.setKodeGudang(rs.getString("kodeGudang"));
+                this.setAlamat(rs.getString("alamat"));
+                this.setKota(rs.getString("kota"));
+                this.setKodePos(rs.getString("kodePos"));
+                this.setNoTelp(rs.getString("noTelp"));
+                this.setNoFax(rs.getString("noFax"));
+                this.setEmail(rs.getString("email"));
+                this.setCatatan(rs.getString("catatan"));
+                this.setContactPerson(rs.getString("contactPerson"));
+                this.setPenyimpanan(rs.getBoolean("penyimpanan"));
+                this.setProduksi(rs.getBoolean("produksi"));
+              
+                list.add(this);
+            }
+            return list;
+        } catch (Exception e) {
+            System.out.println("e : " + e);
+            return null;
+        }
+    }
+    
+    public boolean delete() {
+        boolean toReturn = false;
+
+        try {
+            String query = "DELETE FROM gudang WHERE kodeGudang = ?";
+            if (conn != null) {
+                pst = conn.prepareStatement(query);
+                pst.setString(1, kodeGudang);
+                pst.execute();
+                conn.close();
+                toReturn = true;
+            }
+        } catch (Exception e) {
+            System.out.println("error : " + e.getMessage());
+        }
+
+        return toReturn;
+    }
+
+
 }
