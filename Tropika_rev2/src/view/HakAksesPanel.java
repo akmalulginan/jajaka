@@ -53,10 +53,6 @@ public class HakAksesPanel extends javax.swing.JPanel {
         gudang9 = new javax.swing.JCheckBox();
         gudang10 = new javax.swing.JCheckBox();
         jPanel5 = new javax.swing.JPanel();
-        gudang11 = new javax.swing.JCheckBox();
-        gudang12 = new javax.swing.JCheckBox();
-        gudang13 = new javax.swing.JCheckBox();
-        gudang14 = new javax.swing.JCheckBox();
         gudang15 = new javax.swing.JCheckBox();
         gudang16 = new javax.swing.JCheckBox();
         gudang17 = new javax.swing.JCheckBox();
@@ -184,7 +180,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(gudang1)
                     .addComponent(gudang))
-                .addContainerGap(495, Short.MAX_VALUE))
+                .addContainerGap(511, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,7 +201,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
         gudang2.setBackground(new java.awt.Color(230, 199, 159));
         gudang2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         gudang2.setForeground(new java.awt.Color(40, 40, 40));
-        gudang2.setText("Barang");
+        gudang2.setText("Gudang");
         gudang2.setToolTipText("");
         gudang2.setBorderPaintedFlat(true);
         gudang2.setOpaque(false);
@@ -213,15 +209,20 @@ public class HakAksesPanel extends javax.swing.JPanel {
         gudang3.setBackground(new java.awt.Color(230, 199, 159));
         gudang3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         gudang3.setForeground(new java.awt.Color(40, 40, 40));
-        gudang3.setText("Kelompok");
+        gudang3.setText("Item");
         gudang3.setToolTipText("");
         gudang3.setBorderPaintedFlat(true);
         gudang3.setOpaque(false);
+        gudang3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gudang3ActionPerformed(evt);
+            }
+        });
 
         gudang4.setBackground(new java.awt.Color(230, 199, 159));
         gudang4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         gudang4.setForeground(new java.awt.Color(40, 40, 40));
-        gudang4.setText("Satuan");
+        gudang4.setText("Harga");
         gudang4.setToolTipText("");
         gudang4.setBorderPaintedFlat(true);
         gudang4.setOpaque(false);
@@ -229,7 +230,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
         gudang5.setBackground(new java.awt.Color(230, 199, 159));
         gudang5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         gudang5.setForeground(new java.awt.Color(40, 40, 40));
-        gudang5.setText("Supplier");
+        gudang5.setText("Kategori");
         gudang5.setToolTipText("");
         gudang5.setBorderPaintedFlat(true);
         gudang5.setOpaque(false);
@@ -237,7 +238,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
         gudang6.setBackground(new java.awt.Color(230, 199, 159));
         gudang6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         gudang6.setForeground(new java.awt.Color(40, 40, 40));
-        gudang6.setText("Harga");
+        gudang6.setText("Supplier");
         gudang6.setToolTipText("");
         gudang6.setBorderPaintedFlat(true);
         gudang6.setOpaque(false);
@@ -254,7 +255,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
                     .addComponent(gudang4)
                     .addComponent(gudang3)
                     .addComponent(gudang2))
-                .addContainerGap(457, Short.MAX_VALUE))
+                .addContainerGap(481, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -289,7 +290,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
         gudang8.setBackground(new java.awt.Color(230, 199, 159));
         gudang8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         gudang8.setForeground(new java.awt.Color(40, 40, 40));
-        gudang8.setText("Return Pembelian");
+        gudang8.setText("Penjualan");
         gudang8.setToolTipText("");
         gudang8.setBorderPaintedFlat(true);
         gudang8.setOpaque(false);
@@ -297,7 +298,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
         gudang9.setBackground(new java.awt.Color(230, 199, 159));
         gudang9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         gudang9.setForeground(new java.awt.Color(40, 40, 40));
-        gudang9.setText("Penerimaan Barang");
+        gudang9.setText("Gudang");
         gudang9.setToolTipText("");
         gudang9.setBorderPaintedFlat(true);
         gudang9.setOpaque(false);
@@ -305,7 +306,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
         gudang10.setBackground(new java.awt.Color(230, 199, 159));
         gudang10.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         gudang10.setForeground(new java.awt.Color(40, 40, 40));
-        gudang10.setText("Transfer");
+        gudang10.setText("Transaksi");
         gudang10.setToolTipText("");
         gudang10.setBorderPaintedFlat(true);
         gudang10.setOpaque(false);
@@ -321,7 +322,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
                     .addComponent(gudang9)
                     .addComponent(gudang8)
                     .addComponent(gudang7))
-                .addContainerGap(307, Short.MAX_VALUE))
+                .addContainerGap(383, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -343,42 +344,10 @@ public class HakAksesPanel extends javax.swing.JPanel {
         jPanel5.setToolTipText("");
         jPanel5.setOpaque(false);
 
-        gudang11.setBackground(new java.awt.Color(230, 199, 159));
-        gudang11.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        gudang11.setForeground(new java.awt.Color(40, 40, 40));
-        gudang11.setText("Pembelian");
-        gudang11.setToolTipText("");
-        gudang11.setBorderPaintedFlat(true);
-        gudang11.setOpaque(false);
-
-        gudang12.setBackground(new java.awt.Color(230, 199, 159));
-        gudang12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        gudang12.setForeground(new java.awt.Color(40, 40, 40));
-        gudang12.setText("Return Pembelian");
-        gudang12.setToolTipText("");
-        gudang12.setBorderPaintedFlat(true);
-        gudang12.setOpaque(false);
-
-        gudang13.setBackground(new java.awt.Color(230, 199, 159));
-        gudang13.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        gudang13.setForeground(new java.awt.Color(40, 40, 40));
-        gudang13.setText("Penerimaan Barang");
-        gudang13.setToolTipText("");
-        gudang13.setBorderPaintedFlat(true);
-        gudang13.setOpaque(false);
-
-        gudang14.setBackground(new java.awt.Color(230, 199, 159));
-        gudang14.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        gudang14.setForeground(new java.awt.Color(40, 40, 40));
-        gudang14.setText("Transfer");
-        gudang14.setToolTipText("");
-        gudang14.setBorderPaintedFlat(true);
-        gudang14.setOpaque(false);
-
         gudang15.setBackground(new java.awt.Color(230, 199, 159));
         gudang15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         gudang15.setForeground(new java.awt.Color(40, 40, 40));
-        gudang15.setText("Barang");
+        gudang15.setText("Gudang");
         gudang15.setToolTipText("");
         gudang15.setBorderPaintedFlat(true);
         gudang15.setOpaque(false);
@@ -386,7 +355,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
         gudang16.setBackground(new java.awt.Color(230, 199, 159));
         gudang16.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         gudang16.setForeground(new java.awt.Color(40, 40, 40));
-        gudang16.setText("Supplier");
+        gudang16.setText("Pembelian");
         gudang16.setToolTipText("");
         gudang16.setBorderPaintedFlat(true);
         gudang16.setOpaque(false);
@@ -394,7 +363,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
         gudang17.setBackground(new java.awt.Color(230, 199, 159));
         gudang17.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         gudang17.setForeground(new java.awt.Color(40, 40, 40));
-        gudang17.setText("Harga");
+        gudang17.setText("Penjualan");
         gudang17.setToolTipText("");
         gudang17.setBorderPaintedFlat(true);
         gudang17.setOpaque(false);
@@ -404,39 +373,23 @@ public class HakAksesPanel extends javax.swing.JPanel {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(94, 94, 94)
+                .addGap(211, 211, 211)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(gudang17)
                     .addComponent(gudang16)
                     .addComponent(gudang15))
-                .addGap(42, 42, 42)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(gudang14)
-                    .addComponent(gudang13)
-                    .addComponent(gudang12)
-                    .addComponent(gudang11))
-                .addContainerGap(237, Short.MAX_VALUE))
+                .addContainerGap(315, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(gudang15, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(gudang16, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(gudang17, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(gudang11, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(gudang12, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(gudang13, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(gudang14, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addGap(32, 32, 32)
+                .addComponent(gudang15, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(gudang16, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(gudang17, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(102, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Laporan", jPanel5);
@@ -496,16 +449,16 @@ public class HakAksesPanel extends javax.swing.JPanel {
         add(jPanel8, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void gudang3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gudang3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gudang3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton baruKey1;
     private javax.swing.JCheckBox gudang;
     private javax.swing.JCheckBox gudang1;
     private javax.swing.JCheckBox gudang10;
-    private javax.swing.JCheckBox gudang11;
-    private javax.swing.JCheckBox gudang12;
-    private javax.swing.JCheckBox gudang13;
-    private javax.swing.JCheckBox gudang14;
     private javax.swing.JCheckBox gudang15;
     private javax.swing.JCheckBox gudang16;
     private javax.swing.JCheckBox gudang17;

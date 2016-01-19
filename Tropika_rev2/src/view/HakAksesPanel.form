@@ -254,7 +254,7 @@
                               <Component id="gudang1" min="-2" max="-2" attributes="0"/>
                               <Component id="gudang" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="495" max="32767" attributes="0"/>
+                          <EmptySpace pref="511" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -333,7 +333,7 @@
                               <Component id="gudang3" min="-2" max="-2" attributes="0"/>
                               <Component id="gudang2" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="457" max="32767" attributes="0"/>
+                          <EmptySpace pref="481" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -367,7 +367,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="28" green="28" red="28" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Barang"/>
+                    <Property name="text" type="java.lang.String" value="Gudang"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="borderPaintedFlat" type="boolean" value="true"/>
                     <Property name="opaque" type="boolean" value="false"/>
@@ -384,11 +384,14 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="28" green="28" red="28" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Kelompok"/>
+                    <Property name="text" type="java.lang.String" value="Item"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="borderPaintedFlat" type="boolean" value="true"/>
                     <Property name="opaque" type="boolean" value="false"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gudang3ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="gudang4">
                   <Properties>
@@ -401,7 +404,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="28" green="28" red="28" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Satuan"/>
+                    <Property name="text" type="java.lang.String" value="Harga"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="borderPaintedFlat" type="boolean" value="true"/>
                     <Property name="opaque" type="boolean" value="false"/>
@@ -418,7 +421,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="28" green="28" red="28" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Supplier"/>
+                    <Property name="text" type="java.lang.String" value="Kategori"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="borderPaintedFlat" type="boolean" value="true"/>
                     <Property name="opaque" type="boolean" value="false"/>
@@ -435,7 +438,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="28" green="28" red="28" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Harga"/>
+                    <Property name="text" type="java.lang.String" value="Supplier"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="borderPaintedFlat" type="boolean" value="true"/>
                     <Property name="opaque" type="boolean" value="false"/>
@@ -470,7 +473,7 @@
                               <Component id="gudang8" min="-2" max="-2" attributes="0"/>
                               <Component id="gudang7" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="307" max="32767" attributes="0"/>
+                          <EmptySpace pref="383" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -519,7 +522,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="28" green="28" red="28" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Return Pembelian"/>
+                    <Property name="text" type="java.lang.String" value="Penjualan"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="borderPaintedFlat" type="boolean" value="true"/>
                     <Property name="opaque" type="boolean" value="false"/>
@@ -536,7 +539,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="28" green="28" red="28" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Penerimaan Barang"/>
+                    <Property name="text" type="java.lang.String" value="Gudang"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="borderPaintedFlat" type="boolean" value="true"/>
                     <Property name="opaque" type="boolean" value="false"/>
@@ -553,7 +556,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="28" green="28" red="28" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Transfer"/>
+                    <Property name="text" type="java.lang.String" value="Transaksi"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="borderPaintedFlat" type="boolean" value="true"/>
                     <Property name="opaque" type="boolean" value="false"/>
@@ -581,119 +584,31 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="211" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="gudang17" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="gudang16" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="gudang15" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="gudang14" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="gudang13" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="gudang12" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="gudang11" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="237" max="32767" attributes="0"/>
+                          <EmptySpace pref="315" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="gudang15" min="-2" pref="29" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="gudang16" min="-2" pref="29" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="gudang17" min="-2" pref="29" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="gudang11" min="-2" pref="29" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="gudang12" min="-2" pref="29" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="gudang13" min="-2" pref="29" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="gudang14" min="-2" pref="29" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace pref="81" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="gudang15" min="-2" pref="29" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="gudang16" min="-2" pref="29" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="gudang17" min="-2" pref="29" max="-2" attributes="0"/>
+                          <EmptySpace pref="102" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JCheckBox" name="gudang11">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="9f" green="c7" red="e6" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial" size="14" style="0"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="28" green="28" red="28" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Pembelian"/>
-                    <Property name="toolTipText" type="java.lang.String" value=""/>
-                    <Property name="borderPaintedFlat" type="boolean" value="true"/>
-                    <Property name="opaque" type="boolean" value="false"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="gudang12">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="9f" green="c7" red="e6" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial" size="14" style="0"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="28" green="28" red="28" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Return Pembelian"/>
-                    <Property name="toolTipText" type="java.lang.String" value=""/>
-                    <Property name="borderPaintedFlat" type="boolean" value="true"/>
-                    <Property name="opaque" type="boolean" value="false"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="gudang13">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="9f" green="c7" red="e6" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial" size="14" style="0"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="28" green="28" red="28" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Penerimaan Barang"/>
-                    <Property name="toolTipText" type="java.lang.String" value=""/>
-                    <Property name="borderPaintedFlat" type="boolean" value="true"/>
-                    <Property name="opaque" type="boolean" value="false"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="gudang14">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="9f" green="c7" red="e6" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial" size="14" style="0"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="28" green="28" red="28" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Transfer"/>
-                    <Property name="toolTipText" type="java.lang.String" value=""/>
-                    <Property name="borderPaintedFlat" type="boolean" value="true"/>
-                    <Property name="opaque" type="boolean" value="false"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="gudang15">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -705,7 +620,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="28" green="28" red="28" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Barang"/>
+                    <Property name="text" type="java.lang.String" value="Gudang"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="borderPaintedFlat" type="boolean" value="true"/>
                     <Property name="opaque" type="boolean" value="false"/>
@@ -722,7 +637,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="28" green="28" red="28" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Supplier"/>
+                    <Property name="text" type="java.lang.String" value="Pembelian"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="borderPaintedFlat" type="boolean" value="true"/>
                     <Property name="opaque" type="boolean" value="false"/>
@@ -739,7 +654,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="28" green="28" red="28" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Harga"/>
+                    <Property name="text" type="java.lang.String" value="Penjualan"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="borderPaintedFlat" type="boolean" value="true"/>
                     <Property name="opaque" type="boolean" value="false"/>
