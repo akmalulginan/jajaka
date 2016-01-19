@@ -2,8 +2,10 @@ package view;
 
 import control.GudangControl;
 import java.awt.Component;
+import javax.swing.JCheckBox;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.JTextPane;
 import javax.swing.text.JTextComponent;
 
 /*
@@ -20,9 +22,88 @@ public class GudangPanel extends javax.swing.JPanel {
     /**
      * Creates new form FormGudang
      */
+    private GudangControl gudangControl = new GudangControl();
     Boolean penyimpanan = false;
     Boolean produksi = false;
 
+    public Boolean getPenyimpanan() {
+        return penyimpanan;
+    }
+
+    public Boolean getProduksi() {
+        return produksi;
+    }
+
+    public JTextPane getAlamatText() {
+        return alamatText;
+    }
+
+    public JTextField getBaris() {
+        return baris;
+    }
+
+    public JTextField getcPersonText() {
+        return cPersonText;
+    }
+
+    public JTextPane getCatatanText() {
+        return catatanText;
+    }
+
+    public JTextField getEmailText() {
+        return emailText;
+    }
+
+    public JTextField getjBarangMasuk() {
+        return jBarangMasuk;
+    }
+
+    public JTextField getKategoriGudangText() {
+        return kategoriGudangText;
+    }
+
+    public JTextField getKodeGudangText() {
+        return kodeGudangText;
+    }
+
+    public JTextField getKodeItem() {
+        return kodeItem;
+    }
+
+    public JTextField getKodePosText() {
+        return kodePosText;
+    }
+
+    public JTextField getKotaText() {
+        return kotaText;
+    }
+
+    public JTextField getNamaItem() {
+        return namaItem;
+    }
+
+    public JTextField getNoFaxText() {
+        return noFaxText;
+    }
+
+    public JTextField getNoTelpText() {
+        return noTelpText;
+    }
+
+    public JCheckBox getPenyimpananCheck() {
+        return penyimpananCheck;
+    }
+
+    public JCheckBox getProduksiCheck() {
+        return produksiCheck;
+    }
+
+    public JTextField getTglBarangMasuk() {
+        return tglBarangMasuk;
+    }
+    
+    
+    
     public GudangPanel() {
         initComponents();
         System.out.println(jPanel1.getComponentCount());
@@ -732,23 +813,8 @@ public class GudangPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void simpanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanButtonActionPerformed
-        GudangControl gC = new GudangControl();
-        clear();
-        if (!kodeGudangText.getText().isEmpty()) {
-            gC.setGudang(
-                    kodeGudangText.getText(), 
-                    alamatText.getText(), 
-                    kotaText.getText(), 
-                    kodePosText.getText(), 
-                    noTelpText.getText(), 
-                    noFaxText.getText(), 
-                    emailText.getText(), 
-                    catatanText.getText(), 
-                    cPersonText.getText(), 
-                    penyimpanan, 
-                    produksi
-            );
-        }
+        
+            gudangControl.simpanGudang(this);  
     }//GEN-LAST:event_simpanButtonActionPerformed
 
     private void penyimpananCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penyimpananCheckActionPerformed

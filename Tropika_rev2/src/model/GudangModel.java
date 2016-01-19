@@ -17,6 +17,7 @@ import javax.swing.JOptionPane;
 public class GudangModel extends Model {
 
     String kodeGudang;
+    String kategoriGudang;
     String alamat;
     String kota;
     String kodePos;
@@ -34,6 +35,14 @@ public class GudangModel extends Model {
 
     public void setKodeGudang(String kodeGudang) {
         this.kodeGudang = kodeGudang;
+    }
+
+    public String getKategoriGudang() {
+        return kategoriGudang;
+    }
+
+    public void setKategoriGudang(String kategoriGudang) {
+        this.kategoriGudang = kategoriGudang;
     }
 
     public String getAlamat() {
@@ -121,6 +130,7 @@ public class GudangModel extends Model {
             String sql = "INSERT INTO gudang "
                     + "("
                     + "kodeGudang, "
+                    + "kategoriGudang, "
                     + "alamat, "
                     + "kota, "
                     + "kodePos, "
@@ -131,20 +141,21 @@ public class GudangModel extends Model {
                     + "contactPerson, "
                     + "penyimpanan, "
                     + "produksi"
-                    + ") VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+                    + ") VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 
             pst = conn.prepareStatement(sql);
             pst.setString(1, kodeGudang);
-            pst.setString(2, alamat);
-            pst.setString(3, kota);
-            pst.setString(4, kodePos);
-            pst.setString(5, noTelp);
-            pst.setString(6, noFax);
-            pst.setString(7, email);
-            pst.setString(8, catatan);
-            pst.setString(9, contactPerson);
-            pst.setBoolean(10, penyimpanan);
-            pst.setBoolean(11, produksi);
+            pst.setString(2, kategoriGudang);
+            pst.setString(3, alamat);
+            pst.setString(4, kota);
+            pst.setString(5, kodePos);
+            pst.setString(6, noTelp);
+            pst.setString(7, noFax);
+            pst.setString(8, email);
+            pst.setString(9, catatan);
+            pst.setString(10, contactPerson);
+            pst.setBoolean(11, penyimpanan);
+            pst.setBoolean(12, produksi);
 
             pst.execute();
 
@@ -162,6 +173,7 @@ public class GudangModel extends Model {
         try {
             String query = "UPDATE  "
                     + "SET "
+                    + "kategoriGudang = ?"
                     + "alamat = ?"
                     + "kota = ?"
                     + "kodePos = ?"
@@ -177,17 +189,18 @@ public class GudangModel extends Model {
             if (conn != null) {
                 pst = conn.prepareStatement(query);
 
-                pst.setString(11, kodeGudang);
-                pst.setString(1, alamat);
-                pst.setString(2, kota);
-                pst.setString(3, kodePos);
-                pst.setString(4, noTelp);
-                pst.setString(5, noFax);
-                pst.setString(6, email);
-                pst.setString(7, catatan);
-                pst.setString(8, contactPerson);
-                pst.setBoolean(9, penyimpanan);
-                pst.setBoolean(10, produksi);
+                pst.setString(12, kodeGudang);
+                pst.setString(1, kategoriGudang);
+                pst.setString(2, alamat);
+                pst.setString(3, kota);
+                pst.setString(4, kodePos);
+                pst.setString(5, noTelp);
+                pst.setString(6, noFax);
+                pst.setString(7, email);
+                pst.setString(8, catatan);
+                pst.setString(9, contactPerson);
+                pst.setBoolean(10, penyimpanan);
+                pst.setBoolean(11, produksi);
 
                 pst.execute();
                 conn.close();
@@ -205,8 +218,9 @@ public class GudangModel extends Model {
             pst = conn.prepareStatement("SELECT * FROM gudang");
             rs = pst.executeQuery();
             while (rs.next()) {
-                
+
                 this.setKodeGudang(rs.getString("kodeGudang"));
+                this.setKategoriGudang(rs.getString("kategoriGudang"));
                 this.setAlamat(rs.getString("alamat"));
                 this.setKota(rs.getString("kota"));
                 this.setKodePos(rs.getString("kodePos"));
@@ -217,7 +231,7 @@ public class GudangModel extends Model {
                 this.setContactPerson(rs.getString("contactPerson"));
                 this.setPenyimpanan(rs.getBoolean("penyimpanan"));
                 this.setProduksi(rs.getBoolean("produksi"));
-              
+
                 list.add(this);
             }
             return list;
@@ -226,7 +240,7 @@ public class GudangModel extends Model {
             return null;
         }
     }
-    
+
     public boolean delete() {
         boolean toReturn = false;
 
@@ -245,6 +259,5 @@ public class GudangModel extends Model {
 
         return toReturn;
     }
-
 
 }

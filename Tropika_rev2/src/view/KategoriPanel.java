@@ -79,7 +79,15 @@ public class KategoriPanel extends javax.swing.JPanel {
             new String [] {
                 "Kode", "Barcode", "Nama", "Satuan", "Dapat Dibeli", "Dapat Dijual", "Dapat Diproduksi", "Untuk Produksi", "Dapat Dibongkar", "Status", "Keterangan"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(dataTable);
 
         javax.swing.GroupLayout tableLayout = new javax.swing.GroupLayout(table);
