@@ -20,7 +20,7 @@ public class TransaksiGudangPanel extends javax.swing.JPanel {
      */
     public TransaksiGudangPanel() {
         initComponents();
-        tGC.update_table("barang", barangTable);
+        tGC.update_table("barang", itemTable);
         tGC.update_table("", gudangTable);
     }
 
@@ -66,7 +66,7 @@ public class TransaksiGudangPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         gudangTable = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        barangTable = new javax.swing.JTable();
+        itemTable = new javax.swing.JTable();
 
         setName("Trans. Gudang"); // NOI18N
 
@@ -173,7 +173,6 @@ public class TransaksiGudangPanel extends javax.swing.JPanel {
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(0, 0, 0)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel23)
                     .addComponent(jLabel25)
@@ -346,7 +345,7 @@ public class TransaksiGudangPanel extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Gudang", jScrollPane1);
 
-        barangTable.setModel(new javax.swing.table.DefaultTableModel(
+        itemTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -357,12 +356,12 @@ public class TransaksiGudangPanel extends javax.swing.JPanel {
 
             }
         ));
-        barangTable.addMouseListener(new java.awt.event.MouseAdapter() {
+        itemTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                barangTableMouseClicked(evt);
+                itemTableMouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(barangTable);
+        jScrollPane2.setViewportView(itemTable);
 
         jTabbedPane1.addTab("Item", jScrollPane2);
 
@@ -394,11 +393,11 @@ public class TransaksiGudangPanel extends javax.swing.JPanel {
         kodeGudangText.setText(gudangTable.getValueAt(gudangTable.getSelectedRow(), 0).toString());
     }//GEN-LAST:event_gudangTableMouseClicked
 
-    private void barangTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_barangTableMouseClicked
-        namaItemText.setText(barangTable.getValueAt(barangTable.getSelectedRow(), 0).toString());
-        kodeItemText.setText(barangTable.getValueAt(barangTable.getSelectedRow(), 1).toString());
-        new TransaksiGudangControl().getImage(barangTable.getValueAt(barangTable.getSelectedRow(), 0).toString(), gambarLabel);
-    }//GEN-LAST:event_barangTableMouseClicked
+    private void itemTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemTableMouseClicked
+        namaItemText.setText(itemTable.getValueAt(itemTable.getSelectedRow(), 0).toString());
+        kodeItemText.setText(itemTable.getValueAt(itemTable.getSelectedRow(), 1).toString());
+        new TransaksiGudangControl().getImage(itemTable.getValueAt(itemTable.getSelectedRow(), 0).toString(), gambarLabel);
+    }//GEN-LAST:event_itemTableMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
@@ -411,10 +410,10 @@ public class TransaksiGudangPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField StockText;
-    private javax.swing.JTable barangTable;
     private javax.swing.JTextField barisText;
     private javax.swing.JLabel gambarLabel;
     private javax.swing.JTable gudangTable;
+    private javax.swing.JTable itemTable;
     private javax.swing.JTextField jBarangMasukText;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel22;
