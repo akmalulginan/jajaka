@@ -154,9 +154,8 @@ public class ItemModel extends Model {
     }
 
     public boolean insert() {
-        boolean toReturn = false;
         try {
-            String sql = "INSERT INTO item "
+            String query = "INSERT INTO item "
                     + "("
                     + "kodeItem, "
                     + "barcode, "
@@ -174,7 +173,7 @@ public class ItemModel extends Model {
                     + ") "
                     + "VALUES "
                     + "(?,?,?,?,?,?,?,?,?,?,?,?,?);";
-            pst = conn.prepareStatement(sql);
+            pst = conn.prepareStatement(query);
             pst.setString(1, kodeItem);
             pst.setString(2, barcode);
             pst.setString(3, namaItem);
@@ -188,14 +187,13 @@ public class ItemModel extends Model {
             pst.setBoolean(11, statusItem);
             pst.setBytes(12, gambar);
             pst.setString(13, keterangan);
-            if (pst.execute()) {
-                toReturn = true;
-            }
+            pst.execute();
 
+            return true;
         } catch (SQLException | HeadlessException e) {
-            JOptionPane.showMessageDialog(null, e);
+            System.out.println("e : " + e);
+            return false;
         }
-        return toReturn;
     }
 
     public boolean update() {
