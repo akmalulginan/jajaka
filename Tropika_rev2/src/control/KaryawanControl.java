@@ -5,9 +5,9 @@
  */
 package control;
 
+import java.util.Date;
 import model.KaryawanModel;
 import view.KaryawanPanel;
-import java.sql.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -29,9 +29,9 @@ public class KaryawanControl {
             karyawanModel.setJenisKelamin("Perempuan");
         }
         karyawanModel.setJenisKelamin(karyawanPanel.getJenisKelaminButtonGroup().getSelection().toString());
-        karyawanModel.setTanggalMasuk((Date)karyawanPanel.getTanggalMasukKerjaDate().getDate());
+        karyawanModel.setTanggalMasuk(karyawanPanel.getTanggalMasukKerjaDate().getDate().getTime());
         karyawanModel.setTempatLahir(karyawanPanel.getTempatLahir().getText());
-        karyawanModel.setTanggalLahir((Date)karyawanPanel.getTanggalLahirDate().getDate());
+        karyawanModel.setTanggalLahir(karyawanPanel.getTanggalLahirDate().getDate().getTime());
         karyawanModel.setAlamat(karyawanPanel.getAlamat().getText());
         karyawanModel.setKota(karyawanPanel.getKota().getText());
         karyawanModel.setKodePos(karyawanPanel.getKodePos().getText());

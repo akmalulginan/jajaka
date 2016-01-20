@@ -5,7 +5,7 @@
  */
 package model;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -19,9 +19,9 @@ public class KaryawanModel extends Model {
     private String namaLengkap;
     private String namaPanggilan;
     private String jenisKelamin;
-    private Date tanggalMasuk;
+    private long tanggalMasuk;
     private String tempatLahir;
-    private Date tanggalLahir;
+    private long tanggalLahir;
     private String alamat;
     private String kota;
     private String kodePos;
@@ -63,11 +63,11 @@ public class KaryawanModel extends Model {
         this.jenisKelamin = jenisKelamin;
     }
 
-    public Date getTanggalMasuk() {
+    public long getTanggalMasuk() {
         return tanggalMasuk;
     }
 
-    public void setTanggalMasuk(Date tanggalMasuk) {
+    public void setTanggalMasuk(long tanggalMasuk) {
         this.tanggalMasuk = tanggalMasuk;
     }
 
@@ -79,11 +79,11 @@ public class KaryawanModel extends Model {
         this.tempatLahir = tempatLahir;
     }
 
-    public Date getTanggalLahir() {
+    public long getTanggalLahir() {
         return tanggalLahir;
     }
 
-    public void setTanggalLahir(Date tanggalLahir) {
+    public void setTanggalLahir(long tanggalLahir) {
         this.tanggalLahir = tanggalLahir;
     }
 
@@ -163,9 +163,9 @@ public class KaryawanModel extends Model {
             pst.setString(2, namaLengkap);
             pst.setString(3, namaPanggilan);
             pst.setString(4, jenisKelamin);
-            pst.setDate(5, tanggalMasuk);
+            pst.setDate(5, new java.sql.Date(tanggalMasuk));
             pst.setString(6, tempatLahir);
-            pst.setDate(7, tanggalLahir);
+            pst.setDate(7, new java.sql.Date(tanggalLahir));
             pst.setString(8, alamat);
             pst.setString(9, kota);
             pst.setString(10, kodePos);
@@ -215,9 +215,9 @@ public class KaryawanModel extends Model {
                 pst.setString(1, namaLengkap);
                 pst.setString(2, namaPanggilan);
                 pst.setString(3, jenisKelamin);
-                pst.setDate(4, tanggalMasuk);
+                pst.setDate(4, new java.sql.Date(tanggalMasuk));
                 pst.setString(5, tempatLahir);
-                pst.setDate(6, tanggalLahir);
+                pst.setDate(6, new java.sql.Date(tanggalLahir));
                 pst.setString(7, alamat);
                 pst.setString(8, kota);
                 pst.setString(9, kodePos);
@@ -255,7 +255,7 @@ public class KaryawanModel extends Model {
 
         return toReturn;
     }
-    
+
     public ArrayList<KaryawanModel> select() {
         ArrayList<KaryawanModel> list = new ArrayList<>();
         try {
@@ -266,9 +266,9 @@ public class KaryawanModel extends Model {
                 this.setNamaLengkap(rs.getString("namaLengkap"));
                 this.setNamaPanggilan(rs.getString("namaPanggilan"));
                 this.setJenisKelamin(rs.getString("jenisKelamin"));
-                this.setTanggalMasuk(rs.getDate("tanggalMasuk"));
+                this.setTanggalMasuk(rs.getDate("tanggalMasuk").getTime());
                 this.setTempatLahir(rs.getString("tempatLahir"));
-                this.setTanggalLahir(rs.getDate("tanggalLahir"));
+                this.setTanggalLahir(rs.getDate("tanggalLahir").getTime());
                 this.setAlamat(rs.getString("alamat"));
                 this.setKota(rs.getString("kota"));
                 this.setKodePos(rs.getString("kodePos"));
@@ -276,7 +276,7 @@ public class KaryawanModel extends Model {
                 this.setEmail(rs.getString("email"));
                 this.setCatatan(rs.getString("catatan"));
                 this.setStatus(rs.getString("status"));
-                this.setGambar(rs.getBytes("gambar"));        
+                this.setGambar(rs.getBytes("gambar"));
                 list.add(this);
             }
             return list;
