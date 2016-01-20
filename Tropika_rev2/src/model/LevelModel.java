@@ -156,5 +156,23 @@ public class LevelModel extends Model {
         this.laporanPenjualan = laporanPenjualan;
     }
     
+    public LevelModel select(int level){
+        LevelModel levelModel = new LevelModel();
+        
+        String query = "SELECT * FROM level WHERE level.level = ?";
+        try {
+            pst = conn.prepareStatement(query);
+            pst.setInt(1, level);
+            rs = pst.executeQuery();
+            
+            if (rs.next()) {
+                levelModel.setLevel(rs.getInt("level"));
+                levelModel.setPengguna(rs.getBoolean("pengguna"));
+                levelModel.setPengguna(rs.getBoolean("hakAkses"));
+            }
+        } catch (Exception e) {
+        }
+        return null;
+    }
     
 }
