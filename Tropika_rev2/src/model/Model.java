@@ -16,10 +16,13 @@ import java.sql.Statement;
  */
 public class Model {
 
-    public Connection conn = SqliteConnect.ConnectDb();
+    public Connection conn = SqliteConnection.getInstance().getConnection();
     public Statement st;
     public PreparedStatement pst;
     public ResultSet rs;
 
 //    public void insert(){}
+//    public void update(){}
+//    public void delete(){}
+//    public void select(){}
 }

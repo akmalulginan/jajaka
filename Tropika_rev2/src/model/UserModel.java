@@ -48,9 +48,7 @@ public class UserModel extends Model {
         UserModel userModel = new UserModel();
         
         String query = "SELECT * FROM user WHERE user.username = ? AND user.password = ?";
-        System.out.println(query);
         try {
-            conn = SqliteConnect.ConnectDb();
             pst = conn.prepareStatement(query);
             pst.setString(1, username);
             pst.setString(2, password);

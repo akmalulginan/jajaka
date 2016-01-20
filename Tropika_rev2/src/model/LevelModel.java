@@ -10,16 +10,20 @@ package model;
  * @author akmal
  */
 public class LevelModel extends Model {
+
     private int level;
     private boolean pengguna;
     private boolean hakAkses;
+    private boolean gudang;
     private boolean item;
+    private boolean harga;
     private boolean kategori;
     private boolean satuan;
     private boolean supplier;
-    private boolean harga;
     private boolean pembelian;
-    private boolean transfer;
+    private boolean penjualan;
+    private boolean transaksiGudang;
+    private boolean transaksi;
     private boolean laporanGudang;
     private boolean laporanPembelian;
     private boolean laporanPenjualan;
