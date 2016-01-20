@@ -31,7 +31,6 @@ public class Login extends javax.swing.JFrame {
 //        initComponents();
         setUndecorated(true);
         initComponents();
-//        FormUtil.centerWindow(this);
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date date = new Date();
         dateLabel.setText(dateFormat.format(date));
