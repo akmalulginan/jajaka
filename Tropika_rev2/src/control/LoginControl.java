@@ -5,7 +5,7 @@
  */
 package control;
 
-import model.UserLoginModel;
+//import model.UserLoginModel;
 import model.UserModel;
 import view.Login;
 
@@ -16,13 +16,13 @@ import view.Login;
 public class LoginControl {
 
     private UserModel userModel = new UserModel();
-    private UserLoginModel userLoginModel = new UserLoginModel();
+//    private UserLoginModel userLoginModel = new UserLoginModel();
 
     public void login(Login login) {
         setUser(login);
         userModel = userModel.select();
-        userLoginModel.setUsername(userModel.getUsername());
-        System.out.println(userLoginModel.getUsername());
+//        userLoginModel.setUsername(userModel.getUsername());
+//        System.out.println(userLoginModel.getUsername());
     }
 
     public void setUser(Login login) {
