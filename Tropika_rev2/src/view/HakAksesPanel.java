@@ -180,7 +180,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(gudang1)
                     .addComponent(gudang))
-                .addContainerGap(511, Short.MAX_VALUE))
+                .addContainerGap(577, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,11 +213,6 @@ public class HakAksesPanel extends javax.swing.JPanel {
         gudang3.setToolTipText("");
         gudang3.setBorderPaintedFlat(true);
         gudang3.setOpaque(false);
-        gudang3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gudang3ActionPerformed(evt);
-            }
-        });
 
         gudang4.setBackground(new java.awt.Color(230, 199, 159));
         gudang4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -255,7 +250,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
                     .addComponent(gudang4)
                     .addComponent(gudang3)
                     .addComponent(gudang2))
-                .addContainerGap(481, Short.MAX_VALUE))
+                .addContainerGap(547, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -298,7 +293,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
         gudang9.setBackground(new java.awt.Color(230, 199, 159));
         gudang9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         gudang9.setForeground(new java.awt.Color(40, 40, 40));
-        gudang9.setText("Gudang");
+        gudang9.setText("Transaksi Gudang");
         gudang9.setToolTipText("");
         gudang9.setBorderPaintedFlat(true);
         gudang9.setOpaque(false);
@@ -316,26 +311,26 @@ public class HakAksesPanel extends javax.swing.JPanel {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(143, 143, 143)
+                .addGap(145, 145, 145)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(gudang10)
                     .addComponent(gudang9)
+                    .addComponent(gudang10)
                     .addComponent(gudang8)
                     .addComponent(gudang7))
-                .addContainerGap(383, Short.MAX_VALUE))
+                .addContainerGap(395, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(23, 23, 23)
                 .addComponent(gudang7, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(gudang8, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(6, 6, 6)
                 .addComponent(gudang9, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(gudang10, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Transaksi", jPanel4);
@@ -378,7 +373,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
                     .addComponent(gudang17)
                     .addComponent(gudang16)
                     .addComponent(gudang15))
-                .addContainerGap(315, Short.MAX_VALUE))
+                .addContainerGap(381, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -407,6 +402,11 @@ public class HakAksesPanel extends javax.swing.JPanel {
         baruKey1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         baruKey1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         baruKey1.setIconTextGap(23);
+        baruKey1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                baruKey1ActionPerformed(evt);
+            }
+        });
 
         satuan.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         satuan.setForeground(new java.awt.Color(40, 40, 40));
@@ -449,9 +449,9 @@ public class HakAksesPanel extends javax.swing.JPanel {
         add(jPanel8, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void gudang3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gudang3ActionPerformed
+    private void baruKey1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_baruKey1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_gudang3ActionPerformed
+    }//GEN-LAST:event_baruKey1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
