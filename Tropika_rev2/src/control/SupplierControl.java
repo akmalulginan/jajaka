@@ -69,15 +69,12 @@ public class SupplierControl {
         if (supplierPanel.getKodeSupplier().getText().isEmpty()) {
             JOptionPane.showMessageDialog(supplierPanel, "Kode supplier harus diisi");
             supplierPanel.getKodeSupplier().requestFocus();
-
         } else if (supplierPanel.getNamaSupplier().getText().isEmpty()) {
             JOptionPane.showMessageDialog(supplierPanel, "Nama supplier harus diisi");
             supplierPanel.getNamaSupplier().requestFocus();
-
         } else if (supplierPanel.getKategori().getText().isEmpty()) {
             JOptionPane.showMessageDialog(supplierPanel, "Kategori supplier harus diisi");
             supplierPanel.getKategori().requestFocus();
-
         } else if (supplierPanel.getAlamat().getText().isEmpty()) {
             JOptionPane.showMessageDialog(supplierPanel, "Alamat supplier harus diisi");
             supplierPanel.getAlamat().requestFocus();
