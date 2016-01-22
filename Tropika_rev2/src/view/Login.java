@@ -240,42 +240,12 @@ public class Login extends javax.swing.JFrame {
 
     private void usernameTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_usernameTextKeyReleased
         // TODO add your handling code here:
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            try {
-                if (passwordText.getText().isEmpty()) {
-                    keteranganLabel.setText("Masukkan Username dan Password");
-                } else {
-                    if (usernameText.getText().equals("admin") && passwordText.getText().equals("admin")) {
-                        this.dispose();
-                        new MainMenu().show();
-                    } else {
-                        keteranganLabel.setText("Username atau Password Salah");
-                    }
-                }
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e);
-            }
-        }
+        loginControl.enter(this, evt);
     }//GEN-LAST:event_usernameTextKeyReleased
 
     private void passwordTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordTextKeyReleased
         // TODO add your handling code here:
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            try {
-                if (passwordText.getText().isEmpty()) {
-                    keteranganLabel.setText("Masukkan Username dan Password");
-                } else {
-                    if (usernameText.getText().equals("admin") && passwordText.getText().equals("admin")) {
-                        this.dispose();
-                        new MainMenu().show();
-                    } else {
-                        keteranganLabel.setText("Username atau Password Salah");
-                    }
-                }
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e);
-            }
-        }
+        loginControl.enter(this, evt);
     }//GEN-LAST:event_passwordTextKeyReleased
 
     /**

@@ -161,7 +161,7 @@ public class LevelModel extends Model {
 
         String query = "SELECT * FROM level WHERE level.level = ?";
         try {
-            conn = SqliteConnection.getInstance().getConnection();
+            conn = SqliteConnection.ConnectDb();
             pst = conn.prepareStatement(query);
             pst.setInt(1, id);
             rs = pst.executeQuery();
@@ -179,7 +179,7 @@ public class LevelModel extends Model {
                 levelModel.setPembelian(rs.getBoolean("pembelian"));
                 levelModel.setPenjualan(rs.getBoolean("penjualan"));
                 levelModel.setTransaksiGudang(rs.getBoolean("transaksiGudang"));
-                levelModel.setTransaksi(rs.getBoolean("transaksi"));
+                levelModel.setTransaksi(rs.getBoolean("transfer"));
                 levelModel.setLaporanGudang(rs.getBoolean("laporanGudang"));
                 levelModel.setLaporanPembelian(rs.getBoolean("laporanPembelian"));
                 levelModel.setLaporanPenjualan(rs.getBoolean("laporanPenjualan"));

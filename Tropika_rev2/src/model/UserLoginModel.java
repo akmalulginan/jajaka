@@ -10,5 +10,15 @@ package model;
  * @author akmal
  */
 public class UserLoginModel extends UserModel {
+    LevelModel levelModel;
 
+    public LevelModel getLevelModel() {
+        return levelModel;
+    }
+
+    public void setLevelModel(LevelModel levelModel) {
+        this.levelModel = levelModel;
+    }
+    
+    
 }

@@ -13,7 +13,7 @@ public class UserModel extends Model {
 
     protected String username;
     protected String password;
-    protected LevelModel level;
+    protected int level;
 
     public UserModel() {
     }
@@ -34,11 +34,11 @@ public class UserModel extends Model {
         this.password = password;
     }
 
-    public LevelModel getLevel() {
+    public int getLevel() {
         return level;
     }
 
-    public void setLevel(LevelModel level) {
+    public void setLevel(int level) {
         this.level = level;
     }
 
@@ -47,8 +47,9 @@ public class UserModel extends Model {
         LevelModel levelModel = new LevelModel();
 
         String query = "SELECT * FROM user WHERE user.username = ? AND user.password = ?";
+        conn = SqliteConnection.ConnectDb();
+
         try {
-            conn = SqliteConnection.getInstance().getConnection();
             pst = conn.prepareStatement(query);
             pst.setString(1, username);
             pst.setString(2, password);
@@ -57,9 +58,14 @@ public class UserModel extends Model {
             if (rs.next()) {
                 userModel.setUsername(rs.getString("username"));
                 userModel.setPassword(rs.getString("password"));
-                userModel.setLevel(levelModel.select(rs.getInt("level")));
+                userModel.setLevel(rs.getInt("level"));
+            } else {
+                userModel.setUsername("");
+                userModel.setPassword("");
+                userModel.setLevel(999999);
             }
             conn.close();
+
         } catch (Exception e) {
             System.out.println("e : " + e);
         }
@@ -72,5 +78,4 @@ public class UserModel extends Model {
         return "UserModel{" + "username=" + username + ", password=" + password + ", level=" + level + '}';
     }
 
-    
 }
