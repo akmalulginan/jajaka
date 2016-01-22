@@ -65,8 +65,6 @@ public class TransaksiGudangControl {
                 gudang.getEmail(),
                 gudang.getContactPerson()
             });
-            
-            JOptionPane.showMessageDialog(gudangPanel, gudang.getKodeGudang());
         }
         gudangPanel.getGudangTable().setModel(defaultTableModel);
     }
