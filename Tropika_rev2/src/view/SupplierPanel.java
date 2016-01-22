@@ -3,6 +3,7 @@ package view;
 import control.SupplierControl;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
@@ -99,8 +100,16 @@ public class SupplierPanel extends javax.swing.JPanel {
     public JTextField getNoTelpCs() {
         return noTelpCs;
     }
-    
 
+    public JCheckBox getAktif() {
+        return aktif;
+    }
+
+    public JTabbedPane getPanelInfoSupplier() {
+        return panelInfoSupplier;
+    }
+    
+    
     
     
     /**

@@ -69,15 +69,15 @@ public class SupplierControl {
         if (supplierPanel.getKodeSupplier().getText().isEmpty()) {
             JOptionPane.showMessageDialog(supplierPanel, "Kode supplier harus diisi");
             supplierPanel.getKodeSupplier().requestFocus();
-            
+
         } else if (supplierPanel.getNamaSupplier().getText().isEmpty()) {
             JOptionPane.showMessageDialog(supplierPanel, "Nama supplier harus diisi");
             supplierPanel.getNamaSupplier().requestFocus();
-            
+
         } else if (supplierPanel.getKategori().getText().isEmpty()) {
             JOptionPane.showMessageDialog(supplierPanel, "Kategori supplier harus diisi");
             supplierPanel.getKategori().requestFocus();
-            
+
         } else if (supplierPanel.getAlamat().getText().isEmpty()) {
             JOptionPane.showMessageDialog(supplierPanel, "Alamat supplier harus diisi");
             supplierPanel.getAlamat().requestFocus();
@@ -110,12 +110,15 @@ public class SupplierControl {
             supplierPanel.getAtasNama().requestFocus();
         } else if (supplierPanel.getContactPerson().getText().isEmpty()) {
             JOptionPane.showMessageDialog(supplierPanel, "Contact Person supplier harus diisi");
+            supplierPanel.getPanelInfoSupplier().setSelectedIndex(1);
             supplierPanel.getContactPerson().requestFocus();
         } else if (supplierPanel.getNoTelpCs().getText().isEmpty()) {
             JOptionPane.showMessageDialog(supplierPanel, "No Telp Contact Person supplier harus diisi");
+            supplierPanel.getPanelInfoSupplier().setSelectedIndex(1);
             supplierPanel.getNoTelpCs().requestFocus();
         } else if (supplierPanel.getEmailCs().getText().isEmpty()) {
             JOptionPane.showMessageDialog(supplierPanel, "Email Contact Person supplier harus diisi");
+            supplierPanel.getPanelInfoSupplier().setSelectedIndex(1);
             supplierPanel.getEmailCs().requestFocus();
         } else {
             toReturn = true;
