@@ -38,7 +38,6 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
-        inputCepatKey1 = new javax.swing.JButton();
         jLabel37 = new javax.swing.JLabel();
         inputCepatKey = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -179,21 +178,6 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         jLabel35.setText("   :");
         jPanel8.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(819, 432, -1, 29));
 
-        inputCepatKey1.setBackground(new java.awt.Color(36, 198, 237));
-        inputCepatKey1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        inputCepatKey1.setForeground(new java.awt.Color(40, 40, 40));
-        inputCepatKey1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/input.png"))); // NOI18N
-        inputCepatKey1.setText("Input Cepat");
-        inputCepatKey1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        inputCepatKey1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        inputCepatKey1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        inputCepatKey1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputCepatKey1ActionPerformed(evt);
-            }
-        });
-        jPanel8.add(inputCepatKey1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 46, 115, -1));
-
         jLabel37.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel37.setForeground(new java.awt.Color(40, 40, 40));
         jLabel37.setText("   :");
@@ -209,7 +193,7 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         inputCepatKey.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         inputCepatKey.setIconTextGap(13);
         inputCepatKey.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        jPanel8.add(inputCepatKey, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 46, 100, -1));
+        jPanel8.add(inputCepatKey, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 50, 100, -1));
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(40, 40, 40));
@@ -233,12 +217,10 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
 
         namaUsulan.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         namaUsulan.setForeground(new java.awt.Color(40, 40, 40));
-        namaUsulan.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel8.add(namaUsulan, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 46, 223, 29));
 
         kodeUsulan.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         kodeUsulan.setForeground(new java.awt.Color(40, 40, 40));
-        kodeUsulan.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel8.add(kodeUsulan, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 11, 223, 29));
 
         jLabel36.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -248,7 +230,6 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
 
         tglUsulan.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         tglUsulan.setForeground(new java.awt.Color(40, 40, 40));
-        tglUsulan.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
         jPanel8.add(tglUsulan, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 11, 223, 29));
 
         jTabbedPane1.setBackground(new java.awt.Color(204, 204, 204));
@@ -291,22 +272,18 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
 
         kodeItem.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         kodeItem.setForeground(new java.awt.Color(40, 40, 40));
-        kodeItem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
         jPanel1.add(kodeItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 14, 150, 29));
 
         namaItem.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         namaItem.setForeground(new java.awt.Color(40, 40, 40));
-        namaItem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
         jPanel1.add(namaItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 150, 29));
 
         jPembelian.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPembelian.setForeground(new java.awt.Color(40, 40, 40));
-        jPembelian.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
         jPanel1.add(jPembelian, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 88, 150, 29));
 
         harga.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         harga.setForeground(new java.awt.Color(40, 40, 40));
-        harga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
         jPanel1.add(harga, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 125, 150, 29));
 
         satuan.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -358,22 +335,18 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
 
         koseSupplier.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         koseSupplier.setForeground(new java.awt.Color(40, 40, 40));
-        koseSupplier.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
         jPanel5.add(koseSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 150, 29));
 
         namaSupplier.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         namaSupplier.setForeground(new java.awt.Color(40, 40, 40));
-        namaSupplier.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
         jPanel5.add(namaSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 150, 29));
 
         alamat.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         alamat.setForeground(new java.awt.Color(40, 40, 40));
-        alamat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
         jPanel5.add(alamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 150, 29));
 
         noTelp.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         noTelp.setForeground(new java.awt.Color(40, 40, 40));
-        noTelp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
         jPanel5.add(noTelp, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 150, 29));
 
         email.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -503,11 +476,9 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
 
         noRek.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         noRek.setForeground(new java.awt.Color(40, 40, 40));
-        noRek.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
 
         namaBank.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         namaBank.setForeground(new java.awt.Color(40, 40, 40));
-        namaBank.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
 
         jScrollPane2.setForeground(new java.awt.Color(40, 40, 40));
 
@@ -579,7 +550,6 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
 
         jTextField19.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField19.setForeground(new java.awt.Color(40, 40, 40));
-        jTextField19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -715,19 +685,15 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
 
         kodeLokasi.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         kodeLokasi.setForeground(new java.awt.Color(40, 40, 40));
-        kodeLokasi.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
 
         kodeGudang.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         kodeGudang.setForeground(new java.awt.Color(40, 40, 40));
-        kodeGudang.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
 
         namaLokasi.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         namaLokasi.setForeground(new java.awt.Color(40, 40, 40));
-        namaLokasi.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
 
         tglPenerimaan.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         tglPenerimaan.setForeground(new java.awt.Color(40, 40, 40));
-        tglPenerimaan.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
 
         jLabel49.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel49.setForeground(new java.awt.Color(40, 40, 40));
@@ -845,10 +811,6 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_transferActionPerformed
 
-    private void inputCepatKey1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCepatKey1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputCepatKey1ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField alamat;
@@ -859,7 +821,6 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
     private javax.swing.JCheckBox gudang;
     private javax.swing.JTextField harga;
     private javax.swing.JButton inputCepatKey;
-    private javax.swing.JButton inputCepatKey1;
     private javax.swing.JTextField jHarga;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

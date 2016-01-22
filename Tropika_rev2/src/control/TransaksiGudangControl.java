@@ -5,9 +5,14 @@
  */
 package control;
 
-import javax.swing.JLabel;
-import javax.swing.JTable;
-import model.TransaksiGudangModel;
+import java.awt.Image;
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.GudangModel;
+import model.ItemModel;
+import view.TransaksiGudangPanel;
 
 /**
  *
@@ -15,28 +20,62 @@ import model.TransaksiGudangModel;
  */
 public class TransaksiGudangControl {
 
-    public void update_table(String jenis, JTable table) {
-        String sql = "SELECT "
-                + "kodeGudang AS 'Kode Gudang', "
-                + "alamat AS 'Alamat', "
-                + "kota AS 'Kota', "
-                + "noTelp AS 'Telp', "
-                + "email AS 'Email', "
-                + "contactPerson AS 'CS' "
-                + "FROM gudang";
-        if (jenis.equals("barang")) {
-            sql = "SELECT "
-                    + "kodeItem AS 'Kode Item', "
-                    + "namaItem AS Nama, "
-                    + "gambar AS Gambar "
-                    + "FROM item";
-        }
+    private ItemModel itemModel = new ItemModel();
+    private GudangModel gudangModel = new GudangModel();
 
-        new TransaksiGudangModel().select(sql, table);
-
+    public void setGudang(TransaksiGudangPanel gudangPanel) {
+        int row = gudangPanel.getGudangTable().getSelectedRow();
+        gudangPanel.getKodeGudangText().setText(gudangPanel.getGudangTable().getValueAt(row, 0).toString());
     }
 
-    public void getImage(String kode, JLabel gambarLabel) {
-        new TransaksiGudangModel().getImage(kode, gambarLabel);
+    public void setBarang(TransaksiGudangPanel gudangPanel) {
+        int row = gudangPanel.getItemTable().getSelectedRow();
+        gudangPanel.getKodeItemText().setText(gudangPanel.getItemTable().getValueAt(row, 0).toString());
+        gudangPanel.getNamaItemText().setText(gudangPanel.getItemTable().getValueAt(row, 1).toString());
+    }
+
+    public void populateTable(TransaksiGudangPanel gudangPanel) {
+        poputalteTableGudang(gudangPanel);
+        poputalteTableItem(gudangPanel);
+    }
+
+    public void poputalteTableItem(TransaksiGudangPanel gudangPanel) {
+        ArrayList<ItemModel> itemList = itemModel.select("");
+        DefaultTableModel defaultTableModel = (DefaultTableModel) gudangPanel.getItemTable().getModel();
+        defaultTableModel.setRowCount(0);
+        for (ItemModel item : itemList) {
+            defaultTableModel.addRow(new Object[]{
+                item.getKodeItem(),
+                item.getNamaItem()
+            });
+        }
+        gudangPanel.getItemTable().setModel(defaultTableModel);
+    }
+
+    public void poputalteTableGudang(TransaksiGudangPanel gudangPanel) {
+        ArrayList<GudangModel> gudangList = gudangModel.select();
+        DefaultTableModel defaultTableModel = (DefaultTableModel) gudangPanel.getGudangTable().getModel();
+        defaultTableModel.setRowCount(0);
+        for (GudangModel gudang : gudangList) {
+            defaultTableModel.addRow(new Object[]{
+                gudang.getKodeGudang(),
+                gudang.getAlamat(),
+                gudang.getKota(),
+                gudang.getNoTelp(),
+                gudang.getEmail(),
+                gudang.getContactPerson()
+            });
+            
+            JOptionPane.showMessageDialog(gudangPanel, gudang.getKodeGudang());
+        }
+        gudangPanel.getGudangTable().setModel(defaultTableModel);
+    }
+
+    public void getImage(TransaksiGudangPanel gudangPanel) {
+        ImageIcon gambar = new ImageIcon(itemModel.select(gudangPanel.getKodeItemText().getText()).get(0).getGambar());
+        Image image = gambar.getImage().getScaledInstance(gudangPanel.getGambarLabel().getWidth(), (gudangPanel.getGambarLabel().getWidth() * gambar.getIconHeight()) / gambar.getIconWidth(), java.awt.Image.SCALE_SMOOTH);
+        gambar = new ImageIcon(image);
+
+        gudangPanel.getGambarLabel().setIcon(gambar);
     }
 }

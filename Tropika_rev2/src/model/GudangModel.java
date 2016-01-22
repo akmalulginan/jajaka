@@ -213,28 +213,29 @@ public class GudangModel extends Model {
     }
 
     public ArrayList<GudangModel> select() {
-        ArrayList<GudangModel> list = new ArrayList<>();
+        ArrayList<GudangModel> gudangList = new ArrayList<>();
+        
         try {
             pst = conn.prepareStatement("SELECT * FROM gudang");
             rs = pst.executeQuery();
             while (rs.next()) {
+                GudangModel gudangModel = new GudangModel();
+                gudangModel.setKodeGudang(rs.getString("kodeGudang"));
+                gudangModel.setKategoriGudang(rs.getString("kategoriGudang"));
+                gudangModel.setAlamat(rs.getString("alamat"));
+                gudangModel.setKota(rs.getString("kota"));
+                gudangModel.setKodePos(rs.getString("kodePos"));
+                gudangModel.setNoTelp(rs.getString("noTelp"));
+                gudangModel.setNoFax(rs.getString("noFax"));
+                gudangModel.setEmail(rs.getString("email"));
+                gudangModel.setCatatan(rs.getString("catatan"));
+                gudangModel.setContactPerson(rs.getString("contactPerson"));
+                gudangModel.setPenyimpanan(rs.getBoolean("penyimpanan"));
+                gudangModel.setProduksi(rs.getBoolean("produksi"));
 
-                this.setKodeGudang(rs.getString("kodeGudang"));
-                this.setKategoriGudang(rs.getString("kategoriGudang"));
-                this.setAlamat(rs.getString("alamat"));
-                this.setKota(rs.getString("kota"));
-                this.setKodePos(rs.getString("kodePos"));
-                this.setNoTelp(rs.getString("noTelp"));
-                this.setNoFax(rs.getString("noFax"));
-                this.setEmail(rs.getString("email"));
-                this.setCatatan(rs.getString("catatan"));
-                this.setContactPerson(rs.getString("contactPerson"));
-                this.setPenyimpanan(rs.getBoolean("penyimpanan"));
-                this.setProduksi(rs.getBoolean("produksi"));
-
-                list.add(this);
+                gudangList.add(gudangModel);
             }
-            return list;
+            return gudangList;
         } catch (Exception e) {
             System.out.println("e : " + e);
             return null;

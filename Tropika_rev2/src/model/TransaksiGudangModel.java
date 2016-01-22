@@ -6,6 +6,7 @@
 package model;
 
 import java.awt.Image;
+import java.sql.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -17,6 +18,10 @@ import net.proteanit.sql.DbUtils;
  * @author akmal
  */
 public class TransaksiGudangModel extends Model {
+    private int kodePenyimpanan;
+    private ItemModel item;
+    private GudangModel gudang;
+//    Date waktu
 
     public void select(String sql, JTable table) {
         try {

@@ -6,6 +6,9 @@
 package view;
 
 import control.TransaksiGudangControl;
+import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 
 /**
  *
@@ -13,16 +16,61 @@ import control.TransaksiGudangControl;
  */
 public class TransaksiGudangPanel extends javax.swing.JPanel {
 
-    TransaksiGudangControl tGC = new TransaksiGudangControl();
+    TransaksiGudangControl transaksiGudangControl = new TransaksiGudangControl();
 
     /**
      * Creates new form TransaksiGudangPanel
      */
     public TransaksiGudangPanel() {
         initComponents();
-        tGC.update_table("barang", itemTable);
-        tGC.update_table("", gudangTable);
+        transaksiGudangControl.populateTable(this);
     }
+
+    public JTextField getStockText() {
+        return StockText;
+    }
+
+    public JTextField getBarisText() {
+        return barisText;
+    }
+
+    public JTable getGudangTable() {
+        return gudangTable;
+    }
+
+    public JTable getItemTable() {
+        return itemTable;
+    }
+
+    public JTextField getjBarangMasukText() {
+        return jBarangMasukText;
+    }
+
+    public JTextField getKodeGudangText() {
+        return kodeGudangText;
+    }
+
+    public JTextField getKodeItemText() {
+        return kodeItemText;
+    }
+
+    public JTextField getNamaItemText() {
+        return namaItemText;
+    }
+
+    public JTextField getRakText() {
+        return rakText;
+    }
+
+    public JTextField getTglBarangMasukText() {
+        return tglBarangMasukText;
+    }
+
+    public JLabel getGambarLabel() {
+        return gambarLabel;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -291,7 +339,7 @@ public class TransaksiGudangPanel extends javax.swing.JPanel {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(gambarLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                .addComponent(gambarLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
@@ -322,15 +370,23 @@ public class TransaksiGudangPanel extends javax.swing.JPanel {
 
         gudangTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {},
-                {},
-                {},
-                {}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-
+                "Kode", "Alamat", "Kota", "No. Telp", "Email", "Contact Person"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         gudangTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         gudangTable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         gudangTable.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -347,15 +403,23 @@ public class TransaksiGudangPanel extends javax.swing.JPanel {
 
         itemTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {},
-                {},
-                {},
-                {}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-
+                "Kode", "Nama"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         itemTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 itemTableMouseClicked(evt);
@@ -390,13 +454,11 @@ public class TransaksiGudangPanel extends javax.swing.JPanel {
 
     private void gudangTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gudangTableMouseClicked
         // TODO add your handling code here:
-        kodeGudangText.setText(gudangTable.getValueAt(gudangTable.getSelectedRow(), 0).toString());
+        transaksiGudangControl.setGudang(this);
     }//GEN-LAST:event_gudangTableMouseClicked
 
     private void itemTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemTableMouseClicked
-        namaItemText.setText(itemTable.getValueAt(itemTable.getSelectedRow(), 0).toString());
-        kodeItemText.setText(itemTable.getValueAt(itemTable.getSelectedRow(), 1).toString());
-        new TransaksiGudangControl().getImage(itemTable.getValueAt(itemTable.getSelectedRow(), 0).toString(), gambarLabel);
+        transaksiGudangControl.getImage(this);
     }//GEN-LAST:event_itemTableMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

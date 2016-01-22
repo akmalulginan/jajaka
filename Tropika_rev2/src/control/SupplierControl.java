@@ -99,15 +99,15 @@ public class SupplierControl {
         } else if (supplierPanel.getCatatan().getText().isEmpty()) {
             JOptionPane.showMessageDialog(supplierPanel, "Catatan supplier harus diisi");
             supplierPanel.getCatatan().requestFocus();
+        } else if (supplierPanel.getNamaBank().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(supplierPanel, "Nama bank supplier harus diisi");
+            supplierPanel.getNamaBank().requestFocus();
         } else if (supplierPanel.getNoRek().getText().isEmpty()) {
             JOptionPane.showMessageDialog(supplierPanel, "No rekening supplier harus diisi");
             supplierPanel.getNoRek().requestFocus();
         } else if (supplierPanel.getAtasNama().getText().isEmpty()) {
             JOptionPane.showMessageDialog(supplierPanel, "Atas nama rekening supplier harus diisi");
             supplierPanel.getAtasNama().requestFocus();
-        } else if (supplierPanel.getNamaBank().getText().isEmpty()) {
-            JOptionPane.showMessageDialog(supplierPanel, "Nama bank supplier harus diisi");
-            supplierPanel.getNamaBank().requestFocus();
         } else if (supplierPanel.getContactPerson().getText().isEmpty()) {
             JOptionPane.showMessageDialog(supplierPanel, "Contact Person supplier harus diisi");
             supplierPanel.getContactPerson().requestFocus();
