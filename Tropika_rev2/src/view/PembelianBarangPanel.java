@@ -30,11 +30,11 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
 
         jPanel8 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
-        jHarga = new javax.swing.JTextField();
+        jumlahHargaText = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        ppn = new javax.swing.JTextField();
-        total = new javax.swing.JTextField();
+        ppnText = new javax.swing.JTextField();
+        totalText = new javax.swing.JTextField();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
@@ -44,10 +44,9 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        namaUsulan = new javax.swing.JTextField();
-        kodeUsulan = new javax.swing.JTextField();
+        namaUsulanText = new javax.swing.JTextField();
+        kodeUsulanText = new javax.swing.JTextField();
         jLabel36 = new javax.swing.JLabel();
-        tglUsulan = new javax.swing.JTextField();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -60,7 +59,6 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         namaItem = new javax.swing.JTextField();
         jPembelian = new javax.swing.JTextField();
         harga = new javax.swing.JTextField();
-        satuan = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         keterangan = new javax.swing.JTextPane();
         jPanel5 = new javax.swing.JPanel();
@@ -82,106 +80,98 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
+        satuanText = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        tinai = new javax.swing.JCheckBox();
-        kredit = new javax.swing.JCheckBox();
-        transfer = new javax.swing.JCheckBox();
+        tunaiCheckBox = new javax.swing.JCheckBox();
+        kreditCheckBox = new javax.swing.JCheckBox();
+        transferCheckBox = new javax.swing.JCheckBox();
         jPanel6 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
-        noRek = new javax.swing.JTextField();
-        namaBank = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        atasNama = new javax.swing.JTextPane();
+        noRekeningText = new javax.swing.JTextField();
+        namaBankText = new javax.swing.JTextField();
         jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
+        atasNamaText = new javax.swing.JTextField();
         jLabel44 = new javax.swing.JLabel();
-        jTextField19 = new javax.swing.JTextField();
+        jumlahPembayaranText = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         satu = new javax.swing.JCheckBox();
         dua = new javax.swing.JCheckBox();
         tiga = new javax.swing.JCheckBox();
         jPanel4 = new javax.swing.JPanel();
-        gudang = new javax.swing.JCheckBox();
-        lokasiLain = new javax.swing.JCheckBox();
+        gudangCheckBox = new javax.swing.JCheckBox();
+        lokasiLainCheckBox = new javax.swing.JCheckBox();
         jPanel7 = new javax.swing.JPanel();
-        jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
-        kodeLokasi = new javax.swing.JTextField();
-        kodeGudang = new javax.swing.JTextField();
-        namaLokasi = new javax.swing.JTextField();
-        tglPenerimaan = new javax.swing.JTextField();
-        jLabel49 = new javax.swing.JLabel();
+        kodeGudangText = new javax.swing.JTextField();
+        namaLokasiText = new javax.swing.JTextField();
         jLabel50 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
+        tanggalPenerimaanDate = new com.toedter.calendar.JDateChooser();
+        tanggalDate = new com.toedter.calendar.JDateChooser();
 
         setBackground(new java.awt.Color(231, 231, 231));
         setName("Pembelian Barang"); // NOI18N
         setLayout(new java.awt.GridBagLayout());
 
         jPanel8.setOpaque(false);
-        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel17.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(40, 40, 40));
         jLabel17.setText("Jumlah Harga");
-        jPanel8.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(729, 362, -1, 29));
 
-        jHarga.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jHarga.setForeground(new java.awt.Color(40, 40, 40));
-        jHarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
-        jPanel8.add(jHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(839, 362, 155, 29));
+        jumlahHargaText.setEditable(false);
+        jumlahHargaText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jumlahHargaText.setForeground(new java.awt.Color(40, 40, 40));
+        jumlahHargaText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
 
         jLabel18.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(40, 40, 40));
         jLabel18.setText("PPN(10%)");
-        jPanel8.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(749, 397, -1, 29));
 
         jLabel19.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(40, 40, 40));
         jLabel19.setText("Total");
-        jPanel8.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(779, 432, -1, 29));
 
-        ppn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        ppn.setForeground(new java.awt.Color(40, 40, 40));
-        ppn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
-        jPanel8.add(ppn, new org.netbeans.lib.awtextra.AbsoluteConstraints(839, 397, 155, 29));
+        ppnText.setEditable(false);
+        ppnText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        ppnText.setForeground(new java.awt.Color(40, 40, 40));
+        ppnText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
 
-        total.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        total.setForeground(new java.awt.Color(40, 40, 40));
-        total.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
-        jPanel8.add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(839, 432, 155, 29));
+        totalText.setEditable(false);
+        totalText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        totalText.setForeground(new java.awt.Color(40, 40, 40));
+        totalText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
 
         jLabel33.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(40, 40, 40));
         jLabel33.setText("   :");
-        jPanel8.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(819, 362, -1, 29));
 
         jLabel34.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(40, 40, 40));
         jLabel34.setText("   :");
-        jPanel8.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(819, 397, -1, 29));
 
         jLabel35.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(40, 40, 40));
         jLabel35.setText("   :");
-        jPanel8.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(819, 432, -1, 29));
 
         jLabel37.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel37.setForeground(new java.awt.Color(40, 40, 40));
         jLabel37.setText("   :");
-        jPanel8.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(222, 46, -1, 29));
 
         inputCepatKey.setBackground(new java.awt.Color(36, 198, 237));
         inputCepatKey.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -193,44 +183,32 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         inputCepatKey.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         inputCepatKey.setIconTextGap(13);
         inputCepatKey.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        jPanel8.add(inputCepatKey, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 50, 100, -1));
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(40, 40, 40));
         jLabel1.setText("Kode Usulan");
-        jPanel8.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 11, -1, 29));
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(40, 40, 40));
         jLabel2.setText("Nama Usulan");
-        jPanel8.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 46, -1, 29));
 
         jLabel38.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(40, 40, 40));
         jLabel38.setText("   :");
-        jPanel8.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(592, 11, -1, 29));
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(40, 40, 40));
         jLabel3.setText("Tanggal");
-        jPanel8.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(512, 18, -1, -1));
 
-        namaUsulan.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        namaUsulan.setForeground(new java.awt.Color(40, 40, 40));
-        jPanel8.add(namaUsulan, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 46, 223, 29));
+        namaUsulanText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        namaUsulanText.setForeground(new java.awt.Color(40, 40, 40));
 
-        kodeUsulan.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        kodeUsulan.setForeground(new java.awt.Color(40, 40, 40));
-        jPanel8.add(kodeUsulan, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 11, 223, 29));
+        kodeUsulanText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        kodeUsulanText.setForeground(new java.awt.Color(40, 40, 40));
 
         jLabel36.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(40, 40, 40));
         jLabel36.setText("   :");
-        jPanel8.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(222, 11, -1, 29));
-
-        tglUsulan.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        tglUsulan.setForeground(new java.awt.Color(40, 40, 40));
-        jPanel8.add(tglUsulan, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 11, 223, 29));
 
         jTabbedPane1.setBackground(new java.awt.Color(204, 204, 204));
         jTabbedPane1.setForeground(new java.awt.Color(40, 40, 40));
@@ -238,222 +216,387 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(230, 199, 159));
         jPanel1.setOpaque(false);
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(40, 40, 40));
         jLabel5.setText("Kode Item");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 14, -1, 29));
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(40, 40, 40));
         jLabel6.setText("Nama Item");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 29));
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(40, 40, 40));
         jLabel7.setText("Jumlah Pembelian");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 88, -1, 29));
 
         jLabel8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(40, 40, 40));
         jLabel8.setText("Harga");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 125, -1, 29));
 
         jLabel9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(40, 40, 40));
         jLabel9.setText("Satuan");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 165, -1, 29));
 
         jLabel10.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(40, 40, 40));
         jLabel10.setText("Keterangan");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
 
+        kodeItem.setEditable(false);
         kodeItem.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         kodeItem.setForeground(new java.awt.Color(40, 40, 40));
-        jPanel1.add(kodeItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 14, 150, 29));
 
+        namaItem.setEditable(false);
         namaItem.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         namaItem.setForeground(new java.awt.Color(40, 40, 40));
-        jPanel1.add(namaItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 150, 29));
 
+        jPembelian.setEditable(false);
         jPembelian.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPembelian.setForeground(new java.awt.Color(40, 40, 40));
-        jPanel1.add(jPembelian, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 88, 150, 29));
 
+        harga.setEditable(false);
         harga.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         harga.setForeground(new java.awt.Color(40, 40, 40));
-        jPanel1.add(harga, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 125, 150, 29));
 
-        satuan.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        satuan.setForeground(new java.awt.Color(40, 40, 40));
-        satuan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "........", "Item 1", "Item 2", "Item 3", "Item 4" }));
-        satuan.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
-        jPanel1.add(satuan, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 165, 131, 29));
-
+        keterangan.setEditable(false);
         keterangan.setForeground(new java.awt.Color(40, 40, 40));
         jScrollPane1.setViewportView(keterangan);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 230, 30));
 
         jPanel5.setBackground(new java.awt.Color(230, 199, 159));
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Data Supplier", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14), new java.awt.Color(40, 40, 40))); // NOI18N
         jPanel5.setForeground(new java.awt.Color(40, 40, 40));
         jPanel5.setOpaque(false);
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel11.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(40, 40, 40));
         jLabel11.setText("Kode Supplier");
-        jPanel5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 36, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(40, 40, 40));
         jLabel12.setText("Nama Supplier");
-        jPanel5.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 76, 101, -1));
 
         jLabel13.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(40, 40, 40));
         jLabel13.setText("Alamat");
-        jPanel5.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 116, 72, -1));
 
         jLabel14.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(40, 40, 40));
         jLabel14.setText("Nomor Telepon");
-        jPanel5.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 156, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(40, 40, 40));
         jLabel15.setText("Email");
-        jPanel5.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 36, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(40, 40, 40));
         jLabel16.setText("Contact Person");
-        jPanel5.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 76, -1, -1));
 
+        koseSupplier.setEditable(false);
         koseSupplier.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         koseSupplier.setForeground(new java.awt.Color(40, 40, 40));
-        jPanel5.add(koseSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 150, 29));
 
+        namaSupplier.setEditable(false);
         namaSupplier.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         namaSupplier.setForeground(new java.awt.Color(40, 40, 40));
-        jPanel5.add(namaSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 150, 29));
 
+        alamat.setEditable(false);
         alamat.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         alamat.setForeground(new java.awt.Color(40, 40, 40));
-        jPanel5.add(alamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 150, 29));
 
+        noTelp.setEditable(false);
         noTelp.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         noTelp.setForeground(new java.awt.Color(40, 40, 40));
-        jPanel5.add(noTelp, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 150, 29));
 
         email.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         email.setForeground(new java.awt.Color(40, 40, 40));
-        email.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
-        jPanel5.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(415, 30, 150, 29));
 
         cPerson.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         cPerson.setForeground(new java.awt.Color(40, 40, 40));
-        cPerson.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
-        jPanel5.add(cPerson, new org.netbeans.lib.awtextra.AbsoluteConstraints(415, 70, 150, 29));
 
         jLabel27.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(40, 40, 40));
         jLabel27.setText("   :");
-        jPanel5.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, -1, 29));
 
         jLabel28.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(40, 40, 40));
         jLabel28.setText("   :");
-        jPanel5.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, -1, 29));
 
         jLabel29.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(40, 40, 40));
         jLabel29.setText("   :");
-        jPanel5.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, -1, 29));
 
         jLabel30.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(40, 40, 40));
         jLabel30.setText("   :");
-        jPanel5.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(395, 70, -1, 29));
 
         jLabel31.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(40, 40, 40));
         jLabel31.setText("   :");
-        jPanel5.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(395, 30, -1, 29));
 
         jLabel32.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(40, 40, 40));
         jLabel32.setText("   :");
-        jPanel5.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, -1, 29));
 
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, 580, 220));
+        jButton2.setText("Pilih Supplier");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel27)
+                        .addGap(4, 4, 4)
+                        .addComponent(koseSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel15)
+                        .addGap(61, 61, 61)
+                        .addComponent(jLabel31)
+                        .addGap(4, 4, 4)
+                        .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(95, 95, 95)
+                                .addComponent(jLabel28)))
+                        .addGap(4, 4, 4)
+                        .addComponent(namaSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(95, 95, 95)
+                                .addComponent(jLabel30)))
+                        .addGap(4, 4, 4)
+                        .addComponent(cPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel29)
+                        .addGap(4, 4, 4)
+                        .addComponent(alamat, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(95, 95, 95)
+                                .addComponent(jLabel32))
+                            .addComponent(jLabel14))
+                        .addGap(4, 4, 4)
+                        .addComponent(noTelp, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2)
+                        .addContainerGap())))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(koseSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel15))))
+                .addGap(11, 11, 11)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(namaSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel16))))
+                .addGap(11, 11, 11)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel13))
+                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(alamat, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(11, 11, 11)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel14))
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(noTelp, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(20, 20, 20))
+        );
 
         jLabel20.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(40, 40, 40));
         jLabel20.setText("   :");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 14, -1, 29));
 
         jLabel21.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(40, 40, 40));
         jLabel21.setText("   :");
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, -1, 29));
 
         jLabel22.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(40, 40, 40));
         jLabel22.setText("   :");
-        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 88, -1, 29));
 
         jLabel23.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(40, 40, 40));
         jLabel23.setText("   :");
-        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 125, -1, 29));
 
         jLabel24.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(40, 40, 40));
         jLabel24.setText("   :");
-        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 165, -1, 29));
 
         jLabel26.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(40, 40, 40));
         jLabel26.setText("   :");
-        jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, -1, 29));
+
+        satuanText.setEditable(false);
+        satuanText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        satuanText.setForeground(new java.awt.Color(40, 40, 40));
+
+        jButton1.setText("Pilih Item");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(47, 47, 47)
+                        .addComponent(jLabel20))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(44, 44, 44)
+                        .addComponent(jLabel21))
+                    .addComponent(jLabel7)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(jLabel22))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(72, 72, 72)
+                        .addComponent(jLabel23))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addGap(65, 65, 65)
+                        .addComponent(jLabel24))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addGap(36, 36, 36)
+                        .addComponent(jLabel26)))
+                .addGap(4, 4, 4)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(namaItem, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPembelian, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(harga, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(31, 31, 31))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(kodeItem, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton1))
+                            .addComponent(satuanText, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)))
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(11, 11, 11)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(satuanText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(6, 6, 6)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel10))
+                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(kodeItem, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addComponent(namaItem, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
+                .addComponent(jPembelian, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(harga, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         jTabbedPane1.addTab("Detail", jPanel1);
 
         jPanel2.setBackground(new java.awt.Color(230, 199, 159));
         jPanel2.setOpaque(false);
 
-        tinai.setBackground(new java.awt.Color(230, 199, 159));
-        tinai.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        tinai.setForeground(new java.awt.Color(40, 40, 40));
-        tinai.setText("Tunai");
-        tinai.setBorderPaintedFlat(true);
-        tinai.setOpaque(false);
+        tunaiCheckBox.setBackground(new java.awt.Color(230, 199, 159));
+        tunaiCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        tunaiCheckBox.setForeground(new java.awt.Color(40, 40, 40));
+        tunaiCheckBox.setText("Tunai");
+        tunaiCheckBox.setBorderPaintedFlat(true);
+        tunaiCheckBox.setOpaque(false);
 
-        kredit.setBackground(new java.awt.Color(230, 199, 159));
-        kredit.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        kredit.setForeground(new java.awt.Color(40, 40, 40));
-        kredit.setText("Kredit");
-        kredit.setBorderPaintedFlat(true);
-        kredit.setOpaque(false);
-        kredit.addActionListener(new java.awt.event.ActionListener() {
+        kreditCheckBox.setBackground(new java.awt.Color(230, 199, 159));
+        kreditCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        kreditCheckBox.setForeground(new java.awt.Color(40, 40, 40));
+        kreditCheckBox.setText("Kredit");
+        kreditCheckBox.setBorderPaintedFlat(true);
+        kreditCheckBox.setOpaque(false);
+        kreditCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kreditActionPerformed(evt);
+                kreditCheckBoxActionPerformed(evt);
             }
         });
 
-        transfer.setBackground(new java.awt.Color(230, 199, 159));
-        transfer.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        transfer.setForeground(new java.awt.Color(40, 40, 40));
-        transfer.setText("Transfer");
-        transfer.setBorderPaintedFlat(true);
-        transfer.setOpaque(false);
-        transfer.addActionListener(new java.awt.event.ActionListener() {
+        transferCheckBox.setBackground(new java.awt.Color(230, 199, 159));
+        transferCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        transferCheckBox.setForeground(new java.awt.Color(40, 40, 40));
+        transferCheckBox.setText("Transfer");
+        transferCheckBox.setBorderPaintedFlat(true);
+        transferCheckBox.setOpaque(false);
+        transferCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                transferActionPerformed(evt);
+                transferCheckBoxActionPerformed(evt);
             }
         });
 
@@ -474,16 +617,13 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         jLabel40.setForeground(new java.awt.Color(40, 40, 40));
         jLabel40.setText("Atas Nama");
 
-        noRek.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        noRek.setForeground(new java.awt.Color(40, 40, 40));
+        noRekeningText.setEditable(false);
+        noRekeningText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        noRekeningText.setForeground(new java.awt.Color(40, 40, 40));
 
-        namaBank.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        namaBank.setForeground(new java.awt.Color(40, 40, 40));
-
-        jScrollPane2.setForeground(new java.awt.Color(40, 40, 40));
-
-        atasNama.setForeground(new java.awt.Color(40, 40, 40));
-        jScrollPane2.setViewportView(atasNama);
+        namaBankText.setEditable(false);
+        namaBankText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        namaBankText.setForeground(new java.awt.Color(40, 40, 40));
 
         jLabel41.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel41.setForeground(new java.awt.Color(40, 40, 40));
@@ -496,6 +636,10 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         jLabel43.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(40, 40, 40));
         jLabel43.setText("   :");
+
+        atasNamaText.setEditable(false);
+        atasNamaText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        atasNamaText.setForeground(new java.awt.Color(40, 40, 40));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -518,29 +662,28 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
                         .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(10, 10, 10)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(noRek)
-                    .addComponent(namaBank)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(noRekeningText, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
+                    .addComponent(namaBankText)
+                    .addComponent(atasNamaText))
                 .addGap(107, 107, 107))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(noRek, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(noRekeningText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
                     .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(namaBank, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(namaBankText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel39))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel40)
-                        .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane2))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel40)
+                    .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(atasNamaText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 9, Short.MAX_VALUE))
         );
 
@@ -548,8 +691,8 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         jLabel44.setForeground(new java.awt.Color(40, 40, 40));
         jLabel44.setText("Jumlah Uang yang di Bayarkan");
 
-        jTextField19.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField19.setForeground(new java.awt.Color(40, 40, 40));
+        jumlahPembayaranText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jumlahPembayaranText.setForeground(new java.awt.Color(40, 40, 40));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -560,16 +703,16 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(70, 70, 70)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(transfer)
-                            .addComponent(kredit)
-                            .addComponent(tinai))
+                            .addComponent(transferCheckBox)
+                            .addComponent(kreditCheckBox)
+                            .addComponent(tunaiCheckBox))
                         .addGap(35, 35, 35)
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(187, 187, 187)
                         .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField19)))
+                        .addComponent(jumlahPembayaranText)))
                 .addContainerGap(214, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -578,18 +721,18 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(tinai, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tunaiCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(kredit, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(kreditCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(transfer, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(transferCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel44)
-                    .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jumlahPembayaranText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(61, Short.MAX_VALUE))
         );
 
@@ -648,28 +791,24 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         jPanel4.setBackground(new java.awt.Color(230, 199, 159));
         jPanel4.setOpaque(false);
 
-        gudang.setBackground(new java.awt.Color(230, 199, 159));
-        gudang.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        gudang.setForeground(new java.awt.Color(40, 40, 40));
-        gudang.setText("Gudang");
-        gudang.setBorderPaintedFlat(true);
-        gudang.setOpaque(false);
+        gudangCheckBox.setBackground(new java.awt.Color(230, 199, 159));
+        gudangCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        gudangCheckBox.setForeground(new java.awt.Color(40, 40, 40));
+        gudangCheckBox.setText("Gudang");
+        gudangCheckBox.setBorderPaintedFlat(true);
+        gudangCheckBox.setOpaque(false);
 
-        lokasiLain.setBackground(new java.awt.Color(230, 199, 159));
-        lokasiLain.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        lokasiLain.setForeground(new java.awt.Color(40, 40, 40));
-        lokasiLain.setText("Lokasi Lian");
-        lokasiLain.setBorderPaintedFlat(true);
-        lokasiLain.setOpaque(false);
+        lokasiLainCheckBox.setBackground(new java.awt.Color(230, 199, 159));
+        lokasiLainCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lokasiLainCheckBox.setForeground(new java.awt.Color(40, 40, 40));
+        lokasiLainCheckBox.setText("Lokasi Lian");
+        lokasiLainCheckBox.setBorderPaintedFlat(true);
+        lokasiLainCheckBox.setOpaque(false);
 
         jPanel7.setBackground(new java.awt.Color(230, 199, 159));
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
         jPanel7.setForeground(new java.awt.Color(40, 40, 40));
         jPanel7.setOpaque(false);
-
-        jLabel45.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel45.setForeground(new java.awt.Color(40, 40, 40));
-        jLabel45.setText("Kode Lokasi");
 
         jLabel46.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel46.setForeground(new java.awt.Color(40, 40, 40));
@@ -683,21 +822,12 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         jLabel48.setForeground(new java.awt.Color(40, 40, 40));
         jLabel48.setText("Tanggal Penerimaan");
 
-        kodeLokasi.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        kodeLokasi.setForeground(new java.awt.Color(40, 40, 40));
+        kodeGudangText.setEditable(false);
+        kodeGudangText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        kodeGudangText.setForeground(new java.awt.Color(40, 40, 40));
 
-        kodeGudang.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        kodeGudang.setForeground(new java.awt.Color(40, 40, 40));
-
-        namaLokasi.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        namaLokasi.setForeground(new java.awt.Color(40, 40, 40));
-
-        tglPenerimaan.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        tglPenerimaan.setForeground(new java.awt.Color(40, 40, 40));
-
-        jLabel49.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel49.setForeground(new java.awt.Color(40, 40, 40));
-        jLabel49.setText("   :");
+        namaLokasiText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        namaLokasiText.setForeground(new java.awt.Color(40, 40, 40));
 
         jLabel50.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel50.setForeground(new java.awt.Color(40, 40, 40));
@@ -711,17 +841,15 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         jLabel52.setForeground(new java.awt.Color(40, 40, 40));
         jLabel52.setText("   :");
 
+        tanggalPenerimaanDate.setDateFormatString("dd-MM-yyyy");
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(51, 51, 51)
+                .addGap(55, 55, 55)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel45)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -735,37 +863,32 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(10, 10, 10)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(kodeLokasi, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(kodeGudang, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(namaLokasi, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tglPenerimaan, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50))
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(kodeGudangText)
+                    .addComponent(namaLokasiText)
+                    .addComponent(tanggalPenerimaanDate, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(46, 46, 46))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel45)
-                    .addComponent(kodeLokasi, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(40, 40, 40)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel46)
-                    .addComponent(kodeGudang, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(kodeGudangText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel47)
-                    .addComponent(namaLokasi, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(namaLokasiText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel48)
-                    .addComponent(tglPenerimaan, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel48)
+                        .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tanggalPenerimaanDate, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -775,8 +898,8 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(106, 106, 106)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lokasiLain)
-                    .addComponent(gudang))
+                    .addComponent(lokasiLainCheckBox)
+                    .addComponent(gudangCheckBox))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(253, Short.MAX_VALUE))
@@ -787,9 +910,9 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(59, 59, 59)
-                        .addComponent(gudang, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(gudangCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lokasiLain, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lokasiLainCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -798,30 +921,120 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Detail Transfer Barang", jPanel4);
 
-        jPanel8.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 81, -1, -1));
+        tanggalDate.setDateFormatString("dd-MM-yyyy");
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(121, 121, 121)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(21, 21, 21)
+                                .addComponent(jLabel36)
+                                .addGap(4, 4, 4)
+                                .addComponent(kodeUsulanText, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(47, 47, 47)
+                                .addComponent(jLabel3)
+                                .addGap(28, 28, 28)
+                                .addComponent(jLabel38)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tanggalDate, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel37)
+                                .addGap(4, 4, 4)
+                                .addComponent(namaUsulanText, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addGap(4, 4, 4)
+                        .addComponent(jLabel33)
+                        .addGap(4, 4, 4)
+                        .addComponent(jumlahHargaText, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel18)
+                        .addGap(5, 5, 5)
+                        .addComponent(jLabel34)
+                        .addGap(4, 4, 4)
+                        .addComponent(ppnText, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel19)
+                        .addGap(8, 8, 8)
+                        .addComponent(jLabel35)
+                        .addGap(4, 4, 4)
+                        .addComponent(totalText, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputCepatKey, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(kodeUsulanText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel8Layout.createSequentialGroup()
+                            .addGap(7, 7, 7)
+                            .addComponent(jLabel3))
+                        .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tanggalDate, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(namaUsulanText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jumlahHargaText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ppnText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(totalText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addComponent(inputCepatKey))
+        );
 
         add(jPanel8, new java.awt.GridBagConstraints());
     }// </editor-fold>//GEN-END:initComponents
 
-    private void kreditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kreditActionPerformed
+    private void kreditCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kreditCheckBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_kreditActionPerformed
+    }//GEN-LAST:event_kreditCheckBoxActionPerformed
 
-    private void transferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transferActionPerformed
+    private void transferCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transferCheckBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_transferActionPerformed
+    }//GEN-LAST:event_transferCheckBoxActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField alamat;
-    private javax.swing.JTextPane atasNama;
+    private javax.swing.JTextField atasNamaText;
     private javax.swing.JTextField cPerson;
     private javax.swing.JCheckBox dua;
     private javax.swing.JTextField email;
-    private javax.swing.JCheckBox gudang;
+    private javax.swing.JCheckBox gudangCheckBox;
     private javax.swing.JTextField harga;
     private javax.swing.JButton inputCepatKey;
-    private javax.swing.JTextField jHarga;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -860,11 +1073,9 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
@@ -883,32 +1094,31 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JTextField jPembelian;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField19;
+    private javax.swing.JTextField jumlahHargaText;
+    private javax.swing.JTextField jumlahPembayaranText;
     private javax.swing.JTextPane keterangan;
-    private javax.swing.JTextField kodeGudang;
+    private javax.swing.JTextField kodeGudangText;
     private javax.swing.JTextField kodeItem;
-    private javax.swing.JTextField kodeLokasi;
-    private javax.swing.JTextField kodeUsulan;
+    private javax.swing.JTextField kodeUsulanText;
     private javax.swing.JTextField koseSupplier;
-    private javax.swing.JCheckBox kredit;
-    private javax.swing.JCheckBox lokasiLain;
-    private javax.swing.JTextField namaBank;
+    private javax.swing.JCheckBox kreditCheckBox;
+    private javax.swing.JCheckBox lokasiLainCheckBox;
+    private javax.swing.JTextField namaBankText;
     private javax.swing.JTextField namaItem;
-    private javax.swing.JTextField namaLokasi;
+    private javax.swing.JTextField namaLokasiText;
     private javax.swing.JTextField namaSupplier;
-    private javax.swing.JTextField namaUsulan;
-    private javax.swing.JTextField noRek;
+    private javax.swing.JTextField namaUsulanText;
+    private javax.swing.JTextField noRekeningText;
     private javax.swing.JTextField noTelp;
-    private javax.swing.JTextField ppn;
+    private javax.swing.JTextField ppnText;
     private javax.swing.JCheckBox satu;
-    private javax.swing.JComboBox satuan;
-    private javax.swing.JTextField tglPenerimaan;
-    private javax.swing.JTextField tglUsulan;
+    private javax.swing.JTextField satuanText;
+    private com.toedter.calendar.JDateChooser tanggalDate;
+    private com.toedter.calendar.JDateChooser tanggalPenerimaanDate;
     private javax.swing.JCheckBox tiga;
-    private javax.swing.JCheckBox tinai;
-    private javax.swing.JTextField total;
-    private javax.swing.JCheckBox transfer;
+    private javax.swing.JTextField totalText;
+    private javax.swing.JCheckBox transferCheckBox;
+    private javax.swing.JCheckBox tunaiCheckBox;
     // End of variables declaration//GEN-END:variables
 }

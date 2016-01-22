@@ -155,24 +155,45 @@ public class LevelModel extends Model {
     public void setLaporanPenjualan(boolean laporanPenjualan) {
         this.laporanPenjualan = laporanPenjualan;
     }
-    
-    public LevelModel select(int level){
+
+    public LevelModel select(int id) {
         LevelModel levelModel = new LevelModel();
-        
+
         String query = "SELECT * FROM level WHERE level.level = ?";
         try {
+            conn = SqliteConnection.getInstance().getConnection();
             pst = conn.prepareStatement(query);
-            pst.setInt(1, level);
+            pst.setInt(1, id);
             rs = pst.executeQuery();
-            
+
             if (rs.next()) {
                 levelModel.setLevel(rs.getInt("level"));
                 levelModel.setPengguna(rs.getBoolean("pengguna"));
-                levelModel.setPengguna(rs.getBoolean("hakAkses"));
+                levelModel.setHakAkses(rs.getBoolean("hakAkses"));
+                levelModel.setGudang(rs.getBoolean("gudang"));
+                levelModel.setItem(rs.getBoolean("item"));
+                levelModel.setHarga(rs.getBoolean("harga"));
+                levelModel.setKategori(rs.getBoolean("kategori"));
+                levelModel.setSatuan(rs.getBoolean("satuan"));
+                levelModel.setSupplier(rs.getBoolean("supplier"));
+                levelModel.setPembelian(rs.getBoolean("pembelian"));
+                levelModel.setPenjualan(rs.getBoolean("penjualan"));
+                levelModel.setTransaksiGudang(rs.getBoolean("transaksiGudang"));
+                levelModel.setTransaksi(rs.getBoolean("transaksi"));
+                levelModel.setLaporanGudang(rs.getBoolean("laporanGudang"));
+                levelModel.setLaporanPembelian(rs.getBoolean("laporanPembelian"));
+                levelModel.setLaporanPenjualan(rs.getBoolean("laporanPenjualan"));
             }
+            conn.close();
         } catch (Exception e) {
+            System.out.println("e : " + e);
         }
-        return null;
+        return levelModel;
     }
-    
+
+    @Override
+    public String toString() {
+        return "LevelModel{" + "level=" + level + ", pengguna=" + pengguna + ", hakAkses=" + hakAkses + ", gudang=" + gudang + ", item=" + item + ", harga=" + harga + ", kategori=" + kategori + ", satuan=" + satuan + ", supplier=" + supplier + ", pembelian=" + pembelian + ", penjualan=" + penjualan + ", transaksiGudang=" + transaksiGudang + ", transaksi=" + transaksi + ", laporanGudang=" + laporanGudang + ", laporanPembelian=" + laporanPembelian + ", laporanPenjualan=" + laporanPenjualan + '}';
+    }
+
 }
