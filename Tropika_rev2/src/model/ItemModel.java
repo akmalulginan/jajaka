@@ -247,7 +247,7 @@ public class ItemModel extends Model {
         String query = "SELECT * FROM item";
 
         if (!cari.isEmpty()) {
-            query = query + " WHERE kategori LIKE '%" + cari + "%'";
+            query = query + " WHERE kategori LIKE '%" + cari + "%' OR kodeItem LIKE '%" + cari + "%'";
         }
 
         ArrayList<ItemModel> itemList = new ArrayList<>();

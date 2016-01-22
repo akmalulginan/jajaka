@@ -458,7 +458,7 @@ public class TransaksiGudangPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_gudangTableMouseClicked
 
     private void itemTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemTableMouseClicked
-        transaksiGudangControl.getImage(this);
+        transaksiGudangControl.getDataItem(this);
     }//GEN-LAST:event_itemTableMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

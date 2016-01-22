@@ -69,8 +69,16 @@ public class TransaksiGudangControl {
         gudangPanel.getGudangTable().setModel(defaultTableModel);
     }
 
-    public void getImage(TransaksiGudangPanel gudangPanel) {
-        ImageIcon gambar = new ImageIcon(itemModel.select(gudangPanel.getKodeItemText().getText()).get(0).getGambar());
+    public void getDataItem(TransaksiGudangPanel gudangPanel) {
+        int row = gudangPanel.getItemTable().getSelectedRow();
+        gudangPanel.getKodeItemText().setText(gudangPanel.getItemTable().getValueAt(row, 0).toString());
+        gudangPanel.getNamaItemText().setText(gudangPanel.getItemTable().getValueAt(row, 1).toString());
+        getImage(gudangPanel, gudangPanel.getItemTable().getValueAt(row, 0).toString());
+        
+    }
+
+    public void getImage(TransaksiGudangPanel gudangPanel, String kodeItem) {
+        ImageIcon gambar = new ImageIcon(itemModel.select(kodeItem).get(0).getGambar());
         Image image = gambar.getImage().getScaledInstance(gudangPanel.getGambarLabel().getWidth(), (gudangPanel.getGambarLabel().getWidth() * gambar.getIconHeight()) / gambar.getIconWidth(), java.awt.Image.SCALE_SMOOTH);
         gambar = new ImageIcon(image);
 
