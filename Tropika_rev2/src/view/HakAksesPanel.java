@@ -10,7 +10,6 @@ import javax.swing.JTabbedPane;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author sipit
@@ -21,7 +20,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
      * Creates new form FormHakAkses
      */
     private HakAksesControl hakAksesControl = new HakAksesControl();
-    
+
     public HakAksesPanel() {
         initComponents();
         hakAksesControl.loadLevel(this);
@@ -90,8 +89,6 @@ public class HakAksesPanel extends javax.swing.JPanel {
     public JCheckBox getTransaksiGudangCheckBox() {
         return transaksiGudangCheckBox;
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -134,6 +131,8 @@ public class HakAksesPanel extends javax.swing.JPanel {
         laporanGudangCheckBox = new javax.swing.JCheckBox();
         laporanPembelianCheckBox = new javax.swing.JCheckBox();
         laporanPenjualanCheckBox = new javax.swing.JCheckBox();
+        baruKey2 = new javax.swing.JButton();
+        baruKey3 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(231, 231, 231));
         setName("Hak Akses"); // NOI18N
@@ -231,7 +230,6 @@ public class HakAksesPanel extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(40, 40, 40));
         jLabel2.setText("Level");
 
-        baruKey1.setBackground(new java.awt.Color(36, 198, 237));
         baruKey1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         baruKey1.setForeground(new java.awt.Color(40, 40, 40));
         baruKey1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/process.png"))); // NOI18N
@@ -254,7 +252,6 @@ public class HakAksesPanel extends javax.swing.JPanel {
         jTabbedPane1.setBackground(new java.awt.Color(204, 204, 204));
         jTabbedPane1.setForeground(new java.awt.Color(40, 40, 40));
         jTabbedPane1.setToolTipText("");
-        jTabbedPane1.setEnabled(false);
         jTabbedPane1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
         jPanel2.setBackground(new java.awt.Color(230, 199, 159));
@@ -265,7 +262,6 @@ public class HakAksesPanel extends javax.swing.JPanel {
         penggunaCheckBox.setForeground(new java.awt.Color(40, 40, 40));
         penggunaCheckBox.setText("Pengguna");
         penggunaCheckBox.setBorderPaintedFlat(true);
-        penggunaCheckBox.setEnabled(false);
         penggunaCheckBox.setOpaque(false);
 
         hakAksesCheckBox.setBackground(new java.awt.Color(230, 199, 159));
@@ -273,7 +269,6 @@ public class HakAksesPanel extends javax.swing.JPanel {
         hakAksesCheckBox.setForeground(new java.awt.Color(40, 40, 40));
         hakAksesCheckBox.setText("Hak Akses");
         hakAksesCheckBox.setBorderPaintedFlat(true);
-        hakAksesCheckBox.setEnabled(false);
         hakAksesCheckBox.setOpaque(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -494,31 +489,68 @@ public class HakAksesPanel extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Laporan", jPanel5);
 
+        baruKey2.setBackground(new java.awt.Color(255, 255, 255));
+        baruKey2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        baruKey2.setForeground(new java.awt.Color(40, 40, 40));
+        baruKey2.setText("Tambah Level");
+        baruKey2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        baruKey2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        baruKey2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        baruKey2.setIconTextGap(23);
+        baruKey2.setPreferredSize(new java.awt.Dimension(95, 29));
+        baruKey2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                baruKey2ActionPerformed(evt);
+            }
+        });
+
+        baruKey3.setBackground(new java.awt.Color(255, 255, 255));
+        baruKey3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        baruKey3.setForeground(new java.awt.Color(40, 40, 40));
+        baruKey3.setText("Cancel");
+        baruKey3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        baruKey3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        baruKey3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        baruKey3.setIconTextGap(23);
+        baruKey3.setPreferredSize(new java.awt.Dimension(49, 29));
+        baruKey3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                baruKey3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(levelComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(baruKey1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(baruKey2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(baruKey3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(223, 223, 223)
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(levelComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(baruKey1))
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(levelComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(baruKey1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(levelComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(baruKey1))
+                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(baruKey2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(baruKey3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -546,9 +578,20 @@ public class HakAksesPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_baruKey1ActionPerformed
 
+    private void baruKey2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_baruKey2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_baruKey2ActionPerformed
+
+    private void baruKey3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_baruKey3ActionPerformed
+        // TODO add your handling code here:
+        hakAksesControl.clear(this);
+    }//GEN-LAST:event_baruKey3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton baruKey1;
+    private javax.swing.JButton baruKey2;
+    private javax.swing.JButton baruKey3;
     private javax.swing.JCheckBox gudangCheckBox;
     private javax.swing.JCheckBox hakAksesCheckBox;
     private javax.swing.JCheckBox hargaCheckBox;

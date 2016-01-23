@@ -19,21 +19,70 @@ public class HakAksesControl {
 
     public void loadLevel(HakAksesPanel hakAksesPanel) {
         ArrayList<LevelModel> levelList = levelModel.select("");
-        
+
         hakAksesPanel.getLevelComboBox().removeAllItems();
         hakAksesPanel.getLevelComboBox().addItem("");
-        
-        
+
         for (LevelModel level : levelList) {
             hakAksesPanel.getLevelComboBox().addItem(level.getLevel());
         }
     }
-    
-    public static void main(String[] args) {
-        ArrayList<LevelModel> levelList = new LevelModel().select("");
 
-        for (LevelModel level : levelList) {
-            System.out.println(level.getLevel());
-        }
+    public void clear(HakAksesPanel hakAksesPanel) {
+        hakAksesPanel.getjTabbedPane1().setSelectedIndex(0);
+        hakAksesPanel.getLevelComboBox().setSelectedIndex(0);
+        hakAksesPanel.getPenggunaCheckBox().setSelected(false);
+        hakAksesPanel.getHakAksesCheckBox().setSelected(false);
+        hakAksesPanel.getGudangCheckBox().setSelected(false);
+        hakAksesPanel.getItemCheckBox().setSelected(false);
+        hakAksesPanel.getHargaCheckBox().setSelected(false);
+        hakAksesPanel.getKategoriCheckBox().setSelected(false);
+        hakAksesPanel.getSupplierCheckBox().setSelected(false);
+        hakAksesPanel.getPembelianCheckBox().setSelected(false);
+        hakAksesPanel.getPenjualanCheckBox().setSelected(false);
+        hakAksesPanel.getTransaksiGudangCheckBox().setSelected(false);
+        hakAksesPanel.getTransaksiCheckBox().setSelected(false);
+        hakAksesPanel.getLaporanGudangCheckBox().setSelected(false);
+        hakAksesPanel.getLaporanPembelianCheckBox().setSelected(false);
+        hakAksesPanel.getLaporanPenjualanCheckBox().setSelected(false);
     }
+
+    public void disable(HakAksesPanel hakAksesPanel) {
+        hakAksesPanel.getjTabbedPane1().setEnabled(false);
+        hakAksesPanel.getLevelComboBox();
+        hakAksesPanel.getPenggunaCheckBox();
+        hakAksesPanel.getHakAksesCheckBox();
+        hakAksesPanel.getGudangCheckBox();
+        hakAksesPanel.getItemCheckBox();
+        hakAksesPanel.getHargaCheckBox();
+        hakAksesPanel.getKategoriCheckBox();
+        hakAksesPanel.getSupplierCheckBox();
+        hakAksesPanel.getPembelianCheckBox();
+        hakAksesPanel.getPenjualanCheckBox();
+        hakAksesPanel.getTransaksiGudangCheckBox();
+        hakAksesPanel.getTransaksiCheckBox();
+        hakAksesPanel.getLaporanGudangCheckBox();
+        hakAksesPanel.getLaporanPembelianCheckBox();
+        hakAksesPanel.getLaporanPenjualanCheckBox();
+    }
+
+    public void enable(HakAksesPanel hakAksesPanel) {
+        hakAksesPanel.getjTabbedPane1();
+        hakAksesPanel.getLevelComboBox();
+        hakAksesPanel.getPenggunaCheckBox();
+        hakAksesPanel.getHakAksesCheckBox();
+        hakAksesPanel.getGudangCheckBox();
+        hakAksesPanel.getItemCheckBox();
+        hakAksesPanel.getHargaCheckBox();
+        hakAksesPanel.getKategoriCheckBox();
+        hakAksesPanel.getSupplierCheckBox();
+        hakAksesPanel.getPembelianCheckBox();
+        hakAksesPanel.getPenjualanCheckBox();
+        hakAksesPanel.getTransaksiGudangCheckBox();
+        hakAksesPanel.getTransaksiCheckBox();
+        hakAksesPanel.getLaporanGudangCheckBox();
+        hakAksesPanel.getLaporanPembelianCheckBox();
+        hakAksesPanel.getLaporanPenjualanCheckBox();
+    }
+
 }
