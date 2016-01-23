@@ -298,6 +298,9 @@
               <Insets value="[2, 2, 2, 2]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputCepatKeyActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
@@ -1438,8 +1441,8 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="dua" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
                               <Component id="tiga" min="-2" max="-2" attributes="0"/>
-                              <Component id="dua" min="-2" max="-2" attributes="0"/>
                               <Component id="satu" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="816" max="32767" attributes="0"/>
