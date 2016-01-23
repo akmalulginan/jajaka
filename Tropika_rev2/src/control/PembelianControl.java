@@ -61,15 +61,21 @@ public class PembelianControl {
         }else if(pembelianPanel.getTanggalDate().getDate() == null){
             JOptionPane.showMessageDialog(pembelianPanel, "Tanggal tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
             pembelianPanel.getTanggalDate().requestFocus();
-        }else if(pembelianPanel.getNamaUsulanText().getText().isEmpty()){
-            JOptionPane.showMessageDialog(pembelianPanel, "Nama Usulan tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
-            pembelianPanel.getNamaUsulanText().requestFocus();
-        }else if(pembelianPanel.getNamaUsulanText().getText().isEmpty()){
-            JOptionPane.showMessageDialog(pembelianPanel, "Nama Usulan tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
-            pembelianPanel.getNamaUsulanText().requestFocus();
-        }else if(pembelianPanel.getNamaUsulanText().getText().isEmpty()){
-            JOptionPane.showMessageDialog(pembelianPanel, "Nama Usulan tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
-            pembelianPanel.getNamaUsulanText().requestFocus();
+        }else if(!pembelianPanel.getTunaiCheckBox().isSelected() && !pembelianPanel.getKreditCheckBox().isSelected() && !pembelianPanel.getTransferCheckBox().isSelected()){
+            JOptionPane.showMessageDialog(pembelianPanel, "Pilih salah satu jenis Pembelian !", "Error", JOptionPane.ERROR_MESSAGE);
+        }else if(pembelianPanel.getJumlahPembayaranText().getText().isEmpty()){
+            JOptionPane.showMessageDialog(pembelianPanel, "Jumlah uang yang dibayarkan tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
+            pembelianPanel.getJumlahPembayaranText().requestFocus();
+        }else if(!pembelianPanel.getSatu().isSelected() && !pembelianPanel.getDua().isSelected() && !pembelianPanel.getTiga().isSelected()){
+            JOptionPane.showMessageDialog(pembelianPanel, "Pilih salah satu Persetujuan !", "Error", JOptionPane.ERROR_MESSAGE);
+        }else if(!pembelianPanel.getGudangCheckBox().isSelected() && !pembelianPanel.getLokasiLainCheckBox().isSelected()){
+            JOptionPane.showMessageDialog(pembelianPanel, "Pilih salah satu tempat Penyimpanan !", "Error", JOptionPane.ERROR_MESSAGE);
+        }else if(pembelianPanel.getNamaLokasiText().getText().isEmpty()){
+            JOptionPane.showMessageDialog(pembelianPanel, "Nama lokasi tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
+            pembelianPanel.getNamaLokasiText().requestFocus();
+        }else if(pembelianPanel.getTanggalPenerimaanDate().getDate() == null){
+            JOptionPane.showMessageDialog(pembelianPanel, "Tanggal Penerimaan tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
+            pembelianPanel.getTanggalPenerimaanDate().requestFocus();
         }else{
              toReturn = true;
         }
