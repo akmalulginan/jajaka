@@ -13,6 +13,7 @@ import model.LevelModel;
 import model.UserLoginModel;
 import model.UserModel;
 import view.Login;
+import view.MainMenu;
 
 /**
  *
@@ -33,6 +34,7 @@ public class LoginControl {
                 userLoginModel.setPassword(userModel.getPassword());
                 userLoginModel.setLevel(userModel.getLevel());
                 userLoginModel.setLevelModel(levelModel.select(userLoginModel.getLevel()));
+                hakAkses(userLoginModel);
             } else {
                 JOptionPane.showMessageDialog(login, "username atau password salah");
             }
@@ -45,8 +47,28 @@ public class LoginControl {
         userModel.setPassword(login.getPasswordText().getText());
     }
 
-    public void hakAkses() {
+    public void hakAkses(UserLoginModel user) {
+        MainMenu mainMenu = new MainMenu();
+        System.out.println(user.toString() + user.getLevelModel().toString());
 
+//        level.isSatuan();
+
+        mainMenu.getGudangButton().setEnabled(user.getLevelModel().isGudang());
+        mainMenu.getItemButton().setEnabled(user.getLevelModel().isItem());
+        mainMenu.getHargaButton().setEnabled(user.getLevelModel().isHarga());
+        mainMenu.getKelompokButton().setEnabled(user.getLevelModel().isKategori());
+        mainMenu.getSupplierButton().setEnabled(user.getLevelModel().isSupplier());
+        mainMenu.getUserButton().setEnabled(user.getLevelModel().isPengguna());
+        mainMenu.getHakAksesButton().setEnabled(user.getLevelModel().isHakAkses());
+        mainMenu.getLaporanGudangButton().setEnabled(user.getLevelModel().isLaporanGudang());
+        mainMenu.getLaporanPembelianButton().setEnabled(user.getLevelModel().isLaporanPembelian());
+        mainMenu.getLaporanPenjualanButton().setEnabled(user.getLevelModel().isLaporanPenjualan());
+        mainMenu.getPembelianButton().setEnabled(user.getLevelModel().isPembelian());
+        mainMenu.getPenjualanButton().setEnabled(user.getLevelModel().isPenjualan());
+        mainMenu.getTransaksiButton().setEnabled(user.getLevelModel().isTransaksi());
+        mainMenu.getTransaksiGudangButton().setEnabled(user.getLevelModel().isTransaksiGudang());
+        
+        mainMenu.setVisible(true);
     }
 
     public boolean validasi(Login login) {

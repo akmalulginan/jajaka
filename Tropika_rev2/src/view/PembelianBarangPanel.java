@@ -458,9 +458,11 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         noTelp.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         noTelp.setForeground(new java.awt.Color(40, 40, 40));
 
+        email.setEditable(false);
         email.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         email.setForeground(new java.awt.Color(40, 40, 40));
 
+        cPerson.setEditable(false);
         cPerson.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         cPerson.setForeground(new java.awt.Color(40, 40, 40));
 
@@ -665,7 +667,8 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
                                 .addComponent(jButton1))
                             .addComponent(satuanText, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)))
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
