@@ -6,9 +6,17 @@
 package control;
 
 //import model.UserLoginModel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.awt.event.KeyEvent;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import javax.swing.Timer;
 import model.LevelModel;
 import model.UserLoginModel;
 import model.UserModel;
@@ -33,7 +41,8 @@ public class LoginControl {
                 userLoginModel.setUsername(userModel.getUsername());
                 userLoginModel.setPassword(userModel.getPassword());
                 userLoginModel.setLevel(userModel.getLevel());
-                userLoginModel.setLevelModel(levelModel.select(userLoginModel.getLevel()));
+                userLoginModel.setLevelModel(levelModel.select(userLoginModel.getLevel() + "").get(0));
+                login.dispose();
                 hakAkses(userLoginModel);
             } else {
                 JOptionPane.showMessageDialog(login, "username atau password salah");
@@ -52,7 +61,6 @@ public class LoginControl {
         System.out.println(user.toString() + user.getLevelModel().toString());
 
 //        level.isSatuan();
-
         mainMenu.getGudangButton().setEnabled(user.getLevelModel().isGudang());
         mainMenu.getItemButton().setEnabled(user.getLevelModel().isItem());
         mainMenu.getHargaButton().setEnabled(user.getLevelModel().isHarga());
@@ -67,7 +75,7 @@ public class LoginControl {
         mainMenu.getPenjualanButton().setEnabled(user.getLevelModel().isPenjualan());
         mainMenu.getTransaksiButton().setEnabled(user.getLevelModel().isTransaksi());
         mainMenu.getTransaksiGudangButton().setEnabled(user.getLevelModel().isTransaksiGudang());
-        
+
         mainMenu.setVisible(true);
     }
 
@@ -93,6 +101,21 @@ public class LoginControl {
                 System.out.println("e : " + e);
             }
         }
+    }
+
+    public void setTime(Login login) {
+        Timer timer = new Timer(500, new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                updateTime(login);
+            }
+        });
+        timer.start();
+    }
+
+    protected void updateTime(Login login) {
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        Date date = new Date();
+        login.getDateLabel().setText(dateFormat.format(new Date()));
     }
 
 }

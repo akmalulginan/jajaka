@@ -7,14 +7,12 @@ package view;
 
 //import com.util.FormUtil;
 import control.LoginControl;
-import java.awt.event.KeyEvent;
 import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import javax.swing.JOptionPane;
+import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import javax.swing.UIManager;
 
 /**
  *
@@ -31,10 +29,7 @@ public class Login extends javax.swing.JFrame {
 //        initComponents();
         setUndecorated(true);
         initComponents();
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        Date date = new Date();
-        dateLabel.setText(dateFormat.format(date));
-
+        loginControl.setTime(this);
     }
 
     public JPasswordField getPasswordText() {
@@ -43,6 +38,10 @@ public class Login extends javax.swing.JFrame {
 
     public JTextField getUsernameText() {
         return usernameText;
+    }
+
+    public JLabel getDateLabel() {
+        return dateLabel;
     }
     
     

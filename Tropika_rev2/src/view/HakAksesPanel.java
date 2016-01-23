@@ -1,5 +1,10 @@
 package view;
 
+import control.HakAksesControl;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JTabbedPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,9 +20,78 @@ public class HakAksesPanel extends javax.swing.JPanel {
     /**
      * Creates new form FormHakAkses
      */
+    private HakAksesControl hakAksesControl = new HakAksesControl();
+    
     public HakAksesPanel() {
         initComponents();
+        hakAksesControl.loadLevel(this);
     }
+
+    public JCheckBox getGudangCheckBox() {
+        return gudangCheckBox;
+    }
+
+    public JCheckBox getHakAksesCheckBox() {
+        return hakAksesCheckBox;
+    }
+
+    public JCheckBox getHargaCheckBox() {
+        return hargaCheckBox;
+    }
+
+    public JCheckBox getItemCheckBox() {
+        return itemCheckBox;
+    }
+
+    public JTabbedPane getjTabbedPane1() {
+        return jTabbedPane1;
+    }
+
+    public JCheckBox getKategoriCheckBox() {
+        return kategoriCheckBox;
+    }
+
+    public JCheckBox getLaporanGudangCheckBox() {
+        return laporanGudangCheckBox;
+    }
+
+    public JCheckBox getLaporanPembelianCheckBox() {
+        return laporanPembelianCheckBox;
+    }
+
+    public JCheckBox getLaporanPenjualanCheckBox() {
+        return laporanPenjualanCheckBox;
+    }
+
+    public JCheckBox getPembelianCheckBox() {
+        return pembelianCheckBox;
+    }
+
+    public JCheckBox getPenggunaCheckBox() {
+        return penggunaCheckBox;
+    }
+
+    public JCheckBox getPenjualanCheckBox() {
+        return penjualanCheckBox;
+    }
+
+    public JComboBox getLevelComboBox() {
+        return levelComboBox;
+    }
+
+    public JCheckBox getSupplierCheckBox() {
+        return supplierCheckBox;
+    }
+
+    public JCheckBox getTransaksiCheckBox() {
+        return transaksiCheckBox;
+    }
+
+    public JCheckBox getTransaksiGudangCheckBox() {
+        return transaksiGudangCheckBox;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -40,7 +114,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
         jPanel9 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         baruKey1 = new javax.swing.JButton();
-        satuan = new javax.swing.JComboBox();
+        levelComboBox = new javax.swing.JComboBox();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         penggunaCheckBox = new javax.swing.JCheckBox();
@@ -63,7 +137,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(231, 231, 231));
         setName("Hak Akses"); // NOI18N
-        setLayout(new java.awt.GridLayout());
+        setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel8.setOpaque(false);
 
@@ -161,7 +235,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
         baruKey1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         baruKey1.setForeground(new java.awt.Color(40, 40, 40));
         baruKey1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/process.png"))); // NOI18N
-        baruKey1.setText("Proses");
+        baruKey1.setText("Simpan");
         baruKey1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         baruKey1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         baruKey1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -172,14 +246,15 @@ public class HakAksesPanel extends javax.swing.JPanel {
             }
         });
 
-        satuan.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        satuan.setForeground(new java.awt.Color(40, 40, 40));
-        satuan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "            ", "Item 1", "Item 2", "Item 3", "Item 4" }));
-        satuan.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
+        levelComboBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        levelComboBox.setForeground(new java.awt.Color(40, 40, 40));
+        levelComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "            ", "Item 1", "Item 2", "Item 3", "Item 4" }));
+        levelComboBox.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
 
         jTabbedPane1.setBackground(new java.awt.Color(204, 204, 204));
         jTabbedPane1.setForeground(new java.awt.Color(40, 40, 40));
         jTabbedPane1.setToolTipText("");
+        jTabbedPane1.setEnabled(false);
         jTabbedPane1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
         jPanel2.setBackground(new java.awt.Color(230, 199, 159));
@@ -190,6 +265,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
         penggunaCheckBox.setForeground(new java.awt.Color(40, 40, 40));
         penggunaCheckBox.setText("Pengguna");
         penggunaCheckBox.setBorderPaintedFlat(true);
+        penggunaCheckBox.setEnabled(false);
         penggunaCheckBox.setOpaque(false);
 
         hakAksesCheckBox.setBackground(new java.awt.Color(230, 199, 159));
@@ -197,6 +273,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
         hakAksesCheckBox.setForeground(new java.awt.Color(40, 40, 40));
         hakAksesCheckBox.setText("Hak Akses");
         hakAksesCheckBox.setBorderPaintedFlat(true);
+        hakAksesCheckBox.setEnabled(false);
         hakAksesCheckBox.setOpaque(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -420,18 +497,18 @@ public class HakAksesPanel extends javax.swing.JPanel {
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+            .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
-                .addComponent(satuan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(levelComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(baruKey1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(210, 210, 210))
+                .addContainerGap())
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -440,7 +517,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(satuan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(levelComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(baruKey1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -496,10 +573,10 @@ public class HakAksesPanel extends javax.swing.JPanel {
     private javax.swing.JCheckBox laporanGudangCheckBox;
     private javax.swing.JCheckBox laporanPembelianCheckBox;
     private javax.swing.JCheckBox laporanPenjualanCheckBox;
+    private javax.swing.JComboBox levelComboBox;
     private javax.swing.JCheckBox pembelianCheckBox;
     private javax.swing.JCheckBox penggunaCheckBox;
     private javax.swing.JCheckBox penjualanCheckBox;
-    private javax.swing.JComboBox satuan;
     private javax.swing.JCheckBox supplierCheckBox;
     private javax.swing.JCheckBox transaksiCheckBox;
     private javax.swing.JCheckBox transaksiGudangCheckBox;

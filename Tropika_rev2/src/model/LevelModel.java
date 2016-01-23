@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author akmal
@@ -156,17 +158,18 @@ public class LevelModel extends Model {
         this.laporanPenjualan = laporanPenjualan;
     }
 
-    public LevelModel select(int id) {
-        LevelModel levelModel = new LevelModel();
+    public ArrayList<LevelModel> select(String id) {
+        ArrayList<LevelModel> levelList = new ArrayList<>();
 
-        String query = "SELECT * FROM level WHERE level.level = ?";
+        String query = "SELECT * FROM level WHERE level LIKE '%"+id+"%'";
         try {
             conn = SqliteConnection.ConnectDb();
             pst = conn.prepareStatement(query);
-            pst.setInt(1, id);
+//            pst.setString(1, id);
             rs = pst.executeQuery();
 
-            if (rs.next()) {
+            while (rs.next()) {
+                LevelModel levelModel = new LevelModel();
                 levelModel.setLevel(rs.getInt("level"));
                 levelModel.setPengguna(rs.getBoolean("pengguna"));
                 levelModel.setHakAkses(rs.getBoolean("hakAkses"));
@@ -183,12 +186,13 @@ public class LevelModel extends Model {
                 levelModel.setLaporanGudang(rs.getBoolean("laporanGudang"));
                 levelModel.setLaporanPembelian(rs.getBoolean("laporanPembelian"));
                 levelModel.setLaporanPenjualan(rs.getBoolean("laporanPenjualan"));
+                levelList.add(levelModel);
             }
             conn.close();
         } catch (Exception e) {
             System.out.println("e : " + e);
         }
-        return levelModel;
+        return levelList;
     }
 
     @Override

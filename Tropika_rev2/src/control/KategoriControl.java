@@ -8,11 +8,9 @@ package control;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.util.ArrayList;
-import java.util.Date;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import model.ItemModel;
-import view.ItemPanel;
 import view.KategoriPanel;
 
 /**

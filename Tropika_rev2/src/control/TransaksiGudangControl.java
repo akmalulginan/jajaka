@@ -8,7 +8,6 @@ package control;
 import java.awt.Image;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.GudangModel;
 import model.ItemModel;
