@@ -687,7 +687,7 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void pembelianButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pembelianButtonActionPerformed
         // TODO add your handling code here:
-        menuControl.newTab(new PembelianBarangPanel(), pane);
+        menuControl.newTab(new PembelianItemPanel(), pane);
     }//GEN-LAST:event_pembelianButtonActionPerformed
 
     private void paneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_paneMouseClicked
