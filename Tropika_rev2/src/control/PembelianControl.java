@@ -15,7 +15,6 @@ import view.PembelianBarangPanel;
  */
 public class PembelianControl {
 
-    PembelianBarangPanel pembelianPanel = new PembelianBarangPanel();
     PembelianModel pembelianModel = new PembelianModel();
 
     public void setPembelian(PembelianBarangPanel pembelianPanel) {
@@ -48,6 +47,7 @@ public class PembelianControl {
         pembelianPanel.getTanggalPenerimaanDate().setDate(null);
         pembelianPanel.getGudangCheckBox().setSelected(false);
         pembelianPanel.getLokasiLainCheckBox().setSelected(false);
+        pembelianPanel.getNamaLokasiText().setText("");
     }
 
     private boolean validasi(PembelianBarangPanel pembelianPanel) {

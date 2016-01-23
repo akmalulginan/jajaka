@@ -638,7 +638,6 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         ItemPanel barang = new ItemPanel();
         menuControl.newTab(barang, pane);
-        barang.repaint();
     }//GEN-LAST:event_itemButtonActionPerformed
 
     private void gudangButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gudangButtonActionPerformed
@@ -687,7 +686,7 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void pembelianButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pembelianButtonActionPerformed
         // TODO add your handling code here:
-        menuControl.newTab(new PembelianItemPanel(), pane);
+        menuControl.newTab(new PembelianBarangPanel(), pane);
     }//GEN-LAST:event_pembelianButtonActionPerformed
 
     private void paneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_paneMouseClicked
