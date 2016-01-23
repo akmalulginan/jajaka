@@ -75,11 +75,11 @@ public class Login extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(75, 191, 96));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Login");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Login Sistem Pengguna");
 
@@ -130,7 +130,8 @@ public class Login extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(65, 166, 83));
 
         dateLabel.setBackground(new java.awt.Color(255, 255, 255));
-        dateLabel.setForeground(new java.awt.Color(255, 255, 255));
+        dateLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        dateLabel.setForeground(new java.awt.Color(255, 255, 0));
         dateLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dateLabel.setText("date");
 
