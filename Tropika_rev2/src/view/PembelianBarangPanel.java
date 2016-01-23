@@ -1178,7 +1178,6 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
     private void inputCepatKeyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCepatKeyActionPerformed
         // TODO add your handling code here:
         
-        
     }//GEN-LAST:event_inputCepatKeyActionPerformed
 
 
