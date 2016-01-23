@@ -251,8 +251,8 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="gudang1" min="-2" max="-2" attributes="0"/>
-                              <Component id="gudang" min="-2" max="-2" attributes="0"/>
+                              <Component id="hakAksesCheckBox" min="-2" max="-2" attributes="0"/>
+                              <Component id="penggunaCheckBox" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="577" max="32767" attributes="0"/>
                       </Group>
@@ -262,16 +262,16 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                          <Component id="gudang" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="penggunaCheckBox" min="-2" pref="29" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="gudang1" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="hakAksesCheckBox" min="-2" pref="29" max="-2" attributes="0"/>
                           <EmptySpace pref="114" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JCheckBox" name="gudang">
+                <Component class="javax.swing.JCheckBox" name="penggunaCheckBox">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="9f" green="c7" red="e6" type="rgb"/>
@@ -287,7 +287,7 @@
                     <Property name="opaque" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="gudang1">
+                <Component class="javax.swing.JCheckBox" name="hakAksesCheckBox">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="9f" green="c7" red="e6" type="rgb"/>
@@ -327,11 +327,11 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="gudang6" min="-2" max="-2" attributes="0"/>
-                              <Component id="gudang5" min="-2" max="-2" attributes="0"/>
-                              <Component id="gudang4" min="-2" max="-2" attributes="0"/>
-                              <Component id="gudang3" min="-2" max="-2" attributes="0"/>
-                              <Component id="gudang2" min="-2" max="-2" attributes="0"/>
+                              <Component id="supplierCheckBox" min="-2" max="-2" attributes="0"/>
+                              <Component id="kategoriCheckBox" min="-2" max="-2" attributes="0"/>
+                              <Component id="hargaCheckBox" min="-2" max="-2" attributes="0"/>
+                              <Component id="itemCheckBox" min="-2" max="-2" attributes="0"/>
+                              <Component id="gudangCheckBox" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="547" max="32767" attributes="0"/>
                       </Group>
@@ -341,22 +341,22 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                          <Component id="gudang2" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="gudangCheckBox" min="-2" pref="29" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="gudang3" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="itemCheckBox" min="-2" pref="29" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="gudang4" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="hargaCheckBox" min="-2" pref="29" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="gudang5" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="kategoriCheckBox" min="-2" pref="29" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="gudang6" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="supplierCheckBox" min="-2" pref="29" max="-2" attributes="0"/>
                           <EmptySpace pref="48" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JCheckBox" name="gudang2">
+                <Component class="javax.swing.JCheckBox" name="gudangCheckBox">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="9f" green="c7" red="e6" type="rgb"/>
@@ -373,7 +373,7 @@
                     <Property name="opaque" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="gudang3">
+                <Component class="javax.swing.JCheckBox" name="itemCheckBox">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="9f" green="c7" red="e6" type="rgb"/>
@@ -390,7 +390,7 @@
                     <Property name="opaque" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="gudang4">
+                <Component class="javax.swing.JCheckBox" name="hargaCheckBox">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="9f" green="c7" red="e6" type="rgb"/>
@@ -407,7 +407,7 @@
                     <Property name="opaque" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="gudang5">
+                <Component class="javax.swing.JCheckBox" name="kategoriCheckBox">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="9f" green="c7" red="e6" type="rgb"/>
@@ -424,7 +424,7 @@
                     <Property name="opaque" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="gudang6">
+                <Component class="javax.swing.JCheckBox" name="supplierCheckBox">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="9f" green="c7" red="e6" type="rgb"/>
@@ -465,10 +465,10 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="gudang9" min="-2" max="-2" attributes="0"/>
-                              <Component id="gudang10" min="-2" max="-2" attributes="0"/>
-                              <Component id="gudang8" min="-2" max="-2" attributes="0"/>
-                              <Component id="gudang7" min="-2" max="-2" attributes="0"/>
+                              <Component id="transaksiGudangCheckBox" min="-2" max="-2" attributes="0"/>
+                              <Component id="transaksiCheckBox" min="-2" max="-2" attributes="0"/>
+                              <Component id="penjualanCheckBox" min="-2" max="-2" attributes="0"/>
+                              <Component id="pembelianCheckBox" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="395" max="32767" attributes="0"/>
                       </Group>
@@ -478,20 +478,20 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                          <Component id="gudang7" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="pembelianCheckBox" min="-2" pref="29" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="gudang8" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="penjualanCheckBox" min="-2" pref="29" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                          <Component id="gudang9" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="transaksiGudangCheckBox" min="-2" pref="29" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="gudang10" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="transaksiCheckBox" min="-2" pref="29" max="-2" attributes="0"/>
                           <EmptySpace pref="79" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JCheckBox" name="gudang7">
+                <Component class="javax.swing.JCheckBox" name="pembelianCheckBox">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="9f" green="c7" red="e6" type="rgb"/>
@@ -508,7 +508,7 @@
                     <Property name="opaque" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="gudang8">
+                <Component class="javax.swing.JCheckBox" name="penjualanCheckBox">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="9f" green="c7" red="e6" type="rgb"/>
@@ -525,7 +525,7 @@
                     <Property name="opaque" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="gudang9">
+                <Component class="javax.swing.JCheckBox" name="transaksiGudangCheckBox">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="9f" green="c7" red="e6" type="rgb"/>
@@ -542,7 +542,7 @@
                     <Property name="opaque" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="gudang10">
+                <Component class="javax.swing.JCheckBox" name="transaksiCheckBox">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="9f" green="c7" red="e6" type="rgb"/>
@@ -583,9 +583,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="211" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="gudang17" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="gudang16" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="gudang15" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="laporanPenjualanCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="laporanPembelianCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="laporanGudangCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="381" max="32767" attributes="0"/>
                       </Group>
@@ -595,18 +595,18 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="gudang15" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="laporanGudangCheckBox" min="-2" pref="29" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="gudang16" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="laporanPembelianCheckBox" min="-2" pref="29" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="gudang17" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="laporanPenjualanCheckBox" min="-2" pref="29" max="-2" attributes="0"/>
                           <EmptySpace pref="102" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JCheckBox" name="gudang15">
+                <Component class="javax.swing.JCheckBox" name="laporanGudangCheckBox">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="9f" green="c7" red="e6" type="rgb"/>
@@ -623,7 +623,7 @@
                     <Property name="opaque" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="gudang16">
+                <Component class="javax.swing.JCheckBox" name="laporanPembelianCheckBox">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="9f" green="c7" red="e6" type="rgb"/>
@@ -640,7 +640,7 @@
                     <Property name="opaque" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="gudang17">
+                <Component class="javax.swing.JCheckBox" name="laporanPenjualanCheckBox">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="9f" green="c7" red="e6" type="rgb"/>

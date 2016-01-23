@@ -39,23 +39,23 @@ public class HakAksesPanel extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
-        gudang = new javax.swing.JCheckBox();
-        gudang1 = new javax.swing.JCheckBox();
+        penggunaCheckBox = new javax.swing.JCheckBox();
+        hakAksesCheckBox = new javax.swing.JCheckBox();
         jPanel3 = new javax.swing.JPanel();
-        gudang2 = new javax.swing.JCheckBox();
-        gudang3 = new javax.swing.JCheckBox();
-        gudang4 = new javax.swing.JCheckBox();
-        gudang5 = new javax.swing.JCheckBox();
-        gudang6 = new javax.swing.JCheckBox();
+        gudangCheckBox = new javax.swing.JCheckBox();
+        itemCheckBox = new javax.swing.JCheckBox();
+        hargaCheckBox = new javax.swing.JCheckBox();
+        kategoriCheckBox = new javax.swing.JCheckBox();
+        supplierCheckBox = new javax.swing.JCheckBox();
         jPanel4 = new javax.swing.JPanel();
-        gudang7 = new javax.swing.JCheckBox();
-        gudang8 = new javax.swing.JCheckBox();
-        gudang9 = new javax.swing.JCheckBox();
-        gudang10 = new javax.swing.JCheckBox();
+        pembelianCheckBox = new javax.swing.JCheckBox();
+        penjualanCheckBox = new javax.swing.JCheckBox();
+        transaksiGudangCheckBox = new javax.swing.JCheckBox();
+        transaksiCheckBox = new javax.swing.JCheckBox();
         jPanel5 = new javax.swing.JPanel();
-        gudang15 = new javax.swing.JCheckBox();
-        gudang16 = new javax.swing.JCheckBox();
-        gudang17 = new javax.swing.JCheckBox();
+        laporanGudangCheckBox = new javax.swing.JCheckBox();
+        laporanPembelianCheckBox = new javax.swing.JCheckBox();
+        laporanPenjualanCheckBox = new javax.swing.JCheckBox();
         jLabel2 = new javax.swing.JLabel();
         baruKey1 = new javax.swing.JButton();
         satuan = new javax.swing.JComboBox();
@@ -157,19 +157,19 @@ public class HakAksesPanel extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(230, 199, 159));
         jPanel2.setOpaque(false);
 
-        gudang.setBackground(new java.awt.Color(230, 199, 159));
-        gudang.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        gudang.setForeground(new java.awt.Color(40, 40, 40));
-        gudang.setText("Pengguna");
-        gudang.setBorderPaintedFlat(true);
-        gudang.setOpaque(false);
+        penggunaCheckBox.setBackground(new java.awt.Color(230, 199, 159));
+        penggunaCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        penggunaCheckBox.setForeground(new java.awt.Color(40, 40, 40));
+        penggunaCheckBox.setText("Pengguna");
+        penggunaCheckBox.setBorderPaintedFlat(true);
+        penggunaCheckBox.setOpaque(false);
 
-        gudang1.setBackground(new java.awt.Color(230, 199, 159));
-        gudang1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        gudang1.setForeground(new java.awt.Color(40, 40, 40));
-        gudang1.setText("Hak Akses");
-        gudang1.setBorderPaintedFlat(true);
-        gudang1.setOpaque(false);
+        hakAksesCheckBox.setBackground(new java.awt.Color(230, 199, 159));
+        hakAksesCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        hakAksesCheckBox.setForeground(new java.awt.Color(40, 40, 40));
+        hakAksesCheckBox.setText("Hak Akses");
+        hakAksesCheckBox.setBorderPaintedFlat(true);
+        hakAksesCheckBox.setOpaque(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -178,17 +178,17 @@ public class HakAksesPanel extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(gudang1)
-                    .addComponent(gudang))
+                    .addComponent(hakAksesCheckBox)
+                    .addComponent(penggunaCheckBox))
                 .addContainerGap(577, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(52, 52, 52)
-                .addComponent(gudang, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(penggunaCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(gudang1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(hakAksesCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(114, Short.MAX_VALUE))
         );
 
@@ -198,45 +198,45 @@ public class HakAksesPanel extends javax.swing.JPanel {
         jPanel3.setToolTipText("");
         jPanel3.setOpaque(false);
 
-        gudang2.setBackground(new java.awt.Color(230, 199, 159));
-        gudang2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        gudang2.setForeground(new java.awt.Color(40, 40, 40));
-        gudang2.setText("Gudang");
-        gudang2.setToolTipText("");
-        gudang2.setBorderPaintedFlat(true);
-        gudang2.setOpaque(false);
+        gudangCheckBox.setBackground(new java.awt.Color(230, 199, 159));
+        gudangCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        gudangCheckBox.setForeground(new java.awt.Color(40, 40, 40));
+        gudangCheckBox.setText("Gudang");
+        gudangCheckBox.setToolTipText("");
+        gudangCheckBox.setBorderPaintedFlat(true);
+        gudangCheckBox.setOpaque(false);
 
-        gudang3.setBackground(new java.awt.Color(230, 199, 159));
-        gudang3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        gudang3.setForeground(new java.awt.Color(40, 40, 40));
-        gudang3.setText("Item");
-        gudang3.setToolTipText("");
-        gudang3.setBorderPaintedFlat(true);
-        gudang3.setOpaque(false);
+        itemCheckBox.setBackground(new java.awt.Color(230, 199, 159));
+        itemCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        itemCheckBox.setForeground(new java.awt.Color(40, 40, 40));
+        itemCheckBox.setText("Item");
+        itemCheckBox.setToolTipText("");
+        itemCheckBox.setBorderPaintedFlat(true);
+        itemCheckBox.setOpaque(false);
 
-        gudang4.setBackground(new java.awt.Color(230, 199, 159));
-        gudang4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        gudang4.setForeground(new java.awt.Color(40, 40, 40));
-        gudang4.setText("Harga");
-        gudang4.setToolTipText("");
-        gudang4.setBorderPaintedFlat(true);
-        gudang4.setOpaque(false);
+        hargaCheckBox.setBackground(new java.awt.Color(230, 199, 159));
+        hargaCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        hargaCheckBox.setForeground(new java.awt.Color(40, 40, 40));
+        hargaCheckBox.setText("Harga");
+        hargaCheckBox.setToolTipText("");
+        hargaCheckBox.setBorderPaintedFlat(true);
+        hargaCheckBox.setOpaque(false);
 
-        gudang5.setBackground(new java.awt.Color(230, 199, 159));
-        gudang5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        gudang5.setForeground(new java.awt.Color(40, 40, 40));
-        gudang5.setText("Kategori");
-        gudang5.setToolTipText("");
-        gudang5.setBorderPaintedFlat(true);
-        gudang5.setOpaque(false);
+        kategoriCheckBox.setBackground(new java.awt.Color(230, 199, 159));
+        kategoriCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        kategoriCheckBox.setForeground(new java.awt.Color(40, 40, 40));
+        kategoriCheckBox.setText("Kategori");
+        kategoriCheckBox.setToolTipText("");
+        kategoriCheckBox.setBorderPaintedFlat(true);
+        kategoriCheckBox.setOpaque(false);
 
-        gudang6.setBackground(new java.awt.Color(230, 199, 159));
-        gudang6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        gudang6.setForeground(new java.awt.Color(40, 40, 40));
-        gudang6.setText("Supplier");
-        gudang6.setToolTipText("");
-        gudang6.setBorderPaintedFlat(true);
-        gudang6.setOpaque(false);
+        supplierCheckBox.setBackground(new java.awt.Color(230, 199, 159));
+        supplierCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        supplierCheckBox.setForeground(new java.awt.Color(40, 40, 40));
+        supplierCheckBox.setText("Supplier");
+        supplierCheckBox.setToolTipText("");
+        supplierCheckBox.setBorderPaintedFlat(true);
+        supplierCheckBox.setOpaque(false);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -245,26 +245,26 @@ public class HakAksesPanel extends javax.swing.JPanel {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(gudang6)
-                    .addComponent(gudang5)
-                    .addComponent(gudang4)
-                    .addComponent(gudang3)
-                    .addComponent(gudang2))
+                    .addComponent(supplierCheckBox)
+                    .addComponent(kategoriCheckBox)
+                    .addComponent(hargaCheckBox)
+                    .addComponent(itemCheckBox)
+                    .addComponent(gudangCheckBox))
                 .addContainerGap(547, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(gudang2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(gudangCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(gudang3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(itemCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(gudang4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(hargaCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(gudang5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(kategoriCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(gudang6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(supplierCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(48, Short.MAX_VALUE))
         );
 
@@ -274,37 +274,37 @@ public class HakAksesPanel extends javax.swing.JPanel {
         jPanel4.setToolTipText("");
         jPanel4.setOpaque(false);
 
-        gudang7.setBackground(new java.awt.Color(230, 199, 159));
-        gudang7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        gudang7.setForeground(new java.awt.Color(40, 40, 40));
-        gudang7.setText("Pembelian");
-        gudang7.setToolTipText("");
-        gudang7.setBorderPaintedFlat(true);
-        gudang7.setOpaque(false);
+        pembelianCheckBox.setBackground(new java.awt.Color(230, 199, 159));
+        pembelianCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        pembelianCheckBox.setForeground(new java.awt.Color(40, 40, 40));
+        pembelianCheckBox.setText("Pembelian");
+        pembelianCheckBox.setToolTipText("");
+        pembelianCheckBox.setBorderPaintedFlat(true);
+        pembelianCheckBox.setOpaque(false);
 
-        gudang8.setBackground(new java.awt.Color(230, 199, 159));
-        gudang8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        gudang8.setForeground(new java.awt.Color(40, 40, 40));
-        gudang8.setText("Penjualan");
-        gudang8.setToolTipText("");
-        gudang8.setBorderPaintedFlat(true);
-        gudang8.setOpaque(false);
+        penjualanCheckBox.setBackground(new java.awt.Color(230, 199, 159));
+        penjualanCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        penjualanCheckBox.setForeground(new java.awt.Color(40, 40, 40));
+        penjualanCheckBox.setText("Penjualan");
+        penjualanCheckBox.setToolTipText("");
+        penjualanCheckBox.setBorderPaintedFlat(true);
+        penjualanCheckBox.setOpaque(false);
 
-        gudang9.setBackground(new java.awt.Color(230, 199, 159));
-        gudang9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        gudang9.setForeground(new java.awt.Color(40, 40, 40));
-        gudang9.setText("Transaksi Gudang");
-        gudang9.setToolTipText("");
-        gudang9.setBorderPaintedFlat(true);
-        gudang9.setOpaque(false);
+        transaksiGudangCheckBox.setBackground(new java.awt.Color(230, 199, 159));
+        transaksiGudangCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        transaksiGudangCheckBox.setForeground(new java.awt.Color(40, 40, 40));
+        transaksiGudangCheckBox.setText("Transaksi Gudang");
+        transaksiGudangCheckBox.setToolTipText("");
+        transaksiGudangCheckBox.setBorderPaintedFlat(true);
+        transaksiGudangCheckBox.setOpaque(false);
 
-        gudang10.setBackground(new java.awt.Color(230, 199, 159));
-        gudang10.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        gudang10.setForeground(new java.awt.Color(40, 40, 40));
-        gudang10.setText("Transaksi");
-        gudang10.setToolTipText("");
-        gudang10.setBorderPaintedFlat(true);
-        gudang10.setOpaque(false);
+        transaksiCheckBox.setBackground(new java.awt.Color(230, 199, 159));
+        transaksiCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        transaksiCheckBox.setForeground(new java.awt.Color(40, 40, 40));
+        transaksiCheckBox.setText("Transaksi");
+        transaksiCheckBox.setToolTipText("");
+        transaksiCheckBox.setBorderPaintedFlat(true);
+        transaksiCheckBox.setOpaque(false);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -313,23 +313,23 @@ public class HakAksesPanel extends javax.swing.JPanel {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(145, 145, 145)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(gudang9)
-                    .addComponent(gudang10)
-                    .addComponent(gudang8)
-                    .addComponent(gudang7))
+                    .addComponent(transaksiGudangCheckBox)
+                    .addComponent(transaksiCheckBox)
+                    .addComponent(penjualanCheckBox)
+                    .addComponent(pembelianCheckBox))
                 .addContainerGap(395, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(gudang7, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pembelianCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(gudang8, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(penjualanCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
-                .addComponent(gudang9, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(transaksiGudangCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(gudang10, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(transaksiCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(79, Short.MAX_VALUE))
         );
 
@@ -339,29 +339,29 @@ public class HakAksesPanel extends javax.swing.JPanel {
         jPanel5.setToolTipText("");
         jPanel5.setOpaque(false);
 
-        gudang15.setBackground(new java.awt.Color(230, 199, 159));
-        gudang15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        gudang15.setForeground(new java.awt.Color(40, 40, 40));
-        gudang15.setText("Gudang");
-        gudang15.setToolTipText("");
-        gudang15.setBorderPaintedFlat(true);
-        gudang15.setOpaque(false);
+        laporanGudangCheckBox.setBackground(new java.awt.Color(230, 199, 159));
+        laporanGudangCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        laporanGudangCheckBox.setForeground(new java.awt.Color(40, 40, 40));
+        laporanGudangCheckBox.setText("Gudang");
+        laporanGudangCheckBox.setToolTipText("");
+        laporanGudangCheckBox.setBorderPaintedFlat(true);
+        laporanGudangCheckBox.setOpaque(false);
 
-        gudang16.setBackground(new java.awt.Color(230, 199, 159));
-        gudang16.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        gudang16.setForeground(new java.awt.Color(40, 40, 40));
-        gudang16.setText("Pembelian");
-        gudang16.setToolTipText("");
-        gudang16.setBorderPaintedFlat(true);
-        gudang16.setOpaque(false);
+        laporanPembelianCheckBox.setBackground(new java.awt.Color(230, 199, 159));
+        laporanPembelianCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        laporanPembelianCheckBox.setForeground(new java.awt.Color(40, 40, 40));
+        laporanPembelianCheckBox.setText("Pembelian");
+        laporanPembelianCheckBox.setToolTipText("");
+        laporanPembelianCheckBox.setBorderPaintedFlat(true);
+        laporanPembelianCheckBox.setOpaque(false);
 
-        gudang17.setBackground(new java.awt.Color(230, 199, 159));
-        gudang17.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        gudang17.setForeground(new java.awt.Color(40, 40, 40));
-        gudang17.setText("Penjualan");
-        gudang17.setToolTipText("");
-        gudang17.setBorderPaintedFlat(true);
-        gudang17.setOpaque(false);
+        laporanPenjualanCheckBox.setBackground(new java.awt.Color(230, 199, 159));
+        laporanPenjualanCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        laporanPenjualanCheckBox.setForeground(new java.awt.Color(40, 40, 40));
+        laporanPenjualanCheckBox.setText("Penjualan");
+        laporanPenjualanCheckBox.setToolTipText("");
+        laporanPenjualanCheckBox.setBorderPaintedFlat(true);
+        laporanPenjualanCheckBox.setOpaque(false);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -370,20 +370,20 @@ public class HakAksesPanel extends javax.swing.JPanel {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(211, 211, 211)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(gudang17)
-                    .addComponent(gudang16)
-                    .addComponent(gudang15))
+                    .addComponent(laporanPenjualanCheckBox)
+                    .addComponent(laporanPembelianCheckBox)
+                    .addComponent(laporanGudangCheckBox))
                 .addContainerGap(381, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addComponent(gudang15, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(laporanGudangCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(gudang16, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(laporanPembelianCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(gudang17, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(laporanPenjualanCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(102, Short.MAX_VALUE))
         );
 
@@ -456,20 +456,10 @@ public class HakAksesPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton baruKey1;
-    private javax.swing.JCheckBox gudang;
-    private javax.swing.JCheckBox gudang1;
-    private javax.swing.JCheckBox gudang10;
-    private javax.swing.JCheckBox gudang15;
-    private javax.swing.JCheckBox gudang16;
-    private javax.swing.JCheckBox gudang17;
-    private javax.swing.JCheckBox gudang2;
-    private javax.swing.JCheckBox gudang3;
-    private javax.swing.JCheckBox gudang4;
-    private javax.swing.JCheckBox gudang5;
-    private javax.swing.JCheckBox gudang6;
-    private javax.swing.JCheckBox gudang7;
-    private javax.swing.JCheckBox gudang8;
-    private javax.swing.JCheckBox gudang9;
+    private javax.swing.JCheckBox gudangCheckBox;
+    private javax.swing.JCheckBox hakAksesCheckBox;
+    private javax.swing.JCheckBox hargaCheckBox;
+    private javax.swing.JCheckBox itemCheckBox;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -484,6 +474,16 @@ public class HakAksesPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JCheckBox kategoriCheckBox;
+    private javax.swing.JCheckBox laporanGudangCheckBox;
+    private javax.swing.JCheckBox laporanPembelianCheckBox;
+    private javax.swing.JCheckBox laporanPenjualanCheckBox;
+    private javax.swing.JCheckBox pembelianCheckBox;
+    private javax.swing.JCheckBox penggunaCheckBox;
+    private javax.swing.JCheckBox penjualanCheckBox;
     private javax.swing.JComboBox satuan;
+    private javax.swing.JCheckBox supplierCheckBox;
+    private javax.swing.JCheckBox transaksiCheckBox;
+    private javax.swing.JCheckBox transaksiGudangCheckBox;
     // End of variables declaration//GEN-END:variables
 }

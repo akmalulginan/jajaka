@@ -6,6 +6,7 @@
 package view;
 
 import control.MenuControl;
+import javax.swing.JButton;
 import javax.swing.UIManager;
 
 /**
@@ -23,6 +24,80 @@ public class MainMenu extends javax.swing.JFrame {
         this.setExtendedState(this.getExtendedState() | MainMenu.MAXIMIZED_BOTH);
         initComponents();
     }
+
+    public JButton getCariButton() {
+        return cariButton;
+    }
+
+    public JButton getGudangButton() {
+        return gudangButton;
+    }
+
+    public JButton getHakAksesButton() {
+        return hakAksesButton;
+    }
+
+    public JButton getHargaButton() {
+        return hargaButton;
+    }
+
+    public JButton getHistoryButton() {
+        return historyButton;
+    }
+
+    public JButton getItemButton() {
+        return itemButton;
+    }
+
+    public JButton getKaryawanButton() {
+        return karyawanButton;
+    }
+
+    public JButton getKelompokButton() {
+        return kelompokButton;
+    }
+
+    public JButton getLaporanGudangButton() {
+        return laporanGudangButton;
+    }
+
+    public JButton getLaporanPembelianButton() {
+        return laporanPembelianButton;
+    }
+
+    public JButton getLaporanPenjualanButton() {
+        return laporanPenjualanButton;
+    }
+
+    public JButton getPasswordButton() {
+        return passwordButton;
+    }
+
+    public JButton getPembelianButton() {
+        return pembelianButton;
+    }
+
+    public JButton getPenjualanButton() {
+        return penjualanButton;
+    }
+
+    public JButton getSupplierButton() {
+        return supplierButton;
+    }
+
+    public JButton getTransaksiButton() {
+        return transaksiButton;
+    }
+
+    public JButton getTransaksiGudangButton() {
+        return transaksiGudangButton;
+    }
+
+    public JButton getUserButton() {
+        return userButton;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

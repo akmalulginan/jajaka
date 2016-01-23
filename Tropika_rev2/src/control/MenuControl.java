@@ -4,6 +4,7 @@ import java.awt.Component;
 import javax.swing.JTabbedPane;
 
 public class MenuControl {
+    
 
     public void newTab(Component cmpnt, JTabbedPane pane) {
         int nTab;
