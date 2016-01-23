@@ -454,11 +454,11 @@ public class TransaksiGudangPanel extends javax.swing.JPanel {
 
     private void gudangTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gudangTableMouseClicked
         // TODO add your handling code here:
-        transaksiGudangControl.setGudang(this);
+//        transaksiGudangControl.setGudang(this);
     }//GEN-LAST:event_gudangTableMouseClicked
 
     private void itemTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemTableMouseClicked
-        transaksiGudangControl.getDataItem(this);
+//        transaksiGudangControl.getDataItem(this);
     }//GEN-LAST:event_itemTableMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

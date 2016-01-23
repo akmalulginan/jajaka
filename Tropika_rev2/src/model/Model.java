@@ -16,8 +16,8 @@ import java.sql.Statement;
  */
 public class Model {
 
-//    public Connection conn = SqliteConnection.getInstance().getConnection();
-    public Connection conn;
+    public Connection conn = SqliteConnection.getInstance().getConnection();
+//    public Connection conn;
     public Statement st;
     public PreparedStatement pst;
     public ResultSet rs;

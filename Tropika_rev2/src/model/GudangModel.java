@@ -261,4 +261,12 @@ public class GudangModel extends Model {
         return toReturn;
     }
 
+    public static void main(String[] args) {
+        ArrayList<GudangModel> gudangList = new GudangModel().select();
+        for (GudangModel gudang : gudangList) {
+            
+        }
+    }
+    
+    
 }
