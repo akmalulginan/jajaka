@@ -5,6 +5,13 @@
  */
 package view;
 
+import com.toedter.calendar.JDateChooser;
+import control.PembelianControl;
+import javax.swing.JCheckBox;
+import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
+
 /**
  *
  * @author akmal
@@ -17,6 +24,145 @@ public class PembelianItemPanel extends javax.swing.JPanel {
     public PembelianItemPanel() {
         initComponents();
     }
+    
+
+    public JTextField getAlamat() {
+        return alamat;
+    }
+
+    public JTextField getAtasNamaText() {
+        return atasNamaText;
+    }
+
+    public JTextField getcPerson() {
+        return cPerson;
+    }
+
+    public JCheckBox getDua() {
+        return dua;
+    }
+
+    public JTextField getEmail() {
+        return email;
+    }
+
+    public JCheckBox getGudangCheckBox() {
+        return gudangCheckBox;
+    }
+
+    public JTextField getHarga() {
+        return harga;
+    }
+
+    public JTextField getjPembelian() {
+        return jPembelian;
+    }
+
+    public JTabbedPane getjTabbedPane1() {
+        return jTabbedPane1;
+    }
+
+    public JTextField getJumlahHargaText() {
+        return jumlahHargaText;
+    }
+
+    public JTextField getJumlahPembayaranText() {
+        return jumlahPembayaranText;
+    }
+
+    public JTextPane getKeterangan() {
+        return keterangan;
+    }
+
+    public JTextField getKodeGudangText() {
+        return kodeGudangText;
+    }
+
+    public JTextField getKodeItem() {
+        return kodeItem;
+    }
+
+    public JTextField getKodeUsulanText() {
+        return kodeUsulanText;
+    }
+
+    public JTextField getKoseSupplier() {
+        return koseSupplier;
+    }
+
+    public JCheckBox getKreditCheckBox() {
+        return kreditCheckBox;
+    }
+
+    public JCheckBox getLokasiLainCheckBox() {
+        return lokasiLainCheckBox;
+    }
+
+    public JTextField getNamaBankText() {
+        return namaBankText;
+    }
+
+    public JTextField getNamaItem() {
+        return namaItem;
+    }
+
+    public JTextField getNamaLokasiText() {
+        return namaLokasiText;
+    }
+
+    public JTextField getNamaSupplier() {
+        return namaSupplier;
+    }
+
+    public JTextField getNamaUsulanText() {
+        return namaUsulanText;
+    }
+
+    public JTextField getNoRekeningText() {
+        return noRekeningText;
+    }
+
+    public JTextField getNoTelp() {
+        return noTelp;
+    }
+
+    public JTextField getPpnText() {
+        return ppnText;
+    }
+
+    public JCheckBox getSatu() {
+        return satu;
+    }
+
+    public JTextField getSatuanText() {
+        return satuanText;
+    }
+
+    public JDateChooser getTanggalDate() {
+        return tanggalDate;
+    }
+
+    public JDateChooser getTanggalPenerimaanDate() {
+        return tanggalPenerimaanDate;
+    }
+
+    public JCheckBox getTiga() {
+        return tiga;
+    }
+
+    public JTextField getTotalText() {
+        return totalText;
+    }
+
+    public JCheckBox getTransferCheckBox() {
+        return transferCheckBox;
+    }
+
+    public JCheckBox getTunaiCheckBox() {
+        return tunaiCheckBox;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

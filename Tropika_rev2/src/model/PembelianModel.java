@@ -17,12 +17,23 @@ public class PembelianModel extends Model {
 
     private String kodeUsulan;
     private String namaUsulan;
-    private Date tanggal;
+    private long tanggal;
     private String kodeItem;
     private int jumlahPembelian;
     private double harga;
     private String keterangan;
+    private String jenisPembayaran;
 
+    public String getJenisPembayaran() {
+        return jenisPembayaran;
+    }
+
+    public void setJenisPembayaran(String jenisPembayaran) {
+        this.jenisPembayaran = jenisPembayaran;
+    }
+    
+    
+    
     public String getKodeUsulan() {
         return kodeUsulan;
     }
@@ -39,11 +50,11 @@ public class PembelianModel extends Model {
         this.namaUsulan = namaUsulan;
     }
 
-    public Date getTanggal() {
+    public long getTanggal() {
         return tanggal;
     }
 
-    public void setTanggal(Date tanggal) {
+    public void setTanggal(long tanggal) {
         this.tanggal = tanggal;
     }
 
@@ -86,7 +97,7 @@ public class PembelianModel extends Model {
             pst = conn.prepareStatement(sql);
             pst.setString(1, kodeUsulan);
             pst.setString(2, namaUsulan);
-            pst.setDate(3, tanggal);
+            pst.setLong(3, tanggal);
             pst.setString(4, kodeItem);
             pst.setInt(5, jumlahPembelian);
             pst.setDouble(6, harga);
@@ -121,7 +132,7 @@ public class PembelianModel extends Model {
                 pst = conn.prepareStatement(query);
                 pst.setString(7, kodeUsulan);
                 pst.setString(1, namaUsulan);
-                pst.setDate(2, tanggal);
+                pst.setLong(2, tanggal);
                 pst.setString(3, kodeItem);
                 pst.setInt(4, jumlahPembelian);
                 pst.setDouble(5, harga);
@@ -165,7 +176,7 @@ public class PembelianModel extends Model {
             while (rs.next()) {
                 this.setKodeUsulan(rs.getString("kodeUsulan"));
                 this.setNamaUsulan(rs.getString("namaUsulan"));
-                this.setTanggal(rs.getDate("tanggal"));
+                this.setTanggal(rs.getLong("tanggal"));
                 this.setJumlahPembelian(rs.getInt("jumlahPembelian"));
                 this.setHarga(rs.getDouble("harga"));
                 this.setKeterangan(rs.getString("keterangan"));

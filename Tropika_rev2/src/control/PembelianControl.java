@@ -8,7 +8,7 @@ package control;
 import javax.swing.JOptionPane;
 import model.PembelianModel;
 import view.PembelianBarangPanel;
-
+import java.sql.Date;
 /**
  *
  * @author hendar
@@ -18,7 +18,19 @@ public class PembelianControl {
     PembelianModel pembelianModel = new PembelianModel();
 
     public void setPembelian(PembelianBarangPanel pembelianPanel) {
-
+        pembelianModel.setKodeUsulan(pembelianPanel.getKodeUsulanText().getText());
+        pembelianModel.setNamaUsulan(pembelianPanel.getNamaUsulanText().getText());
+        pembelianModel.setTanggal(pembelianPanel.getTanggalDate().getDate().getTime());
+        if(pembelianPanel.getTunaiCheckBox().isSelected()){
+            pembelianModel.setJenisPembayaran("Tunai");
+        }else if(pembelianPanel.getKreditCheckBox().isSelected()){
+            pembelianModel.setJenisPembayaran("Kredit");
+        }else if(pembelianPanel.getTransferCheckBox().isSelected()){
+            pembelianModel.setJenisPembayaran("Transfer");
+        }
+        pembelianModel.getJumlahPembelian();
+        
+        
     }
 
     public void simpanPembelian(PembelianBarangPanel pembelianPanel) {
@@ -62,7 +74,7 @@ public class PembelianControl {
             JOptionPane.showMessageDialog(pembelianPanel, "Tanggal tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
             pembelianPanel.getTanggalDate().requestFocus();
         } else if (!pembelianPanel.getTunaiCheckBox().isSelected() && !pembelianPanel.getKreditCheckBox().isSelected() && !pembelianPanel.getTransferCheckBox().isSelected()) {
-            JOptionPane.showMessageDialog(pembelianPanel, "Pilih salah satu jenis Pembelian !", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(pembelianPanel, "Pilih salah satu jenis Pembayaran !", "Error", JOptionPane.ERROR_MESSAGE);
         } else if (pembelianPanel.getJumlahPembayaranText().getText().isEmpty()) {
             JOptionPane.showMessageDialog(pembelianPanel, "Jumlah uang yang dibayarkan tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
             pembelianPanel.getJumlahPembayaranText().requestFocus();
