@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import model.PembelianModel;
 import view.PembelianBarangPanel;
 import java.sql.Date;
+import model.DataBankModel;
 /**
  *
  * @author hendar
@@ -16,11 +17,13 @@ import java.sql.Date;
 public class PembelianControl {
 
     PembelianModel pembelianModel = new PembelianModel();
+    DataBankModel dataBankModel = new DataBankModel();
 
     public void setPembelian(PembelianBarangPanel pembelianPanel) {
         pembelianModel.setKodeUsulan(pembelianPanel.getKodeUsulanText().getText());
         pembelianModel.setNamaUsulan(pembelianPanel.getNamaUsulanText().getText());
         pembelianModel.setTanggal(pembelianPanel.getTanggalDate().getDate().getTime());
+        pembelianModel.setKodeItem(pembelianPanel.getKodeItem().getText());
         if(pembelianPanel.getTunaiCheckBox().isSelected()){
             pembelianModel.setJenisPembayaran("Tunai");
         }else if(pembelianPanel.getKreditCheckBox().isSelected()){
@@ -28,9 +31,10 @@ public class PembelianControl {
         }else if(pembelianPanel.getTransferCheckBox().isSelected()){
             pembelianModel.setJenisPembayaran("Transfer");
         }
-        pembelianModel.getJumlahPembelian();
-        
-        
+        pembelianModel.setJumlahPembelian(Integer.parseInt(pembelianPanel.getjPembelian().getText()));
+        pembelianModel.setJumlahPembayaran(Double.parseDouble(pembelianPanel.getJumlahPembayaranText().getText()));
+        pembelianModel.setKeterangan(pembelianPanel.getKeterangan().getText());
+         
     }
 
     public void simpanPembelian(PembelianBarangPanel pembelianPanel) {
@@ -80,8 +84,10 @@ public class PembelianControl {
             pembelianPanel.getJumlahPembayaranText().requestFocus();
         } else if (!pembelianPanel.getSatu().isSelected() && !pembelianPanel.getDua().isSelected() && !pembelianPanel.getTiga().isSelected()) {
             JOptionPane.showMessageDialog(pembelianPanel, "Pilih salah satu Persetujuan !", "Error", JOptionPane.ERROR_MESSAGE);
+//            pembelianPanel.getjTabbedPane1().setSelectedIndex(1);
         } else if (!pembelianPanel.getGudangCheckBox().isSelected() && !pembelianPanel.getLokasiLainCheckBox().isSelected()) {
             JOptionPane.showMessageDialog(pembelianPanel, "Pilih salah satu tempat Penyimpanan !", "Error", JOptionPane.ERROR_MESSAGE);
+//            pembelianPanel.getjTabbedPane1().setSelectedIndex(3);
         } else if (pembelianPanel.getNamaLokasiText().getText().isEmpty()) {
             JOptionPane.showMessageDialog(pembelianPanel, "Nama lokasi tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
             pembelianPanel.getNamaLokasiText().requestFocus();
