@@ -404,7 +404,6 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         namaItem.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         namaItem.setForeground(new java.awt.Color(40, 40, 40));
 
-        jPembelian.setEditable(false);
         jPembelian.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPembelian.setForeground(new java.awt.Color(40, 40, 40));
 
