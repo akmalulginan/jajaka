@@ -23,6 +23,15 @@ public class PembelianModel extends Model {
     private double harga;
     private String keterangan;
     private String jenisPembayaran;
+    private double jumlahPembayaran;
+
+    public double getJumlahPembayaran() {
+        return jumlahPembayaran;
+    }
+
+    public void setJumlahPembayaran(double jumlahPembayaran) {
+        this.jumlahPembayaran = jumlahPembayaran;
+    }
 
     public String getJenisPembayaran() {
         return jenisPembayaran;
@@ -31,9 +40,7 @@ public class PembelianModel extends Model {
     public void setJenisPembayaran(String jenisPembayaran) {
         this.jenisPembayaran = jenisPembayaran;
     }
-    
-    
-    
+
     public String getKodeUsulan() {
         return kodeUsulan;
     }
@@ -92,7 +99,7 @@ public class PembelianModel extends Model {
 
     public boolean insert() {
         try {
-            String sql = "INSERT INTO pembelian (kodeUsulan, namaUsulan, tanggal, kodeItem, jumlahPembelian, harga, keterangan) VALUES (?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO pembelian (kodeUsulan, namaUsulan, tanggal, kodeItem, jumlahPembelian, harga, keterangan, jumlahPembayaran) VALUES (?,?,?,?,?,?,?)";
 
             pst = conn.prepareStatement(sql);
             pst.setString(1, kodeUsulan);
@@ -102,7 +109,7 @@ public class PembelianModel extends Model {
             pst.setInt(5, jumlahPembelian);
             pst.setDouble(6, harga);
             pst.setString(7, keterangan);
-
+            pst.setDouble(8, jumlahPembayaran);
             pst.execute();
 
             return true;
@@ -126,17 +133,19 @@ public class PembelianModel extends Model {
                     + "jumlahPembelian = ? "
                     + "harga = ? "
                     + "keterangan = ?"
+                    + "jumlahPembayaran = ?"
                     + "WHERE kodeUsulan = ?";
 
             if (conn != null) {
                 pst = conn.prepareStatement(query);
-                pst.setString(7, kodeUsulan);
+                pst.setString(8, kodeUsulan);
                 pst.setString(1, namaUsulan);
                 pst.setLong(2, tanggal);
                 pst.setString(3, kodeItem);
                 pst.setInt(4, jumlahPembelian);
                 pst.setDouble(5, harga);
                 pst.setString(6, keterangan);
+                pst.setDouble(7, jumlahPembayaran);
 
                 pst.execute();
                 conn.close();
@@ -158,7 +167,7 @@ public class PembelianModel extends Model {
                 pst.setString(1, kodeUsulan);
                 pst.execute();
                 conn.close();
-                
+
                 toReturn = true;
             }
         } catch (Exception e) {
@@ -169,7 +178,7 @@ public class PembelianModel extends Model {
     }
 
     public ArrayList<PembelianModel> select() {
-       ArrayList<PembelianModel> list = new ArrayList<>();
+        ArrayList<PembelianModel> list = new ArrayList<>();
         try {
             pst = conn.prepareStatement("SELECT * FROM pembelian");
             rs = pst.executeQuery();
@@ -180,6 +189,7 @@ public class PembelianModel extends Model {
                 this.setJumlahPembelian(rs.getInt("jumlahPembelian"));
                 this.setHarga(rs.getDouble("harga"));
                 this.setKeterangan(rs.getString("keterangan"));
+                this.setJumlahPembayaran(rs.getDouble("jumlahPembayaran"));
                 list.add(this);
             }
             return list;

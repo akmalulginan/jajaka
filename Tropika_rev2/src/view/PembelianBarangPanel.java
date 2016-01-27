@@ -4,6 +4,7 @@ import com.toedter.calendar.JDateChooser;
 import control.PembelianControl;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
@@ -163,6 +164,11 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         return tunaiCheckBox;
     }
 
+    public JTabbedPane getjTabbedPane1() {
+        return jTabbedPane1;
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

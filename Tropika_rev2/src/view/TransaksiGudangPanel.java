@@ -5,6 +5,7 @@
  */
 package view;
 
+import com.toedter.calendar.JDateChooser;
 import control.TransaksiGudangControl;
 import javax.swing.JLabel;
 import javax.swing.JTable;
@@ -62,10 +63,11 @@ public class TransaksiGudangPanel extends javax.swing.JPanel {
         return rakText;
     }
 
-    public JTextField getTglBarangMasukText() {
-        return tglBarangMasukText;
+    public JDateChooser getTanggalBarangMasukDate() {
+        return tanggalBarangMasukDate;
     }
-
+    
+    
     public JLabel getGambarLabel() {
         return gambarLabel;
     }
@@ -93,7 +95,6 @@ public class TransaksiGudangPanel extends javax.swing.JPanel {
         jLabel22 = new javax.swing.JLabel();
         StockText = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
-        tglBarangMasukText = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
         jBarangMasukText = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
@@ -108,6 +109,7 @@ public class TransaksiGudangPanel extends javax.swing.JPanel {
         kodeGudangText = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
+        tanggalBarangMasukDate = new com.toedter.calendar.JDateChooser();
         searchText = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -158,9 +160,6 @@ public class TransaksiGudangPanel extends javax.swing.JPanel {
         jLabel23.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(40, 40, 40));
         jLabel23.setText("Nama Item");
-
-        tglBarangMasukText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        tglBarangMasukText.setForeground(new java.awt.Color(40, 40, 40));
 
         jLabel24.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(40, 40, 40));
@@ -269,7 +268,7 @@ public class TransaksiGudangPanel extends javax.swing.JPanel {
                             .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tglBarangMasukText, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(tanggalBarangMasukDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jLabel26)
                         .addGap(11, 11, 11)
@@ -281,13 +280,14 @@ public class TransaksiGudangPanel extends javax.swing.JPanel {
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
-                    .addComponent(tglBarangMasukText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(kodeGudangText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel27))
+                    .addComponent(jLabel27)
+                    .addComponent(tanggalBarangMasukDate, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
@@ -335,6 +335,11 @@ public class TransaksiGudangPanel extends javax.swing.JPanel {
         });
 
         jButton2.setText("Simpan");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -454,7 +459,7 @@ public class TransaksiGudangPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -475,6 +480,11 @@ public class TransaksiGudangPanel extends javax.swing.JPanel {
     private void gudangTableMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gudangTableMouseExited
 
     }//GEN-LAST:event_gudangTableMouseExited
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:    
+        transaksiGudangControl.simpanTransaksiGudang(this);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -512,6 +522,6 @@ public class TransaksiGudangPanel extends javax.swing.JPanel {
     private javax.swing.JTextField namaItemText;
     private javax.swing.JTextField rakText;
     private javax.swing.JTextField searchText;
-    private javax.swing.JTextField tglBarangMasukText;
+    private com.toedter.calendar.JDateChooser tanggalBarangMasukDate;
     // End of variables declaration//GEN-END:variables
 }

@@ -21,6 +21,8 @@ public class TransaksiGudangModel extends Model {
     private int kodePenyimpanan;
     private ItemModel item;
     private GudangModel gudang;
+    
+    
 //    Date waktu
 
     public void select(String sql, JTable table) {
