@@ -8,14 +8,11 @@ package control;
 //import model.UserLoginModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
 import java.awt.event.KeyEvent;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import javax.swing.Timer;
 import model.LevelModel;
 import model.UserLoginModel;
@@ -37,11 +34,11 @@ public class LoginControl {
         if (validasi(login)) {
             setUser(login);
             userModel = userModel.select();
-            if (userModel.getLevel() != 999999) {
+            if (userModel.getLevel() != 0) {
                 userLoginModel.setUsername(userModel.getUsername());
                 userLoginModel.setPassword(userModel.getPassword());
-                userLoginModel.setLevel(userModel.getLevel());
-                userLoginModel.setLevelModel(levelModel.select(userLoginModel.getLevel() + "").get(0));
+//                userLoginModel.setLevel(userModel.getLevel());
+                userLoginModel.setLevelModel(levelModel.select(userModel.getLevel() + "").get(0));
                 login.dispose();
                 hakAkses(userLoginModel);
             } else {
@@ -58,7 +55,7 @@ public class LoginControl {
 
     public void hakAkses(UserLoginModel user) {
         MainMenu mainMenu = new MainMenu();
-        System.out.println(user.toString() + user.getLevelModel().toString());
+        System.out.println(user.toString() + UserLoginModel.getLevelModel().toString());
 
 //        level.isSatuan();
         mainMenu.getGudangButton().setEnabled(user.getLevelModel().isGudang());
@@ -117,5 +114,5 @@ public class LoginControl {
         Date date = new Date();
         login.getDateLabel().setText(dateFormat.format(new Date()));
     }
-
+    
 }

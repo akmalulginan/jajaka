@@ -5,6 +5,11 @@
  */
 package view;
 
+import control.LoginControl;
+import control.PasswordControl;
+import javax.swing.JTextField;
+import model.UserLoginModel;
+
 /**
  *
  * @author sipit
@@ -18,6 +23,14 @@ public class PasswordPanel extends javax.swing.JPanel {
         initComponents();
     }
 
+    public JTextField getPasswordBaruText() {
+        return passwordBaruText;
+    }
+
+    public JTextField getPasswordLamaText() {
+        return passwordLamaText;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -66,6 +79,11 @@ public class PasswordPanel extends javax.swing.JPanel {
         simpanButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         simpanButton.setIconTextGap(18);
         simpanButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
+        simpanButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simpanButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -105,6 +123,11 @@ public class PasswordPanel extends javax.swing.JPanel {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         add(jPanel1, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void simpanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanButtonActionPerformed
+        // TODO add your handling code here:
+        new PasswordControl().ubahPassword(this);
+    }//GEN-LAST:event_simpanButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

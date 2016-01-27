@@ -24,7 +24,7 @@ public class Login extends javax.swing.JFrame {
      * Creates new form Login
      */
     private LoginControl loginControl = new LoginControl();
-    
+
     public Login() {
 //        initComponents();
         setUndecorated(true);
@@ -43,8 +43,6 @@ public class Login extends javax.swing.JFrame {
     public JLabel getDateLabel() {
         return dateLabel;
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -154,6 +152,9 @@ public class Login extends javax.swing.JFrame {
 
         usernameText.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         usernameText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                usernameTextKeyPressed(evt);
+            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 usernameTextKeyReleased(evt);
             }
@@ -161,6 +162,9 @@ public class Login extends javax.swing.JFrame {
 
         passwordText.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         passwordText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                passwordTextKeyPressed(evt);
+            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 passwordTextKeyReleased(evt);
             }
@@ -240,13 +244,23 @@ public class Login extends javax.swing.JFrame {
 
     private void usernameTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_usernameTextKeyReleased
         // TODO add your handling code here:
-        loginControl.enter(this, evt);
+//        loginControl.enter(this, evt);
     }//GEN-LAST:event_usernameTextKeyReleased
 
     private void passwordTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordTextKeyReleased
         // TODO add your handling code here:
-        loginControl.enter(this, evt);
+//        loginControl.enter(this, evt);
     }//GEN-LAST:event_passwordTextKeyReleased
+
+    private void passwordTextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordTextKeyPressed
+        // TODO add your handling code here:
+        loginControl.enter(this, evt);
+    }//GEN-LAST:event_passwordTextKeyPressed
+
+    private void usernameTextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_usernameTextKeyPressed
+        // TODO add your handling code here:
+        loginControl.enter(this, evt);
+    }//GEN-LAST:event_usernameTextKeyPressed
 
     /**
      * @param args the command line arguments

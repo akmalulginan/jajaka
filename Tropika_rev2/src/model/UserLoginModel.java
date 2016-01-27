@@ -9,16 +9,36 @@ package model;
  *
  * @author akmal
  */
-public class UserLoginModel extends UserModel {
-    LevelModel levelModel;
+public class UserLoginModel{
+    private static String username;
+    private static String password;
+    private static LevelModel levelModel;
 
-    public LevelModel getLevelModel() {
+    public static LevelModel getLevelModel() {
         return levelModel;
     }
 
-    public void setLevelModel(LevelModel levelModel) {
-        this.levelModel = levelModel;
+    public static void setLevelModel(LevelModel levelModel) {
+        UserLoginModel.levelModel = levelModel;
     }
+
+    public static String getUsername() {
+        return username;
+    }
+
+    public static void setUsername(String username) {
+        UserLoginModel.username = username;
+    }
+
+    public static String getPassword() {
+        return password;
+    }
+
+    public static void setPassword(String password) {
+        UserLoginModel.password = password;
+    }
+    
+    
     
     
 }

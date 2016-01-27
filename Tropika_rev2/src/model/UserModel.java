@@ -11,9 +11,9 @@ package model;
  */
 public class UserModel extends Model {
 
-    protected String username;
-    protected String password;
-    protected int level;
+    private String username;
+    private String password;
+    private int level;
 
     public UserModel() {
     }
@@ -62,7 +62,7 @@ public class UserModel extends Model {
             } else {
                 userModel.setUsername("");
                 userModel.setPassword("");
-                userModel.setLevel(999999);
+                userModel.setLevel(0);
             }
             conn.close();
 
@@ -71,6 +71,23 @@ public class UserModel extends Model {
         }
 
         return userModel;
+    }
+
+    public boolean update() {
+        boolean toReturn = false;
+        String query = "UPDATE user SET password = ? WHERE username = ?";
+        conn = SqliteConnection.ConnectDb();
+        try {
+            pst = conn.prepareStatement(query);
+            pst.setString(2, username);
+            pst.setString(1, password);
+            pst.execute();
+            toReturn = true;
+
+        } catch (Exception e) {
+            System.out.println("e : " + e);
+        }
+        return toReturn;
     }
 
     @Override
