@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.GudangModel;
 import model.ItemModel;
+import model.TransaksiGudangModel;
 import view.TransaksiGudangPanel;
 
 /**
@@ -22,6 +23,7 @@ public class TransaksiGudangControl {
     
     private ItemModel itemModel = new ItemModel();
     private GudangModel gudangModel = new GudangModel();
+    private TransaksiGudangModel transaksiGudangModel = new TransaksiGudangModel();
     
     public void setGudang(TransaksiGudangPanel gudangPanel) {
         int row = gudangPanel.getGudangTable().getSelectedRow();
@@ -111,6 +113,9 @@ public class TransaksiGudangControl {
     }
     
     public void clear(TransaksiGudangPanel gudangPanel) {
+        gudangPanel.getKodeGudangText().setText("");
+        gudangPanel.getKodeItemText().setText("");
+        gudangPanel.getNamaItemText().setText("");
         gudangPanel.getBarisText().setText("");
         gudangPanel.getRakText().setText("");
         gudangPanel.getTanggalBarangMasukDate().setDate(null);
@@ -119,14 +124,21 @@ public class TransaksiGudangControl {
     }
     
     public void setTransaksiGudang(TransaksiGudangPanel gudangPanel){
-        
-    }
+        transaksiGudangModel.setKodeGudang(gudangPanel.getKodeGudangText().getText());
+        transaksiGudangModel.setKodeItem(gudangPanel.getKodeItemText().getText());
+        transaksiGudangModel.setNamaItem(gudangPanel.getNamaItemText().getText());
+        transaksiGudangModel.setBaris(gudangPanel.getBarisText().getText());
+        transaksiGudangModel.setRak(gudangPanel.getRakText().getText());
+        transaksiGudangModel.setTanggalBarangMasuk(gudangPanel.getTanggalBarangMasukDate().getDate().getTime());
+        transaksiGudangModel.setJumlahBarangMasuk(Integer.parseInt(gudangPanel.getjBarangMasukText().getText()));
+        transaksiGudangModel.setJumlahStockBarang(Integer.parseInt(gudangPanel.getStockText().getText()));
+   }
     
     public void simpanTransaksiGudang(TransaksiGudangPanel gudangPanel) {
         if (validasi(gudangPanel)) {
             setTransaksiGudang(gudangPanel);
-            if (true) {
-                JOptionPane.showMessageDialog(gudangPanel, "Data Transaksi Gudang berhasil Disimpan!", "Error", JOptionPane.ERROR_MESSAGE);
+            if (transaksiGudangModel.insert()) {
+                JOptionPane.showMessageDialog(gudangPanel, "Data Transaksi Gudang berhasil Disimpan!");
                 clear(gudangPanel);
             } else {
                 JOptionPane.showMessageDialog(gudangPanel, "Data Transaksi Gudang gagal Disimpan!", "Error", JOptionPane.ERROR_MESSAGE);

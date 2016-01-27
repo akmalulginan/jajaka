@@ -57,6 +57,7 @@ public class PembelianControl {
         pembelianPanel.getKreditCheckBox().setSelected(false);
         pembelianPanel.getTransferCheckBox().setSelected(false);
         pembelianPanel.getJumlahPembayaranText().setText("");
+        pembelianPanel.getjPembelian().setText("");
         pembelianPanel.getSatu().setSelected(false);
         pembelianPanel.getDua().setSelected(false);
         pembelianPanel.getTiga().setSelected(false);
@@ -77,6 +78,9 @@ public class PembelianControl {
         } else if (pembelianPanel.getTanggalDate().getDate() == null) {
             JOptionPane.showMessageDialog(pembelianPanel, "Tanggal tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
             pembelianPanel.getTanggalDate().requestFocus();
+        }else if (pembelianPanel.getjPembelian().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(pembelianPanel, "Jumlah Pembelian tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
+            pembelianPanel.getjPembelian().requestFocus();
         } else if (!pembelianPanel.getTunaiCheckBox().isSelected() && !pembelianPanel.getKreditCheckBox().isSelected() && !pembelianPanel.getTransferCheckBox().isSelected()) {
             JOptionPane.showMessageDialog(pembelianPanel, "Pilih salah satu jenis Pembayaran !", "Error", JOptionPane.ERROR_MESSAGE);
         } else if (pembelianPanel.getJumlahPembayaranText().getText().isEmpty()) {

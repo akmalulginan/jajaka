@@ -22,6 +22,80 @@ public class TransaksiGudangModel extends Model {
     private ItemModel item;
     private GudangModel gudang;
     
+    private String kodeGudang;
+    private String kodeItem;
+    private String namaItem;
+    private String baris;
+    private String rak;
+    private long tanggalBarangMasuk;
+    private int jumlahBarangMasuk;
+    private int jumlahStockBarang;
+
+    public String getKodeGudang() {
+        return kodeGudang;
+    }
+
+    public void setKodeGudang(String kodeGudang) {
+        this.kodeGudang = kodeGudang;
+    }
+
+    public String getKodeItem() {
+        return kodeItem;
+    }
+
+    public void setKodeItem(String kodeItem) {
+        this.kodeItem = kodeItem;
+    }
+
+    public String getNamaItem() {
+        return namaItem;
+    }
+
+    public void setNamaItem(String namaItem) {
+        this.namaItem = namaItem;
+    }
+
+    public String getBaris() {
+        return baris;
+    }
+
+    public void setBaris(String baris) {
+        this.baris = baris;
+    }
+
+    public String getRak() {
+        return rak;
+    }
+
+    public void setRak(String rak) {
+        this.rak = rak;
+    }
+
+    public long getTanggalBarangMasuk() {
+        return tanggalBarangMasuk;
+    }
+
+    public void setTanggalBarangMasuk(long tanggalBarangMasuk) {
+        this.tanggalBarangMasuk = tanggalBarangMasuk;
+    }
+
+    public int getJumlahBarangMasuk() {
+        return jumlahBarangMasuk;
+    }
+
+    public void setJumlahBarangMasuk(int jumlahBarangMasuk) {
+        this.jumlahBarangMasuk = jumlahBarangMasuk;
+    }
+
+    public int getJumlahStockBarang() {
+        return jumlahStockBarang;
+    }
+
+    public void setJumlahStockBarang(int jumlahStockBarang) {
+        this.jumlahStockBarang = jumlahStockBarang;
+    }
+    
+    
     
 //    Date waktu
 
@@ -55,6 +129,30 @@ public class TransaksiGudangModel extends Model {
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
+        }
+    }
+
+    public boolean insert() {
+        try {
+            String sql = "INSERT INTO transaksiGudang (kodeTransaksi, kodeGudang, kodeItem, namaItem, baris, rak, tanggalBarangMasuk, jumlahBarangMasuk, jumlahStockBarang) VALUES (null,?,?,?,?,?,?,?,?)";
+
+            pst = conn.prepareStatement(sql);
+           
+            pst.setString(1, kodeGudang);
+            pst.setString(2, kodeItem);
+            pst.setString(3, namaItem);
+            pst.setString(4, baris);
+            pst.setString(5, rak);
+            pst.setLong(6, tanggalBarangMasuk);
+            pst.setInt(7, jumlahBarangMasuk);
+            pst.setInt(8, jumlahStockBarang);
+            pst.execute();
+
+            return true;
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+            return false;
         }
     }
 }
