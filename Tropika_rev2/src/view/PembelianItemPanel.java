@@ -234,6 +234,7 @@ public class PembelianItemPanel extends javax.swing.JPanel {
         jLabel26 = new javax.swing.JLabel();
         satuanText = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jPembelian1 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         tunaiCheckBox = new javax.swing.JCheckBox();
         kreditCheckBox = new javax.swing.JCheckBox();
@@ -397,7 +398,6 @@ public class PembelianItemPanel extends javax.swing.JPanel {
         namaItem.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         namaItem.setForeground(new java.awt.Color(40, 40, 40));
 
-        jPembelian.setEditable(false);
         jPembelian.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPembelian.setForeground(new java.awt.Color(40, 40, 40));
 
@@ -616,6 +616,10 @@ public class PembelianItemPanel extends javax.swing.JPanel {
 
         jButton1.setText("Pilih Item");
 
+        jPembelian1.setEditable(false);
+        jPembelian1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jPembelian1.setForeground(new java.awt.Color(40, 40, 40));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -654,7 +658,8 @@ public class PembelianItemPanel extends javax.swing.JPanel {
                             .addComponent(namaItem, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPembelian, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(harga, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPembelian1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(31, 31, 31))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -707,6 +712,8 @@ public class PembelianItemPanel extends javax.swing.JPanel {
                 .addComponent(namaItem, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(9, 9, 9)
                 .addComponent(jPembelian, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
+                .addComponent(jPembelian1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8)
                 .addComponent(harga, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(46, 46, 46)
@@ -885,7 +892,7 @@ public class PembelianItemPanel extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel44)
                     .addComponent(jumlahPembayaranText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Pembayaran", jPanel2);
@@ -935,7 +942,7 @@ public class PembelianItemPanel extends javax.swing.JPanel {
                 .addComponent(dua, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tiga, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Persetujuan", jPanel3);
@@ -1068,7 +1075,7 @@ public class PembelianItemPanel extends javax.swing.JPanel {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Detail Transfer Barang", jPanel4);
@@ -1250,6 +1257,7 @@ public class PembelianItemPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JTextField jPembelian;
+    private javax.swing.JTextField jPembelian1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jumlahHargaText;
