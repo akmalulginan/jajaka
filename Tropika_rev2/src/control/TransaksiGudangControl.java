@@ -53,7 +53,7 @@ public class TransaksiGudangControl {
     }
     
     public void poputalteTableGudang(TransaksiGudangPanel gudangPanel) {
-        ArrayList<GudangModel> gudangList = gudangModel.select();
+        ArrayList<GudangModel> gudangList = gudangModel.select("");
         DefaultTableModel defaultTableModel = (DefaultTableModel) gudangPanel.getGudangTable().getModel();
         defaultTableModel.setRowCount(0);
         for (GudangModel gudang : gudangList) {

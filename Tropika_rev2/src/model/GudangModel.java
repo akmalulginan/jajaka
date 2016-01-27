@@ -212,11 +212,29 @@ public class GudangModel extends Model {
         return toReturn;
     }
 
-    public ArrayList<GudangModel> select() {
+    public ArrayList<GudangModel> select(String cari) {
         ArrayList<GudangModel> gudangList = new ArrayList<>();
-        
+        String query = "SELECT * FROM gudang";
+        if (!cari.isEmpty()) {
+            query = query + " WHERE kodeGudang LIKE '%" + cari + "%' "
+                    + "OR kategoriGudang LIKE '%" + cari + "%' "
+                    + "OR alamat LIKE '%" + cari + "%' "
+                    + "OR kota LIKE '%" + cari + "%' "
+                    + "OR kodePos LIKE '%" + cari + "%' "
+                    + "OR noTelp LIKE '%" + cari + "%' "
+                    + "OR noFax LIKE '%" + cari + "%' "
+                    + "OR email LIKE '%" + cari + "%' "
+                    + "OR catatan LIKE '%" + cari + "%' "
+                    + "OR contactPerson LIKE '%" + cari + "%' ";
+            if (cari.equals("produksi")) {
+                query = query + "OR produksi = 1";
+            } else if (cari.equals("penyimpanan")) {
+                query = query + "OR penyimpanan = 1";
+            }
+        }
+        System.out.println(query);
         try {
-            pst = conn.prepareStatement("SELECT * FROM gudang");
+            pst = conn.prepareStatement(query);
             rs = pst.executeQuery();
             while (rs.next()) {
                 GudangModel gudangModel = new GudangModel();
@@ -260,13 +278,4 @@ public class GudangModel extends Model {
 
         return toReturn;
     }
-
-    public static void main(String[] args) {
-        ArrayList<GudangModel> gudangList = new GudangModel().select();
-        for (GudangModel gudang : gudangList) {
-            
-        }
-    }
-    
-    
 }

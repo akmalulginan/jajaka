@@ -150,6 +150,8 @@ public class ItemControl {
     }
 
     public void clear(ItemPanel itemPanel) {
+        itemPanel.getGambarLabel().setIcon(null);
+        itemPanel.getjTabbedPane1().setSelectedIndex(0);
         itemPanel.getKodeItemText().setText("");
         itemPanel.getBarcodeText().setText("");
         itemPanel.getNamaItemText().setText("");

@@ -30,7 +30,6 @@ public class GudangControl {
         gudangModel.setContactPerson(gudangPanel.getcPersonText().getText());
         gudangModel.setPenyimpanan(gudangPanel.getPenyimpanan());
         gudangModel.setProduksi(gudangPanel.getProduksi());
-
     }
 
     public void simpanGudang(GudangPanel gudangPanel) {

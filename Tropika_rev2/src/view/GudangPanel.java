@@ -101,9 +101,7 @@ public class GudangPanel extends javax.swing.JPanel {
     public JTextField getTglBarangMasuk() {
         return tglBarangMasuk;
     }
-    
-    
-    
+
     public GudangPanel() {
         initComponents();
         System.out.println(jPanel1.getComponentCount());
@@ -813,8 +811,8 @@ public class GudangPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void simpanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanButtonActionPerformed
-        
-            gudangControl.simpanGudang(this);  
+
+        gudangControl.simpanGudang(this);
     }//GEN-LAST:event_simpanButtonActionPerformed
 
     private void penyimpananCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penyimpananCheckActionPerformed

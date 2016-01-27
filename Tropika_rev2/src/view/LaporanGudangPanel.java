@@ -5,6 +5,10 @@
  */
 package view;
 
+import control.LaporanGudangControl;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author sipit
@@ -14,8 +18,19 @@ public class LaporanGudangPanel extends javax.swing.JPanel {
     /**
      * Creates new form FormLaporanGudang
      */
+    private LaporanGudangControl laporanGudangControl = new LaporanGudangControl();
+    
     public LaporanGudangPanel() {
         initComponents();
+        laporanGudangControl.refresh(this);
+    }
+
+    public JTextField getCariText() {
+        return cariText;
+    }
+
+    public JTable getGudangTable() {
+        return gudangTable;
     }
 
     /**
@@ -32,7 +47,7 @@ public class LaporanGudangPanel extends javax.swing.JPanel {
         cariButton = new javax.swing.JButton();
         cariText = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        gudangTable = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(231, 231, 231));
         setName("Laporan Gudang"); // NOI18N
@@ -80,19 +95,27 @@ public class LaporanGudangPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(11, 18, 0, 0);
         add(cariText, gridBagConstraints);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        gudangTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Kode Gudang", "Kategori Gudang", "Alamat", "Kota", "Kode Pos", "No. Telp", "No. Fax", "Sifat Gudang", "Catatan"
+                "Kode", "Kategori", "Alamat", "Kota", "Kode Pos", "No. Telp", "No. Fax", "Email", "Catatan", "Sifat"
             }
-        ));
-        jTable1.setOpaque(false);
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        gudangTable.setOpaque(false);
+        jScrollPane1.setViewportView(gudangTable);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -110,14 +133,15 @@ public class LaporanGudangPanel extends javax.swing.JPanel {
 
     private void cariButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cariButtonActionPerformed
         // TODO add your handling code here:
+        laporanGudangControl.cari(this);
     }//GEN-LAST:event_cariButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cariButton;
     private javax.swing.JTextField cariText;
+    private javax.swing.JTable gudangTable;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

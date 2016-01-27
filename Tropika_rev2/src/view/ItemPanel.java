@@ -4,6 +4,7 @@ import control.ItemControl;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
@@ -36,6 +37,10 @@ public class ItemPanel extends javax.swing.JPanel {
         kategoriCombo.addItem("Stok");
         kategoriCombo.addItem("Non Stok");
         itemControl.loadSatuanCombo(satuanCombo);
+    }
+
+    public JTabbedPane getjTabbedPane1() {
+        return jTabbedPane1;
     }
 
     public JComboBox getKategoriCombo() {
@@ -121,8 +126,6 @@ public class ItemPanel extends javax.swing.JPanel {
     public JCheckBox getStatusItemCheck() {
         return statusItemCheck;
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.

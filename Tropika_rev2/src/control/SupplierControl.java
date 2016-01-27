@@ -125,6 +125,7 @@ public class SupplierControl {
     }
 
     public void clear(SupplierPanel supplierPanel) {
+        supplierPanel.getPanelInfoSupplier().setSelectedIndex(0);
         supplierPanel.getKodeSupplier().setText("");
         supplierPanel.getNamaSupplier().setText("");
         supplierPanel.getKategori().setText("");
