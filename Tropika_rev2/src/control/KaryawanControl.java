@@ -5,10 +5,13 @@
  */
 package control;
 
+import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.JComboBox;
 import model.KaryawanModel;
 import view.KaryawanPanel;
 import javax.swing.JOptionPane;
+import model.JabatanModel;
 
 /**
  *
@@ -17,6 +20,7 @@ import javax.swing.JOptionPane;
 public class KaryawanControl {
 
     private KaryawanModel karyawanModel = new KaryawanModel();
+    private JabatanModel jabatanModel = new JabatanModel();
 
     public void setKaryawan(KaryawanPanel karyawanPanel) {
 
@@ -141,5 +145,26 @@ public class KaryawanControl {
         karyawanPanel.getNoRek().setText("");
         karyawanPanel.getAtasNama().setText("");
     }
-
+    public void getJabatan(KaryawanPanel karyawanPanel){
+        String kodeJabatan="";
+        if(karyawanPanel.getKodeJabatanComboBox().getSelectedIndex() != -1 ){
+            kodeJabatan = karyawanPanel.getKodeJabatanComboBox().getSelectedItem().toString();
+        }
+        System.out.println(kodeJabatan);
+    }
+    
+    public void loadJabatanCombo(JComboBox comboBox) {
+        comboBox.removeAllItems();
+        ItemControl bC = new ItemControl();
+        loadJabatan(comboBox);
+    }
+    
+  
+    public void loadJabatan(JComboBox combo) {
+        ArrayList<JabatanModel> jabatanList = jabatanModel.selectJabatan();
+        combo.addItem("");
+        for (JabatanModel jabatan : jabatanList) {
+            combo.addItem(jabatan.getKodeJabatan());
+        }
+    }
 }

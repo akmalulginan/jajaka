@@ -17,8 +17,4 @@ public class SatuanControl {
         sM.insert();
     }
     
-    public void setJabatan(String kodeJabatan, String namaJabatan){
-        SatuanModel sM = new SatuanModel(kodeJabatan, namaJabatan);
-        sM.insertJabatan();
-    }
 }

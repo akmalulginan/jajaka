@@ -5,6 +5,7 @@
  */
 package view;
 
+import control.JabatanControl;
 import control.SatuanControl;
 
 /**
@@ -137,7 +138,7 @@ public class KaryawanDialog extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        new SatuanControl().setJabatan(kodeJabatanText.getText(), namaJabatanText.getText());
+        new JabatanControl().setJabatan(kodeJabatanText.getText(), namaJabatanText.getText());
         doClose(RET_OK);
     }//GEN-LAST:event_okButtonActionPerformed
 

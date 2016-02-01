@@ -73,14 +73,6 @@ public class ItemControl {
         }
     }
 
-    public void loadJabatan(JComboBox combo) {
-        ArrayList<SatuanModel> satuanList = satuanModel.selectJabatan();
-        combo.addItem("");
-        for (SatuanModel satuan : satuanList) {
-            combo.addItem(satuan.getKodeSatuan());
-        }
-    }
-
     public String openImage(JTextField pathText) {
         JFileChooser chooser = new JFileChooser();
         chooser.showOpenDialog(null);
@@ -136,11 +128,7 @@ public class ItemControl {
         loadSatuan(comboBox);
     }
     
-    public void loadJabatanCombo(JComboBox comboBox) {
-        comboBox.removeAllItems();
-        ItemControl bC = new ItemControl();
-        loadJabatan(comboBox);
-    }
+    
 
     public boolean validasi(ItemPanel itemPanel) {
         boolean toReturn = false;

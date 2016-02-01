@@ -5,6 +5,7 @@ import control.ItemControl;
 import control.KaryawanControl;
 import javax.swing.ButtonGroup;
 import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
@@ -29,7 +30,8 @@ public class KaryawanPanel extends javax.swing.JPanel {
 
     public KaryawanPanel() {
         initComponents();
-        new ItemControl().loadJabatanCombo(kodeJabatanComboBox);
+        karyawanControl.loadJabatanCombo(kodeJabatanComboBox);
+        
     }
 
     public JTextField getNamaLengkapText() {
@@ -131,6 +133,11 @@ public class KaryawanPanel extends javax.swing.JPanel {
         return usia;
     }
 
+    public JComboBox getKodeJabatanComboBox() {
+        return kodeJabatanComboBox;
+    }
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -223,6 +230,11 @@ public class KaryawanPanel extends javax.swing.JPanel {
         jPanel3.setOpaque(false);
 
         kodeJabatanComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        kodeJabatanComboBox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                kodeJabatanComboBoxItemStateChanged(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(40, 40, 40));
@@ -267,6 +279,7 @@ public class KaryawanPanel extends javax.swing.JPanel {
 
         namaLengkapText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
+        jabatanText.setEditable(false);
         jabatanText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
         tempatLahir.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -796,13 +809,12 @@ public class KaryawanPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel3Layout.createSequentialGroup()
                             .addGap(9, 9, 9)
-                            .addComponent(jLabel2))
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGap(9, 9, 9)
-                            .addComponent(jLabel22))
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel22))))
                     .addComponent(kodeJabatanComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
                 .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -841,7 +853,7 @@ public class KaryawanPanel extends javax.swing.JPanel {
         karyawanDialog.setVisible(true);
 
         if (karyawanDialog.getReturnStatus() == 1) {
-            new ItemControl().loadJabatanCombo(kodeJabatanComboBox);
+            new KaryawanControl().loadJabatanCombo(kodeJabatanComboBox);
         }
         System.out.println(karyawanDialog.getReturnStatus());
 
@@ -850,6 +862,11 @@ public class KaryawanPanel extends javax.swing.JPanel {
     private void aktifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aktifActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_aktifActionPerformed
+
+    private void kodeJabatanComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_kodeJabatanComboBoxItemStateChanged
+        // TODO add your handling code here:
+        karyawanControl.getJabatan(this);
+    }//GEN-LAST:event_kodeJabatanComboBoxItemStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
