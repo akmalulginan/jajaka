@@ -60,9 +60,6 @@ public class KaryawanControl {
         if (karyawanPanel.getKodeKaryawanText().getText().isEmpty()) {
             JOptionPane.showMessageDialog(karyawanPanel, "Kode Karyawan tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
             karyawanPanel.getKodeKaryawanText().requestFocus();
-        } else if (karyawanPanel.getKodeJabatanText().getText().isEmpty()) {
-            JOptionPane.showMessageDialog(karyawanPanel, "Kode Jabatan tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
-            karyawanPanel.getKodeJabatanText().requestFocus();
         } else if (karyawanPanel.getNamaLengkapText().getText().isEmpty()) {
             JOptionPane.showMessageDialog(karyawanPanel, "Nama Lengkap tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
             karyawanPanel.getNamaLengkapText().requestFocus();
@@ -121,7 +118,7 @@ public class KaryawanControl {
     
     public void clear(KaryawanPanel karyawanPanel) {
         karyawanPanel.getKodeKaryawanText().setText("");
-        karyawanPanel.getKodeJabatanText().setText("");
+       
         karyawanPanel.getNamaLengkapText().setText("");
         karyawanPanel.getNamaPanggilanText().setText("");
         karyawanPanel.getJabatanText().setText("");
