@@ -6,13 +6,13 @@
 package view;
 
 import control.JabatanControl;
-import control.SatuanControl;
+import javax.swing.JTextField;
 
 /**
  *
  * @author hendar
  */
-public class KaryawanDialog extends javax.swing.JDialog {
+public class JabatanDialog extends javax.swing.JDialog {
 
     /**
      * Creates new form KaryawanDialog
@@ -23,9 +23,17 @@ public class KaryawanDialog extends javax.swing.JDialog {
      */
     public static final int RET_OK = 1;
     
-    public KaryawanDialog(java.awt.Frame parent, boolean modal) {
+    public JabatanDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+    }
+
+    public JTextField getKodeJabatanText() {
+        return kodeJabatanText;
+    }
+
+    public JTextField getNamaJabatanText() {
+        return namaJabatanText;
     }
 
     /**
@@ -138,7 +146,7 @@ public class KaryawanDialog extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        new JabatanControl().setJabatan(kodeJabatanText.getText(), namaJabatanText.getText());
+        new JabatanControl().simpanJabatan(this);
         doClose(RET_OK);
     }//GEN-LAST:event_okButtonActionPerformed
 

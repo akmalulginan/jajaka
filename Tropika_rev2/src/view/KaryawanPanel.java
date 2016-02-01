@@ -30,7 +30,7 @@ public class KaryawanPanel extends javax.swing.JPanel {
 
     public KaryawanPanel() {
         initComponents();
-        karyawanControl.loadJabatanCombo(kodeJabatanComboBox);
+        karyawanControl.loadJabatan(kodeJabatanComboBox);
         
     }
 
@@ -73,10 +73,7 @@ public class KaryawanPanel extends javax.swing.JPanel {
     public ButtonGroup getJenisKelaminButtonGroup() {
         return jenisKelaminButtonGroup;
     }
-
-//    public JTextField getKodeJabatanText() {
-//        return kodeJabatanText;
-//    }
+    
     public JTextField getKodeKaryawanText() {
         return kodeKaryawanText;
     }
@@ -132,7 +129,7 @@ public class KaryawanPanel extends javax.swing.JPanel {
     public JTextField getUsia() {
         return usia;
     }
-
+    
     public JComboBox getKodeJabatanComboBox() {
         return kodeJabatanComboBox;
     }
@@ -849,11 +846,11 @@ public class KaryawanPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        KaryawanDialog karyawanDialog = new KaryawanDialog(null, true);
+        JabatanDialog karyawanDialog = new JabatanDialog(null, true);
         karyawanDialog.setVisible(true);
 
         if (karyawanDialog.getReturnStatus() == 1) {
-            new KaryawanControl().loadJabatanCombo(kodeJabatanComboBox);
+            new KaryawanControl().loadJabatan(kodeJabatanComboBox);
         }
         System.out.println(karyawanDialog.getReturnStatus());
 

@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author hendar
  */
 public class JabatanModel extends Model {
-    
+
     String kodeJabatan;
     String namaJabatan;
 
@@ -23,7 +23,7 @@ public class JabatanModel extends Model {
     }
 
     public JabatanModel() {
-        
+
     }
 
     public String getKodeJabatan() {
@@ -41,12 +41,15 @@ public class JabatanModel extends Model {
     public void setNamaJabatan(String namaJabatan) {
         this.namaJabatan = namaJabatan;
     }
-    
-    public ArrayList<JabatanModel> selectJabatan(){
+
+    public ArrayList<JabatanModel> select(String cari) {
         ArrayList<JabatanModel> jabatanList = new ArrayList<>();
+        String query = "SELECT * FROM jabatan";
+        if (!cari.isEmpty()) {
+            query = query + " WHERE kodeJabatan = '"+cari+"'";
+        }
         try {
-            String sql = "SELECT * FROM jabatan";
-            pst = conn.prepareStatement(sql);
+            pst = conn.prepareStatement(query);
             rs = pst.executeQuery();
 
             JabatanModel jabatanModel;
@@ -59,11 +62,11 @@ public class JabatanModel extends Model {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
-        
+
         return jabatanList;
     }
-    
-    public void insertJabatan() {
+
+    public void insert() {
         try {
             String sql = "INSERT INTO jabatan (kodeJabatan, namaJabatan) VALUES (?,?);";
             pst = conn.prepareStatement(sql);
@@ -75,6 +78,5 @@ public class JabatanModel extends Model {
             JOptionPane.showMessageDialog(null, "Kode Jabatan Sudah Dipakai!");
         }
     }
-    
-  
+
 }

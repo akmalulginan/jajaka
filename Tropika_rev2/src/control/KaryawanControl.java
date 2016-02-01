@@ -125,7 +125,7 @@ public class KaryawanControl {
 
     public void clear(KaryawanPanel karyawanPanel) {
         karyawanPanel.getKodeKaryawanText().setText("");
-       
+
         karyawanPanel.getNamaLengkapText().setText("");
         karyawanPanel.getNamaPanggilanText().setText("");
         karyawanPanel.getJabatanText().setText("");
@@ -145,23 +145,20 @@ public class KaryawanControl {
         karyawanPanel.getNoRek().setText("");
         karyawanPanel.getAtasNama().setText("");
     }
-    public void getJabatan(KaryawanPanel karyawanPanel){
-        String kodeJabatan="";
-        if(karyawanPanel.getKodeJabatanComboBox().getSelectedIndex() != -1 ){
+
+    public void getJabatan(KaryawanPanel karyawanPanel) {
+        String kodeJabatan = "";
+        if (karyawanPanel.getKodeJabatanComboBox().getSelectedIndex() != -1) {
             kodeJabatan = karyawanPanel.getKodeJabatanComboBox().getSelectedItem().toString();
+            if (!kodeJabatan.equals("")) {
+                karyawanPanel.getJabatanText().setText(jabatanModel.select(kodeJabatan).get(0).getNamaJabatan());
+            }
         }
-        System.out.println(kodeJabatan);
     }
-    
-    public void loadJabatanCombo(JComboBox comboBox) {
-        comboBox.removeAllItems();
-        ItemControl bC = new ItemControl();
-        loadJabatan(comboBox);
-    }
-    
-  
+
     public void loadJabatan(JComboBox combo) {
-        ArrayList<JabatanModel> jabatanList = jabatanModel.selectJabatan();
+        ArrayList<JabatanModel> jabatanList = jabatanModel.select("");
+        combo.removeAllItems();
         combo.addItem("");
         for (JabatanModel jabatan : jabatanList) {
             combo.addItem(jabatan.getKodeJabatan());

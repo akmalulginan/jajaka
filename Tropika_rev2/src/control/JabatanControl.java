@@ -5,23 +5,25 @@
  */
 package control;
 
-import java.util.ArrayList;
-import javax.swing.JComboBox;
 import model.JabatanModel;
+import view.JabatanDialog;
 
 /**
  *
  * @author hendar
  */
-
 public class JabatanControl {
-    
-    
-    JabatanModel jabatanModel;
-    
-    public void setJabatan(String kodeJabatan, String namaJabatan){
-        JabatanModel sM = new JabatanModel(kodeJabatan, namaJabatan);
-        sM.insertJabatan();
+
+    JabatanModel jabatanModel = new JabatanModel();
+
+    public void simpanJabatan(JabatanDialog jabatanDialog) {
+        setJabatan(jabatanDialog);
+        jabatanModel.insert();
+    }
+
+    public void setJabatan(JabatanDialog jabatanDialog) {
+        jabatanModel.setKodeJabatan(jabatanDialog.getKodeJabatanText().getText());
+        jabatanModel.setNamaJabatan(jabatanDialog.getNamaJabatanText().getText());
     }
 
 }
