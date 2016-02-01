@@ -672,7 +672,7 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void userButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userButtonActionPerformed
         // TODO add your handling code here:
-        menuControl.newTab(new Pengguna1Panel(), pane);
+        menuControl.newTab(new PenggunaPanel(), pane);
     }//GEN-LAST:event_userButtonActionPerformed
 
     private void passwordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordButtonActionPerformed
