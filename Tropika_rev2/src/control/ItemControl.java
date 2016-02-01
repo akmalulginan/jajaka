@@ -103,7 +103,7 @@ public class ItemControl {
             byte[] photo;
             photo = bos.toByteArray();
             ImageIcon poto = new ImageIcon(photo);
-            Image img = poto.getImage().getScaledInstance(gambarLabel.getWidth(), (gambarLabel.getWidth() * poto.getIconHeight()) / poto.getIconWidth(), java.awt.Image.SCALE_SMOOTH);
+            Image img = poto.getImage().getScaledInstance(170, (170 * poto.getIconHeight()) / poto.getIconWidth(), java.awt.Image.SCALE_SMOOTH);
             ImageIcon i = new ImageIcon(img);
             gambarLabel.setIcon(i);
             return photo;
@@ -164,7 +164,9 @@ public class ItemControl {
     }
 
     public void clear(ItemPanel itemPanel) {
-        itemPanel.getGambarLabel().setIcon(null);
+        setImage(System.getProperty("user.dir") + "\\lib\\item.bak", itemPanel.getGambarLabel());
+        itemPanel.getPathText().setText("");
+        itemPanel.getKeteranganText().setText("");
         itemPanel.getjTabbedPane1().setSelectedIndex(0);
         itemPanel.getKodeItemText().setText("");
         itemPanel.getBarcodeText().setText("");

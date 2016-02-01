@@ -1089,6 +1089,9 @@
                     <Property name="borderPaintedFlat" type="boolean" value="true"/>
                     <Property name="opaque" type="boolean" value="false"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="aktifActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>

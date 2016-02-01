@@ -5,8 +5,8 @@
  */
 package model;
 
-import java.util.Date;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,23 +16,41 @@ import javax.swing.JOptionPane;
 public class KaryawanModel extends Model {
 
     private String kodeKaryawan;
+    private String kodeJabatan;
     private String namaLengkap;
     private String namaPanggilan;
+    private String jabatan;
     private String jenisKelamin;
-    private long tanggalMasuk;
+    private Date tanggalMasuk;
     private String tempatLahir;
-    private long tanggalLahir;
+    private Date tanggalLahir;
     private String alamat;
     private String kota;
     private String kodePos;
     private String noHp;
     private String email;
     private String catatan;
-    private String status;
+    private boolean status;
     private byte[] gambar;
 
     public String getKodeKaryawan() {
         return kodeKaryawan;
+    }
+
+    public String getKodeJabatan() {
+        return kodeJabatan;
+    }
+
+    public void setKodeJabatan(String kodeJabatan) {
+        this.kodeJabatan = kodeJabatan;
+    }
+
+    public String getJabatan() {
+        return jabatan;
+    }
+
+    public void setJabatan(String jabatan) {
+        this.jabatan = jabatan;
     }
 
     public void setKodeKaryawan(String kodeKaryawan) {
@@ -63,11 +81,11 @@ public class KaryawanModel extends Model {
         this.jenisKelamin = jenisKelamin;
     }
 
-    public long getTanggalMasuk() {
+    public Date getTanggalMasuk() {
         return tanggalMasuk;
     }
 
-    public void setTanggalMasuk(long tanggalMasuk) {
+    public void setTanggalMasuk(Date tanggalMasuk) {
         this.tanggalMasuk = tanggalMasuk;
     }
 
@@ -79,11 +97,11 @@ public class KaryawanModel extends Model {
         this.tempatLahir = tempatLahir;
     }
 
-    public long getTanggalLahir() {
+    public Date getTanggalLahir() {
         return tanggalLahir;
     }
 
-    public void setTanggalLahir(long tanggalLahir) {
+    public void setTanggalLahir(Date tanggalLahir) {
         this.tanggalLahir = tanggalLahir;
     }
 
@@ -135,11 +153,11 @@ public class KaryawanModel extends Model {
         this.catatan = catatan;
     }
 
-    public String getStatus() {
+    public boolean getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 
@@ -152,28 +170,33 @@ public class KaryawanModel extends Model {
     }
 
     public boolean insert() {
+        java.sql.Date tglMasuk = new java.sql.Date(tanggalMasuk.getTime());
+        java.sql.Date tglLahir = new java.sql.Date(tanggalLahir.getTime());
+
         try {
-            String sql = "INSERT INTO karyawan (kodeKaryawan, namaLengkap, namaPanggilan, jenisKelamin,"
+            String sql = "INSERT INTO karyawan (kodeKaryawan, kodeJabatan, namaLengkap, namaPanggilan, jabatan, jenisKelamin,"
                     + "tanggalMasuk, tempatLahir, tanggalLahir, alamat, kota, kodePos, noHp, email,"
-                    + "catatan, status, gambar) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                    + "catatan, status, gambar) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
             pst = conn.prepareStatement(sql);
 
             pst.setString(1, kodeKaryawan);
-            pst.setString(2, namaLengkap);
-            pst.setString(3, namaPanggilan);
-            pst.setString(4, jenisKelamin);
-            pst.setDate(5, new java.sql.Date(tanggalMasuk));
-            pst.setString(6, tempatLahir);
-            pst.setDate(7, new java.sql.Date(tanggalLahir));
-            pst.setString(8, alamat);
-            pst.setString(9, kota);
-            pst.setString(10, kodePos);
-            pst.setString(11, noHp);
-            pst.setString(12, email);
-            pst.setString(13, catatan);
-            pst.setString(14, status);
-            pst.setBytes(15, gambar);
+            pst.setString(2, kodeJabatan);
+            pst.setString(3, namaLengkap);
+            pst.setString(4, namaPanggilan);
+            pst.setString(5, jabatan);
+            pst.setString(6, jenisKelamin);
+            pst.setDate(7, tglMasuk);
+            pst.setString(8, tempatLahir);
+            pst.setDate(9, tglLahir);
+            pst.setString(10, alamat);
+            pst.setString(11, kota);
+            pst.setString(12, kodePos);
+            pst.setString(13, noHp);
+            pst.setString(14, email);
+            pst.setString(15, catatan);
+            pst.setBoolean(16, status);
+            pst.setBytes(17, gambar);
 
             pst.execute();
 
@@ -215,16 +238,16 @@ public class KaryawanModel extends Model {
                 pst.setString(1, namaLengkap);
                 pst.setString(2, namaPanggilan);
                 pst.setString(3, jenisKelamin);
-                pst.setDate(4, new java.sql.Date(tanggalMasuk));
+//                pst.setDate(4, new java.sql.Date(tanggalMasuk));
                 pst.setString(5, tempatLahir);
-                pst.setDate(6, new java.sql.Date(tanggalLahir));
+//                pst.setDate(6, new java.sql.Date(tanggalLahir));
                 pst.setString(7, alamat);
                 pst.setString(8, kota);
                 pst.setString(9, kodePos);
                 pst.setString(10, noHp);
                 pst.setString(11, email);
                 pst.setString(12, catatan);
-                pst.setString(13, status);
+                pst.setBoolean(13, status);
                 pst.setBytes(14, gambar);
 
                 pst.execute();
@@ -266,16 +289,16 @@ public class KaryawanModel extends Model {
                 this.setNamaLengkap(rs.getString("namaLengkap"));
                 this.setNamaPanggilan(rs.getString("namaPanggilan"));
                 this.setJenisKelamin(rs.getString("jenisKelamin"));
-                this.setTanggalMasuk(rs.getDate("tanggalMasuk").getTime());
+//                this.setTanggalMasuk(rs.getDate("tanggalMasuk").getTime());
                 this.setTempatLahir(rs.getString("tempatLahir"));
-                this.setTanggalLahir(rs.getDate("tanggalLahir").getTime());
+//                this.setTanggalLahir(rs.getDate("tanggalLahir").getTime());
                 this.setAlamat(rs.getString("alamat"));
                 this.setKota(rs.getString("kota"));
                 this.setKodePos(rs.getString("kodePos"));
                 this.setNoHp(rs.getString("noHp"));
                 this.setEmail(rs.getString("email"));
                 this.setCatatan(rs.getString("catatan"));
-                this.setStatus(rs.getString("status"));
+                this.setStatus(rs.getBoolean("status"));
                 this.setGambar(rs.getBytes("gambar"));
                 list.add(this);
             }

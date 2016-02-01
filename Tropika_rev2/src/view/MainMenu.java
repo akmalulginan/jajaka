@@ -667,7 +667,7 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void cariButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cariButtonActionPerformed
         // TODO add your handling code here:
-        menuControl.newTab(new DataKaryawanSearchPanel(), pane);
+        menuControl.newTab(new DataKaryawanPanel(), pane);
     }//GEN-LAST:event_cariButtonActionPerformed
 
     private void userButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userButtonActionPerformed
