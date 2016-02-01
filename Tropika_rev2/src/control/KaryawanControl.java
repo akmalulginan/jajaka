@@ -21,7 +21,6 @@ public class KaryawanControl {
     public void setKaryawan(KaryawanPanel karyawanPanel) {
 
         karyawanModel.setKodeKaryawan(karyawanPanel.getKodeKaryawanText().getText());
-        karyawanModel.setKodeJabatan(karyawanPanel.getKodeJabatanText().getText());
         karyawanModel.setNamaLengkap(karyawanPanel.getNamaLengkapText().getText());
         karyawanModel.setNamaPanggilan(karyawanPanel.getNamaPanggilanText().getText());
         if (karyawanPanel.getLaki2RadioButton().isSelected()) {
@@ -48,7 +47,7 @@ public class KaryawanControl {
     }
 
     public void simpanKaryawan(KaryawanPanel karyawanPanel) {
-        if (true) {
+        if (validasi(karyawanPanel)) {
             setKaryawan(karyawanPanel);
             if (karyawanModel.insert()) {
                 JOptionPane.showMessageDialog(karyawanPanel, "Data Karyawan berhasil Disimpan!");
