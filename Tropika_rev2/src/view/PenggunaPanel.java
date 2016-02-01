@@ -1,6 +1,7 @@
 package view;
 
 import control.PenggunaControl;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -25,6 +26,10 @@ public class PenggunaPanel extends javax.swing.JPanel {
     
     public PenggunaPanel() {
         initComponents();
+        penggunaControl.disable(this);
+        penggunaControl.loadKodePengguna(this);
+        penggunaControl.loadLevel(this);
+        penggunaControl.clear(this);
     }
 
     public JComboBox getKodePenggunaComboBox() {
@@ -50,6 +55,24 @@ public class PenggunaPanel extends javax.swing.JPanel {
     public JPasswordField getKonfirmPassword() {
         return konfirmPassword;
     }
+
+    public JButton getBatalButton() {
+        return batalButton;
+    }
+
+    public JButton getHapusButton() {
+        return hapusButton;
+    }
+
+    public JButton getSimpanButton() {
+        return simpanButton;
+    }
+
+    public JButton getUbahButton() {
+        return ubahButton;
+    }
+    
+    
     
     
 
@@ -116,8 +139,11 @@ public class PenggunaPanel extends javax.swing.JPanel {
 
         kodePenggunaComboBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         kodePenggunaComboBox.setForeground(new java.awt.Color(40, 40, 40));
-        kodePenggunaComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "      ", "Item 1", "Item 2", "Item 3", "Item 4" }));
-        kodePenggunaComboBox.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
+        kodePenggunaComboBox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                kodePenggunaComboBoxItemStateChanged(evt);
+            }
+        });
 
         simpanButton.setBackground(new java.awt.Color(36, 198, 237));
         simpanButton.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -216,8 +242,6 @@ public class PenggunaPanel extends javax.swing.JPanel {
 
         levelComboBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         levelComboBox.setForeground(new java.awt.Color(40, 40, 40));
-        levelComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "      ", "Item 1", "Item 2", "Item 3", "Item 4" }));
-        levelComboBox.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
 
         passwordText.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
@@ -226,6 +250,11 @@ public class PenggunaPanel extends javax.swing.JPanel {
         jButton1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton1.setText("Tambah");
         jButton1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -337,6 +366,7 @@ public class PenggunaPanel extends javax.swing.JPanel {
 
     private void ubahButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ubahButtonActionPerformed
         // TODO add your handling code here:
+        penggunaControl.ubah(this);
     }//GEN-LAST:event_ubahButtonActionPerformed
 
     private void hapusButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusButtonActionPerformed
@@ -345,8 +375,18 @@ public class PenggunaPanel extends javax.swing.JPanel {
 
     private void batalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batalButtonActionPerformed
         // TODO add your handling code here:
-        penggunaControl.clear(this);
+        penggunaControl.batal(this);
     }//GEN-LAST:event_batalButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        penggunaControl.tambah(this);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void kodePenggunaComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_kodePenggunaComboBoxItemStateChanged
+        // TODO add your handling code here:
+        penggunaControl.getUser(this);
+    }//GEN-LAST:event_kodePenggunaComboBoxItemStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
