@@ -75,18 +75,7 @@ public class SatuanModel extends Model {
         }
     }
     
-    public void insertJabatan() {
-        try {
-            String sql = "INSERT INTO jabatan (kodeJabatan, namaJabatan) VALUES (?,?);";
-            pst = conn.prepareStatement(sql);
-            pst.setString(1, kodeSatuan);
-            pst.setString(2, namaSatuan);
-            pst.execute();
-            JOptionPane.showMessageDialog(null, "Penambahan Jabatan Berhasil!");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Kode Jabatan Sudah Dipakai!");
-        }
-    }
+    
     
     public ArrayList<SatuanModel> select(){
         ArrayList<SatuanModel> satuanList = new ArrayList<>();
@@ -108,25 +97,5 @@ public class SatuanModel extends Model {
         
         return satuanList;
     }
-    
-    public ArrayList<SatuanModel> selectJabatan(){
-        ArrayList<SatuanModel> satuanList = new ArrayList<>();
-        try {
-            String sql = "SELECT * FROM jabatan";
-            pst = conn.prepareStatement(sql);
-            rs = pst.executeQuery();
-
-            SatuanModel satuanModel;
-            while (rs.next()) {
-                satuanModel = new SatuanModel();
-                satuanModel.kodeSatuan = rs.getString("kodeJabatan");
-                satuanModel.namaSatuan = rs.getString("namaJabatan");
-                satuanList.add(satuanModel);
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
-        
-        return satuanList;
-    }
+      
 }
