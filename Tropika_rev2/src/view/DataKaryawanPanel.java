@@ -67,10 +67,7 @@ public class DataKaryawanPanel extends javax.swing.JPanel {
 
         karyawanTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Kode", "Nama", "Panggilan", "Jenis Kelamin", "Tgl Masuk", "TTL", "Alamat", "Kota", "Kode Pos", "HP", "Email", "Catatan", "Status"
