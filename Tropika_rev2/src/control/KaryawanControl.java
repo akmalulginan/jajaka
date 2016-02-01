@@ -15,12 +15,13 @@ import javax.swing.JOptionPane;
  * @author hendar
  */
 public class KaryawanControl {
-    
+
     private KaryawanModel karyawanModel = new KaryawanModel();
-    
+
     public void setKaryawan(KaryawanPanel karyawanPanel) {
-        
+
         karyawanModel.setKodeKaryawan(karyawanPanel.getKodeKaryawanText().getText());
+        karyawanModel.setKodeJabatan(karyawanPanel.getKodeJabatanText().getText());
         karyawanModel.setNamaLengkap(karyawanPanel.getNamaLengkapText().getText());
         karyawanModel.setNamaPanggilan(karyawanPanel.getNamaPanggilanText().getText());
         if (karyawanPanel.getLaki2RadioButton().isSelected()) {
@@ -28,23 +29,26 @@ public class KaryawanControl {
         } else if (karyawanPanel.getPerempuanRadioButton().isSelected()) {
             karyawanModel.setJenisKelamin("Perempuan");
         }
+        karyawanModel.setJabatan(karyawanPanel.getJabatanText().getText());
         karyawanModel.setJenisKelamin(karyawanPanel.getJenisKelaminButtonGroup().getSelection().toString());
-        karyawanModel.setTanggalMasuk(karyawanPanel.getTanggalMasukKerjaDate().getDate().getTime());
+        karyawanModel.setTanggalMasuk(karyawanPanel.getTanggalMasukKerjaDate().getDate());
         karyawanModel.setTempatLahir(karyawanPanel.getTempatLahir().getText());
-        karyawanModel.setTanggalLahir(karyawanPanel.getTanggalLahirDate().getDate().getTime());
+        karyawanModel.setTanggalLahir(karyawanPanel.getTanggalLahirDate().getDate());
         karyawanModel.setAlamat(karyawanPanel.getAlamat().getText());
         karyawanModel.setKota(karyawanPanel.getKota().getText());
         karyawanModel.setKodePos(karyawanPanel.getKodePos().getText());
         karyawanModel.setNoHp(karyawanPanel.getNoHp().getText());
         karyawanModel.setEmail(karyawanPanel.getEmail().getText());
         karyawanModel.setCatatan(karyawanPanel.getCatatan().getText());
-        karyawanModel.setStatus(karyawanPanel.getAktif().getSelectedObjects().toString());
+        if (karyawanPanel.getAktif().isSelected()) {
+            karyawanModel.setStatus(true);
+        }
         karyawanModel.setGambar(karyawanPanel.getGambar());
-        
+
     }
-    
-    public void simpanGudang(KaryawanPanel karyawanPanel) {
-        if (validasi(karyawanPanel)) {
+
+    public void simpanKaryawan(KaryawanPanel karyawanPanel) {
+        if (true) {
             setKaryawan(karyawanPanel);
             if (karyawanModel.insert()) {
                 JOptionPane.showMessageDialog(karyawanPanel, "Data Karyawan berhasil Disimpan!");
@@ -54,7 +58,7 @@ public class KaryawanControl {
             }
         }
     }
-    
+
     public boolean validasi(KaryawanPanel karyawanPanel) {
         boolean toReturn = false;
         if (karyawanPanel.getKodeKaryawanText().getText().isEmpty()) {
@@ -118,7 +122,7 @@ public class KaryawanControl {
         }
         return toReturn;
     }
-    
+
     public void clear(KaryawanPanel karyawanPanel) {
         karyawanPanel.getKodeKaryawanText().setText("");
         karyawanPanel.getKodeJabatanText().setText("");
@@ -141,5 +145,5 @@ public class KaryawanControl {
         karyawanPanel.getNoRek().setText("");
         karyawanPanel.getAtasNama().setText("");
     }
-    
+
 }

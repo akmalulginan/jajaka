@@ -421,7 +421,6 @@ public class KaryawanPanel extends javax.swing.JPanel {
                             .addComponent(namaLengkapText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3)
                             .addComponent(jLabel13))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -603,6 +602,11 @@ public class KaryawanPanel extends javax.swing.JPanel {
         aktif.setText("Aktif");
         aktif.setBorderPaintedFlat(true);
         aktif.setOpaque(false);
+        aktif.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aktifActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -818,9 +822,13 @@ public class KaryawanPanel extends javax.swing.JPanel {
 
     private void inputCepatKey1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCepatKey1ActionPerformed
         // TODO add your handling code here:
-        karyawanControl.simpanGudang(this);
+        karyawanControl.simpanKaryawan(this);
         
     }//GEN-LAST:event_inputCepatKey1ActionPerformed
+
+    private void aktifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aktifActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_aktifActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

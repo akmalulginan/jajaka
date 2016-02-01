@@ -10,12 +10,15 @@ package view;
  *
  * @author sipit
  */
-public class DataKaryawanSearchPanel extends javax.swing.JPanel {
+public class DataKaryawanPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form DataKaryawanSearch
      */
-    public DataKaryawanSearchPanel() {
+    
+    
+    
+    public DataKaryawanPanel() {
         initComponents();
     }
 
@@ -32,6 +35,8 @@ public class DataKaryawanSearchPanel extends javax.swing.JPanel {
         tglUsulan1 = new javax.swing.JTextField();
         inputCepatKey4 = new javax.swing.JButton();
         table = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        karyawanTable = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(231, 231, 231));
         setName("Data Karyawan"); // NOI18N
@@ -60,15 +65,36 @@ public class DataKaryawanSearchPanel extends javax.swing.JPanel {
         table.setBackground(new java.awt.Color(204, 204, 204));
         table.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
 
+        karyawanTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Kode", "Nama", "Panggilan", "Jenis Kelamin", "Tgl Masuk", "TTL", "Alamat", "Kota", "Kode Pos", "HP", "Email", "Catatan", "Status"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(karyawanTable);
+
         javax.swing.GroupLayout tableLayout = new javax.swing.GroupLayout(table);
         table.setLayout(tableLayout);
         tableLayout.setHorizontalGroup(
             tableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 790, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
         );
         tableLayout.setVerticalGroup(
             tableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 263, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -86,7 +112,7 @@ public class DataKaryawanSearchPanel extends javax.swing.JPanel {
                 .addComponent(tglUsulan1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(inputCepatKey4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(278, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,6 +136,8 @@ public class DataKaryawanSearchPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton inputCepatKey4;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable karyawanTable;
     private javax.swing.JPanel table;
     private javax.swing.JTextField tglUsulan1;
     // End of variables declaration//GEN-END:variables
