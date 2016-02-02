@@ -33,7 +33,7 @@ public class LoginControl {
     public void login(Login login) {
         if (validasi(login)) {
             setUser(login);
-            userModel = userModel.select();
+            userModel = userModel.select("").get(0);
             if (userModel.getLevel() != 0) {
                 userLoginModel.setUsername(userModel.getUsername());
                 userLoginModel.setPassword(userModel.getPassword());

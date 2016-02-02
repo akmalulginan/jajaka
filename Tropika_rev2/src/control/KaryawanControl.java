@@ -5,10 +5,13 @@
  */
 package control;
 
+import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.JComboBox;
 import model.KaryawanModel;
 import view.KaryawanPanel;
 import javax.swing.JOptionPane;
+import model.JabatanModel;
 
 /**
  *
@@ -17,11 +20,11 @@ import javax.swing.JOptionPane;
 public class KaryawanControl {
 
     private KaryawanModel karyawanModel = new KaryawanModel();
+    private JabatanModel jabatanModel = new JabatanModel();
 
     public void setKaryawan(KaryawanPanel karyawanPanel) {
 
         karyawanModel.setKodeKaryawan(karyawanPanel.getKodeKaryawanText().getText());
-        karyawanModel.setKodeJabatan(karyawanPanel.getKodeJabatanText().getText());
         karyawanModel.setNamaLengkap(karyawanPanel.getNamaLengkapText().getText());
         karyawanModel.setNamaPanggilan(karyawanPanel.getNamaPanggilanText().getText());
         if (karyawanPanel.getLaki2RadioButton().isSelected()) {
@@ -48,7 +51,7 @@ public class KaryawanControl {
     }
 
     public void simpanKaryawan(KaryawanPanel karyawanPanel) {
-        if (true) {
+        if (validasi(karyawanPanel)) {
             setKaryawan(karyawanPanel);
             if (karyawanModel.insert()) {
                 JOptionPane.showMessageDialog(karyawanPanel, "Data Karyawan berhasil Disimpan!");
@@ -64,9 +67,6 @@ public class KaryawanControl {
         if (karyawanPanel.getKodeKaryawanText().getText().isEmpty()) {
             JOptionPane.showMessageDialog(karyawanPanel, "Kode Karyawan tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
             karyawanPanel.getKodeKaryawanText().requestFocus();
-        } else if (karyawanPanel.getKodeJabatanText().getText().isEmpty()) {
-            JOptionPane.showMessageDialog(karyawanPanel, "Kode Jabatan tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
-            karyawanPanel.getKodeJabatanText().requestFocus();
         } else if (karyawanPanel.getNamaLengkapText().getText().isEmpty()) {
             JOptionPane.showMessageDialog(karyawanPanel, "Nama Lengkap tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
             karyawanPanel.getNamaLengkapText().requestFocus();
@@ -125,7 +125,7 @@ public class KaryawanControl {
 
     public void clear(KaryawanPanel karyawanPanel) {
         karyawanPanel.getKodeKaryawanText().setText("");
-        karyawanPanel.getKodeJabatanText().setText("");
+
         karyawanPanel.getNamaLengkapText().setText("");
         karyawanPanel.getNamaPanggilanText().setText("");
         karyawanPanel.getJabatanText().setText("");
@@ -157,4 +157,22 @@ public class KaryawanControl {
         
     }
 
+    public void getJabatan(KaryawanPanel karyawanPanel) {
+        String kodeJabatan = "";
+        if (karyawanPanel.getKodeJabatanComboBox().getSelectedIndex() != -1) {
+            kodeJabatan = karyawanPanel.getKodeJabatanComboBox().getSelectedItem().toString();
+            if (!kodeJabatan.equals("")) {
+                karyawanPanel.getJabatanText().setText(jabatanModel.select(kodeJabatan).get(0).getNamaJabatan());
+            }
+        }
+    }
+
+    public void loadJabatan(JComboBox combo) {
+        ArrayList<JabatanModel> jabatanList = jabatanModel.select("");
+        combo.removeAllItems();
+        combo.addItem("");
+        for (JabatanModel jabatan : jabatanList) {
+            combo.addItem(jabatan.getKodeJabatan());
+        }
+    }
 }

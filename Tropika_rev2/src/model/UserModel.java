@@ -5,17 +5,37 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author akmal
  */
 public class UserModel extends Model {
 
+    private String kodePengguna;
+    private String namaPengguna;
     private String username;
     private String password;
     private int level;
 
     public UserModel() {
+    }
+
+    public String getKodePengguna() {
+        return kodePengguna;
+    }
+
+    public void setKodePengguna(String kodePengguna) {
+        this.kodePengguna = kodePengguna;
+    }
+
+    public String getNamaPengguna() {
+        return namaPengguna;
+    }
+
+    public void setNamaPengguna(String namaPengguna) {
+        this.namaPengguna = namaPengguna;
     }
 
     public String getUsername() {
@@ -42,7 +62,7 @@ public class UserModel extends Model {
         this.level = level;
     }
 
-    public UserModel select() {
+    public UserModel login() {
         UserModel userModel = new UserModel();
         LevelModel levelModel = new LevelModel();
 
@@ -71,6 +91,58 @@ public class UserModel extends Model {
         }
 
         return userModel;
+    }
+
+    public ArrayList<UserModel> select(String cari) {
+
+        ArrayList<UserModel> userList = new ArrayList<>();
+
+//        LevelModel levelModel = new LevelModel();
+        String query = "SELECT * FROM user";
+        boolean login = false;
+
+        if (username != null && password != null) {
+            query = "SELECT * FROM user WHERE user.username = ? AND user.password = ?";
+            login = true;
+        } else if (!cari.isEmpty()) {
+            query = "SELECT * FROM user WHERE user.kodePengguna = '" + cari + "'";
+        }
+        conn = SqliteConnection.ConnectDb();
+        System.out.println(query);
+        try {
+            pst = conn.prepareStatement(query);
+            if (login) {
+                pst.setString(1, username);
+                pst.setString(2, password);
+            }
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                if (true) {
+                    UserModel userModel = new UserModel();
+
+                    userModel.setKodePengguna(rs.getString("kodePengguna"));
+                    userModel.setNamaPengguna(rs.getString("namaPengguna"));
+                    userModel.setUsername(rs.getString("username"));
+                    userModel.setPassword(rs.getString("password"));
+                    userModel.setLevel(rs.getInt("level"));
+                    userList.add(userModel);
+                } else {
+                    UserModel userModel = new UserModel();
+
+                    userModel.setUsername("");
+                    userModel.setPassword("");
+                    userModel.setLevel(0);
+                    userList.add(userModel);
+                }
+            }
+            conn.close();
+
+        } catch (Exception e) {
+            System.out.println("ecd : " + e);
+        }
+
+        return userList;
     }
 
     public boolean update() {

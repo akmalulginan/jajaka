@@ -17,10 +17,29 @@ public class SatuanModel extends Model {
 
     String kodeSatuan;
     String namaSatuan;
+    String kodeJabatan;
+    String namaJabatan;
+    
 
     public SatuanModel() {
     }
 
+    public String getKodeJabatan() {
+        return kodeJabatan;
+    }
+
+    public void setKodeJabatan(String kodeJabatan) {
+        this.kodeJabatan = kodeJabatan;
+    }
+
+    public String getNamaJabatan() {
+        return namaJabatan;
+    }
+
+    public void setNamaJabatan(String namaJabatan) {
+        this.namaJabatan = namaJabatan;
+    }
+    
     public SatuanModel(String kodeSatuan, String namaSatuan) {
         this.kodeSatuan = kodeSatuan;
         this.namaSatuan = namaSatuan;
@@ -45,8 +64,6 @@ public class SatuanModel extends Model {
 //    @Override
     public void insert() {
         try {
-//            conn = SqliteConnect.ConnectDb();
-//            conn = DbConnect.ConnectDb();
             String sql = "INSERT INTO satuan (kodeSatuan, namaSatuan) VALUES (?,?);";
             pst = conn.prepareStatement(sql);
             pst.setString(1, kodeSatuan);
@@ -55,15 +72,14 @@ public class SatuanModel extends Model {
             JOptionPane.showMessageDialog(null, "Penambahan Satuan Berhasil!");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Kode Satuan Sudah Dipakai!");
-//            System.out.println(e);
         }
     }
+    
+    
     
     public ArrayList<SatuanModel> select(){
         ArrayList<SatuanModel> satuanList = new ArrayList<>();
         try {
-//            conn = SqliteConnect.ConnectDb();
-//            conn = DbConnect.ConnectDb();
             String sql = "SELECT * FROM satuan";
             pst = conn.prepareStatement(sql);
             rs = pst.executeQuery();
@@ -81,4 +97,5 @@ public class SatuanModel extends Model {
         
         return satuanList;
     }
+      
 }

@@ -1,5 +1,11 @@
 package view;
 
+import control.PenggunaControl;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,9 +21,60 @@ public class PenggunaPanel extends javax.swing.JPanel {
     /**
      * Creates new form FormPengguna
      */
+    
+    PenggunaControl penggunaControl = new PenggunaControl();
+    
     public PenggunaPanel() {
         initComponents();
+        penggunaControl.disable(this);
+        penggunaControl.loadKodePengguna(this);
+        penggunaControl.loadLevel(this);
+        penggunaControl.clear(this);
     }
+
+    public JComboBox getKodePenggunaComboBox() {
+        return kodePenggunaComboBox;
+    }
+
+    public JComboBox getLevelComboBox() {
+        return levelComboBox;
+    }
+
+    public JTextField getNamaPenggunaText() {
+        return namaPenggunaText;
+    }
+
+    public JTextField getUsernameText() {
+        return usernameText;
+    }
+
+    public JPasswordField getPasswordText() {
+        return passwordText;
+    }
+
+    public JPasswordField getKonfirmPassword() {
+        return konfirmPassword;
+    }
+
+    public JButton getBatalButton() {
+        return batalButton;
+    }
+
+    public JButton getHapusButton() {
+        return hapusButton;
+    }
+
+    public JButton getSimpanButton() {
+        return simpanButton;
+    }
+
+    public JButton getUbahButton() {
+        return ubahButton;
+    }
+    
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,85 +85,37 @@ public class PenggunaPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        tglUsulan1 = new javax.swing.JTextField();
-        tglUsulan2 = new javax.swing.JTextField();
-        tglUsulan3 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        tglUsulan4 = new javax.swing.JTextField();
-        tglUsulan5 = new javax.swing.JTextField();
-        jLabel36 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
-        satuan = new javax.swing.JComboBox();
-        jPanel1 = new javax.swing.JPanel();
-        inputCepatKey5 = new javax.swing.JButton();
-        inputCepatKey6 = new javax.swing.JButton();
-        inputCepatKey7 = new javax.swing.JButton();
-        inputCepatKey8 = new javax.swing.JButton();
-        inputCepatKey9 = new javax.swing.JButton();
+        kodePenggunaComboBox = new javax.swing.JComboBox();
+        simpanButton = new javax.swing.JButton();
+        ubahButton = new javax.swing.JButton();
+        hapusButton = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        batalButton = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        namaPenggunaText = new javax.swing.JTextField();
+        usernameText = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        levelComboBox = new javax.swing.JComboBox();
+        passwordText = new javax.swing.JPasswordField();
+        konfirmPassword = new javax.swing.JPasswordField();
+        jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(231, 231, 231));
+        setName("User"); // NOI18N
+        setLayout(new java.awt.GridBagLayout());
 
-        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(40, 40, 40));
-        jLabel3.setText("Kode Pengguna");
-
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(40, 40, 40));
-        jLabel4.setText("Nama Admin");
-
-        jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(40, 40, 40));
-        jLabel5.setText("Nama Login");
-
-        jLabel6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(40, 40, 40));
-        jLabel6.setText("Password");
-
-        jLabel7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(40, 40, 40));
-        jLabel7.setText("Konfirmasi Password");
-
-        jLabel8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(40, 40, 40));
-        jLabel8.setText("Level");
-
-        tglUsulan1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        tglUsulan1.setForeground(new java.awt.Color(40, 40, 40));
-        tglUsulan1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
-
-        tglUsulan2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        tglUsulan2.setForeground(new java.awt.Color(40, 40, 40));
-        tglUsulan2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
-
-        tglUsulan3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        tglUsulan3.setForeground(new java.awt.Color(40, 40, 40));
-        tglUsulan3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
-
-        jLabel9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(40, 40, 40));
-        jLabel9.setText("*Password case-sensitive");
-
-        tglUsulan4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        tglUsulan4.setForeground(new java.awt.Color(40, 40, 40));
-        tglUsulan4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
-
-        tglUsulan5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        tglUsulan5.setForeground(new java.awt.Color(40, 40, 40));
-        tglUsulan5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
-
-        jLabel36.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel36.setForeground(new java.awt.Color(40, 40, 40));
-        jLabel36.setText("   :");
+        jPanel2.setBackground(new java.awt.Color(231, 231, 231));
 
         jLabel37.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel37.setForeground(new java.awt.Color(40, 40, 40));
@@ -128,218 +137,262 @@ public class PenggunaPanel extends javax.swing.JPanel {
         jLabel41.setForeground(new java.awt.Color(40, 40, 40));
         jLabel41.setText("   :");
 
-        satuan.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        satuan.setForeground(new java.awt.Color(40, 40, 40));
-        satuan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "      ", "Item 1", "Item 2", "Item 3", "Item 4" }));
-        satuan.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
-
-        jPanel1.setBackground(new java.awt.Color(75, 191, 96));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 639, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 79, Short.MAX_VALUE)
-        );
-
-        inputCepatKey5.setBackground(new java.awt.Color(36, 198, 237));
-        inputCepatKey5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        inputCepatKey5.setForeground(new java.awt.Color(40, 40, 40));
-        inputCepatKey5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save.png"))); // NOI18N
-        inputCepatKey5.setText("Simpan");
-        inputCepatKey5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        inputCepatKey5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        inputCepatKey5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        inputCepatKey5.setIconTextGap(18);
-        inputCepatKey5.setMargin(new java.awt.Insets(2, 2, 2, 2));
-
-        inputCepatKey6.setBackground(new java.awt.Color(36, 198, 237));
-        inputCepatKey6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        inputCepatKey6.setForeground(new java.awt.Color(40, 40, 40));
-        inputCepatKey6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit.png"))); // NOI18N
-        inputCepatKey6.setText("Ubah");
-        inputCepatKey6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        inputCepatKey6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        inputCepatKey6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        inputCepatKey6.setIconTextGap(25);
-        inputCepatKey6.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        inputCepatKey6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputCepatKey6ActionPerformed(evt);
+        kodePenggunaComboBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        kodePenggunaComboBox.setForeground(new java.awt.Color(40, 40, 40));
+        kodePenggunaComboBox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                kodePenggunaComboBoxItemStateChanged(evt);
             }
         });
 
-        inputCepatKey7.setBackground(new java.awt.Color(36, 198, 237));
-        inputCepatKey7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        inputCepatKey7.setForeground(new java.awt.Color(40, 40, 40));
-        inputCepatKey7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/hapus.png"))); // NOI18N
-        inputCepatKey7.setText("Hapus");
-        inputCepatKey7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        inputCepatKey7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        inputCepatKey7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        inputCepatKey7.setIconTextGap(20);
-        inputCepatKey7.addActionListener(new java.awt.event.ActionListener() {
+        simpanButton.setBackground(new java.awt.Color(36, 198, 237));
+        simpanButton.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        simpanButton.setForeground(new java.awt.Color(40, 40, 40));
+        simpanButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save.png"))); // NOI18N
+        simpanButton.setText("Simpan");
+        simpanButton.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        simpanButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        simpanButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        simpanButton.setIconTextGap(18);
+        simpanButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
+
+        ubahButton.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        ubahButton.setForeground(new java.awt.Color(40, 40, 40));
+        ubahButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit.png"))); // NOI18N
+        ubahButton.setText("Ubah");
+        ubahButton.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        ubahButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ubahButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        ubahButton.setIconTextGap(25);
+        ubahButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
+        ubahButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputCepatKey7ActionPerformed(evt);
+                ubahButtonActionPerformed(evt);
             }
         });
 
-        inputCepatKey8.setBackground(new java.awt.Color(36, 198, 237));
-        inputCepatKey8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        inputCepatKey8.setForeground(new java.awt.Color(40, 40, 40));
-        inputCepatKey8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/batal.png"))); // NOI18N
-        inputCepatKey8.setText("Batal");
-        inputCepatKey8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        inputCepatKey8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        inputCepatKey8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        inputCepatKey8.setIconTextGap(25);
-        inputCepatKey8.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        inputCepatKey8.addActionListener(new java.awt.event.ActionListener() {
+        hapusButton.setBackground(new java.awt.Color(36, 198, 237));
+        hapusButton.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        hapusButton.setForeground(new java.awt.Color(40, 40, 40));
+        hapusButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/hapus.png"))); // NOI18N
+        hapusButton.setText("Hapus");
+        hapusButton.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        hapusButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        hapusButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        hapusButton.setIconTextGap(20);
+        hapusButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputCepatKey8ActionPerformed(evt);
+                hapusButtonActionPerformed(evt);
             }
         });
 
-        inputCepatKey9.setBackground(new java.awt.Color(36, 198, 237));
-        inputCepatKey9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        inputCepatKey9.setForeground(new java.awt.Color(40, 40, 40));
-        inputCepatKey9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close.png"))); // NOI18N
-        inputCepatKey9.setText("Tutup");
-        inputCepatKey9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        inputCepatKey9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        inputCepatKey9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        inputCepatKey9.setIconTextGap(23);
-        inputCepatKey9.addActionListener(new java.awt.event.ActionListener() {
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(40, 40, 40));
+        jLabel4.setText("Nama Pengguna");
+
+        batalButton.setBackground(new java.awt.Color(36, 198, 237));
+        batalButton.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        batalButton.setForeground(new java.awt.Color(40, 40, 40));
+        batalButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/batal.png"))); // NOI18N
+        batalButton.setText("Batal");
+        batalButton.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        batalButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        batalButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        batalButton.setIconTextGap(25);
+        batalButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
+        batalButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputCepatKey9ActionPerformed(evt);
+                batalButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(40, 40, 40));
+        jLabel5.setText("Username");
+
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(40, 40, 40));
+        jLabel6.setText("Password");
+
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(40, 40, 40));
+        jLabel7.setText("Konfirmasi Password");
+
+        jLabel8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(40, 40, 40));
+        jLabel8.setText("Level");
+
+        namaPenggunaText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        namaPenggunaText.setForeground(new java.awt.Color(40, 40, 40));
+
+        usernameText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        usernameText.setForeground(new java.awt.Color(40, 40, 40));
+
+        jLabel9.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(40, 40, 40));
+        jLabel9.setText("*Password case-sensitive");
+
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(40, 40, 40));
+        jLabel3.setText("Kode Pengguna");
+
+        jLabel36.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(40, 40, 40));
+        jLabel36.setText("   :");
+
+        levelComboBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        levelComboBox.setForeground(new java.awt.Color(40, 40, 40));
+
+        passwordText.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        konfirmPassword.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        jButton1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jButton1.setText("Tambah");
+        jButton1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                         .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tglUsulan5, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tglUsulan4, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tglUsulan1)
-                            .addComponent(tglUsulan2)
-                            .addComponent(tglUsulan3)
-                            .addComponent(jLabel9)
-                            .addComponent(satuan, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(inputCepatKey5, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputCepatKey6, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputCepatKey7, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputCepatKey8, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputCepatKey9, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(levelComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                        .addComponent(simpanButton, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(namaPenggunaText)
+                                    .addComponent(usernameText)
+                                    .addComponent(jLabel9)
+                                    .addComponent(kodePenggunaComboBox, 0, 223, Short.MAX_VALUE)
+                                    .addComponent(passwordText))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(39, 39, 39)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(hapusButton, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(batalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(ubahButton, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+                                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                            .addComponent(konfirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(satuan, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputCepatKey5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(kodePenggunaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(tglUsulan1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(namaPenggunaText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputCepatKey6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ubahButton, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tglUsulan2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputCepatKey7, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(usernameText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hapusButton, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(tglUsulan3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputCepatKey8, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(passwordText, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel6)
+                        .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(batalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
-                    .addComponent(inputCepatKey9, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jLabel9)
+                .addGap(21, 21, 21)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(tglUsulan4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(konfirmPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(tglUsulan5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(50, Short.MAX_VALUE))
+                    .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(levelComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(simpanButton, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
+
+        add(jPanel2, new java.awt.GridBagConstraints());
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inputCepatKey6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCepatKey6ActionPerformed
+    private void ubahButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ubahButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputCepatKey6ActionPerformed
+        penggunaControl.ubah(this);
+    }//GEN-LAST:event_ubahButtonActionPerformed
 
-    private void inputCepatKey7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCepatKey7ActionPerformed
+    private void hapusButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputCepatKey7ActionPerformed
+    }//GEN-LAST:event_hapusButtonActionPerformed
 
-    private void inputCepatKey8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCepatKey8ActionPerformed
+    private void batalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batalButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputCepatKey8ActionPerformed
+        penggunaControl.batal(this);
+    }//GEN-LAST:event_batalButtonActionPerformed
 
-    private void inputCepatKey9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCepatKey9ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputCepatKey9ActionPerformed
+        penggunaControl.tambah(this);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void kodePenggunaComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_kodePenggunaComboBoxItemStateChanged
+        // TODO add your handling code here:
+        penggunaControl.getUser(this);
+    }//GEN-LAST:event_kodePenggunaComboBoxItemStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton inputCepatKey5;
-    private javax.swing.JButton inputCepatKey6;
-    private javax.swing.JButton inputCepatKey7;
-    private javax.swing.JButton inputCepatKey8;
-    private javax.swing.JButton inputCepatKey9;
+    private javax.swing.JButton batalButton;
+    private javax.swing.JButton hapusButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
@@ -353,12 +406,14 @@ public class PenggunaPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JComboBox satuan;
-    private javax.swing.JTextField tglUsulan1;
-    private javax.swing.JTextField tglUsulan2;
-    private javax.swing.JTextField tglUsulan3;
-    private javax.swing.JTextField tglUsulan4;
-    private javax.swing.JTextField tglUsulan5;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JComboBox kodePenggunaComboBox;
+    private javax.swing.JPasswordField konfirmPassword;
+    private javax.swing.JComboBox levelComboBox;
+    private javax.swing.JTextField namaPenggunaText;
+    private javax.swing.JPasswordField passwordText;
+    private javax.swing.JButton simpanButton;
+    private javax.swing.JButton ubahButton;
+    private javax.swing.JTextField usernameText;
     // End of variables declaration//GEN-END:variables
 }

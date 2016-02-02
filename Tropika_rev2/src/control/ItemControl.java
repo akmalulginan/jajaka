@@ -127,6 +127,8 @@ public class ItemControl {
         ItemControl bC = new ItemControl();
         loadSatuan(comboBox);
     }
+    
+    
 
     public boolean validasi(ItemPanel itemPanel) {
         boolean toReturn = false;

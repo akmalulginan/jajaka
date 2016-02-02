@@ -553,6 +553,7 @@ public class ItemPanel extends javax.swing.JPanel {
 //        new TambahSatuanDialog(new MainMenu(), true).show();
         SatuanDialog satuanDialog = new SatuanDialog(null, true);
         satuanDialog.setVisible(true);
+        
         if (satuanDialog.getReturnStatus() == 1) {
             itemControl.loadSatuanCombo(satuanCombo);
         }

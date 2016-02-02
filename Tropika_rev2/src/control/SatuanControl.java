@@ -14,10 +14,7 @@ import model.SatuanModel;
 public class SatuanControl {
     public void set(String kodeSatuan, String namaSatuan){
         SatuanModel sM = new SatuanModel(kodeSatuan, namaSatuan);
-//        System.out.println(kodeSatuan);
-//        System.out.println(namaSatuan);
-//        System.out.println(sM.getKodeSatuan());
-//        System.out.println(sM.getNamaSatuan());
         sM.insert();
     }
+    
 }

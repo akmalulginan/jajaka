@@ -261,9 +261,9 @@ public class MainMenu extends javax.swing.JFrame {
         karyawanButton.setText("<html><hr>Karyawan");
         karyawanButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         karyawanButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        karyawanButton.setMaximumSize(new java.awt.Dimension(79, 81));
-        karyawanButton.setMinimumSize(new java.awt.Dimension(79, 81));
-        karyawanButton.setPreferredSize(new java.awt.Dimension(79, 81));
+        karyawanButton.setMaximumSize(new java.awt.Dimension(2147483647, 79));
+        karyawanButton.setMinimumSize(new java.awt.Dimension(77, 79));
+        karyawanButton.setPreferredSize(new java.awt.Dimension(77, 79));
         karyawanButton.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         karyawanButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         karyawanButton.addActionListener(new java.awt.event.ActionListener() {
@@ -292,19 +292,19 @@ public class MainMenu extends javax.swing.JFrame {
             karyawanTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(karyawanTabLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(karyawanButton, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(karyawanButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cariButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(843, Short.MAX_VALUE))
+                .addContainerGap(845, Short.MAX_VALUE))
         );
         karyawanTabLayout.setVerticalGroup(
             karyawanTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(karyawanTabLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(karyawanTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cariButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(karyawanButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(karyawanTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(karyawanButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cariButton))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Karyawan", karyawanTab);
@@ -672,7 +672,7 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void userButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userButtonActionPerformed
         // TODO add your handling code here:
-        menuControl.newTab(new Pengguna1Panel(), pane);
+        menuControl.newTab(new PenggunaPanel(), pane);
     }//GEN-LAST:event_userButtonActionPerformed
 
     private void passwordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordButtonActionPerformed
