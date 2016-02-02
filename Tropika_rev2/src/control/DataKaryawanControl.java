@@ -28,7 +28,7 @@ public class DataKaryawanControl {
         defaultTableModel.setRowCount(0);
 
         for (KaryawanModel karyawan : karyawanList) {
-             System.out.println(karyawan.getTanggalLahir());
+             
             defaultTableModel.addRow(
                     new Object[]{
                         karyawan.getKodeKaryawan(),
