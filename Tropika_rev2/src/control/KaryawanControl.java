@@ -6,11 +6,14 @@
 package control;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import javax.swing.JComboBox;
 import model.KaryawanModel;
 import view.KaryawanPanel;
 import javax.swing.JOptionPane;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import model.JabatanModel;
 
 /**
@@ -33,7 +36,6 @@ public class KaryawanControl {
             karyawanModel.setJenisKelamin("Perempuan");
         }
         karyawanModel.setJabatan(karyawanPanel.getJabatanText().getText());
-        karyawanModel.setJenisKelamin(karyawanPanel.getJenisKelaminButtonGroup().getSelection().toString());
         karyawanModel.setTanggalMasuk(karyawanPanel.getTanggalMasukKerjaDate().getDate());
         karyawanModel.setTempatLahir(karyawanPanel.getTempatLahir().getText());
         karyawanModel.setTanggalLahir(karyawanPanel.getTanggalLahirDate().getDate());
@@ -47,6 +49,7 @@ public class KaryawanControl {
             karyawanModel.setStatus(true);
         }
         karyawanModel.setGambar(karyawanPanel.getGambar());
+        karyawanModel.setKodeJabatan(karyawanPanel.getKodeJabatanComboBox().getSelectedItem().toString());
 
     }
 
@@ -67,6 +70,9 @@ public class KaryawanControl {
         if (karyawanPanel.getKodeKaryawanText().getText().isEmpty()) {
             JOptionPane.showMessageDialog(karyawanPanel, "Kode Karyawan tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
             karyawanPanel.getKodeKaryawanText().requestFocus();
+        } else if (karyawanPanel.getKodeJabatanComboBox().getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(karyawanPanel, "Pilih salah satu kode jabatan!", "Error", JOptionPane.ERROR_MESSAGE);
+            karyawanPanel.getKodeJabatanComboBox().requestFocus();
         } else if (karyawanPanel.getNamaLengkapText().getText().isEmpty()) {
             JOptionPane.showMessageDialog(karyawanPanel, "Nama Lengkap tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
             karyawanPanel.getNamaLengkapText().requestFocus();
@@ -125,7 +131,7 @@ public class KaryawanControl {
 
     public void clear(KaryawanPanel karyawanPanel) {
         karyawanPanel.getKodeKaryawanText().setText("");
-
+        karyawanPanel.getKodeJabatanComboBox().setSelectedIndex(0);
         karyawanPanel.getNamaLengkapText().setText("");
         karyawanPanel.getNamaPanggilanText().setText("");
         karyawanPanel.getJabatanText().setText("");
@@ -175,4 +181,39 @@ public class KaryawanControl {
             combo.addItem(jabatan.getKodeJabatan());
         }
     }
+
+    public void usia(KaryawanPanel karyawanPanel) {
+
+            karyawanPanel.getUsia().getDocument().addDocumentListener(new DocumentListener() {
+
+            @Override
+            public void insertUpdate(DocumentEvent de) {
+                hitungUsia(karyawanPanel);
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent de) {
+                hitungUsia(karyawanPanel);
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent de) {
+                hitungUsia(karyawanPanel);
+            }
+        });
+    }
+
+    public void hitungUsia(KaryawanPanel karyawanPanel) {
+        Calendar now = Calendar.getInstance();
+        int usia = 0;
+        if (karyawanPanel.getTanggalLahirDate().getDate() != null) {
+            usia = karyawanPanel.getTanggalLahirDate().getDate().getYear() - now.get(Calendar.YEAR);
+            if(usia != 0){
+                 karyawanPanel.getUsia().setText(String.valueOf(usia));
+            }
+        }
+        
+       
+    }
+
 }

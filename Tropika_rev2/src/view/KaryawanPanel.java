@@ -31,6 +31,7 @@ public class KaryawanPanel extends javax.swing.JPanel {
     public KaryawanPanel() {
         initComponents();
         karyawanControl.loadJabatan(kodeJabatanComboBox);
+        karyawanControl.usia(this);
         
     }
 
@@ -325,6 +326,18 @@ public class KaryawanPanel extends javax.swing.JPanel {
         tanggalMasukKerjaDate.setDateFormatString("dd-MM-yyyy");
 
         tanggalLahirDate.setDateFormatString("dd-MM-yyyy");
+        tanggalLahirDate.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                tanggalLahirDateInputMethodTextChanged(evt);
+            }
+        });
+        tanggalLahirDate.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tanggalLahirDateKeyReleased(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel7.setText("Nama Panggilan");
@@ -830,6 +843,7 @@ public class KaryawanPanel extends javax.swing.JPanel {
 
     private void usiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usiaActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_usiaActionPerformed
 
     private void tempatLahirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tempatLahirActionPerformed
@@ -864,6 +878,16 @@ public class KaryawanPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         karyawanControl.getJabatan(this);
     }//GEN-LAST:event_kodeJabatanComboBoxItemStateChanged
+
+    private void tanggalLahirDateKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tanggalLahirDateKeyReleased
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_tanggalLahirDateKeyReleased
+
+    private void tanggalLahirDateInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_tanggalLahirDateInputMethodTextChanged
+        // TODO add your handling code here:
+        karyawanControl.usia(this);
+    }//GEN-LAST:event_tanggalLahirDateInputMethodTextChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
