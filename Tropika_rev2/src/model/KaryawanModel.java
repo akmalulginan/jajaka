@@ -289,6 +289,7 @@ public class KaryawanModel extends Model {
                     + "namaPanggilan LIKE '%" + cari + "%' OR "
                     + "jenisKelamin LIKE '%" + cari + "%' OR "
                     + "tanggalMasuk LIKE '%" + cari + "%' OR "
+                    + "tempatLahir LIKE '%" + cari + "%' OR "
                     + "tanggalLahir LIKE '%" + cari + "%' OR "
                     + "alamat LIKE '%" + cari + "%' OR "
                     + "kota LIKE '%" + cari + "%' OR "
@@ -304,15 +305,14 @@ public class KaryawanModel extends Model {
             pst = conn.prepareStatement(query);
             rs = pst.executeQuery();
             while (rs.next()) {
-                KaryawanModel karyawanModel = new KaryawanModel();
-                
+                KaryawanModel karyawanModel = new KaryawanModel();   
                 karyawanModel.setKodeKaryawan(rs.getString("kodeKaryawan"));
                 karyawanModel.setNamaLengkap(rs.getString("namaLengkap"));
                 karyawanModel.setNamaPanggilan(rs.getString("namaPanggilan"));
                 karyawanModel.setJenisKelamin(rs.getString("jenisKelamin"));
-//                this.setTanggalMasuk(rs.getDate("tanggalMasuk").getTime());
+                karyawanModel.setTanggalMasuk(rs.getDate("tanggalMasuk"));
                 karyawanModel.setTempatLahir(rs.getString("tempatLahir"));
-//                this.setTanggalLahir(rs.getDate("tanggalLahir").getTime());
+                karyawanModel.setTanggalLahir(rs.getDate("tanggalLahir"));
                 karyawanModel.setAlamat(rs.getString("alamat"));
                 karyawanModel.setKota(rs.getString("kota"));
                 karyawanModel.setKodePos(rs.getString("kodePos"));

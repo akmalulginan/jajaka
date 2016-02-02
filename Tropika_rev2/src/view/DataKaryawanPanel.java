@@ -84,11 +84,11 @@ public class DataKaryawanPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Kode", "Nama", "Panggilan", "Jenis Kelamin", "Tgl Masuk", "TTL", "Alamat", "Kota", "Kode Pos", "HP", "Email", "Catatan", "Status"
+                "Kode", "Nama", "Panggilan", "Jenis Kelamin", "Tanggal Masuk", "Tempat Lahir", "Tanggal Lahir", "Alamat", "Kota", "Kode Pos", "HP", "Email", "Catatan", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

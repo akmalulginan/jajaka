@@ -28,22 +28,23 @@ public class DataKaryawanControl {
         defaultTableModel.setRowCount(0);
 
         for (KaryawanModel karyawan : karyawanList) {
-
+             System.out.println(karyawan.getTanggalLahir());
             defaultTableModel.addRow(
                     new Object[]{
                         karyawan.getKodeKaryawan(),
                         karyawan.getNamaLengkap(),
                         karyawan.getNamaPanggilan(),
                         karyawan.getJenisKelamin(),
+                        karyawan.getTanggalMasuk(),
                         karyawan.getTempatLahir(),
+                        karyawan.getTanggalLahir(),
                         karyawan.getAlamat(),
                         karyawan.getKota(),
                         karyawan.getKodePos(),
                         karyawan.getNoHp(),
                         karyawan.getEmail(),
                         karyawan.getCatatan(),
-                        karyawan.getStatus(),
-                        karyawan.getGambar()
+                        karyawan.getStatus()
                     }
             );
         }
