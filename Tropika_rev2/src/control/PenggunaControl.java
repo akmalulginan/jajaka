@@ -149,7 +149,7 @@ public class PenggunaControl {
         userModel.setPassword(penggunaPanel.getPasswordText().getText());
         userModel.setLevel(Integer.parseInt(penggunaPanel.getLevelComboBox().getSelectedItem().toString()));
         
-        if (userModel.update()) {
+        if (userModel.insert()) {
                 JOptionPane.showMessageDialog(penggunaPanel, "Pengguna berhasil dirubah !");
                 
             } else {
