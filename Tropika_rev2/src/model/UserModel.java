@@ -149,15 +149,22 @@ public class UserModel extends Model {
 
     public boolean update() {
         boolean toReturn = false;
-        String query = "UPDATE user SET password = ? WHERE username = ?";
+        String query = "UPDATE user SET "
+                + "namaPengguna = ?,"
+                + "password = ?,"
+                + "username = ?,"
+                + "level = ?"
+                + "Where kodePengguna = ?";
         conn = SqliteConnection.ConnectDb();
         try {
             pst = conn.prepareStatement(query);
-            pst.setString(2, username);
-            pst.setString(1, password);
-            pst.execute();
+            pst.setString(1, namaPengguna);
+            pst.setString(2, password);
+            pst.setString(3, username);
+            pst.setInt(4, level);
+            pst.setString(5, kodePengguna);
+            pst.execute(); 
             toReturn = true;
-
         } catch (Exception e) {
             System.out.println("e : " + e);
         }
@@ -188,19 +195,11 @@ public class UserModel extends Model {
         return true;
     }
     
-     public void cekPengguna(){
-         if(kodePengguna.isEmpty()){
-             insertPengguna();
-         }else{
-             updatePengguna();
-         }
-     }
-
     private void insertPengguna() {
         
     }
 
-    private void updatePengguna() {
+    private boolean updatePengguna() {
         String query = "UPDATE user SET "
                 + "namaPengguna = ?,"
                 + "password = ?,"
@@ -211,16 +210,18 @@ public class UserModel extends Model {
         conn = SqliteConnection.ConnectDb();
         try {
             pst = conn.prepareStatement(query);
+            pst.setString(1, username);
             pst.setString(2, username);
-            pst.setString(2, username);
-            pst.setString(2, username);
-            pst.setString(2, username);
-            pst.setString(1, kodePengguna);
+            pst.setString(3, username);
+            pst.setString(4, username);
+            pst.setString(5, kodePengguna);
             pst.execute(); 
 
         } catch (Exception e) {
             System.out.println("e : " + e);
         }
+        return true;
+        
     }
 
 }

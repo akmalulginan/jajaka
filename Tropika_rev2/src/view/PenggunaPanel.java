@@ -155,6 +155,11 @@ public class PenggunaPanel extends javax.swing.JPanel {
         simpanButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         simpanButton.setIconTextGap(18);
         simpanButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
+        simpanButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simpanButtonActionPerformed(evt);
+            }
+        });
 
         ubahButton.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         ubahButton.setForeground(new java.awt.Color(40, 40, 40));
@@ -391,6 +396,14 @@ public class PenggunaPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         penggunaControl.getUser(this);
     }//GEN-LAST:event_kodePenggunaComboBoxItemStateChanged
+
+    private void simpanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanButtonActionPerformed
+        // TODO add your handling code here:
+        penggunaControl.set(this);
+        penggunaControl.loadKodePengguna(this);
+        penggunaControl.loadLevel(this);
+        penggunaControl.clear(this);
+    }//GEN-LAST:event_simpanButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
