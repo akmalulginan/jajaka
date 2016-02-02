@@ -279,30 +279,39 @@ public class KaryawanModel extends Model {
         return toReturn;
     }
 
-    public ArrayList<KaryawanModel> select() {
-        ArrayList<KaryawanModel> list = new ArrayList<>();
+    public ArrayList<KaryawanModel> select(String cari) {
+        
+        String query = "SELECT * FROM karyawan";;
+        
+         if (!cari.isEmpty()) {
+            query = query + " WHERE kategori LIKE '%" + cari + "%' OR kodeItem LIKE '%" + cari + "%'";
+        }
+        
+        ArrayList<KaryawanModel> karyawanList = new ArrayList<>();
         try {
-            pst = conn.prepareStatement("SELECT * FROM karyawan");
+            pst = conn.prepareStatement(query);
             rs = pst.executeQuery();
             while (rs.next()) {
-                this.setKodeKaryawan(rs.getString("kodeKaryawan"));
-                this.setNamaLengkap(rs.getString("namaLengkap"));
-                this.setNamaPanggilan(rs.getString("namaPanggilan"));
-                this.setJenisKelamin(rs.getString("jenisKelamin"));
+                KaryawanModel karyawanModel = new KaryawanModel();
+                
+                karyawanModel.setKodeKaryawan(rs.getString("kodeKaryawan"));
+                karyawanModel.setNamaLengkap(rs.getString("namaLengkap"));
+                karyawanModel.setNamaPanggilan(rs.getString("namaPanggilan"));
+                karyawanModel.setJenisKelamin(rs.getString("jenisKelamin"));
 //                this.setTanggalMasuk(rs.getDate("tanggalMasuk").getTime());
-                this.setTempatLahir(rs.getString("tempatLahir"));
+                karyawanModel.setTempatLahir(rs.getString("tempatLahir"));
 //                this.setTanggalLahir(rs.getDate("tanggalLahir").getTime());
-                this.setAlamat(rs.getString("alamat"));
-                this.setKota(rs.getString("kota"));
-                this.setKodePos(rs.getString("kodePos"));
-                this.setNoHp(rs.getString("noHp"));
-                this.setEmail(rs.getString("email"));
-                this.setCatatan(rs.getString("catatan"));
-                this.setStatus(rs.getBoolean("status"));
-                this.setGambar(rs.getBytes("gambar"));
-                list.add(this);
+                karyawanModel.setAlamat(rs.getString("alamat"));
+                karyawanModel.setKota(rs.getString("kota"));
+                karyawanModel.setKodePos(rs.getString("kodePos"));
+                karyawanModel.setNoHp(rs.getString("noHp"));
+                karyawanModel.setEmail(rs.getString("email"));
+                karyawanModel.setCatatan(rs.getString("catatan"));
+                karyawanModel.setStatus(rs.getBoolean("status"));
+                karyawanModel.setGambar(rs.getBytes("gambar"));
+                karyawanList.add(karyawanModel);
             }
-            return list;
+            return karyawanList;
         } catch (Exception e) {
             System.out.println("e : " + e);
             return null;
