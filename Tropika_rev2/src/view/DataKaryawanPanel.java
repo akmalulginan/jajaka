@@ -62,7 +62,6 @@ public class DataKaryawanPanel extends javax.swing.JPanel {
 
         cariText.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cariText.setForeground(new java.awt.Color(40, 40, 40));
-        cariText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         cariText.setMargin(new java.awt.Insets(1, 1, 1, 3));
 
         cariButton.setBackground(new java.awt.Color(36, 198, 237));

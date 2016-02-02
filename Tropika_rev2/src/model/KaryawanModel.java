@@ -284,7 +284,20 @@ public class KaryawanModel extends Model {
         String query = "SELECT * FROM karyawan";;
         
          if (!cari.isEmpty()) {
-            query = query + " WHERE kategori LIKE '%" + cari + "%' OR kodeItem LIKE '%" + cari + "%'";
+            query = query + " WHERE "
+                    + "kodeKaryawan LIKE '%" + cari + "%' OR "
+                    + "namaLengkap LIKE '%" + cari + "%' OR "
+                    + "namaPanggilan LIKE '%" + cari + "%' OR "
+                    + "jenisKelamin LIKE '%" + cari + "%' OR "
+                    + "tanggalMasuk LIKE '%" + cari + "%' OR "
+                    + "tanggalLahir LIKE '%" + cari + "%' OR "
+                    + "alamat LIKE '%" + cari + "%' OR "
+                    + "kota LIKE '%" + cari + "%' OR "
+                    + "kodePos LIKE '%" + cari + "%' OR "
+                    + "noHp LIKE '%" + cari + "%' OR "
+                    + "catatan LIKE '%" + cari + "%' OR "
+                    + "status LIKE '%" + cari + "%' OR "
+                    + "kodeJabatan LIKE '%" + cari + "%'";
         }
         
         ArrayList<KaryawanModel> karyawanList = new ArrayList<>();
