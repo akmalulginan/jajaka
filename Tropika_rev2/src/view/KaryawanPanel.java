@@ -32,7 +32,7 @@ public class KaryawanPanel extends javax.swing.JPanel {
         initComponents();
         karyawanControl.loadJabatan(kodeJabatanComboBox);
         karyawanControl.usia(this);
-        
+
     }
 
     public JTextField getNamaLengkapText() {
@@ -74,7 +74,7 @@ public class KaryawanPanel extends javax.swing.JPanel {
     public ButtonGroup getJenisKelaminButtonGroup() {
         return jenisKelaminButtonGroup;
     }
-    
+
     public JTextField getKodeKaryawanText() {
         return kodeKaryawanText;
     }
@@ -130,11 +130,10 @@ public class KaryawanPanel extends javax.swing.JPanel {
     public JTextField getUsia() {
         return usia;
     }
-    
+
     public JComboBox getKodeJabatanComboBox() {
         return kodeJabatanComboBox;
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -328,6 +327,7 @@ public class KaryawanPanel extends javax.swing.JPanel {
         tanggalLahirDate.setDateFormatString("dd-MM-yyyy");
         tanggalLahirDate.addInputMethodListener(new java.awt.event.InputMethodListener() {
             public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+                tanggalLahirDateCaretPositionChanged(evt);
             }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
                 tanggalLahirDateInputMethodTextChanged(evt);
@@ -843,7 +843,7 @@ public class KaryawanPanel extends javax.swing.JPanel {
 
     private void usiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usiaActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_usiaActionPerformed
 
     private void tempatLahirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tempatLahirActionPerformed
@@ -852,10 +852,7 @@ public class KaryawanPanel extends javax.swing.JPanel {
 
     private void inputCepatKey1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCepatKey1ActionPerformed
         // TODO add your handling code here:
-
         karyawanControl.simpanKaryawan(this);
-        
-
     }//GEN-LAST:event_inputCepatKey1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -881,13 +878,17 @@ public class KaryawanPanel extends javax.swing.JPanel {
 
     private void tanggalLahirDateKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tanggalLahirDateKeyReleased
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_tanggalLahirDateKeyReleased
 
     private void tanggalLahirDateInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_tanggalLahirDateInputMethodTextChanged
         // TODO add your handling code here:
         karyawanControl.usia(this);
     }//GEN-LAST:event_tanggalLahirDateInputMethodTextChanged
+
+    private void tanggalLahirDateCaretPositionChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_tanggalLahirDateCaretPositionChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tanggalLahirDateCaretPositionChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

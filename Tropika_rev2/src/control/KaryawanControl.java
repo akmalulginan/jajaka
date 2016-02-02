@@ -5,6 +5,8 @@
  */
 package control;
 
+import com.toedter.calendar.JDateChooser;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -151,16 +153,16 @@ public class KaryawanControl {
         karyawanPanel.getNoRek().setText("");
         karyawanPanel.getAtasNama().setText("");
     }
-    
-    public int hitungUmur(KaryawanPanel karyawanPanel){
-        
+
+    public int hitungUmur(KaryawanPanel karyawanPanel) {
+
         int usia;
         Date tanggalSekarang = new Date();
-        
+
         usia = tanggalSekarang.getYear() - karyawanPanel.getTanggalLahirDate().getDate().getYear();
-         
+
         return usia;
-        
+
     }
 
     public void getJabatan(KaryawanPanel karyawanPanel) {
@@ -184,36 +186,56 @@ public class KaryawanControl {
 
     public void usia(KaryawanPanel karyawanPanel) {
 
-            karyawanPanel.getUsia().getDocument().addDocumentListener(new DocumentListener() {
+        karyawanPanel.getTanggalLahirDate().addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                // If the 'date' property was changed...
+                if ("date".equals(evt.getPropertyName())) {
+                    JDateChooser aDateChooser = (JDateChooser) evt.getSource();
+                    boolean isDateSelectedByUser = false;
+                    // Get the otherwise unaccessible JDateChooser's 'dateSelected' field.
+                    try {
+                        // Get the desired field using reflection
+                        Field dateSelectedField = JDateChooser.class.getDeclaredField("dateSelected");
+                        // This line makes the value accesible (can be read and/or modified)
+                        dateSelectedField.setAccessible(true);
+                        isDateSelectedByUser = dateSelectedField.getBoolean(aDateChooser);
+                    } catch (Exception ignoreOrNot) {
+                    }
 
-            @Override
-            public void insertUpdate(DocumentEvent de) {
-                hitungUsia(karyawanPanel);
-            }
+                    // Do some important stuff depending on wether value was changed by user
+                    if (isDateSelectedByUser) {
+                        hitungUsia(karyawanPanel);
+                    }
 
-            @Override
-            public void removeUpdate(DocumentEvent de) {
-                hitungUsia(karyawanPanel);
-            }
-
-            @Override
-            public void changedUpdate(DocumentEvent de) {
-                hitungUsia(karyawanPanel);
+                    // Reset the value to false
+                    try {
+                        Field dateSelectedField = JDateChooser.class.getDeclaredField("dateSelected");
+                        dateSelectedField.setAccessible(true);
+//                        isDateSelectedByUser = dateSelectedField.setBoolean(aDateChooser, false);
+                    } catch (Exception ignoreOrNot) {
+                    }
+                }
             }
         });
     }
 
     public void hitungUsia(KaryawanPanel karyawanPanel) {
-        Calendar now = Calendar.getInstance();
+        Date now = new Date();
+        Date tanggalLahir = karyawanPanel.getTanggalLahirDate().getDate();
         int usia = 0;
-        if (karyawanPanel.getTanggalLahirDate().getDate() != null) {
-            usia = karyawanPanel.getTanggalLahirDate().getDate().getYear() - now.get(Calendar.YEAR);
-            if(usia != 0){
-                 karyawanPanel.getUsia().setText(String.valueOf(usia));
+
+            if (tanggalLahir.getMonth() <= now.getMonth()) {
+                if (tanggalLahir.getDate() <= now.getDate()) {
+                    usia = now.getYear() - tanggalLahir.getYear();
+                } else {
+                    usia = now.getYear() - tanggalLahir.getYear() - 1;
+                }
+            } else {
+                usia = now.getYear() - tanggalLahir.getYear() - 1;
             }
-        }
-        
-       
+
+        karyawanPanel.getUsia().setText(String.valueOf(usia));
+
     }
 
 }
