@@ -62,6 +62,8 @@ public class UserModel extends Model {
         this.level = level;
     }
 
+    
+   
     public UserModel login() {
         UserModel userModel = new UserModel();
         LevelModel levelModel = new LevelModel();
@@ -184,6 +186,41 @@ public class UserModel extends Model {
 
         }
         return true;
+    }
+    
+     public void cekPengguna(){
+         if(kodePengguna.isEmpty()){
+             insertPengguna();
+         }else{
+             updatePengguna();
+         }
+     }
+
+    private void insertPengguna() {
+        
+    }
+
+    private void updatePengguna() {
+        String query = "UPDATE user SET "
+                + "namaPengguna = ?,"
+                + "password = ?,"
+                + "username = ?,"
+                + "level = ?"
+                + "Where"
+                + "kodePengguna = ?";
+        conn = SqliteConnection.ConnectDb();
+        try {
+            pst = conn.prepareStatement(query);
+            pst.setString(2, username);
+            pst.setString(2, username);
+            pst.setString(2, username);
+            pst.setString(2, username);
+            pst.setString(1, kodePengguna);
+            pst.execute(); 
+
+        } catch (Exception e) {
+            System.out.println("e : " + e);
+        }
     }
 
 }
