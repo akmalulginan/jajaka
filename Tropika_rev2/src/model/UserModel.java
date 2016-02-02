@@ -6,6 +6,7 @@
 package model;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -196,7 +197,27 @@ public class UserModel extends Model {
     }
     
     public boolean insert() {
-        return true;
+        boolean toReturn = false;
+        conn = SqliteConnection.ConnectDb();
+         try {
+            String sql = "INSERT INTO user (kodePengguna, namaPengguna, username, password, level) VALUES (?,?,?,?,?)";
+
+            pst = conn.prepareStatement(sql);
+            
+            pst.setString(1, kodePengguna);
+            pst.setString(2, namaPengguna);
+            pst.setString(3, password);
+            pst.setString(4, username);
+            pst.setInt(5, level);
+            
+            pst.execute();
+
+            toReturn=true;
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        return toReturn;
     }
 
     

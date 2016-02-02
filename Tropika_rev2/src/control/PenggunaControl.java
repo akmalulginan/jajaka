@@ -150,10 +150,10 @@ public class PenggunaControl {
         userModel.setLevel(Integer.parseInt(penggunaPanel.getLevelComboBox().getSelectedItem().toString()));
         
         if (userModel.insert()) {
-                JOptionPane.showMessageDialog(penggunaPanel, "Pengguna berhasil dirubah !");
+                JOptionPane.showMessageDialog(penggunaPanel, "Pengguna berhasil disimpan !");
                 
             } else {
-                JOptionPane.showMessageDialog(penggunaPanel, "Gagal merubah data Pengguna !");
+                JOptionPane.showMessageDialog(penggunaPanel, "Data pengguna gagal disimpan !");
             }
     }
 
