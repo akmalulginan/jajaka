@@ -151,6 +151,17 @@ public class KaryawanControl {
         karyawanPanel.getNoRek().setText("");
         karyawanPanel.getAtasNama().setText("");
     }
+    
+    public int hitungUmur(KaryawanPanel karyawanPanel){
+        
+        int usia;
+        Date tanggalSekarang = new Date();
+        
+        usia = tanggalSekarang.getYear() - karyawanPanel.getTanggalLahirDate().getDate().getYear();
+         
+        return usia;
+        
+    }
 
     public void getJabatan(KaryawanPanel karyawanPanel) {
         String kodeJabatan = "";
