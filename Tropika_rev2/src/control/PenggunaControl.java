@@ -98,4 +98,22 @@ public class PenggunaControl {
             penggunaPanel.getLevelComboBox().addItem(level.getLevel());
         }
     }
+    
+    public void set(PenggunaPanel penggunaPanel){
+        
+    }
+    
+    public void hapus(PenggunaPanel penggunaPanel){
+        int option = JOptionPane.showConfirmDialog(penggunaPanel, "Anda yakin akan menghapus pengguna ini?");
+        if (option == JOptionPane.OK_OPTION) {
+            userModel.setKodePengguna(penggunaPanel.getKodePenggunaComboBox().getSelectedItem().toString());
+            if (userModel.delete()) {
+                JOptionPane.showMessageDialog(null, "Pengguna berhasil dihapus !");
+                
+            } else {
+                JOptionPane.showMessageDialog(null, "Gagal Menghapus Pengguna !");
+            }
+           
+        }
+    }
 }

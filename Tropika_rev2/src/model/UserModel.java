@@ -167,4 +167,23 @@ public class UserModel extends Model {
         return "UserModel{" + "username=" + username + ", password=" + password + ", level=" + level + '}';
     }
 
+    public boolean delete() {
+        try{
+            String query = "DELETE FROM user WHERE kodePengguna = ?";
+            conn = SqliteConnection.ConnectDb();
+            if (conn != null) {
+                pst = conn.prepareStatement(query);
+                pst.setString(1, kodePengguna);
+                pst.execute();
+                conn.close();
+               
+            }
+
+        } catch (Exception e) {
+            System.out.println("error : " + e.getMessage());
+
+        }
+        return true;
+    }
+
 }
