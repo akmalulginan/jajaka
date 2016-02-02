@@ -853,6 +853,7 @@ public class KaryawanPanel extends javax.swing.JPanel {
     private void inputCepatKey1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCepatKey1ActionPerformed
         // TODO add your handling code here:
         karyawanControl.simpanKaryawan(this);
+        
     }//GEN-LAST:event_inputCepatKey1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

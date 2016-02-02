@@ -152,6 +152,7 @@ public class KaryawanControl {
         karyawanPanel.getNamaBank().setText("");
         karyawanPanel.getNoRek().setText("");
         karyawanPanel.getAtasNama().setText("");
+        karyawanPanel.getUsia().setText("");
     }
 
     public int hitungUmur(KaryawanPanel karyawanPanel) {
