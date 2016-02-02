@@ -143,7 +143,7 @@ public class PenggunaControl {
     }
     
     public void tambahPengguna(PenggunaPanel penggunaPanel){
-        userModel.setKodePengguna(penggunaPanel.getKodePenggunaComboBox().getSelectedItem().toString());
+        userModel.setKodePengguna(generateKodePengguna());
         userModel.setNamaPengguna(penggunaPanel.getNamaPenggunaText().getText());
         userModel.setUsername(penggunaPanel.getUsernameText().getText());
         userModel.setPassword(penggunaPanel.getPasswordText().getText());
