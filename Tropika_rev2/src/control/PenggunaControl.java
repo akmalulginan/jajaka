@@ -87,7 +87,26 @@ public class PenggunaControl {
             penggunaPanel.getLevelComboBox().setSelectedItem(userList.get(0).getLevel());
         }
     }
-    
+
+    public String generateKodePengguna() {
+        ArrayList<UserModel> userList = userModel.select("");
+        int size = userList.size();
+        String kodeLast = userList.get(size - 1).getKodePengguna();
+        int next = Integer.parseInt(kodeLast.substring(1)) + 1;
+        int length = String.valueOf(next).length();
+        String kodeNext = "P";
+
+        if (length == 1) {
+            kodeNext = kodeNext + "00" + next;
+        } else if (length == 2) {
+            kodeNext = kodeNext + "0" + next;
+        } else if (length == 3) {
+            kodeNext = kodeNext + next;
+        } 
+        
+        return kodeNext;
+    }
+
     public void loadLevel(PenggunaPanel penggunaPanel) {
         ArrayList<LevelModel> levelList = levelModel.select("");
 
@@ -98,22 +117,22 @@ public class PenggunaControl {
             penggunaPanel.getLevelComboBox().addItem(level.getLevel());
         }
     }
-    
-    public void set(PenggunaPanel penggunaPanel){
-        
+
+    public void set(PenggunaPanel penggunaPanel) {
+
     }
-    
-    public void hapus(PenggunaPanel penggunaPanel){
+
+    public void hapus(PenggunaPanel penggunaPanel) {
         int option = JOptionPane.showConfirmDialog(penggunaPanel, "Anda yakin akan menghapus pengguna ini?");
         if (option == JOptionPane.OK_OPTION) {
             userModel.setKodePengguna(penggunaPanel.getKodePenggunaComboBox().getSelectedItem().toString());
             if (userModel.delete()) {
                 JOptionPane.showMessageDialog(null, "Pengguna berhasil dihapus !");
-                
+
             } else {
                 JOptionPane.showMessageDialog(null, "Gagal Menghapus Pengguna !");
             }
-           
+
         }
     }
 }
