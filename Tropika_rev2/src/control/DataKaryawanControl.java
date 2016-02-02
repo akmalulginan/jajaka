@@ -18,17 +18,17 @@ import view.DataKaryawanPanel;
  * @author akmal
  */
 public class DataKaryawanControl {
-    
+
 //    Mengambil data darin karyawan model
-      private KaryawanModel karyawanModel = new KaryawanModel();
-      
-      public boolean populateTable(JTable table, String cari) {
+    private KaryawanModel karyawanModel = new KaryawanModel();
+
+    public boolean populateTable(JTable table, String cari) {
         ArrayList<KaryawanModel> karyawanList = karyawanModel.select(cari);
         DefaultTableModel defaultTableModel = (DefaultTableModel) table.getModel();
         defaultTableModel.setRowCount(0);
 
         for (KaryawanModel karyawan : karyawanList) {
-             System.out.println(karyawan.getTanggalLahir());
+            System.out.println(karyawan.getTanggalLahir());
             defaultTableModel.addRow(
                     new Object[]{
                         karyawan.getKodeKaryawan(),
@@ -36,8 +36,7 @@ public class DataKaryawanControl {
                         karyawan.getNamaPanggilan(),
                         karyawan.getJenisKelamin(),
                         karyawan.getTanggalMasuk(),
-                        karyawan.getTempatLahir(),
-                        karyawan.getTanggalLahir(),
+                        karyawan.getTempatLahir() + ", " + karyawan.getTanggalLahir(),
                         karyawan.getAlamat(),
                         karyawan.getKota(),
                         karyawan.getKodePos(),
@@ -66,5 +65,5 @@ public class DataKaryawanControl {
             }
         });
     }
-    
+
 }
