@@ -100,7 +100,42 @@ public class PenggunaControl {
     }
     
     public void set(PenggunaPanel penggunaPanel){
+        if(penggunaPanel.getKodePenggunaComboBox().getSelectedIndex() != 0){
+            ubahPengguna(penggunaPanel);
+        }else{
+            tambahPengguna(penggunaPanel);
+        }
+    }
+    
+    public void ubahPengguna(PenggunaPanel penggunaPanel){
+        userModel.setKodePengguna(penggunaPanel.getKodePenggunaComboBox().getSelectedItem().toString());
+        userModel.setNamaPengguna(penggunaPanel.getNamaPenggunaText().getText());
+        userModel.setUsername(penggunaPanel.getUsernameText().getText());
+        userModel.setPassword(penggunaPanel.getPasswordText().getText());
+        userModel.setLevel(Integer.parseInt(penggunaPanel.getLevelComboBox().getSelectedItem().toString()));
         
+        if (userModel.update()) {
+                JOptionPane.showMessageDialog(penggunaPanel, "Pengguna berhasil dirubah !");
+                
+            } else {
+                JOptionPane.showMessageDialog(penggunaPanel, "Gagal merubah data Pengguna !");
+            }
+        
+    }
+    
+    public void tambahPengguna(PenggunaPanel penggunaPanel){
+        userModel.setKodePengguna(penggunaPanel.getKodePenggunaComboBox().getSelectedItem().toString());
+        userModel.setNamaPengguna(penggunaPanel.getNamaPenggunaText().getText());
+        userModel.setUsername(penggunaPanel.getUsernameText().getText());
+        userModel.setPassword(penggunaPanel.getPasswordText().getText());
+        userModel.setLevel(Integer.parseInt(penggunaPanel.getLevelComboBox().getSelectedItem().toString()));
+        
+        if (userModel.update()) {
+                JOptionPane.showMessageDialog(penggunaPanel, "Pengguna berhasil dirubah !");
+                
+            } else {
+                JOptionPane.showMessageDialog(penggunaPanel, "Gagal merubah data Pengguna !");
+            }
     }
     
     public void hapus(PenggunaPanel penggunaPanel){
