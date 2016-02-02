@@ -172,31 +172,30 @@ public class KaryawanModel extends Model {
     public boolean insert() {
         java.sql.Date tglMasuk = new java.sql.Date(tanggalMasuk.getTime());
         java.sql.Date tglLahir = new java.sql.Date(tanggalLahir.getTime());
-
+        System.out.println(jenisKelamin);
         try {
-            String sql = "INSERT INTO karyawan (kodeKaryawan, kodeJabatan, namaLengkap, namaPanggilan, jabatan, jenisKelamin,"
+            String sql = "INSERT INTO karyawan (kodeKaryawan, namaLengkap, namaPanggilan, jenisKelamin,"
                     + "tanggalMasuk, tempatLahir, tanggalLahir, alamat, kota, kodePos, noHp, email,"
-                    + "catatan, status, gambar) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                    + "catatan, status, gambar, kodeJabatan) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
             pst = conn.prepareStatement(sql);
 
             pst.setString(1, kodeKaryawan);
-            pst.setString(2, kodeJabatan);
-            pst.setString(3, namaLengkap);
-            pst.setString(4, namaPanggilan);
-            pst.setString(5, jabatan);
-            pst.setString(6, jenisKelamin);
-            pst.setDate(7, tglMasuk);
-            pst.setString(8, tempatLahir);
-            pst.setDate(9, tglLahir);
-            pst.setString(10, alamat);
-            pst.setString(11, kota);
-            pst.setString(12, kodePos);
-            pst.setString(13, noHp);
-            pst.setString(14, email);
-            pst.setString(15, catatan);
-            pst.setBoolean(16, status);
-            pst.setBytes(17, gambar);
+            pst.setString(2, namaLengkap);
+            pst.setString(3, namaPanggilan);
+            pst.setString(4, jenisKelamin);
+            pst.setDate(5, tglMasuk);
+            pst.setString(6, tempatLahir);
+            pst.setDate(7, tglLahir);
+            pst.setString(8, alamat);
+            pst.setString(9, kota);
+            pst.setString(10, kodePos);
+            pst.setString(11, noHp);
+            pst.setString(12, email);
+            pst.setString(13, catatan);
+            pst.setBoolean(14, status);
+            pst.setBytes(15, gambar);
+             pst.setString(16, kodeJabatan);
 
             pst.execute();
 
