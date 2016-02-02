@@ -7,6 +7,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JRadioButton;
+import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import model.KaryawanModel;
@@ -135,6 +136,11 @@ public class KaryawanPanel extends javax.swing.JPanel {
         return kodeJabatanComboBox;
     }
 
+    public JTabbedPane getDetailsTabbedPane() {
+        return detailsTabbedPane;
+    }
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -151,7 +157,7 @@ public class KaryawanPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         kodeKaryawanText = new javax.swing.JTextField();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
+        detailsTabbedPane = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -244,8 +250,8 @@ public class KaryawanPanel extends javax.swing.JPanel {
         kodeKaryawanText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         kodeKaryawanText.setForeground(new java.awt.Color(40, 40, 40));
 
-        jTabbedPane2.setBackground(new java.awt.Color(204, 204, 204));
-        jTabbedPane2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        detailsTabbedPane.setBackground(new java.awt.Color(204, 204, 204));
+        detailsTabbedPane.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(230, 199, 159));
         jPanel1.setOpaque(false);
@@ -465,7 +471,7 @@ public class KaryawanPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("Informasi Karyawan", jPanel1);
+        detailsTabbedPane.addTab("Informasi Karyawan", jPanel1);
 
         jPanel2.setBackground(new java.awt.Color(230, 199, 159));
         jPanel2.setOpaque(false);
@@ -742,7 +748,7 @@ public class KaryawanPanel extends javax.swing.JPanel {
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("Detail", jPanel2);
+        detailsTabbedPane.addTab("Detail", jPanel2);
 
         jLabel21.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(40, 40, 40));
@@ -800,7 +806,7 @@ public class KaryawanPanel extends javax.swing.JPanel {
                 .addComponent(jButton1))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 985, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(detailsTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 985, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(821, 821, 821)
                 .addComponent(inputCepatKey1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -827,7 +833,7 @@ public class KaryawanPanel extends javax.swing.JPanel {
                                 .addComponent(jLabel22))))
                     .addComponent(kodeJabatanComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(detailsTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addComponent(inputCepatKey1))
         );
@@ -896,6 +902,7 @@ public class KaryawanPanel extends javax.swing.JPanel {
     private javax.swing.JTextPane alamat;
     private javax.swing.JTextField atasNama;
     private javax.swing.JTextPane catatan;
+    private javax.swing.JTabbedPane detailsTabbedPane;
     private javax.swing.JTextField email;
     private javax.swing.JButton inputCepatKey1;
     private javax.swing.JButton jButton1;
@@ -946,7 +953,6 @@ public class KaryawanPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTextField jabatanText;
     private javax.swing.ButtonGroup jenisKelaminButtonGroup;
     private javax.swing.JComboBox kodeJabatanComboBox;

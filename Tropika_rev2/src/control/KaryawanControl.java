@@ -8,14 +8,12 @@ package control;
 import com.toedter.calendar.JDateChooser;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import javax.swing.JComboBox;
 import model.KaryawanModel;
 import view.KaryawanPanel;
 import javax.swing.JOptionPane;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
+import model.DataBankModel;
 import model.JabatanModel;
 
 /**
@@ -26,6 +24,7 @@ public class KaryawanControl {
 
     private KaryawanModel karyawanModel = new KaryawanModel();
     private JabatanModel jabatanModel = new JabatanModel();
+    private DataBankModel dataBankModel = new DataBankModel();
 
     public void setKaryawan(KaryawanPanel karyawanPanel) {
 
@@ -58,13 +57,23 @@ public class KaryawanControl {
     public void simpanKaryawan(KaryawanPanel karyawanPanel) {
         if (validasi(karyawanPanel)) {
             setKaryawan(karyawanPanel);
-            if (karyawanModel.insert()) {
+            setDataBank(karyawanPanel);
+            if (karyawanModel.insert() && dataBankModel.insert()) {
                 JOptionPane.showMessageDialog(karyawanPanel, "Data Karyawan berhasil Disimpan!");
                 clear(karyawanPanel);
             } else {
                 JOptionPane.showMessageDialog(karyawanPanel, "Data Karyawan gagal Disimpan!\nKode karyawan sudah terdaftar");
             }
         }
+    }
+    
+    public void setDataBank(KaryawanPanel karyawanPanel) {
+
+        dataBankModel.setNoRekening(karyawanPanel.getNoRek().getText());
+        dataBankModel.setAtasNama(karyawanPanel.getAtasNama().getText());
+        dataBankModel.setNamaBank(karyawanPanel.getNamaBank().getText());
+        dataBankModel.setIdPemilik(karyawanPanel.getKodeKaryawanText().getText());
+
     }
 
     public boolean validasi(KaryawanPanel karyawanPanel) {
@@ -97,6 +106,7 @@ public class KaryawanControl {
             karyawanPanel.getTanggalLahirDate().requestFocus();
         } else if (karyawanPanel.getAlamat().getText().isEmpty()) {
             JOptionPane.showMessageDialog(karyawanPanel, "Alamat tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
+            karyawanPanel.getDetailsTabbedPane().setSelectedIndex(1);
             karyawanPanel.getAlamat().requestFocus();
         } else if (karyawanPanel.getKota().getText().isEmpty()) {
             JOptionPane.showMessageDialog(karyawanPanel, "Kota tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
@@ -152,6 +162,7 @@ public class KaryawanControl {
         karyawanPanel.getNamaBank().setText("");
         karyawanPanel.getNoRek().setText("");
         karyawanPanel.getAtasNama().setText("");
+        karyawanPanel.getUsia().setText("");
     }
 
     public int hitungUmur(KaryawanPanel karyawanPanel) {
@@ -211,7 +222,8 @@ public class KaryawanControl {
                     try {
                         Field dateSelectedField = JDateChooser.class.getDeclaredField("dateSelected");
                         dateSelectedField.setAccessible(true);
-//                        isDateSelectedByUser = dateSelectedField.setBoolean(aDateChooser, false);
+                        isDateSelectedByUser = false;
+                        dateSelectedField.setBoolean(aDateChooser, false);
                     } catch (Exception ignoreOrNot) {
                     }
                 }
@@ -224,15 +236,15 @@ public class KaryawanControl {
         Date tanggalLahir = karyawanPanel.getTanggalLahirDate().getDate();
         int usia = 0;
 
-            if (tanggalLahir.getMonth() <= now.getMonth()) {
-                if (tanggalLahir.getDate() <= now.getDate()) {
-                    usia = now.getYear() - tanggalLahir.getYear();
-                } else {
-                    usia = now.getYear() - tanggalLahir.getYear() - 1;
-                }
+        if (tanggalLahir.getMonth() <= now.getMonth()) {
+            if (tanggalLahir.getDate() <= now.getDate()) {
+                usia = now.getYear() - tanggalLahir.getYear();
             } else {
                 usia = now.getYear() - tanggalLahir.getYear() - 1;
             }
+        } else {
+            usia = now.getYear() - tanggalLahir.getYear() - 1;
+        }
 
         karyawanPanel.getUsia().setText(String.valueOf(usia));
 
