@@ -63,8 +63,6 @@ public class UserModel extends Model {
         this.level = level;
     }
 
-    
-   
     public UserModel login() {
         UserModel userModel = new UserModel();
         LevelModel levelModel = new LevelModel();
@@ -107,9 +105,7 @@ public class UserModel extends Model {
         if (username != null && password != null) {
             query = "SELECT * FROM user WHERE user.username = ? AND user.password = ?";
             login = true;
-        } else if (!cari.isEmpty()) {
-            query = "SELECT * FROM user WHERE user.kodePengguna = '" + cari + "'";
-        }
+        } 
         conn = SqliteConnection.ConnectDb();
         System.out.println(query);
         try {
@@ -121,7 +117,7 @@ public class UserModel extends Model {
             rs = pst.executeQuery();
 
             while (rs.next()) {
-                if (true) {
+                
                     UserModel userModel = new UserModel();
 
                     userModel.setKodePengguna(rs.getString("kodePengguna"));
@@ -130,14 +126,7 @@ public class UserModel extends Model {
                     userModel.setPassword(rs.getString("password"));
                     userModel.setLevel(rs.getInt("level"));
                     userList.add(userModel);
-                } else {
-                    UserModel userModel = new UserModel();
-
-                    userModel.setUsername("");
-                    userModel.setPassword("");
-                    userModel.setLevel(0);
-                    userList.add(userModel);
-                }
+                 
             }
             conn.close();
 
@@ -146,6 +135,44 @@ public class UserModel extends Model {
         }
 
         return userList;
+    }
+
+    public UserModel selectUser(String cari) {
+        boolean login = false;
+//        LevelModel levelModel = new LevelModel();
+        String query = "SELECT * FROM user WHERE user.kodePengguna = '" + cari + "'";
+        if (username != null && password != null) {
+            query = "SELECT * FROM user WHERE user.username = ? AND user.password = ?";
+            login = true;
+        } 
+        conn = SqliteConnection.ConnectDb();
+        System.out.println(query);
+        UserModel userModel = new UserModel();
+
+        try {
+            pst = conn.prepareStatement(query);
+            if (login) {
+                pst.setString(1, username);
+                pst.setString(2, password);
+            }
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+
+                userModel.setKodePengguna(rs.getString("kodePengguna"));
+                userModel.setNamaPengguna(rs.getString("namaPengguna"));
+                userModel.setUsername(rs.getString("username"));
+                userModel.setPassword(rs.getString("password"));
+                userModel.setLevel(rs.getInt("level"));
+
+            }
+            conn.close();
+
+        } catch (Exception e) {
+            System.out.println("ecd : " + e);
+        }
+
+        return userModel;
     }
 
     public boolean update() {
@@ -164,8 +191,9 @@ public class UserModel extends Model {
             pst.setString(3, username);
             pst.setInt(4, level);
             pst.setString(5, kodePengguna);
-            pst.execute(); 
+            pst.execute();
             toReturn = true;
+            conn.close();
         } catch (Exception e) {
             System.out.println("e : " + e);
         }
@@ -178,48 +206,49 @@ public class UserModel extends Model {
     }
 
     public boolean delete() {
-        try{
-            String query = "DELETE FROM user WHERE kodePengguna = ?";
-            conn = SqliteConnection.ConnectDb();
+        boolean toReturn = false;
+        String query = "DELETE FROM user WHERE kodePengguna = ?";
+        conn = SqliteConnection.ConnectDb();
+        try {
+
             if (conn != null) {
                 pst = conn.prepareStatement(query);
                 pst.setString(1, kodePengguna);
+
                 pst.execute();
-                conn.close();
-               
+                toReturn = true;
+
             }
+            conn.close();
 
         } catch (Exception e) {
             System.out.println("error : " + e.getMessage());
-
         }
-        return true;
+        return toReturn;
     }
-    
+
     public boolean insert() {
         boolean toReturn = false;
         conn = SqliteConnection.ConnectDb();
-         try {
+        try {
             String sql = "INSERT INTO user (kodePengguna, namaPengguna, username, password, level) VALUES (?,?,?,?,?)";
 
             pst = conn.prepareStatement(sql);
-            
+
             pst.setString(1, kodePengguna);
             pst.setString(2, namaPengguna);
             pst.setString(3, password);
             pst.setString(4, username);
             pst.setInt(5, level);
-            
-            pst.execute();
 
-            toReturn=true;
+            pst.execute();
+            conn.close();
+            toReturn = true;
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
         return toReturn;
     }
-
-    
 
 }

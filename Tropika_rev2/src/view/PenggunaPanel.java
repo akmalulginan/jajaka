@@ -377,9 +377,6 @@ public class PenggunaPanel extends javax.swing.JPanel {
     private void hapusButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusButtonActionPerformed
         // TODO add your handling code here:
         penggunaControl.hapus(this);
-        penggunaControl.loadKodePengguna(this);
-        penggunaControl.loadLevel(this);
-        penggunaControl.clear(this);
     }//GEN-LAST:event_hapusButtonActionPerformed
 
     private void batalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batalButtonActionPerformed
@@ -399,10 +396,7 @@ public class PenggunaPanel extends javax.swing.JPanel {
 
     private void simpanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanButtonActionPerformed
         // TODO add your handling code here:
-        penggunaControl.set(this);
-        penggunaControl.loadKodePengguna(this);
-        penggunaControl.loadLevel(this);
-        penggunaControl.clear(this);
+        penggunaControl.simpan(this);
     }//GEN-LAST:event_simpanButtonActionPerformed
 
 
