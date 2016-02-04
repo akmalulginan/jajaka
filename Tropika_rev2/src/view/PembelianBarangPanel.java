@@ -2,6 +2,7 @@ package view;
 
 import com.toedter.calendar.JDateChooser;
 import control.PembelianControl;
+import control.PilihSupplierControl;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JTabbedPane;
@@ -23,7 +24,8 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
      * Creates new form FormPembelianBarang
      */
     private PembelianControl pembelianControl = new PembelianControl();
-
+   
+    
     public PembelianBarangPanel() {
         initComponents();
     }
@@ -411,6 +413,7 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         harga.setForeground(new java.awt.Color(40, 40, 40));
 
         keterangan.setEditable(false);
+        keterangan.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         keterangan.setForeground(new java.awt.Color(40, 40, 40));
         jScrollPane1.setViewportView(keterangan);
 
@@ -1201,7 +1204,7 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        new PilihSupplierDialog(new javax.swing.JFrame(), true).setVisible(true);
+        pembelianControl.pilihSupplier(this);
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

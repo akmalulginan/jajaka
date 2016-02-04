@@ -84,6 +84,9 @@
           <Font name="Arial" size="14" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cariTextMouseEntered"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="cariBtn">
       <Properties>

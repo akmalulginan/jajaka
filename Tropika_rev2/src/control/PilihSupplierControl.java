@@ -5,9 +5,13 @@
  */
 package control;
 
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import model.SupplierModel;
+import view.PembelianBarangPanel;
+import view.PilihItemDialog;
 import view.PilihSupplierDialog;
 
 /**
@@ -18,9 +22,10 @@ public class PilihSupplierControl {
 
 //    PilihSupplierDialog pilihSupplierDialog = new PilihSupplierDialog(null, true);
     SupplierModel supplierModel = new SupplierModel();
-    
+
     public void poputalteTable(PilihSupplierDialog pilihSupplierDialog) {
-        ArrayList<SupplierModel> supplierList = supplierModel.select("");
+        String cariText = pilihSupplierDialog.getCariText().getText();
+        ArrayList<SupplierModel> supplierList = supplierModel.select(cariText);
         DefaultTableModel defaultTableModel = (DefaultTableModel) pilihSupplierDialog.getSupplierTable().getModel();
         defaultTableModel.setRowCount(0);
         for (SupplierModel supplier : supplierList) {
@@ -31,17 +36,14 @@ public class PilihSupplierControl {
         }
         pilihSupplierDialog.getSupplierTable().setModel(defaultTableModel);
     }
-    
-    public void poputalteTable(PilihSupplierDialog pilihSupplierDialog, String cari) {
-        ArrayList<SupplierModel> supplierList = supplierModel.select(cari);
-        DefaultTableModel defaultTableModel = (DefaultTableModel) pilihSupplierDialog.getSupplierTable().getModel();
-        defaultTableModel.setRowCount(0);
-        for (SupplierModel supplier : supplierList) {
-            defaultTableModel.addRow(new Object[]{
-                supplier.getKodeSupplier(),
-                supplier.getNamaSupplier()
-            });
-        }
-        pilihSupplierDialog.getSupplierTable().setModel(defaultTableModel);
+
+    public SupplierModel getDataSupplierDialog(PilihSupplierDialog suplierDialog) {
+        int row = suplierDialog.getSupplierTable().getSelectedRow();
+        String cari = suplierDialog.getSupplierTable().getValueAt(row, 0).toString();
+
+        suplierDialog.dispose();
+
+        return supplierModel.select(cari).get(0);
     }
+
 }

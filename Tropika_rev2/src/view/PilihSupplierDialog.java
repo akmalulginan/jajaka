@@ -7,6 +7,8 @@ package view;
 
 import control.PilihSupplierControl;
 import javax.swing.JTable;
+import javax.swing.JTextField;
+import model.SupplierModel;
 
 /**
  *
@@ -24,6 +26,14 @@ public class PilihSupplierDialog extends javax.swing.JDialog {
 
     public JTable getSupplierTable() {
         return supplierTable;
+    }
+    
+    public SupplierModel getSupplier(){
+        return pilihSupplierControl.getDataSupplierDialog(this);
+    }
+
+    public JTextField getCariText() {
+        return cariText;
     }
 
         
@@ -72,6 +82,11 @@ public class PilihSupplierDialog extends javax.swing.JDialog {
                 return canEdit [columnIndex];
             }
         });
+        supplierTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                supplierTableMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(supplierTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -107,8 +122,13 @@ public class PilihSupplierDialog extends javax.swing.JDialog {
 
     private void cariBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cariBtn2ActionPerformed
         // TODO add your handling code here:
-        pilihSupplierControl.poputalteTable(this,cariText.getText());
+        pilihSupplierControl.poputalteTable(this);
     }//GEN-LAST:event_cariBtn2ActionPerformed
+
+    private void supplierTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supplierTableMouseClicked
+        // TODO add your handling code here:
+        pilihSupplierControl.getDataSupplierDialog(this);
+    }//GEN-LAST:event_supplierTableMouseClicked
 
     /**
      * @param args the command line arguments
