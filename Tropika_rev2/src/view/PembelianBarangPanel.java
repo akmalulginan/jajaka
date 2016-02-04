@@ -492,6 +492,11 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         jLabel32.setText("   :");
 
         jButton2.setText("Pilih Supplier");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -1193,6 +1198,10 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         new ItemDialog(new javax.swing.JFrame(), true).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
