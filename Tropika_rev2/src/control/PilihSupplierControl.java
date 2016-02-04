@@ -19,14 +19,27 @@ public class PilihSupplierControl {
 //    PilihSupplierDialog pilihSupplierDialog = new PilihSupplierDialog(null, true);
     SupplierModel supplierModel = new SupplierModel();
     
-    public void poputalteTableItem(PilihSupplierDialog pilihSupplierDialog) {
-        ArrayList<SupplierModel> supplierList = supplierModel.select();
+    public void poputalteTable(PilihSupplierDialog pilihSupplierDialog) {
+        ArrayList<SupplierModel> supplierList = supplierModel.select("");
         DefaultTableModel defaultTableModel = (DefaultTableModel) pilihSupplierDialog.getSupplierTable().getModel();
         defaultTableModel.setRowCount(0);
         for (SupplierModel supplier : supplierList) {
             defaultTableModel.addRow(new Object[]{
                 supplier.getKodeSupplier(),
-            supplier.getNamaSupplier()
+                supplier.getNamaSupplier()
+            });
+        }
+        pilihSupplierDialog.getSupplierTable().setModel(defaultTableModel);
+    }
+    
+    public void poputalteTable(PilihSupplierDialog pilihSupplierDialog, String cari) {
+        ArrayList<SupplierModel> supplierList = supplierModel.select(cari);
+        DefaultTableModel defaultTableModel = (DefaultTableModel) pilihSupplierDialog.getSupplierTable().getModel();
+        defaultTableModel.setRowCount(0);
+        for (SupplierModel supplier : supplierList) {
+            defaultTableModel.addRow(new Object[]{
+                supplier.getKodeSupplier(),
+                supplier.getNamaSupplier()
             });
         }
         pilihSupplierDialog.getSupplierTable().setModel(defaultTableModel);

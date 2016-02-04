@@ -14,15 +14,12 @@ import javax.swing.JTable;
  */
 public class PilihSupplierDialog extends javax.swing.JDialog {
 
-    /**
-     * Creates new form PilihSupplierDialog
-     */
     
     private PilihSupplierControl pilihSupplierControl = new PilihSupplierControl();
     public PilihSupplierDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        pilihSupplierControl.poputalteTableItem(this);
+        pilihSupplierControl.poputalteTable(this);
     }
 
     public JTable getSupplierTable() {
@@ -105,10 +102,12 @@ public class PilihSupplierDialog extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void cariBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cariBtn2ActionPerformed
         // TODO add your handling code here:
+        pilihSupplierControl.poputalteTable(this,cariText.getText());
     }//GEN-LAST:event_cariBtn2ActionPerformed
 
     /**
