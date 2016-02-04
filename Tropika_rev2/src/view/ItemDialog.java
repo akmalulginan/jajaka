@@ -7,13 +7,15 @@ package view;
 
 import control.TransaksiGudangControl;
 import javax.swing.JTable;
+import static view.SatuanDialog.RET_CANCEL;
 
 /**
  *
  * @author hendar
  */
 public class ItemDialog extends javax.swing.JDialog {
-    TransaksiGudangControl transaksiGudangControl = new TransaksiGudangControl() ;
+
+    TransaksiGudangControl transaksiGudangControl = new TransaksiGudangControl();
 
     /**
      * Creates new form ItemDialog
@@ -23,14 +25,14 @@ public class ItemDialog extends javax.swing.JDialog {
         initComponents();
         transaksiGudangControl.populateTable(this);
     }
-    
-    
+
+    public int getReturnStatus() {
+        return returnStatus;
+    }
 
     public JTable getItemTable() {
         return itemTable;
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -172,4 +174,5 @@ public class ItemDialog extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
+    private int returnStatus = RET_CANCEL;
 }

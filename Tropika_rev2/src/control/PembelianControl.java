@@ -10,6 +10,7 @@ import model.PembelianModel;
 import view.PembelianBarangPanel;
 import java.sql.Date;
 import model.DataBankModel;
+import view.ItemDialog;
 /**
  *
  * @author hendar
@@ -103,5 +104,15 @@ public class PembelianControl {
         }
 
         return toReturn;
+    }
+    
+    public void pilihItem(PembelianBarangPanel pembelianBarangPanel){
+        ItemDialog itemDialog = new ItemDialog(null, true);
+        itemDialog.setVisible(true);
+        
+//        if (itemDialog.getReturnStatus() == 1) {
+//            loadSatuanCombo(pembelianBarangPanel.setItem());
+//        }
+//        System.out.println(satuanDialog.getReturnStatus());
     }
 }
