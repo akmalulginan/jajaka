@@ -13,6 +13,8 @@ import javax.swing.table.DefaultTableModel;
 import model.GudangModel;
 import model.ItemModel;
 import model.TransaksiGudangModel;
+import view.ItemDialog;
+import view.PembelianBarangPanel;
 import view.TransaksiGudangPanel;
 
 /**
@@ -39,6 +41,23 @@ public class TransaksiGudangControl {
     public void populateTable(TransaksiGudangPanel gudangPanel) {
         poputalteTableGudang(gudangPanel);
         poputalteTableItem(gudangPanel);
+    }
+
+    public void populateTable(ItemDialog itemDialog) {
+        poputalteTableItem(itemDialog);
+    }
+    
+    public void poputalteTableItem(ItemDialog itemDialog) {
+        ArrayList<ItemModel> itemList = itemModel.select("");
+        DefaultTableModel defaultTableModel = (DefaultTableModel) itemDialog.getItemTable().getModel();
+        defaultTableModel.setRowCount(0);
+        for (ItemModel item : itemList) {
+            defaultTableModel.addRow(new Object[]{
+                item.getKodeItem(),
+                item.getNamaItem()
+            });
+        }
+        itemDialog.getItemTable().setModel(defaultTableModel);
     }
     
     public void poputalteTableItem(TransaksiGudangPanel gudangPanel) {
@@ -77,6 +96,20 @@ public class TransaksiGudangControl {
         gudangPanel.getNamaItemText().setText(gudangPanel.getItemTable().getValueAt(row, 1).toString());
         getImage(gudangPanel, gudangPanel.getItemTable().getValueAt(row, 0).toString());
         
+    }
+    
+    
+     public void getDataItemDialog(ItemDialog itemDialog) {
+        int row = itemDialog.getItemTable().getSelectedRow();
+        ItemControl itemControl = new ItemControl();
+        
+        itemControl.loadItem(itemDialog.getItemTable().getValueAt(row, 0).toString()); 
+        itemDialog.setVisible(false);
+    }
+    
+     public void setBarangDialog(ItemDialog itemDialog) {
+        int row = itemDialog.getItemTable().getSelectedRow();
+       
     }
     
     public void getImage(TransaksiGudangPanel gudangPanel, String kodeItem) {
