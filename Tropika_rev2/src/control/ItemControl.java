@@ -19,6 +19,7 @@ import javax.swing.JTextField;
 import model.ItemModel;
 import model.SatuanModel;
 import view.ItemPanel;
+import view.PembelianBarangPanel;
 
 /**
  *
@@ -70,6 +71,15 @@ public class ItemControl {
         combo.addItem("");
         for (SatuanModel satuan : satuanList) {
             combo.addItem(satuan.getKodeSatuan());
+        }
+    }
+    
+    public void loadItem(String cari) {
+        ArrayList<ItemModel> itemList = itemModel.select(cari);
+        PembelianBarangPanel pembelianBarang = new PembelianBarangPanel();
+        for (ItemModel item : itemList) {
+           pembelianBarang.getKodeItem().setText(item.getKodeItem());
+            pembelianBarang.getNamaItem().setText(item.getNamaItem());
         }
     }
 
@@ -124,7 +134,6 @@ public class ItemControl {
 
     public void loadSatuanCombo(JComboBox comboBox) {
         comboBox.removeAllItems();
-        ItemControl bC = new ItemControl();
         loadSatuan(comboBox);
     }
     

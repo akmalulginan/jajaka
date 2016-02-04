@@ -407,7 +407,6 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         jPembelian.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPembelian.setForeground(new java.awt.Color(40, 40, 40));
 
-        harga.setEditable(false);
         harga.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         harga.setForeground(new java.awt.Color(40, 40, 40));
 
@@ -620,6 +619,11 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         satuanText.setForeground(new java.awt.Color(40, 40, 40));
 
         jButton1.setText("Pilih Item");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -1184,6 +1188,11 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         pembelianControl.simpanPembelian(this);
     }//GEN-LAST:event_inputCepatKeyActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        new ItemDialog(new javax.swing.JFrame(), true).setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
