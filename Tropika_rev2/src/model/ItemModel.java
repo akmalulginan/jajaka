@@ -249,7 +249,7 @@ public class ItemModel extends Model {
         if (!cari.isEmpty()) {
             query = query + " WHERE kategori LIKE '%" + cari + "%' OR kodeItem LIKE '%" + cari + "%'";
         }
-
+        System.out.println(query);
         ArrayList<ItemModel> itemList = new ArrayList<>();
         try {
             pst = conn.prepareStatement(query);

@@ -6,35 +6,45 @@
 package view;
 
 import control.PembelianControl;
+import control.PilihItemControl;
 import control.TransaksiGudangControl;
+import java.util.ArrayList;
 import javax.swing.JTable;
+import javax.swing.JTextField;
+import model.ItemModel;
 import static view.SatuanDialog.RET_CANCEL;
 
 /**
  *
  * @author hendar
  */
-public class ItemDialog extends javax.swing.JDialog {
-    TransaksiGudangControl transaksiGudangControl = new TransaksiGudangControl() ;
-    PembelianControl pembelianControl = new  PembelianControl() ;
-
+public class PilihItemDialog extends javax.swing.JDialog {
+    private PilihItemControl pilihItemControl = new PilihItemControl();
+    private PembelianBarangPanel pembelianItemPanel;
     /**
      * Creates new form ItemDialog
      */
-    public ItemDialog(java.awt.Frame parent, boolean modal) {
+    public PilihItemDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        transaksiGudangControl.populateTable(this);
+        pilihItemControl.populateTable(this);
     }
 
-    public int getReturnStatus() {
-        return returnStatus;
+    public PembelianBarangPanel getPembelianItemPanel() {
+        return pembelianItemPanel;
+    }
+
+    public JTextField getCariText() {
+        return cariText;
     }
 
     public JTable getItemTable() {
         return itemTable;
     }
 
+    public ItemModel getItem() {
+        return pilihItemControl.getDataItemDialog(this);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -119,7 +129,7 @@ public class ItemDialog extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void itemTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemTableMouseClicked
-        pembelianControl.getDataItemDialog(this);
+        pilihItemControl.getDataItemDialog(this);
     }//GEN-LAST:event_itemTableMouseClicked
 
     private void cariBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cariBtnActionPerformed
@@ -135,7 +145,8 @@ public class ItemDialog extends javax.swing.JDialog {
     private javax.swing.JTextField cariText;
     private javax.swing.JTable itemTable;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
     private int returnStatus = RET_CANCEL;
+
+    
 }
