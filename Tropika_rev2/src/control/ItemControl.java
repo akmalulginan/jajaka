@@ -74,14 +74,7 @@ public class ItemControl {
         }
     }
     
-    public void loadItem(String cari) {
-        ArrayList<ItemModel> itemList = itemModel.select(cari);
-        PembelianBarangPanel pembelianBarang = new PembelianBarangPanel();
-        for (ItemModel item : itemList) {
-           pembelianBarang.getKodeItem().setText(item.getKodeItem());
-            pembelianBarang.getNamaItem().setText(item.getNamaItem());
-        }
-    }
+   
 
     public String openImage(JTextField pathText) {
         JFileChooser chooser = new JFileChooser();

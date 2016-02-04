@@ -9,7 +9,10 @@ import javax.swing.JOptionPane;
 import model.PembelianModel;
 import view.PembelianBarangPanel;
 import java.sql.Date;
+import java.util.ArrayList;
 import model.DataBankModel;
+import model.ItemModel;
+import view.ItemDialog;
 /**
  *
  * @author hendar
@@ -18,6 +21,7 @@ public class PembelianControl {
 
     PembelianModel pembelianModel = new PembelianModel();
     DataBankModel dataBankModel = new DataBankModel();
+    ItemModel itemModel = new ItemModel();
 
     public void setPembelian(PembelianBarangPanel pembelianPanel) {
         pembelianModel.setKodeUsulan(pembelianPanel.getKodeUsulanText().getText());
@@ -103,5 +107,21 @@ public class PembelianControl {
         }
 
         return toReturn;
+    }
+    
+    public void getDataItemDialog(ItemDialog itemDialog) {
+        int row = itemDialog.getItemTable().getSelectedRow();
+        
+        loadItem(itemDialog.getItemTable().getValueAt(row, 0).toString()); 
+        itemDialog.setVisible(false);
+    }
+    
+     public void loadItem(String cari) {
+        ArrayList<ItemModel> itemList = itemModel.select(cari);
+        PembelianBarangPanel pembelianBarang = new PembelianBarangPanel();
+        for (ItemModel item : itemList) {
+           pembelianBarang.getKodeItem().setText(item.getKodeItem());
+           pembelianBarang.getNamaItem().setText(item.getNamaItem());
+        }
     }
 }

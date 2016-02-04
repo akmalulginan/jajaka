@@ -98,15 +98,6 @@ public class TransaksiGudangControl {
         
     }
     
-    
-     public void getDataItemDialog(ItemDialog itemDialog) {
-        int row = itemDialog.getItemTable().getSelectedRow();
-        ItemControl itemControl = new ItemControl();
-        
-        itemControl.loadItem(itemDialog.getItemTable().getValueAt(row, 0).toString()); 
-        itemDialog.setVisible(false);
-    }
-    
      public void setBarangDialog(ItemDialog itemDialog) {
         int row = itemDialog.getItemTable().getSelectedRow();
        
