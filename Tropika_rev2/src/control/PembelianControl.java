@@ -5,14 +5,19 @@
  */
 package control;
 
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import javax.swing.JOptionPane;
 import model.PembelianModel;
 import view.PembelianBarangPanel;
 import java.sql.Date;
 import java.util.ArrayList;
 import model.DataBankModel;
+
 import model.ItemModel;
-import view.ItemDialog;
+
+import view.PilihItemDialog;
+
 /**
  *
  * @author hendar
@@ -28,17 +33,17 @@ public class PembelianControl {
         pembelianModel.setNamaUsulan(pembelianPanel.getNamaUsulanText().getText());
         pembelianModel.setTanggal(pembelianPanel.getTanggalDate().getDate().getTime());
         pembelianModel.setKodeItem(pembelianPanel.getKodeItem().getText());
-        if(pembelianPanel.getTunaiCheckBox().isSelected()){
+        if (pembelianPanel.getTunaiCheckBox().isSelected()) {
             pembelianModel.setJenisPembayaran("Tunai");
-        }else if(pembelianPanel.getKreditCheckBox().isSelected()){
+        } else if (pembelianPanel.getKreditCheckBox().isSelected()) {
             pembelianModel.setJenisPembayaran("Kredit");
-        }else if(pembelianPanel.getTransferCheckBox().isSelected()){
+        } else if (pembelianPanel.getTransferCheckBox().isSelected()) {
             pembelianModel.setJenisPembayaran("Transfer");
         }
         pembelianModel.setJumlahPembelian(Integer.parseInt(pembelianPanel.getjPembelian().getText()));
         pembelianModel.setJumlahPembayaran(Double.parseDouble(pembelianPanel.getJumlahPembayaranText().getText()));
         pembelianModel.setKeterangan(pembelianPanel.getKeterangan().getText());
-         
+
     }
 
     public void simpanPembelian(PembelianBarangPanel pembelianPanel) {
@@ -82,7 +87,7 @@ public class PembelianControl {
         } else if (pembelianPanel.getTanggalDate().getDate() == null) {
             JOptionPane.showMessageDialog(pembelianPanel, "Tanggal tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
             pembelianPanel.getTanggalDate().requestFocus();
-        }else if (pembelianPanel.getjPembelian().getText().isEmpty()) {
+        } else if (pembelianPanel.getjPembelian().getText().isEmpty()) {
             JOptionPane.showMessageDialog(pembelianPanel, "Jumlah Pembelian tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
             pembelianPanel.getjPembelian().requestFocus();
         } else if (!pembelianPanel.getTunaiCheckBox().isSelected() && !pembelianPanel.getKreditCheckBox().isSelected() && !pembelianPanel.getTransferCheckBox().isSelected()) {
@@ -108,20 +113,25 @@ public class PembelianControl {
 
         return toReturn;
     }
-    
-    public void getDataItemDialog(ItemDialog itemDialog) {
-        int row = itemDialog.getItemTable().getSelectedRow();
-        
-        loadItem(itemDialog.getItemTable().getValueAt(row, 0).toString()); 
-        itemDialog.setVisible(false);
+
+    public void pilihItem(PembelianBarangPanel pembelianBarangPanel) {
+        PilihItemDialog itemDialog = new PilihItemDialog(null, true);
+        itemDialog.setVisible(true);
+        itemDialog.addWindowListener(new WindowAdapter() {
+            public void windowClosed(WindowEvent e) {
+                setItem(pembelianBarangPanel, itemDialog.getItem());
+            }
+        });
+//        if (itemDialog.getItem() != null) {
+//            setItem(pembelianBarangPanel, itemModel);
+//        }
     }
-    
-     public void loadItem(String cari) {
-        ArrayList<ItemModel> itemList = itemModel.select(cari);
-        PembelianBarangPanel pembelianBarang = new PembelianBarangPanel();
-        for (ItemModel item : itemList) {
-           pembelianBarang.getKodeItem().setText(item.getKodeItem());
-           pembelianBarang.getNamaItem().setText(item.getNamaItem());
-        }
+
+    public void setItem(PembelianBarangPanel pembelianBarangPanel, ItemModel item) {
+        pembelianBarangPanel.getKodeItem().setText(item.getKodeItem());
+        pembelianBarangPanel.getNamaItem().setText(item.getNamaItem());
+        pembelianBarangPanel.getSatuanText().setText(item.getSatuan());
+        pembelianBarangPanel.getKeterangan().setText(item.getKeterangan());
     }
+
 }

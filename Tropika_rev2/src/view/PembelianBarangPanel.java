@@ -22,7 +22,7 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
     /**
      * Creates new form FormPembelianBarang
      */
-    PembelianControl pembelianControl = new PembelianControl();
+    private PembelianControl pembelianControl = new PembelianControl();
 
     public PembelianBarangPanel() {
         initComponents();
@@ -1196,7 +1196,7 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        new ItemDialog(new javax.swing.JFrame(), true).setVisible(true);
+        pembelianControl.pilihItem(this);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

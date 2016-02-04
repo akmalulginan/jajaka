@@ -13,7 +13,7 @@ import javax.swing.table.DefaultTableModel;
 import model.GudangModel;
 import model.ItemModel;
 import model.TransaksiGudangModel;
-import view.ItemDialog;
+import view.PilihItemDialog;
 import view.PembelianBarangPanel;
 import view.TransaksiGudangPanel;
 
@@ -43,11 +43,11 @@ public class TransaksiGudangControl {
         poputalteTableItem(gudangPanel);
     }
 
-    public void populateTable(ItemDialog itemDialog) {
+    public void populateTable(PilihItemDialog itemDialog) {
         poputalteTableItem(itemDialog);
     }
     
-    public void poputalteTableItem(ItemDialog itemDialog) {
+    public void poputalteTableItem(PilihItemDialog itemDialog) {
         ArrayList<ItemModel> itemList = itemModel.select("");
         DefaultTableModel defaultTableModel = (DefaultTableModel) itemDialog.getItemTable().getModel();
         defaultTableModel.setRowCount(0);
@@ -98,7 +98,7 @@ public class TransaksiGudangControl {
         
     }
     
-     public void setBarangDialog(ItemDialog itemDialog) {
+     public void setBarangDialog(PilihItemDialog itemDialog) {
         int row = itemDialog.getItemTable().getSelectedRow();
        
     }
