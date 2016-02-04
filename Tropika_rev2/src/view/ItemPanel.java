@@ -551,13 +551,7 @@ public class ItemPanel extends javax.swing.JPanel {
     private void tambahSatuanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahSatuanButtonActionPerformed
         // TODO add your handling code here:
 //        new TambahSatuanDialog(new MainMenu(), true).show();
-        SatuanDialog satuanDialog = new SatuanDialog(null, true);
-        satuanDialog.setVisible(true);
-        
-        if (satuanDialog.getReturnStatus() == 1) {
-            itemControl.loadSatuanCombo(satuanCombo);
-        }
-        System.out.println(satuanDialog.getReturnStatus());
+        itemControl.tambahSatuan(this);
 
 //        System.out.println(result);
     }//GEN-LAST:event_tambahSatuanButtonActionPerformed

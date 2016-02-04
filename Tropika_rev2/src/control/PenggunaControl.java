@@ -218,4 +218,8 @@ public class PenggunaControl {
         batal(penggunaPanel);
 //        loadKodePengguna(penggunaPanel);
     }
+    
+    public void validasi(PenggunaPanel penggunaPanel){
+        
+    }
 }

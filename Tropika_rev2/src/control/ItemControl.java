@@ -20,6 +20,7 @@ import model.ItemModel;
 import model.SatuanModel;
 import view.ItemPanel;
 import view.PembelianBarangPanel;
+import view.SatuanDialog;
 
 /**
  *
@@ -64,6 +65,16 @@ public class ItemControl {
             }
         }
 
+    }
+    
+    public void tambahSatuan(ItemPanel itemPanel){
+        SatuanDialog satuanDialog = new SatuanDialog(null, true);
+        satuanDialog.setVisible(true);
+        
+        if (satuanDialog.getReturnStatus() == 1) {
+            loadSatuanCombo(itemPanel.getSatuanCombo());
+        }
+        System.out.println(satuanDialog.getReturnStatus());
     }
 
     public void loadSatuan(JComboBox combo) {
