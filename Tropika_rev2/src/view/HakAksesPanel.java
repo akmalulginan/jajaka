@@ -24,6 +24,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
     public HakAksesPanel() {
         initComponents();
         hakAksesControl.loadLevel(this);
+        hakAksesControl.disable(this);
     }
 
     public JCheckBox getGudangCheckBox() {
@@ -89,6 +90,8 @@ public class HakAksesPanel extends javax.swing.JPanel {
     public JCheckBox getTransaksiGudangCheckBox() {
         return transaksiGudangCheckBox;
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -131,8 +134,8 @@ public class HakAksesPanel extends javax.swing.JPanel {
         laporanGudangCheckBox = new javax.swing.JCheckBox();
         laporanPembelianCheckBox = new javax.swing.JCheckBox();
         laporanPenjualanCheckBox = new javax.swing.JCheckBox();
-        baruKey2 = new javax.swing.JButton();
-        baruKey3 = new javax.swing.JButton();
+        tambahButton = new javax.swing.JButton();
+        batalButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(231, 231, 231));
         setName("Hak Akses"); // NOI18N
@@ -489,33 +492,33 @@ public class HakAksesPanel extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Laporan", jPanel5);
 
-        baruKey2.setBackground(new java.awt.Color(255, 255, 255));
-        baruKey2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        baruKey2.setForeground(new java.awt.Color(40, 40, 40));
-        baruKey2.setText("Tambah Level");
-        baruKey2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        baruKey2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        baruKey2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        baruKey2.setIconTextGap(23);
-        baruKey2.setPreferredSize(new java.awt.Dimension(95, 29));
-        baruKey2.addActionListener(new java.awt.event.ActionListener() {
+        tambahButton.setBackground(new java.awt.Color(255, 255, 255));
+        tambahButton.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        tambahButton.setForeground(new java.awt.Color(40, 40, 40));
+        tambahButton.setText("Tambah Level");
+        tambahButton.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        tambahButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tambahButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tambahButton.setIconTextGap(23);
+        tambahButton.setPreferredSize(new java.awt.Dimension(95, 29));
+        tambahButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                baruKey2ActionPerformed(evt);
+                tambahButtonActionPerformed(evt);
             }
         });
 
-        baruKey3.setBackground(new java.awt.Color(255, 255, 255));
-        baruKey3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        baruKey3.setForeground(new java.awt.Color(40, 40, 40));
-        baruKey3.setText("Cancel");
-        baruKey3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        baruKey3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        baruKey3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        baruKey3.setIconTextGap(23);
-        baruKey3.setPreferredSize(new java.awt.Dimension(49, 29));
-        baruKey3.addActionListener(new java.awt.event.ActionListener() {
+        batalButton.setBackground(new java.awt.Color(255, 255, 255));
+        batalButton.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        batalButton.setForeground(new java.awt.Color(40, 40, 40));
+        batalButton.setText("Batal");
+        batalButton.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        batalButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        batalButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        batalButton.setIconTextGap(23);
+        batalButton.setPreferredSize(new java.awt.Dimension(49, 29));
+        batalButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                baruKey3ActionPerformed(evt);
+                batalButtonActionPerformed(evt);
             }
         });
 
@@ -527,9 +530,9 @@ public class HakAksesPanel extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(baruKey2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tambahButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(baruKey3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(batalButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(223, 223, 223)
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
@@ -549,8 +552,8 @@ public class HakAksesPanel extends javax.swing.JPanel {
                         .addComponent(levelComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(baruKey1))
                     .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(baruKey2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(baruKey3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(tambahButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(batalButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -578,20 +581,19 @@ public class HakAksesPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_baruKey1ActionPerformed
 
-    private void baruKey2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_baruKey2ActionPerformed
+    private void tambahButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_baruKey2ActionPerformed
+    }//GEN-LAST:event_tambahButtonActionPerformed
 
-    private void baruKey3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_baruKey3ActionPerformed
+    private void batalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batalButtonActionPerformed
         // TODO add your handling code here:
         hakAksesControl.clear(this);
-    }//GEN-LAST:event_baruKey3ActionPerformed
+    }//GEN-LAST:event_batalButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton baruKey1;
-    private javax.swing.JButton baruKey2;
-    private javax.swing.JButton baruKey3;
+    private javax.swing.JButton batalButton;
     private javax.swing.JCheckBox gudangCheckBox;
     private javax.swing.JCheckBox hakAksesCheckBox;
     private javax.swing.JCheckBox hargaCheckBox;
@@ -621,6 +623,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
     private javax.swing.JCheckBox penggunaCheckBox;
     private javax.swing.JCheckBox penjualanCheckBox;
     private javax.swing.JCheckBox supplierCheckBox;
+    private javax.swing.JButton tambahButton;
     private javax.swing.JCheckBox transaksiCheckBox;
     private javax.swing.JCheckBox transaksiGudangCheckBox;
     // End of variables declaration//GEN-END:variables
