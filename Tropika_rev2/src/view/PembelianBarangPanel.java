@@ -2,6 +2,7 @@ package view;
 
 import com.toedter.calendar.JDateChooser;
 import control.PembelianControl;
+import control.PilihSupplierControl;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JTabbedPane;
@@ -23,7 +24,8 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
      * Creates new form FormPembelianBarang
      */
     private PembelianControl pembelianControl = new PembelianControl();
-
+   
+    
     public PembelianBarangPanel() {
         initComponents();
     }
@@ -411,6 +413,7 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         harga.setForeground(new java.awt.Color(40, 40, 40));
 
         keterangan.setEditable(false);
+        keterangan.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         keterangan.setForeground(new java.awt.Color(40, 40, 40));
         jScrollPane1.setViewportView(keterangan);
 
@@ -492,6 +495,11 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         jLabel32.setText("   :");
 
         jButton2.setText("Pilih Supplier");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -1193,6 +1201,11 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         pembelianControl.pilihItem(this);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        pembelianControl.pilihSupplier(this);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

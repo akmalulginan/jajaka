@@ -227,28 +227,33 @@ public class SupplierModel extends Model {
         }
         return toReturn;
     }
-    
-    public ArrayList<SupplierModel> select() {
+
+    public ArrayList<SupplierModel> select(String cari) {
+        String query = "SELECT * FROM supplier";
+        if (!cari.isEmpty()) {
+            query = query + " WHERE kodeSupplier LIKE '%" + cari + "%' OR namaSupplier LIKE '%" + cari + "%'";
+        }
         ArrayList<SupplierModel> list = new ArrayList<>();
+        
         try {
-            pst = conn.prepareStatement("SELECT * FROM supplier");
+            pst = conn.prepareStatement(query);
             rs = pst.executeQuery();
             while (rs.next()) {
-                 
-                this.setKodeSupplier(rs.getString("kodeSupplier"));
-                this.setNamaSupplier(rs.getString("namaSupplier"));
-                this.setKategoriSupplier(rs.getString("kategoriSupplier"));
-                this.setAlamat(rs.getString("alamat"));
-                this.setKota(rs.getString("kota"));
-                this.setKodePos(rs.getString("kodePos"));
-                this.setNoTelp(rs.getString("noTelp"));
-                this.setNoFax(rs.getString("noFax"));
-                this.setEmail(rs.getString("email"));
-                this.setCatatan(rs.getString("catatan"));
-                this.setContactPerson(rs.getString("contactPerson"));
-                this.setNoTelpCs(rs.getString("noTelpCs"));
-                this.setEmailCs(rs.getString("emailCs"));
-                list.add(this);
+                SupplierModel supplierModel = new SupplierModel();
+                supplierModel.setKodeSupplier(rs.getString("kodeSupplier"));
+                supplierModel.setNamaSupplier(rs.getString("namaSupplier"));
+                supplierModel.setKategoriSupplier(rs.getString("kategoriSupplier"));
+                supplierModel.setAlamat(rs.getString("alamat"));
+                supplierModel.setKota(rs.getString("kota"));
+                supplierModel.setKodePos(rs.getString("kodePos"));
+                supplierModel.setNoTelp(rs.getString("noTelp"));
+                supplierModel.setNoFax(rs.getString("noFax"));
+                supplierModel.setEmail(rs.getString("email"));
+                supplierModel.setCatatan(rs.getString("catatan"));
+                supplierModel.setContactPerson(rs.getString("contactPerson"));
+                supplierModel.setNoTelpCs(rs.getString("noTelpCs"));
+                supplierModel.setEmailCs(rs.getString("emailCs"));
+                list.add(supplierModel);
             }
             return list;
         } catch (Exception e) {
@@ -256,7 +261,7 @@ public class SupplierModel extends Model {
             return null;
         }
     }
-    
+
     public Boolean delete() {
         Boolean toReturn = false;
 
@@ -275,11 +280,6 @@ public class SupplierModel extends Model {
 
         return toReturn;
     }
-    
-    
 
-    public static void main(String[] args) {
-        new SupplierModel().select();
-    }
 
 }

@@ -15,8 +15,10 @@ import java.util.ArrayList;
 import model.DataBankModel;
 
 import model.ItemModel;
+import model.SupplierModel;
 
 import view.PilihItemDialog;
+import view.PilihSupplierDialog;
 
 /**
  *
@@ -122,9 +124,18 @@ public class PembelianControl {
                 setItem(pembelianBarangPanel, itemDialog.getItem());
             }
         });
-//        if (itemDialog.getItem() != null) {
-//            setItem(pembelianBarangPanel, itemModel);
-//        }
+
+    }
+    
+    public void pilihSupplier(PembelianBarangPanel pembelianBarangPanel) {
+        PilihSupplierDialog supplierDialog = new PilihSupplierDialog(null, true);
+        supplierDialog.setVisible(true);
+        supplierDialog.addWindowListener(new WindowAdapter() {
+            public void windowClosed(WindowEvent e) {
+                setSupplier(pembelianBarangPanel, supplierDialog.getSupplier());
+            }
+        });
+
     }
 
     public void setItem(PembelianBarangPanel pembelianBarangPanel, ItemModel item) {
@@ -133,5 +144,16 @@ public class PembelianControl {
         pembelianBarangPanel.getSatuanText().setText(item.getSatuan());
         pembelianBarangPanel.getKeterangan().setText(item.getKeterangan());
     }
+    
+    public void setSupplier(PembelianBarangPanel pembelianBarangPanel, SupplierModel supplier) {
+        pembelianBarangPanel.getKoseSupplier().setText(supplier.getKodeSupplier());
+        pembelianBarangPanel.getNamaSupplier().setText(supplier.getNamaSupplier());
+        pembelianBarangPanel.getAlamat().setText(supplier.getAlamat());
+        pembelianBarangPanel.getNoTelp().setText(supplier.getNoTelp());
+        pembelianBarangPanel.getEmail().setText(supplier.getEmail());
+        pembelianBarangPanel.getcPerson().setText(supplier.getContactPerson());
+        
+    }
+    
 
 }

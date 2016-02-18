@@ -21,7 +21,8 @@ public class PilihItemControl {
     private ItemModel itemModel = new ItemModel();
 
     public void populateTable(PilihItemDialog itemDialog) {
-        ArrayList<ItemModel> itemList = itemModel.select("");
+        String cariText = itemDialog.getCariText().getText();
+        ArrayList<ItemModel> itemList = itemModel.select(cariText);
         DefaultTableModel defaultTableModel = (DefaultTableModel) itemDialog.getItemTable().getModel();
         defaultTableModel.setRowCount(0);
         for (ItemModel item : itemList) {

@@ -29,6 +29,7 @@ public class PilihItemDialog extends javax.swing.JDialog {
         initComponents();
         pilihItemControl.populateTable(this);
     }
+    
 
     public PembelianBarangPanel getPembelianItemPanel() {
         return pembelianItemPanel;
@@ -89,6 +90,11 @@ public class PilihItemDialog extends javax.swing.JDialog {
         jScrollPane1.setViewportView(itemTable);
 
         cariText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        cariText.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cariTextMouseEntered(evt);
+            }
+        });
 
         cariBtn.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cariBtn.setText("Cari");
@@ -134,7 +140,13 @@ public class PilihItemDialog extends javax.swing.JDialog {
 
     private void cariBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cariBtnActionPerformed
         // TODO add your handling code here:
+         pilihItemControl.populateTable(this);
     }//GEN-LAST:event_cariBtnActionPerformed
+
+    private void cariTextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cariTextMouseEntered
+        // TODO add your handling code here:
+        pilihItemControl.populateTable(this);
+    }//GEN-LAST:event_cariTextMouseEntered
 
     /**
      * @param args the command line arguments
