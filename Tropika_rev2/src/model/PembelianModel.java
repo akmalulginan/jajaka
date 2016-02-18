@@ -155,7 +155,6 @@ public class PembelianModel extends Model {
             pst.setLong(10, tanngalPenerimaan);
             pst.setString(11, kodeGudang);
             pst.setString(12, lokasiLain);
-            pst.setInt(9, jumlahPembayaran);
             pst.execute();
 
             return true;
