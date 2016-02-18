@@ -99,7 +99,7 @@ public class PembelianModel extends Model {
 
     public boolean insert() {
         try {
-            String sql = "INSERT INTO pembelian (kodeUsulan, namaUsulan, tanggal, kodeItem, jumlahPembelian, harga, keterangan, jumlahPembayaran) VALUES (?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO pembelian (kodeUsulan, namaUsulan, tanggal, kodeItem, jumlahPembelian, harga, keterangan, jenisPembayaran, jumlahPembayaran) VALUES (?,?,?,?,?,?,?,?)";
 
             pst = conn.prepareStatement(sql);
             pst.setString(1, kodeUsulan);
@@ -109,7 +109,8 @@ public class PembelianModel extends Model {
             pst.setInt(5, jumlahPembelian);
             pst.setDouble(6, harga);
             pst.setString(7, keterangan);
-            pst.setDouble(8, jumlahPembayaran);
+            pst.setString(8, jenisPembayaran);
+            pst.setDouble(9, jumlahPembayaran);
             pst.execute();
 
             return true;

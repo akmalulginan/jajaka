@@ -45,7 +45,7 @@ public class PembelianControl {
         pembelianModel.setJumlahPembelian(Integer.parseInt(pembelianPanel.getjPembelian().getText()));
         pembelianModel.setJumlahPembayaran(Double.parseDouble(pembelianPanel.getJumlahPembayaranText().getText()));
         pembelianModel.setKeterangan(pembelianPanel.getKeterangan().getText());
-
+        pembelianModel.setHarga(Double.parseDouble(pembelianPanel.getHarga().getText()));
     }
 
     public void simpanPembelian(PembelianBarangPanel pembelianPanel) {
@@ -143,7 +143,7 @@ public class PembelianControl {
         pembelianBarangPanel.getNamaItem().setText(item.getNamaItem());
         pembelianBarangPanel.getSatuanText().setText(item.getSatuan());
         pembelianBarangPanel.getKeterangan().setText(item.getKeterangan());
-    }
+    } 
     
     public void setSupplier(PembelianBarangPanel pembelianBarangPanel, SupplierModel supplier) {
         pembelianBarangPanel.getKoseSupplier().setText(supplier.getKodeSupplier());

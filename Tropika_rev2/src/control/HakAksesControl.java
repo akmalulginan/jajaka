@@ -6,6 +6,7 @@
 package control;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import model.LevelModel;
 import view.HakAksesPanel;
 
@@ -87,8 +88,8 @@ public class HakAksesControl {
         hakAksesPanel.getLaporanPembelianCheckBox().setEnabled(true);
         hakAksesPanel.getLaporanPenjualanCheckBox().setEnabled(true);
         hakAksesPanel.getUbahButton().setEnabled(true);
-        hakAksesPanel.getHapusButton().setEnabled(true);        hakAksesPanel.getSimpanButton().setEnabled(true);
-
+        hakAksesPanel.getHapusButton().setEnabled(true);
+        hakAksesPanel.getSimpanButton().setEnabled(true);
 
     }
 
@@ -134,18 +135,63 @@ public class HakAksesControl {
         enable(hakAksesPanel);
         hakAksesPanel.getSimpanButton().setEnabled(true);
     }
-    
-    public void setLevelModel(HakAksesPanel hakAksesPanel){
+
+    public void setLevelModel(HakAksesPanel hakAksesPanel) {
+        levelModel.setLevel(hakAksesPanel.getLevelComboBox().getSelectedItem().hashCode());
         levelModel.setPengguna(hakAksesPanel.getPenggunaCheckBox().isSelected());
         levelModel.setHakAkses(hakAksesPanel.getHakAksesCheckBox().isSelected());
+        levelModel.setGudang(hakAksesPanel.getGudangCheckBox().isSelected());
+        levelModel.setItem(hakAksesPanel.getItemCheckBox().isSelected());
+        levelModel.setHarga(hakAksesPanel.getHargaCheckBox().isSelected());
+        levelModel.setKategori(hakAksesPanel.getKategoriCheckBox().isSelected());
+//        levelModel.setSatuan(hakAksesPanel);
+        levelModel.setSupplier(hakAksesPanel.getSupplierCheckBox().isSelected());
+        levelModel.setPembelian(hakAksesPanel.getPembelianCheckBox().isSelected());
+        levelModel.setPenjualan(hakAksesPanel.getPenjualanCheckBox().isSelected());
+        levelModel.setTransaksiGudang(hakAksesPanel.getTransaksiGudangCheckBox().isSelected());
+        levelModel.setTransaksi(hakAksesPanel.getTransaksiCheckBox().isSelected());
+        levelModel.setLaporanPembelian(hakAksesPanel.getLaporanPembelianCheckBox().isSelected());
+        levelModel.setLaporanPenjualan(hakAksesPanel.getLaporanPenjualanCheckBox().isSelected());
+        levelModel.setLaporanGudang(hakAksesPanel.getLaporanGudangCheckBox().isSelected());
+
     }
 
     public void simpan(HakAksesPanel hakAksesPanel) {
         setLevelModel(hakAksesPanel);
         if (hakAksesPanel.getLevelComboBox().getSelectedIndex() == 0) {
             //insert
+            if (levelModel.insert()) {
+                JOptionPane.showMessageDialog(hakAksesPanel, "Data berhasil Disimpan!");
+                reset(hakAksesPanel);
+                setLevel(hakAksesPanel);
+            } else {
+                JOptionPane.showMessageDialog(hakAksesPanel, "Data Gagal Disimpan!");
+            }
+
         } else {
             //update
+            if (levelModel.update()) {
+                JOptionPane.showMessageDialog(hakAksesPanel, "Data berhasil Diubah!");
+                reset(hakAksesPanel);
+            } else {
+                JOptionPane.showMessageDialog(hakAksesPanel, "Data Gagal Diubah!");
+            }
+        }
+
+    }
+
+    public void hapus(HakAksesPanel hakAksesPanel) {
+        int option = JOptionPane.showConfirmDialog(hakAksesPanel, "Anda yakin akan menghapus Data ini?");
+        if (option == JOptionPane.OK_OPTION) {
+            levelModel.setLevel(hakAksesPanel.getLevelComboBox().getSelectedItem().hashCode());
+            if (levelModel.hapus()) {
+                JOptionPane.showMessageDialog(hakAksesPanel, "Data berhasil dihapus !");
+                reset(hakAksesPanel);
+
+            } else {
+                JOptionPane.showMessageDialog(hakAksesPanel, "Gagal Menghapus Data !");
+                reset(hakAksesPanel);
+            }
         }
     }
 }
