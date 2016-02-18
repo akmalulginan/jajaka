@@ -161,12 +161,12 @@ public class SupplierModel extends Model {
             pst.setString(1, kodeSupplier);
             pst.setString(2, namaSupplier);
             pst.setString(3, kategoriSupplier);
-            pst.setString(4, kota);
-            pst.setString(5, kodePos);
-            pst.setString(6, noTelp);
-            pst.setString(7, noFax);
-            pst.setString(8, email);
-            pst.setString(9, catatan);
+            pst.setString(4, alamat);
+            pst.setString(5, kota);
+            pst.setString(6, kodePos);
+            pst.setString(7, noTelp);
+            pst.setString(8, noFax);
+            pst.setString(9, email);
             pst.setString(10, catatan);
             pst.setString(11, contactPerson);
             pst.setString(12, noTelpCs);

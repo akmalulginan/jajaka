@@ -118,10 +118,14 @@ public class DataBankModel extends Model {
         return toReturn;
     }
 
-    public ArrayList<DataBankModel> select() {
+    public ArrayList<DataBankModel> select(String cari) {
         ArrayList<DataBankModel> List = new ArrayList<>();
+        String query = "SELECT * FROM databank";
+        if (!cari.isEmpty()) {
+            query = query + " WHERE idPemilik LIKE '" + cari + "'";
+        }
         try {
-            pst = conn.prepareStatement("SELECT * FROM databank");
+            pst = conn.prepareStatement(query);
             rs = pst.executeQuery();
             while (rs.next()) {
                 this.setNoRekening(rs.getString("noRekening"));
@@ -138,6 +142,6 @@ public class DataBankModel extends Model {
     }
 
     public static void main(String[] args) {
-        new DataBankModel().select();
+        new DataBankModel().select("");
     }
 }

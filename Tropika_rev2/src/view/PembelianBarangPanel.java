@@ -24,10 +24,14 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
      * Creates new form FormPembelianBarang
      */
     private PembelianControl pembelianControl = new PembelianControl();
-   
-    
+
     public PembelianBarangPanel() {
         initComponents();
+        pembelianControl.listenerTextField(jPembelian, this);
+        pembelianControl.listenerTextField(harga, this);
+        pembelianControl.penyimpanan(gudangCheckBox, this);
+        pembelianControl.penyimpanan(lokasiLainCheckBox, this);
+        pembelianControl.disable(this);
     }
 
     public JTextField getAlamat() {
@@ -169,8 +173,13 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
     public JTabbedPane getjTabbedPane1() {
         return jTabbedPane1;
     }
+
+    public JButton getPilihGudangButton() {
+        return pilihGudangButton;
+    }
     
     
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -180,6 +189,8 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel8 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jumlahHargaText = new javax.swing.JTextField();
@@ -242,9 +253,6 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         satuanText = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        tunaiCheckBox = new javax.swing.JCheckBox();
-        kreditCheckBox = new javax.swing.JCheckBox();
-        transferCheckBox = new javax.swing.JCheckBox();
         jPanel6 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
@@ -257,6 +265,9 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         atasNamaText = new javax.swing.JTextField();
         jLabel44 = new javax.swing.JLabel();
         jumlahPembayaranText = new javax.swing.JTextField();
+        tunaiCheckBox = new javax.swing.JCheckBox();
+        kreditCheckBox = new javax.swing.JCheckBox();
+        transferCheckBox = new javax.swing.JCheckBox();
         jPanel3 = new javax.swing.JPanel();
         satu = new javax.swing.JCheckBox();
         dua = new javax.swing.JCheckBox();
@@ -274,6 +285,7 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         jLabel51 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
         tanggalPenerimaanDate = new com.toedter.calendar.JDateChooser();
+        pilihGudangButton = new javax.swing.JButton();
         tanggalDate = new com.toedter.calendar.JDateChooser();
 
         setBackground(new java.awt.Color(231, 231, 231));
@@ -289,7 +301,6 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         jumlahHargaText.setEditable(false);
         jumlahHargaText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jumlahHargaText.setForeground(new java.awt.Color(40, 40, 40));
-        jumlahHargaText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
 
         jLabel18.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(40, 40, 40));
@@ -302,12 +313,10 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         ppnText.setEditable(false);
         ppnText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         ppnText.setForeground(new java.awt.Color(40, 40, 40));
-        ppnText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
 
         totalText.setEditable(false);
         totalText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         totalText.setForeground(new java.awt.Color(40, 40, 40));
-        totalText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 40, 40)));
 
         jLabel33.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(40, 40, 40));
@@ -408,9 +417,19 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
 
         jPembelian.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPembelian.setForeground(new java.awt.Color(40, 40, 40));
+        jPembelian.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jPembelianKeyTyped(evt);
+            }
+        });
 
         harga.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         harga.setForeground(new java.awt.Color(40, 40, 40));
+        harga.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                hargaKeyTyped(evt);
+            }
+        });
 
         keterangan.setEditable(false);
         keterangan.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -738,37 +757,6 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(230, 199, 159));
         jPanel2.setOpaque(false);
 
-        tunaiCheckBox.setBackground(new java.awt.Color(230, 199, 159));
-        tunaiCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        tunaiCheckBox.setForeground(new java.awt.Color(40, 40, 40));
-        tunaiCheckBox.setText("Tunai");
-        tunaiCheckBox.setBorderPaintedFlat(true);
-        tunaiCheckBox.setOpaque(false);
-
-        kreditCheckBox.setBackground(new java.awt.Color(230, 199, 159));
-        kreditCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        kreditCheckBox.setForeground(new java.awt.Color(40, 40, 40));
-        kreditCheckBox.setText("Kredit");
-        kreditCheckBox.setBorderPaintedFlat(true);
-        kreditCheckBox.setOpaque(false);
-        kreditCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kreditCheckBoxActionPerformed(evt);
-            }
-        });
-
-        transferCheckBox.setBackground(new java.awt.Color(230, 199, 159));
-        transferCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        transferCheckBox.setForeground(new java.awt.Color(40, 40, 40));
-        transferCheckBox.setText("Transfer");
-        transferCheckBox.setBorderPaintedFlat(true);
-        transferCheckBox.setOpaque(false);
-        transferCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                transferCheckBoxActionPerformed(evt);
-            }
-        });
-
         jPanel6.setBackground(new java.awt.Color(230, 199, 159));
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Rekening Bank", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14), new java.awt.Color(40, 40, 40))); // NOI18N
         jPanel6.setForeground(new java.awt.Color(40, 40, 40));
@@ -863,22 +851,55 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         jumlahPembayaranText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jumlahPembayaranText.setForeground(new java.awt.Color(40, 40, 40));
 
+        tunaiCheckBox.setBackground(new java.awt.Color(230, 199, 159));
+        buttonGroup1.add(tunaiCheckBox);
+        tunaiCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        tunaiCheckBox.setForeground(new java.awt.Color(40, 40, 40));
+        tunaiCheckBox.setText("Tunai");
+        tunaiCheckBox.setBorderPaintedFlat(true);
+        tunaiCheckBox.setOpaque(false);
+
+        kreditCheckBox.setBackground(new java.awt.Color(230, 199, 159));
+        buttonGroup1.add(kreditCheckBox);
+        kreditCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        kreditCheckBox.setForeground(new java.awt.Color(40, 40, 40));
+        kreditCheckBox.setText("Kredit");
+        kreditCheckBox.setBorderPaintedFlat(true);
+        kreditCheckBox.setOpaque(false);
+        kreditCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kreditCheckBoxActionPerformed(evt);
+            }
+        });
+
+        transferCheckBox.setBackground(new java.awt.Color(230, 199, 159));
+        buttonGroup1.add(transferCheckBox);
+        transferCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        transferCheckBox.setForeground(new java.awt.Color(40, 40, 40));
+        transferCheckBox.setText("Transfer");
+        transferCheckBox.setBorderPaintedFlat(true);
+        transferCheckBox.setOpaque(false);
+        transferCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                transferCheckBoxActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(105, 105, 105)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tunaiCheckBox)
+                    .addComponent(transferCheckBox)
+                    .addComponent(kreditCheckBox))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(transferCheckBox)
-                            .addComponent(kreditCheckBox)
-                            .addComponent(tunaiCheckBox))
-                        .addGap(35, 35, 35)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(187, 187, 187)
+                        .addGap(75, 75, 75)
                         .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jumlahPembayaranText)))
@@ -889,20 +910,20 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(tunaiCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(kreditCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(transferCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(tunaiCheckBox)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(transferCheckBox)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(kreditCheckBox)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel44)
                     .addComponent(jumlahPembayaranText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Pembayaran", jPanel2);
@@ -941,7 +962,7 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
                     .addComponent(dua, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tiga)
                     .addComponent(satu))
-                .addContainerGap(816, Short.MAX_VALUE))
+                .addContainerGap(834, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -952,7 +973,7 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
                 .addComponent(dua, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tiga, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Persetujuan", jPanel3);
@@ -961,6 +982,7 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         jPanel4.setOpaque(false);
 
         gudangCheckBox.setBackground(new java.awt.Color(230, 199, 159));
+        buttonGroup2.add(gudangCheckBox);
         gudangCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         gudangCheckBox.setForeground(new java.awt.Color(40, 40, 40));
         gudangCheckBox.setText("Gudang");
@@ -968,6 +990,7 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         gudangCheckBox.setOpaque(false);
 
         lokasiLainCheckBox.setBackground(new java.awt.Color(230, 199, 159));
+        buttonGroup2.add(lokasiLainCheckBox);
         lokasiLainCheckBox.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lokasiLainCheckBox.setForeground(new java.awt.Color(40, 40, 40));
         lokasiLainCheckBox.setText("Lokasi Lian");
@@ -1012,6 +1035,8 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
 
         tanggalPenerimaanDate.setDateFormatString("dd-MM-yyyy");
 
+        pilihGudangButton.setText("Pilih Gudang");
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -1019,24 +1044,23 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(55, 55, 55)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel48)
+                    .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(namaLokasiText, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel48)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                        .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(10, 10, 10)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(kodeGudangText)
-                    .addComponent(namaLokasiText)
+                        .addComponent(kodeGudangText, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pilihGudangButton))
                     .addComponent(tanggalPenerimaanDate, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1045,7 +1069,8 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel46)
                     .addComponent(kodeGudangText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pilihGudangButton, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel47)
@@ -1071,7 +1096,7 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
                     .addComponent(gudangCheckBox))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(253, Short.MAX_VALUE))
+                .addContainerGap(211, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1085,7 +1110,7 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Detail Transfer Barang", jPanel4);
@@ -1122,9 +1147,9 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
                                 .addComponent(namaUsulanText, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel17)
                         .addGap(4, 4, 4)
                         .addComponent(jLabel33)
@@ -1142,7 +1167,9 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
                         .addComponent(jLabel35)
                         .addGap(4, 4, 4)
                         .addComponent(totalText, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(inputCepatKey, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(inputCepatKey, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
@@ -1207,10 +1234,22 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
         pembelianControl.pilihSupplier(this);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jPembelianKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPembelianKeyTyped
+        // TODO add your handling code here:
+        pembelianControl.validasiAngka(evt);
+    }//GEN-LAST:event_jPembelianKeyTyped
+
+    private void hargaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_hargaKeyTyped
+        // TODO add your handling code here:
+        pembelianControl.validasiAngka(evt);
+    }//GEN-LAST:event_hargaKeyTyped
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField alamat;
     private javax.swing.JTextField atasNamaText;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JTextField cPerson;
     private javax.swing.JCheckBox dua;
     private javax.swing.JTextField email;
@@ -1295,6 +1334,7 @@ public class PembelianBarangPanel extends javax.swing.JPanel {
     private javax.swing.JTextField namaUsulanText;
     private javax.swing.JTextField noRekeningText;
     private javax.swing.JTextField noTelp;
+    private javax.swing.JButton pilihGudangButton;
     private javax.swing.JTextField ppnText;
     private javax.swing.JCheckBox satu;
     private javax.swing.JTextField satuanText;

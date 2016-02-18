@@ -20,16 +20,43 @@ public class PembelianModel extends Model {
     private long tanggal;
     private String kodeItem;
     private int jumlahPembelian;
-    private double harga;
+    private int harga;
     private String keterangan;
     private String jenisPembayaran;
-    private double jumlahPembayaran;
+    private int jumlahPembayaran;
+    private long tanngalPenerimaan;
+    private String kodeGudang;
+    private String lokasiLain;
+
+    public long getTanngalPenerimaan() {
+        return tanngalPenerimaan;
+    }
+
+    public void setTanngalPenerimaan(long tanngalPenerimaan) {
+        this.tanngalPenerimaan = tanngalPenerimaan;
+    }
+
+    public String getKodeGudang() {
+        return kodeGudang;
+    }
+
+    public void setKodeGudang(String kodeGudang) {
+        this.kodeGudang = kodeGudang;
+    }
+
+    public String getLokasiLain() {
+        return lokasiLain;
+    }
+
+    public void setLokasiLain(String lokasiLain) {
+        this.lokasiLain = lokasiLain;
+    }
 
     public double getJumlahPembayaran() {
         return jumlahPembayaran;
     }
 
-    public void setJumlahPembayaran(double jumlahPembayaran) {
+    public void setJumlahPembayaran(int jumlahPembayaran) {
         this.jumlahPembayaran = jumlahPembayaran;
     }
 
@@ -85,7 +112,7 @@ public class PembelianModel extends Model {
         return harga;
     }
 
-    public void setHarga(double harga) {
+    public void setHarga(int harga) {
         this.harga = harga;
     }
 
@@ -99,7 +126,21 @@ public class PembelianModel extends Model {
 
     public boolean insert() {
         try {
-            String sql = "INSERT INTO pembelian (kodeUsulan, namaUsulan, tanggal, kodeItem, jumlahPembelian, harga, keterangan, jumlahPembayaran) VALUES (?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO pembelian "
+                    + "("
+                    + "kodeUsulan, "
+                    + "namaUsulan, "
+                    + "tanggal, "
+                    + "kodeItem, "
+                    + "jumlahPembelian, "
+                    + "harga, "
+                    + "keterangan, "
+                    + "jenisPembayaran, "
+                    + "jumlahPembayaran, "
+                    + "tanggalPenerimaan, "
+                    + "kodeGudang, "
+                    + "lokasiLain"
+                    + ") VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 
             pst = conn.prepareStatement(sql);
             pst.setString(1, kodeUsulan);
@@ -109,7 +150,11 @@ public class PembelianModel extends Model {
             pst.setInt(5, jumlahPembelian);
             pst.setDouble(6, harga);
             pst.setString(7, keterangan);
-            pst.setDouble(8, jumlahPembayaran);
+            pst.setString(8, jenisPembayaran);
+            pst.setInt(9, jumlahPembayaran);
+            pst.setLong(10, tanngalPenerimaan);
+            pst.setString(11, kodeGudang);
+            pst.setString(12, lokasiLain);
             pst.execute();
 
             return true;
@@ -187,9 +232,9 @@ public class PembelianModel extends Model {
                 this.setNamaUsulan(rs.getString("namaUsulan"));
                 this.setTanggal(rs.getLong("tanggal"));
                 this.setJumlahPembelian(rs.getInt("jumlahPembelian"));
-                this.setHarga(rs.getDouble("harga"));
+                this.setHarga(rs.getInt("harga"));
                 this.setKeterangan(rs.getString("keterangan"));
-                this.setJumlahPembayaran(rs.getDouble("jumlahPembayaran"));
+                this.setJumlahPembayaran(rs.getInt("jumlahPembayaran"));
                 list.add(this);
             }
             return list;

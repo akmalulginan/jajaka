@@ -5,13 +5,9 @@
  */
 package control;
 
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import model.SupplierModel;
-import view.PembelianBarangPanel;
-import view.PilihItemDialog;
 import view.PilihSupplierDialog;
 
 /**
