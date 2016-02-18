@@ -161,7 +161,7 @@ public class LevelModel extends Model {
     public ArrayList<LevelModel> select(String id) {
         ArrayList<LevelModel> levelList = new ArrayList<>();
 
-        String query = "SELECT * FROM level WHERE level LIKE '%"+id+"%'";
+        String query = "SELECT * FROM level WHERE level LIKE '%" + id + "%'";
         try {
             conn = SqliteConnection.ConnectDb();
             pst = conn.prepareStatement(query);
@@ -193,6 +193,17 @@ public class LevelModel extends Model {
             System.out.println("e : " + e);
         }
         return levelList;
+    }
+
+    public boolean insert() {
+        boolean toReturn = false;
+        String query = "INSERT INTO hakAkses VALUES ()";
+        try {
+            
+        } catch (Exception e) {
+            System.out.println("e : " + e);
+        }
+        return toReturn;
     }
 
     @Override
