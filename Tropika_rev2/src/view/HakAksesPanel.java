@@ -618,7 +618,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void simpanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanButtonActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:   
         hakAksesControl.simpan(this);
     }//GEN-LAST:event_simpanButtonActionPerformed
 
@@ -639,6 +639,7 @@ public class HakAksesPanel extends javax.swing.JPanel {
 
     private void hapusButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusButtonActionPerformed
         // TODO add your handling code here:
+        hakAksesControl.hapus(this);
     }//GEN-LAST:event_hapusButtonActionPerformed
 
     private void batalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batalButtonActionPerformed

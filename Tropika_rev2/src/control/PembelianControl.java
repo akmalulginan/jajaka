@@ -53,9 +53,11 @@ public class PembelianControl {
         pembelianModel.setJumlahPembelian(Integer.parseInt(pembelianPanel.getjPembelian().getText()));
         pembelianModel.setJumlahPembayaran(Integer.parseInt(pembelianPanel.getJumlahPembayaranText().getText()));
         pembelianModel.setKeterangan(pembelianPanel.getKeterangan().getText());
+
         pembelianModel.setTanngalPenerimaan(pembelianPanel.getTanggalPenerimaanDate().getDate().getTime());
         pembelianModel.setKodeGudang(pembelianPanel.getKodeGudangText().getText());
         pembelianModel.setLokasiLain(pembelianPanel.getNamaLokasiText().getText());
+        pembelianModel.setHarga(Integer.parseInt(pembelianPanel.getHarga().getText()));
 
     }
 
@@ -131,8 +133,8 @@ public class PembelianControl {
         } else if (pembelianPanel.getGudangCheckBox().isSelected() && pembelianPanel.getKodeGudangText().getText().isEmpty()) {
             JOptionPane.showMessageDialog(pembelianPanel, "Pilih salah satu gudang!", "Error", JOptionPane.ERROR_MESSAGE);
         } else if (pembelianPanel.getLokasiLainCheckBox().isSelected() && pembelianPanel.getNamaLokasiText().getText().isEmpty()) {
-                JOptionPane.showMessageDialog(pembelianPanel, "Nama lokasi tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
-                pembelianPanel.getNamaLokasiText().requestFocus();
+            JOptionPane.showMessageDialog(pembelianPanel, "Nama lokasi tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
+            pembelianPanel.getNamaLokasiText().requestFocus();
         } else if (pembelianPanel.getTanggalPenerimaanDate().getDate() == null) {
             JOptionPane.showMessageDialog(pembelianPanel, "Tanggal Penerimaan tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
             pembelianPanel.getTanggalPenerimaanDate().requestFocus();

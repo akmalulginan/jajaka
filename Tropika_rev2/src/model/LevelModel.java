@@ -6,6 +6,7 @@
 package model;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -197,11 +198,36 @@ public class LevelModel extends Model {
 
     public boolean insert() {
         boolean toReturn = false;
-        String query = "INSERT INTO hakAkses VALUES ()";
+        conn = SqliteConnection.ConnectDb();
         try {
             
+            String sql = "INSERT INTO level (level, pengguna, hakAkses, gudang, item, harga, "
+                + "kategori, satuan, supplier, pembelian, penjualan, transaksiGudang, transfer, "
+                + "laporanGudang, laporanPembelian, laporanPenjualan) VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+
+            pst = conn.prepareStatement(sql);
+
+            pst.setBoolean(1, pengguna);
+            pst.setBoolean(2, hakAkses);
+            pst.setBoolean(3, gudang);
+            pst.setBoolean(4, item);
+            pst.setBoolean(5, harga);
+            pst.setBoolean(6, kategori);
+            pst.setBoolean(7, satuan);
+            pst.setBoolean(8, supplier);
+            pst.setBoolean(9, pembelian);
+            pst.setBoolean(10, penjualan);
+            pst.setBoolean(11, transaksiGudang);
+            pst.setBoolean(12, transaksi);
+            pst.setBoolean(13, laporanGudang);
+            pst.setBoolean(14, laporanPembelian);
+            pst.setBoolean(15, laporanPenjualan);
+            pst.execute();
+           
+            toReturn = true;
         } catch (Exception e) {
-            System.out.println("e : " + e);
+            JOptionPane.showMessageDialog(null, e);
+            toReturn= false;
         }
         return toReturn;
     }
@@ -209,6 +235,76 @@ public class LevelModel extends Model {
     @Override
     public String toString() {
         return "LevelModel{" + "level=" + level + ", pengguna=" + pengguna + ", hakAkses=" + hakAkses + ", gudang=" + gudang + ", item=" + item + ", harga=" + harga + ", kategori=" + kategori + ", satuan=" + satuan + ", supplier=" + supplier + ", pembelian=" + pembelian + ", penjualan=" + penjualan + ", transaksiGudang=" + transaksiGudang + ", transaksi=" + transaksi + ", laporanGudang=" + laporanGudang + ", laporanPembelian=" + laporanPembelian + ", laporanPenjualan=" + laporanPenjualan + '}';
+    }
+
+    public boolean update() {
+       boolean toReturn = false;
+        String query = "UPDATE level SET"
+                + " pengguna = ?,"
+                + " hakAkses = ?,"
+                + " gudang = ?,"
+                + "item = ?,"
+                + "harga = ?,"
+                + " kategori = ?,"
+                + " satuan = ?, "
+                + " supplier = ?, "
+                + "pembelian = ?,"
+                + " penjualan = ?,"
+                + " transaksiGudang = ?,"
+                + " transfer = ?,"
+                + " laporanGudang = ?,"
+                + " laporanPembelian = ?,"
+                + " laporanPenjualan = ?"
+                + " WHERE level = ?";
+        try {
+            pst = conn.prepareStatement(query);
+            System.out.println(level);
+            pst.setInt(16, level);
+            pst.setBoolean(1, pengguna);
+            pst.setBoolean(2, hakAkses);
+            pst.setBoolean(3, gudang);
+            pst.setBoolean(4, item);
+            pst.setBoolean(5, harga);
+            pst.setBoolean(6, kategori);
+            pst.setBoolean(7, satuan);
+            pst.setBoolean(8, supplier);
+            pst.setBoolean(9, pembelian);
+            pst.setBoolean(10, penjualan);
+            pst.setBoolean(11, transaksiGudang);
+            pst.setBoolean(12, transaksi);
+            pst.setBoolean(13, laporanGudang);
+            pst.setBoolean(14, laporanPembelian);
+            pst.setBoolean(15, laporanPenjualan);
+            pst.execute();
+           
+            toReturn = true;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+            toReturn= false;
+        }
+        return toReturn;
+    }
+
+    public boolean hapus() {
+        boolean toReturn = false;
+        String query = "DELETE FROM level WHERE level = ?";
+        conn = SqliteConnection.ConnectDb();
+        try {
+
+            if (conn != null) {
+                pst = conn.prepareStatement(query);
+                pst.setInt(1, level);
+
+                pst.execute();
+                toReturn = true;
+
+            }
+            conn.close();
+
+        } catch (Exception e) {
+            System.out.println("error : " + e.getMessage());
+        }
+        return toReturn;
     }
 
 }
