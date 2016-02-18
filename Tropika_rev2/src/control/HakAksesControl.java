@@ -137,6 +137,7 @@ public class HakAksesControl {
     
     public void setLevelModel(HakAksesPanel hakAksesPanel){
         levelModel.setPengguna(hakAksesPanel.getPenggunaCheckBox().isSelected());
+        levelModel.setHakAkses(hakAksesPanel.getHakAksesCheckBox().isSelected());
     }
 
     public void simpan(HakAksesPanel hakAksesPanel) {
